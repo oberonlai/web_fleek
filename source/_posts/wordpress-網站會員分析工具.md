@@ -1,0 +1,12 @@
+---
+title: WordPress 網站會員分析工具
+tags: []
+id: '3313'
+categories:
+  - - WordPress
+date: 2018-01-24 11:21:11
+---
+
+Google Analytics 因為用戶隱私的因素，無法追到個別用戶的瀏覽行為，今天分享的 Users Insights 這套 WordPress 的會員分析工具，可以追到每一個訪客的資訊，如果是站內會員更能做深度的交叉分析，它提供豐富的報表，可以篩選出像是非會員是在看過哪些內容決定成為會員，或是活躍訪客的重覆造訪頻率，還能依照會員屬性做使用者區隔，並已整合多款 WordPress 知名外掛如 WooCommerce、BuddyPress，提供更多的站內使用統計資料。
+
+\[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1565979606842371" display="yes" title="V29yZFByZXNzIOe2suermeacg+WToeWIhuaekOW3peWFtw==" body="R29vZ2xlIEFuYWx5dGljcyDlm6DngrrnlKjmiLbpmrHnp4HnmoTlm6DntKDvvIznhKHms5Xov73liLDlgIvliKXnlKjmiLbnmoTngI/opr3ooYzngrrvvIzku4rlpKnliIbkuqvnmoQgVXNlcnMgSW5zaWdodHMg6YCZ5aWXIFdvcmRQcmVzcyDnmoTmnIPlk6HliIbmnpDlt6XlhbfvvIzlj6/ku6Xov73liLDmr4/kuIDlgIvoqKrlrqLnmoTos4foqIrvvIzlpoLmnpzmmK/nq5nlhafmnIPlk6Hmm7Tog73lgZrmt7HluqbnmoTkuqTlj4nliIbmnpDvvIzlroPmj5DkvpvosZDlr4znmoTloLHooajvvIzlj6/ku6Xnr6npgbjlh7rlg4/mmK/pnZ7mnIPlk6HmmK/lnKjnnIvpgY7lk6rkupvlhaflrrnmsbrlrprmiJDngrrmnIPlk6HvvIzmiJbmmK/mtLvouo3oqKrlrqLnmoTph43opobpgKDoqKrpoLvnjofvvIzpgoTog73kvp3nhafmnIPlk6HlsazmgKflgZrkvb/nlKjogIXljYDpmpTvvIzkuKblt7LmlbTlkIjlpJrmrL4gV29yZFByZXNzIOefpeWQjeWkluaOm+WmgiBXb29Db21tZXJjZeOAgUJ1ZGR5UHJlc3PvvIzmj5Dkvpvmm7TlpJrnmoTnq5nlhafkvb/nlKjntbHoqIjos4fmlpnjgII=" pid="3313"\]

@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/tw/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/tw/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/tw/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/tw/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/tw/css/main.css">
+
+
+<link rel="stylesheet" href="/tw/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oberonlai.blog","root":"/tw/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideDownIn","sidebar":"slideDownIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="前言坦白說做了這麼多年的專案，始終覺得沒有找到一套適合自己的 Starter Theme，不管是官方的還是很多社群朋友推薦的，用起來都還是有卡卡的感覺。 後來看到現在很多網路公司都會開發自己的 Design System，驚覺到要有一套自己的系統才能讓整個工作流程更加順暢，進而建立自己的標準化規格，讓未來的自己好過些。 以往在進行 A 專案的時候，都會去爬以前寫過的程式碼，它們可能散落在 BCD">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【 工具 】使用 ODS starter theme 開發 WordPress 佈景主題">
+<meta property="og:url" content="https://oberonlai.blog/tw/ods-starter-theme/">
+<meta property="og:site_name" content="WordPress 開發日常">
+<meta property="og:description" content="前言坦白說做了這麼多年的專案，始終覺得沒有找到一套適合自己的 Starter Theme，不管是官方的還是很多社群朋友推薦的，用起來都還是有卡卡的感覺。 後來看到現在很多網路公司都會開發自己的 Design System，驚覺到要有一套自己的系統才能讓整個工作流程更加順暢，進而建立自己的標準化規格，讓未來的自己好過些。 以往在進行 A 專案的時候，都會去爬以前寫過的程式碼，它們可能散落在 BCD">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/screenshot-1024x768.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-18-at-09.53.58.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-25-at-12.10.16.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-18-at-11.13.47.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-18-at-11.51.03.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-18-at-12.28.17-1024x746.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/1CO3fAi5OwGbOEU6k1eueJA-1024x576.jpeg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/2000px-Sass_Logo_Color.svg_-1024x768.png">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/github_captions.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-25-at-09.49.42.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-25-at-11.25.09.jpg">
+<meta property="article:published_time" content="2020-04-18T02:39:25.000Z">
+<meta property="article:modified_time" content="2021-05-01T13:07:38.651Z">
+<meta property="article:author" content="賴俊吾 &#x2F; Oberon Lai">
+<meta property="article:tag" content="f2e">
+<meta property="article:tag" content="html5">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oberonlai.blog/wp-content/uploads/2020/04/screenshot-1024x768.jpg">
+<meta property="og:image" content="/tw/images/og-img.jpg" />
+
+<link rel="canonical" href="https://oberonlai.blog/tw/ods-starter-theme/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>【 工具 】使用 ODS starter theme 開發 WordPress 佈景主題 | WordPress 開發日常</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163107142-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-163107142-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/tw/" class="brand" rel="start" style="display: block">
+        <img class="logo-img" src="/tw/images/logo-w.svg" alt="WordPress 開發日常">
+    </a>
+      <p class="site-subtitle" itemprop="description">有任何 WordPress 客製需求歡迎與我聯絡！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-關於我">
+
+    <a href="/tw/about/" rel="section">關於我</a>
+
+  </li>
+        <li class="menu-item menu-item-合作方式">
+
+    <a href="/tw/how-can-oberon-help-you/" rel="section">合作方式</a>
+
+  </li>
+        <li class="menu-item menu-item-計價方式">
+
+    <a href="/tw/how-do-i-make-a-quotation/" rel="section">計價方式</a>
+
+  </li>
+        <li class="menu-item menu-item-學習-wordpress">
+
+    <a href="/tw/wordpress-full-stack/" rel="section">學習 WordPress</a>
+
+  </li>
+        <li class="menu-item menu-item-與我聯繫">
+
+    <a href="mailto:m615926@gmail.com" rel="noopener" target="_blank">與我聯繫</a>
+
+  </li>
+        <li class="menu-item menu-item-訂閱">
+
+    <a href="https://successful-trader-4225.ck.page/bbe15da0e6" rel="noopener" target="_blank">訂閱</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/oberonlai" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/ods-starter-theme/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【 工具 】使用 ODS starter theme 開發 WordPress 佈景主題
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-04-18 10:39:25" itemprop="dateCreated datePublished" datetime="2020-04-18T10:39:25+08:00">2020-04-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 21:07:38" itemprop="dateModified" datetime="2021-05-01T21:07:38+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/saas/" itemprop="url" rel="index"><span itemprop="name">saas</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/F2E/" itemprop="url" rel="index"><span itemprop="name">F2E</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>13k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>11 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>坦白說做了這麼多年的專案，始終覺得沒有找到一套適合自己的 Starter Theme，不管是官方的還是很多社群朋友推薦的，用起來都還是有卡卡的感覺。</p>
+<p>後來看到現在很多網路公司都會開發自己的 <a target="_blank" rel="noopener" href="https://designsystemsrepo.com/design-systems-recent">Design System</a>，驚覺到要有一套自己的系統才能讓整個工作流程更加順暢，進而建立自己的標準化規格，讓未來的自己好過些。</p>
+<p>以往在進行 A 專案的時候，都會去爬以前寫過的程式碼，它們可能散落在 BCD 專案裡面，但時間一久再加上年紀變大，常常想不起來之前寫過的東西放在哪個專案裡面。</p>
+<p>另一方面，自己在寫的時候很少遵循什麼 Code Standard，所以就算找到之前的程式碼，也會先碎碎念自己以前怎麼會把 Code 寫成這副德行，然後真的要用的時候都還要再花時間進行整理。</p>
+<p>而且雖然是自己寫的東西，但不少的寫法都是 Google 來的，為什麼要這樣寫？這樣寫的用意是什麼？當專案結束拿到尾款後，這些問題就也隨風而去了，當下次再碰到類似的狀況要修改成不同的功能，又要再花很多時間來重新研究。</p>
+<p>基於這些理由，<a target="_blank" rel="noopener" href="https://ods.obeornlai.blog/">ODS - Oberon Design System</a> （歐迪賽系統XD）就誕生了～～～</p>
+<span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://ods.oberonlai.blog/"><img src="https://oberonlai.blog/wp-content/uploads/2020/04/screenshot-1024x768.jpg"></a></p>
+<h2 id="什麼是-Oberon-Design-System？"><a href="#什麼是-Oberon-Design-System？" class="headerlink" title="什麼是 Oberon Design System？"></a>什麼是 Oberon Design System？</h2><p>歐迪賽系統分為兩個部分， UI 元件與 WordPress PHP Function。我把近期的專案整理成一個一個獨立的 UI 元件，然後在做 WordPress 的時候也把常用到的 WP_Query、Function 根據範本收集起來，並且做了截圖以及功能的說明。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-18-at-09.53.58.jpg"></p>
+<p>每個 UI 元件會有四個不同的頁籤，分別是不同開發階段的程式碼，有前端的 Pug、Scss 與 JS，以及在 WordPress 之中要如何實現這個元件的 PHP 寫法。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-25-at-12.10.16.jpg"></p>
+<p>針對 WordPress 的部分，依照開發 Theme、Plugin、WP-Admin 與 WooCommerce 來區分，然後把註解附上，幫助自己之後要用的時候能理解程式的寫法。</p>
+<p>PHP 的部分可以直接使用，但前端的部分因為我是根據自己的工作流程所整理的，因此會包含一些打包工具的設定，像是 Pug、Scss 的編譯、ES6 的 Module 與 Babel，這部分就是 ODS Starter Theme 派上用場的時候了。</p>
+<h2 id="ODS-Starter-Theme-介紹"><a href="#ODS-Starter-Theme-介紹" class="headerlink" title="ODS Starter Theme 介紹"></a>ODS Starter Theme 介紹</h2><p>以前我在開始新專案的時候，會直接把上一個專案的資料夾直接複製一份出來，然後把裡面用不到的東西刪一刪，這樣做的問題是很多東西不敢刪，因為怕會刪到之後可能要用到的東西，搞得還是要去上一個專案找程式碼來複製貼上。</p>
+<p>但有了 ODS 之後，我可以把 Starter Theme 精簡到不能再精簡，只留下最必要的基本功能與範本，遇到要用的東西再去 ODS 複製貼上就好，這樣就再也不用擔心會漏掉什麼必要的功能而要把所有東西都塞進去了。</p>
+<p>ODS Starter Theme 從這邊下載—&gt; <a target="_blank" rel="noopener" href="https://github.com/oberonlai/ods"></a><a target="_blank" rel="noopener" href="https://github.com/oberonlai/ods">https://github.com/oberonlai/ods</a><strong>，</strong>以下就資料夾結構做說明：</p>
+<h3 id="themes-ods-src"><a href="#themes-ods-src" class="headerlink" title="themes/ods/src"></a><strong>themes/ods/src</strong></h3><p>該資料夾放的是所有前端開發需要用到的檔案，包含 Pug、Scss、JS 與圖片。</p>
+<h3 id="themes-ods-src-layouts"><a href="#themes-ods-src-layouts" class="headerlink" title="themes/ods/src/_layouts"></a><strong>themes/ods/src/_layouts</strong></h3><p>該資料夾放的是 Pug 的核心模板 temp.pug，它定義了所有頁面的基本框架，以及需要引入的模板。</p>
+<h3 id="themes-ods-src-partials"><a href="#themes-ods-src-partials" class="headerlink" title="themes/ods/src/_partials"></a><strong>themes/ods/src/_partials</strong></h3><p>該資料夾放的是 Pug 的區塊模板，像是 Header、Footer 以及其他可以模組化的元件。</p>
+<h3 id="themes-ods-assets"><a href="#themes-ods-assets" class="headerlink" title="themes/ods/assets"></a><strong>themes/ods/assets</strong></h3><p>執行 npm run build 之後會產生的靜態資源檔，也就是編譯 img、js、css 的資料夾，這些是 Theme 需要引入的檔案。</p>
+<h3 id="themes-ods-dev"><a href="#themes-ods-dev" class="headerlink" title="themes/ods/dev"></a><strong>themes/ods/dev</strong></h3><p>執行 npm run start 之後產生的靜態資源檔，通常為前端開發時所用的資源，因此除了 img、css、js 以外，還會包含編譯 Pug 後的 Html 檔。</p>
+<p>其他根目錄中的 PHP 檔就是 WordPress Theme 的基本檔案，排除各種範本只留下最基本的 index.php，以及 header 與 footer，functions.php 只放了引入靜態資源檔的 Action 以及一些版本資訊移除的 Filter，和根據案件需求啟用或關閉 Gutenberg 編輯器的 Filter。</p>
+<p>就這樣，沒有預設任何資料夾的整理方式，只留下必要的檔案，要找 Code 去 ODS 找，要找範本去 <a target="_blank" rel="noopener" href="https://developer.wordpress.org/themes/basics/template-hierarchy/">Theme Hierarchy</a> 找，用久用熟了很自然的就能針對需要的內容開相對應的範本檔案，就不用再留下一堆可能用不到的東西了。</p>
+<p>至於註冊 Custom Post Type、Taxonomy、WordPress API 一律放在外掛來處理，Theme 只留下最基本的外觀樣式。</p>
+<h2 id="ODS-Starter-Theme-使用說明書"><a href="#ODS-Starter-Theme-使用說明書" class="headerlink" title="ODS Starter Theme 使用說明書"></a>ODS Starter Theme 使用說明書</h2><p>接下來用我在實際專案上的工作流程來說明如何使用 ODS Starter Theme：</p>
+<h3 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a><strong>前置作業</strong></h3><p>主要是安裝 Node 與 NPM，以及最重要的 WordPress 本機開發環境，Node 與 NPM 根據使用的作業系統有不同的安裝方法，我是 Mac 我用 <a target="_blank" rel="noopener" href="https://www.itread01.com/content/1550405718.html">Homebrew</a>。</p>
+<p>本機開發環境我用 Valet，可以參考我之前的整理的文章 - <a href="https://oberonlai.blog/valetpress-setup/">Mac 限定 WordPress 本機開發環境 Valet + ValetPress</a>，也可以使用 <a target="_blank" rel="noopener" href="https://localwp.com/">Local</a> ，安裝上方便很多而且 PC 跟 Mac 都可以使用。</p>
+<p>環境都搞定之後，先把 <a target="_blank" rel="noopener" href="https://github.com/oberonlai/ods">ODS Starter Theme</a> clone 到本機 WordPress wp-content/themes 的目錄底下，如果是用 ValetPress 的話更方便，把 git clone <a target="_blank" rel="noopener" href="https://github.com/oberonlai/ods.git">https://github.com/oberonlai/ods.git</a> 寫在腳本裡面，這樣新開一個站的時候就可以自動把 Theme 安裝好並且啟用，甚至把下面相關的指令一併變成腳本。</p>
+<p>接下來先安裝一個很方便的套件 npm 叫做 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/npm-upgrade">npm-upgrade</a>，它可以偵測再 package.json 裡面的套件是否有新的版本，輸入以下指令進行安裝：</p>
+<p>$ npm i -g npm-upgrade</p>
+<p>接下來開啟 Terminal 把目錄切換到 wp-content/themes/ods 底下，先跑一次 npm-update</p>
+<p>wp-content/themes/ods$ npm-upgrade</p>
+<p>Checking for outdated dependencies for “/Users/oberonlai/Sites/Hellowp/wp-content/themes/ods/package.json”…<br>[====================] 6/6 100%</p>
+<p>New versions of active modules available:</p>
+<p>  uikit                                 ^3.4.0   →   ^3.4.1<br>  parcel-plugin-custom-dist-structure   ^1.1.3   →   ^1.1.9 </p>
+<p>? Update “uikit” in package.json from ^3.4.0 to ^3.4.1? Yes</p>
+<p>? Update “parcel-plugin-custom-dist-structure” in package.json from ^1.1.3 to ^1.1.9? Yes</p>
+<p>These packages will be updated:</p>
+<p>  uikit                                 ^3.4.0   →   ^3.4.1<br>  parcel-plugin-custom-dist-structure   ^1.1.3   →   ^1.1.9 </p>
+<p>? Update package.json? Yes</p>
+<p>它會逐一問你是否要更新現有的 Node 套件，跟 WordPress 外掛一樣，為了安全性考量，每個新的專案我都會習慣先更新，接下來才會安裝它們：</p>
+<p>wp-content/themes/ods$ npm install</p>
+<p>npm notice created a lockfile as package-lock.json. You should commit this file.<br>npm WARN ods No description<br>npm WARN ods No repository field.<br>npm WARN ods No license field.</p>
+<p>removed 1 package, updated 3 packages and audited 10259 packages in 12.748s</p>
+<p>23 packages are looking for funding<br>  run `npm fund` for details</p>
+<p>found 0 vulnerabilities</p>
+<p>到這邊 Node 的環境就準備完成了，接下來是開發工具的介紹。</p>
+<h3 id="Parcel"><a href="#Parcel" class="headerlink" title="Parcel"></a><strong>Parcel</strong></h3><p><a target="_blank" rel="noopener" href="https://parceljs.org/"><img src="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-18-at-11.13.47.jpg"></a></p>
+<p>前端開發的流程越來越複雜，常常有時候光設定環境半天就去了而且還搞不定 (怒)，於是有了 Parcel 的出現來拯救大家。</p>
+<p>這套打包工具我從前年就注意到了，它號稱不用寫任何設定檔，只要裝上之後，它就會根據你寫的語言來自動安裝相對應的套件，十分方便，而且編譯速度飛快，再搭配快取的話一整個爽度十足。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-18-at-11.51.03.jpg"></p>
+<p>但也因為這樣的方便性，當想要做一些客製化調整的時候讓我完全不知道怎麼下手，再加上東西太新相關討論太少，所以遲遲無法把它用在正式的專案上。</p>
+<p>去年年中推出了 Parcel 2，非常興奮的立馬來測試，結果還是無法解決其中一個我最在意的問題：那就是編譯後根據檔案格式來分類資料夾，因為預設的狀況是所有編譯好的檔案全都會在同一層目錄，看了超礙眼。</p>
+<p>直到今年年初想說來看看有沒有解決這個問題了，但 Parcel 2 目前還有上百個 issue 還沒解決，更不用說我在意的問題被排在好後面，準備放棄之餘，碰巧逛到神人出來拯救大眾了，這位大大叫 Vladimir Mikulic，他寫了一支 <a target="_blank" rel="noopener" href="https://github.com/VladimirMikulic/parcel-plugin-custom-dist-structure">parcel-plugin-custom-dist-structure</a> 可以完美分類 dist 資料夾，而且設定十分簡單，</p>
+<p>只要在 package.json 裡面定義好某種格式的檔案會去到哪一個資料夾名稱，剩下的它會自動幫你搞定。</p>
+<p>“customDistStructure”: {<br>    “config”: {<br>      “.js”: “js”,<br>      “.css”: “css”,<br>      “img”: [<br>        “.jpg”,<br>        “.png”,<br>        “.svg”<br>      ]<br>    },<br>    “options”: {<br>      “development”: true<br>    }<br>  }</p>
+<p>.js 檔會去 js 資料夾，.jpg、.png、.svg 會去 img 資料夾，這樣就可以解決我的問題了，而且 Vladimir Mikulic 大大超用心，回報 issue 每天都會即時更新處理狀態，實在是太感謝他，讓我終於能在正式專案中使用 Parcel 了！</p>
+<p>目前我是用 Parcel 1 的版本，因為這支外掛只支援一代，Parcel 與分類資料夾的外掛都已經定義在 ODS 的 package.json 裡面了，所以只要下 npm install 就可以一次安裝完成。</p>
+<p>需要注意的地方是 scripts 的部分：</p>
+<p>“scripts”: {<br>  “build”: “parcel build –no-content-hash src/js/script.js src/sass/style.scss src/img/** –no-source-maps -d assets”,<br>  “start”: “parcel serve src/*.pug –no-source-maps -d dev”<br>},</p>
+<p>當執行 npm run start 的時候，會啟用 Parcel 的本地環境，然後會即時更新所有檔案的修改狀態，預設 port 是 localhost:1234，然後會把檔案編譯到 dev 這跟資料夾</p>
+<p>當執行 npm run build 的時候，會執行 Parcel 的 Build 指令，也就是編譯出正式環境需要用的檔案，給 Theme 的只需要靜態資源檔，然後放在 assets 這個資料夾，wp_enqueue_script 的檔案路徑也是指到這邊。</p>
+<p>更多 Parcel CLI 可以參考官方文件 —&gt; <a target="_blank" rel="noopener" href="https://zh-tw.parceljs.org/cli.html">https://zh-tw.parceljs.org/cli.html</a></p>
+<h3 id="UIKit"><a href="#UIKit" class="headerlink" title="UIKit"></a><strong>UIKit</strong></h3><p><a target="_blank" rel="noopener" href="https://getuikit.com/"><img src="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-18-at-12.28.17-1024x746.jpg"></a></p>
+<p>自從三年前發現了它之後，它現在是我每個專案的必備 CSS 框架，與最熱門的 Bootstrap 或其他框架不同，它不用再裝其他套件就可以使用 Modal、Slideshow、Sticky Menu 之類的效果，</p>
+<p>當然也提供了很多 CSS class 來做版面的設計，像是 Container、Grid、Column，它提供的元件超級豐富也超實用，我沒事的時候就會打開他們的網站把每個元件都瀏覽一遍用法，現在都能把常用的背起來了。</p>
+<p>另一方面，它的 JS API 也非常完整，完整到我可以借用它來開發<a href="https://oberonlai.blog/flash-stories-technical/">一套編輯器</a>，下面會說明在前端開發時如何運用以及客製化 UIKit，ODS 列出的所有元件，都是根據它衍伸而來的，熟悉它了之後做介面就會超快而且又有組織。</p>
+<p>跟 Parcel 一樣，UIkit 已經整合到 ODS Starter Theme 裡面，安裝一次 npm install 後即可使用。</p>
+<h3 id="Pug"><a href="#Pug" class="headerlink" title="Pug"></a><strong>Pug</strong></h3><p><a target="_blank" rel="noopener" href="https://pugjs.org/api/getting-started.html"><img src="https://oberonlai.blog/wp-content/uploads/2020/04/1CO3fAi5OwGbOEU6k1eueJA-1024x576.jpeg"></a></p>
+<p>Pug 可以省去寫 HTML 關閉的標籤，還可以少打 class、style 這些屬性的英文字，然後透過縮排來定義層級，再搭配變數、迴圈、判斷式、引入等等的功能來模組化 HTML。</p>
+<p>其中最方便的地方是在於資料結構的定義，找到 themes/ods/src/ 裡面有一支 pug.config.js 的設定檔，可以事先定義好需要用到的變數並且用物件的方式來呈現。</p>
+<p>module.exports = {<br>  locals: {<br>    header: [<br>      {<br>        navbar: [<br>          {<br>            src: “img/logo.svg”,<br>            nav: [<br>              {<br>                text: “Menu1”,<br>                href: “#”<br>              },<br>              {<br>                text: “Menu2”,<br>                href: “#”<br>              }<br>            ]<br>          }<br>        ]<br>      }<br>    ],<br>    frontPage: [<br>      {<br>        slidershow: [<br>          {<br>            src: “img/default.jpg”,<br>            title: “文章標題”,<br>            desc:”文章摘要”,<br>            text: “閱讀更多”,<br>            href: “#”<br>          },<br>          {<br>            src: “img/default.jpg”,<br>            title: “文章標題”,<br>            desc:”文章摘要”,<br>            text: “閱讀更多”,<br>            href: “#”<br>          }<br>        ],<br>        loop: [<br>          {<br>            title: “最新消息”,<br>            titleEn: “LATESTED NEWS”,<br>            list: [<br>              {<br>                src: “img/default.jpg”,<br>                title: “文章標題”,<br>                date: “2019.05.21”,<br>                href: “#”,<br>                text: “文章分類”<br>              }<br>            ]<br>          }<br>        ],<br>      }<br>    ],<br>  }<br>};</p>
+<p>通常拿到這設計稿的時候，我會先把這份資料整理出來，先從 Header 與 Footer 的資料開始，像是選單有哪些、連結有什麼，再來是分頁面，首頁 Front Page、關於頁 About，把頁面裡面所有的文字都打好 JSON。</p>
+<p>這樣做的好處是在整理 JSON 的時候我就可以先定義之後做 ACF 要開的欄位名稱，以及順過所有欄位的邏輯與定義，一開始會花上不少時間做這份 JSON，但之後就會很開心，因為在寫 HTML 的時候就不用一直複製貼上了，範例如下：</p>
+<p>each i in header<br>  header.uk-padding<br>    each j in i.navbar<br>      h1.uk-text-center#logo<br>        img.uk-width-1-6(src=j.src)<br>      ul.uk-flex.uk-flex-center.uk-margin-top<br>        each k in j.nav<br>          li.uk-margin-left.uk-margin-right<br>            a.text-dark(href=k.href)=k.text</p>
+<p>使用 each 把 header 陣列裡面的東西印出來，然後再使用第二次 each 把 header 裡面的 navbar 陣列印出來，第三次把 navbar 裡面的 nav 選單印出來，需要分多少階層看個人習慣，我是喜歡把屬於 Header 的東西都塞在同一個陣列裡面。</p>
+<p>最開心的部分是 each k in j.nav 這邊，自動就會撈出 nav 裡面的東西，所以我就不用 li 重複貼上好幾次，要修改 class 的話只要改一個就好。</p>
+<p>更進階的用法是可以加入判斷式，範例如下：</p>
+<p>ul.uk-flex.uk-flex-center.uk-margin-top<br>  each k,index in j.nav<br>    if index===0<br>      li.uk-margin-left.uk-margin-right.uk-active<br>        a.text-dark(href=k.href)=k.text<br>    else<br>      li.uk-margin-left.uk-margin-right<br>        a.text-dark(href=k.href)=k.text</p>
+<p>多一個參數叫做 index，當 index = 0 也就是第一個選單的時候，li 多加一個 uk-active 的 class 來表示目前所在頁面的選單套用不同的樣式，或是也可以把 class 寫在 JSON 裡面，這樣就可以很靈活的來控制迴圈裡面的東西。</p>
+<p>其他還有 Extends、Block 也是常會用的東西，所有頁面的基本框架是放在 src/_layouts/temp.pug 裡面，而首頁 index.pug 則是延伸了 temp.pug：</p>
+<p>doctype html<br>html<br>  head<br>    title ODS Starter<br>    meta(charset=’utf-8’)<br>    meta(name=’viewport’ content=’width=device-width, initial-scale=1.0, maximum-scale=1’)<br>    link(rel=’stylesheet’ href=’/sass/style.scss’)<br>    link(rel=’icon’ href=’/img/fav.png’ type=’image/png’)<br>    block head_end</p>
+<p>  body</p>
+<pre><code>include ../\_partials/header.pug
+
+//- 內容區塊
+.content
+  block content
+
+include ../\_partials/footer.pug
+
+script(src=&#39;/js/script.js&#39;)
+
+block body\_end
+</code></pre>
+<p>include 是載入其他模組化的 pug，像是 header 與 footer，而 block head_end、content、body_end 是預先把洞挖好來讓其他 pug 可以寫入這個地方。</p>
+<p>extends _layouts/temp</p>
+<p>block content<br>  .uk-container<br>    h1.uk-text-center.heading-medium 這是首頁</p>
+<p>extends 是衍伸 temp.pug 這個模板，而 block content 就是剛剛在 temp.pug 裡面定義好的一個區塊，寫在這邊的 pug 就會替換 temp.pug 裡面 block content 的部分。</p>
+<p>隨著專案的進行我會把 pug 細分成很多獨立的檔案，拆分出來的 .pug 就可以很方便的整理進 ODS 裡面，或是需要之前寫過的元件的時候，也能從 ODS 拿出來立即使用。</p>
+<h3 id="Sass"><a href="#Sass" class="headerlink" title="Sass"></a><strong>Sass</strong></h3><p><img src="https://oberonlai.blog/wp-content/uploads/2020/04/2000px-Sass_Logo_Color.svg_-1024x768.png"></p>
+<p>Sass 是一套 CSS 的擴充語法，它可以讓 CSS 擁有程式語言常見的功能，像是定義變數、迴圈、判斷式等等，根據寫法的不同又分為 Sass 與 Scss，Sass 跟 Pug 比較類似，可以少寫很多括號跟分號，而 Scss 乍看之下比較像傳統的 CSS，然後多了跟 Sass 一樣的功能。</p>
+<p>因為閱讀上的習慣，我自己是寫 Scss 比較多，而 UIkit 的原始碼也是用 Scss 寫的，所以比較方便的 Sass 反而比較少用到。</p>
+<p>前面提到 UIKit 的眾多元件，除了省下很多的開發時間外，讓我覺得最大的收穫是如何組織 CSS 檔案。最早在寫 CSS 的時候，每個頁面的每個元件有各自獨立的 class 名稱，雖然看似很有組織，但實際在運作時會發現很多頁面都會有重複的元件。</p>
+<p>後來採取了 <a target="_blank" rel="noopener" href="http://getbem.com/introduction/">BEM</a> 這個 CSS 組織方法，也就是依照 Block、Element、Modifier 這樣的邏輯來命名，一開始用的時候覺得好有系統，而且要回頭再改的時候也很方便找。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/04/github_captions.jpg"></p>
+<p>但幾個專案下來之後我發現，在寫 HTML 命名 class 的時候，因爲要想這個元件到底是 Block 還是 Element，或是 Modifier 要怎麼下，寫到後來覺得很煩，因為很不直覺，必須要思考 HTML 的規則。</p>
+<p>在這個時期，我事實上是很討厭使用像是 Bootstrap 或是 UIKit 這一類的 Framework，因為我覺得他們很肥，而且要寫一個帶有圓角、陰影的按鈕要塞一堆 class 在 HTML 裡面，整個看起來超髒超亂。</p>
+<p>但人總是會變的，現在的我完全回不去以前自己命名 class 的寫法了，轉而擁抱這種當初自己嫌得要命的方式，最大的關鍵在於它讓我可以很直覺得像是在寫 CSS 一樣寫 HTML。</p>
+<p>後來才知道這樣的方法叫做 Functional CSS，也就是把每個 CSS 屬性都變成一個獨立的 class，一個 class 只管一件事，當我要設定 font-size 為 12px 就是 .text-xsmall，背景要白色就是 .background-default。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-25-at-09.49.42.jpg"></p>
+<p>一個 h1 可能就帶有四個 class，如果考慮到 RWD 的狀態可能還會更多，但因為這些 class 我知道它們的意義是什麼，所以在寫的時候可以立馬翻譯成 CSS，完全不用思考 class 到底該如何命名。</p>
+<p>UIKit 本身就提供許多現成的 class 可以使用，所以以前還不熟的時候沒事就是去逛他們的文件，把每個元件該怎麼用、class 有哪些一遍又一遍的重複看，再搭配實作幾個專案下來，差不多已經記得大部分常用的寫法。</p>
+<p>在 ODS 的 src/sass 目錄中，主要分為 components、helpers、partials、vendors 這四個資料夾，以下說明這四個資料夾的用途：</p>
+<p><strong>src/scss/componets</strong> - 放覆寫 UIKit 元件的 Scss 檔，可能會有 heading.scss、button.scss、text.scss 等等，所以檔案名稱就是對應 UIKit 的元件名稱，這樣找起來很方便</p>
+<p><strong>src/scss/helpers</strong> - 放一些讓自己寫 Scss 好用的工具，以及管理所有的變數</p>
+<p><strong>src/scss/partials</strong> - 放頁面區塊為主的 Scss 檔案為放在這邊，像是 header、footer 以及 UIKit 沒有需要自行定義的元件</p>
+<p><strong>src/scss/vendors</strong> - 放第三方的元件的 Scss 檔，像是 WordPress 本身的 Style 或是控制 Facebook Social Plugin 的樣式</p>
+<p>新專案我的設計步驟如下：</p>
+<p><strong>一、整理變數</strong></p>
+<p>首先開啟 src/scss/helpers/variable.scss，裡面是 UIKit 大部分會常用到的變數，所以如果你很幸運遇到有組織邏輯的設計師，這些變數可以很快的就整理出來。</p>
+<p>$global-small-margin: 10px !default;<br>$global-margin: 20px !default;<br>$global-medium-margin: 40px !default;<br>$global-large-margin: 70px !default;</p>
+<p>$global-color: #000 !default;<br>$global-muted-background: #EDEDED !default;<br>$global-primary-background: #fc9202 !default;<br>$global-muted-color: #999 !default;<br>$global-background: #fff !default;<br>$global-secondary-background: #ffe400 !default;<br>$global-success-background: #32d296 !default;<br>$global-warning-background: #faa05a !default;<br>$global-danger-background: #f0506e !default;</p>
+<p>$global-link-color: #1e87f0 !default;<br>$global-link-hover-color: #0f6ecd !default;</p>
+<p>$global-small-gutter: 15px !default;<br>$global-gutter: 30px !default;<br>$global-medium-gutter: 40px !default;</p>
+<p>$global-font-family: ‘Noto Sans TC’,’PingFang TC’,’微軟正黑體’,Arial, sans-serif;</p>
+<p>$breakpoint-small: 640px !default;<br>$breakpoint-medium: 960px !default;<br>$breakpoint-large: 1200px !default;<br>$breakpoint-xlarge: 1600px !default;</p>
+<p><strong>二、選擇要引入的 Scss</strong></p>
+<p>打開 src/scss/style.scss，這支檔案是控制所有要引入的 Scss 檔，UIKit 有固定的載入順序，所以儘可能的別去變動它，裡面有所有元件的 Scss 檔案，先確認該專案會用到哪些元件，把要用到的取消註解，算是減少一些不必要的 style。</p>
+<p>// scss<br>// @import url(‘<a target="_blank" rel="noopener" href="https://fonts.googleapis.com/css?family=Noto+Serif+TC:300,400,500,700,900&amp;display=swap&amp;subset=chinese-traditional&#39;">https://fonts.googleapis.com/css?family=Noto+Serif+TC:300,400,500,700,900&amp;display=swap&amp;subset=chinese-traditional&#39;</a>);<br>@import url(“<a target="_blank" rel="noopener" href="https://fonts.googleapis.com/earlyaccess/notosanstc.css&quot;">https://fonts.googleapis.com/earlyaccess/notosanstc.css&quot;</a>);</p>
+<p>@import “helpers/mixin”;<br>@import “helpers/variable”;<br>@import “helpers/reset”;</p>
+<p>@import “../../node_modules/uikit/src/scss/variables-theme.scss”;<br>@import “../../node_modules/uikit/src/scss/mixins.scss”;</p>
+<p>// Elements<br>@import “../../node_modules/uikit/src/scss/components/link.scss”;<br>@import “../../node_modules/uikit/src/scss/components/heading.scss”;<br>// @import “../../node_modules/uikit/src/scss/components/divider.scss”;<br>@import “../../node_modules/uikit/src/scss/components/list.scss”;<br>@import “../../node_modules/uikit/src/scss/components/description-list.scss”;<br>// @import “../../node_modules/uikit/src/scss/components/table.scss”;<br>@import “../../node_modules/uikit/src/scss/components/icon.scss”;<br>// @import “../../node_modules/uikit/src/scss/components/form-range.scss”;<br>@import “../../node_modules/uikit/src/scss/components/form.scss”; // After: Icon, Form Range<br>@import “../../node_modules/uikit/src/scss/components/button.scss”;</p>
+<p>// Layout<br>@import “../../node_modules/uikit/src/scss/components/section.scss”;<br>@import “../../node_modules/uikit/src/scss/components/container.scss”;<br>@import “../../node_modules/uikit/src/scss/components/grid.scss”;<br>// @import “../../node_modules/uikit/src/scss/components/tile.scss”;<br>@import “../../node_modules/uikit/src/scss/components/card.scss”;</p>
+<p>…</p>
+<p><strong>三、根據實際寫的狀態加入 Scss</strong></p>
+<p>假設當今天在用 UIKit 的 Accordion 的時候，發現樣式需要調整，這時後就新增一個 accordion.scss 並放在 /src/scss/componets 的目錄下，然後在 style.scss 最下面寫 @import “components/accordion” 來引入覆寫的檔案，這樣之後要修改 Accordion 的樣式時找起來就非常方便。</p>
+<p>雖然 UIKit 用起來真的十分方便，但即使有經過引入檔案的控管，編譯完之後 CSS 檔案至少都還是會落在 100 kb 出頭左右，相較於最近很紅的 <a target="_blank" rel="noopener" href="https://tailwindcss.com/docs/controlling-file-size/#app">Tailwindcss</a> 以及其他 CSS framework 比起來肥了好幾倍。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/04/CleanShot-2020-04-25-at-11.25.09.jpg"></p>
+<p>主因還是在 UIKit 包含了很多現成的元件方便開發者使用，這在開發上可以省去很多 JS 的撰寫時間，但 Tailwindcss 近期也準備推出 UI components 了，也許之後會跳槽到 Tailwindcss 也說不定XD</p>
+<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a><strong>ES6</strong></h3><p>自從經過上一個專案的洗禮之後，對於 ES6 的模組化開發稍微比較有概念了，所以在之後的專案上，有寫到 JS 的部分就會開始採用新版的語法，因為不管是檔案引入或是相容性 Parcel 都幫忙把環境搞定了。</p>
+<p>JS 的資料夾目錄跟 Scss 一樣，也是分為 components、helpers、partials，少了 vendors 是因為用 import 就可以直接把第三方工具引入。</p>
+<p>ODS Starter Theme 裡面預設的就只有 src/heleprs/Variable.js，主要是用來定義所有的 JS 變數，然後透過 script.js 的引入，可以讓實際運作的程式比較不會有落落長的 Selector 而妨礙閱讀。</p>
+<p>import UIkit from ‘uikit’;<br>import Icons from ‘uikit/dist/js/uikit-icons’;<br>UIkit.use(Icons);</p>
+<p>import { Variable } from “./helpers/Variable”;<br>const vars = new Variable();</p>
+<p>document.addEventListener(‘DOMContentLoaded’,()=&gt;{<br>  vars.logo.classList.add(‘logo-class’);<br>})</p>
+<p>可以看到 UIKit 跟它的 icon 在最前面被引入，這樣如果需要使用 UIkit 的 API 就可以直接拿來用。接下來是引入變數檔案，並且宣告物件 vars 來拿變數，像是 vars.logo 這樣。</p>
+<p>其他像是 ES6 新增的 const、let、箭頭函式、類別都可以直接使用，打包的時候 Parcel 都會幫忙編譯為 ES5 的版本以支援較舊的瀏覽器。</p>
+<h3 id="打包前端資源"><a href="#打包前端資源" class="headerlink" title="打包前端資源"></a><strong>打包前端資源</strong></h3><p>前端開發完成後，執行 npm run build 就可以把 CSS、JS、圖片檔打包到 assets 資料夾裡面，可以打開 themes/ods/functions.php 這支檔案，看到以下的內容：</p>
+<?php
+if ( ! defined( 'ABSPATH' ) ) { exit;}
+
+function ods\_scripts() {
+if ( ! is\_admin() ) {
+wp\_enqueue\_script( 'ods\_js', get\_template\_directory\_uri() . '/assets/js/script.js','','',true ); // name,path,jq,version,footer
+wp\_enqueue\_style( 'ods\_style', get\_template\_directory\_uri() . '/assets/css/style.css', array(), '', 'all' );
+}
+}
+add\_action( 'wp\_enqueue\_scripts', 'ods\_scripts' );// 載入全站 js/css
+
+remove\_action('wp\_head', 'feed\_links\_extra', 3);
+remove\_action('wp\_head', 'feed\_links', 2);
+remove\_action('wp\_head', 'rsd\_link');
+remove\_action('wp\_head', 'wlwmanifest\_link'); 
+remove\_action('wp\_head', 'index\_rel\_link');
+remove\_action('wp\_head', 'parent\_post\_rel\_link', 10, 0);
+remove\_action('wp\_head', 'start\_post\_rel\_link', 10, 0);
+remove\_action('wp\_head', 'adjacent\_posts\_rel\_link', 10, 0);
+remove\_action('wp\_head', 'wp\_generator');
+remove\_action('wp\_head', 'adjacent\_posts\_rel\_link\_wp\_head', 10, 0);
+remove\_action('wp\_head', 'rel\_canonical');
+remove\_action('wp\_head', 'wp\_shortlink\_wp\_head', 10, 0);
+remove\_action('wp\_head', 'print\_emoji\_detection\_script', 7 );
+remove\_action('wp\_print\_styles', 'print\_emoji\_styles' );
+remove\_action('welcome\_panel', 'wp\_welcome\_panel');
+remove\_filter('the\_excerpt', 'wpautop');
+add\_filter('show\_admin\_bar','\_\_return\_false');
+// add\_filter('use\_block\_editor\_for\_post', '\_\_return\_false', 10); // 啟用 or 關閉 Gutenberg
+
+在 wp\_enqueure\_srcipts 的路徑就是 assets 的檔案，這樣就可以開始進行 WordPress PHP 的撰寫了，最後一行的 Hook Filter 在於控制是否要停用 Gutenberg 編輯器，這就看專案性質決定了。
+
+## 小結
+
+透過 ODS Starter Theme 可以把佈景主題的檔案縮減到只留下必要的內容，然後再從專案的實際過程中去加入需要的範本，並從 ODS 去複製相對應的元件或 PHP 來開發 Theme。
+
+另一方面整合各種前端工具來加速頁面切版的工作，透過 Parcel 來提升編譯的速度 ( 或是換 MBP 16 inch )，這就是目前我每個專案的工作流程，也是多年來踩過無數雷、試過一堆工具的血淚史。
+
+也許未來還會有新的工具出來取代現在的作法，同時間我也還在實驗用 Plugin 寫 PHP 類別來整理各種 WP\_Query 以及做資料邏輯處理的組織方式，這樣 Theme 就真的單純是管理 View 而不會去干涉到資料，等有心得再分享出來～
+
+總之這十年來在工作上越深入越覺得自己懂得東西好少，但又有一種信心，只要給我時間我就有辦法找到解決方案並真正的解決它，我想這就是為什麼寫程式會成為我每天的樂趣 ( 痛苦 ) 吧 XD
+        <hr>
+        <div>
+          <h2>覺得文章寫得好再幫我鼓個掌吧！</h2>
+          <iframe width="100%" height="230px" scrolling="no" frameborder="0" id="player" src="https://button.like.co/in/embed/oberonlai/button/?referrer=https://oberonlai.blog/tw/ods-starter-theme/" allowfullscreen="true"></iframe>
+        </div>
+        <hr>
+        <h2>這是電子報訂閱，一週一次絕對沒有壯陽藥廣告～</h2>
+        <p>過往內容：<a target="_blank" rel="noopener" href="https://successful-trader-4225.ck.page/posts">https://successful-trader-4225.ck.page/posts</a></p>
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+        <form action="https://app.convertkit.com/forms/2577901/subscriptions" style="background-color: rgb(255, 255, 255); border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; max-width: none!important;" class="seva-form formkit-form" method="post" data-sv-form="2577901" data-uid="bbe15da0e6" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;訂閱成功，再幫我收信確認下吧！&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div data-style="full" style="--bg-border-radius: 3px;"><div data-element="column" class="formkit-column"><div class="formkit-header" style="color: rgb(83, 83, 83); font-size: 28px; font-weight: 400;" data-element="header"></div><div class="formkit-content" style="color: rgb(105, 113, 119);" data-element="content"><p>Hi，我是 Oberon，我會固定在每週五早上發送接案心得以及與 WordPress 相關的電子報，同時也會分享一些基礎的開發知識，讓你在 WordPress 的接案路上不孤單！</p></div><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="true" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400; background-color: rgb(243, 246, 249); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" aria-label="電子郵件" placeholder="電子郵件" required="" type="email"></div><div class="formkit-field"><input class="formkit-input" aria-label="您的大名" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400; background-color: rgb(243, 246, 249); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" name="fields[first_name]" placeholder="您的大名" type="text"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(113, 173, 137); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; font-weight: 700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span style="font-size: 16px;">訂閱電子報</span></button></div><div class="formkit-disclaimer" style="color: rgb(139, 139, 139); font-size: 13px;" data-element="disclaimer"><p>免費電子報，可隨時取消訂閱，沒有壓力！</p></div></div><div data-element="column" style="background-image: url(&quot;https://embed.filekitcdn.com/e/2SvCbYvt2MQD58GK3N3L5a/qAepSutQWFcsUd4u3qHwKy&quot;);" class="formkit-background"></div></div><style>.formkit-form[data-uid="bbe15da0e6"] *{box-sizing:border-box;}.formkit-form[data-uid="bbe15da0e6"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.formkit-form[data-uid="bbe15da0e6"] legend{border:none;font-size:inherit;margin-bottom:10px;padding:0;position:relative;display:table;}.formkit-form[data-uid="bbe15da0e6"] fieldset{border:0;padding:0.01em 0 0 0;margin:0;min-width:0;}.formkit-form[data-uid="bbe15da0e6"] body:not(:-moz-handler-blocked) fieldset{display:table-cell;}.formkit-form[data-uid="bbe15da0e6"] h1,.formkit-form[data-uid="bbe15da0e6"] h2,.formkit-form[data-uid="bbe15da0e6"] h3,.formkit-form[data-uid="bbe15da0e6"] h4,.formkit-form[data-uid="bbe15da0e6"] h5,.formkit-form[data-uid="bbe15da0e6"] h6{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="bbe15da0e6"] h2{font-size:1.5em;margin:1em 0;}.formkit-form[data-uid="bbe15da0e6"] h3{font-size:1.17em;margin:1em 0;}.formkit-form[data-uid="bbe15da0e6"] p{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="bbe15da0e6"] ol:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ul:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] blockquote:not([template-default]){text-align:left;}.formkit-form[data-uid="bbe15da0e6"] p:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] hr:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] blockquote:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ol:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ul:not([template-default]){color:inherit;font-style:initial;}.formkit-form[data-uid="bbe15da0e6"] .ordered-list,.formkit-form[data-uid="bbe15da0e6"] .unordered-list{list-style-position:outside !important;padding-left:1em;}.formkit-form[data-uid="bbe15da0e6"] .list-item{padding-left:0;}.formkit-form[data-uid="bbe15da0e6"][data-format="modal"]{display:none;}.formkit-form[data-uid="bbe15da0e6"][data-format="slide in"]{display:none;}.formkit-form[data-uid="bbe15da0e6"][data-format="sticky bar"]{display:none;}.formkit-sticky-bar .formkit-form[data-uid="bbe15da0e6"][data-format="sticky bar"]{display:block;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input,.formkit-form[data-uid="bbe15da0e6"] .formkit-select,.formkit-form[data-uid="bbe15da0e6"] .formkit-checkboxes{width:100%;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-button:focus,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:focus{outline:none;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button:hover > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:hover > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-button:focus > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:focus > span{background-color:rgba(0,0,0,0.1);}.formkit-form[data-uid="bbe15da0e6"] .formkit-button > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit > span{display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::-webkit-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::-moz-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input:-ms-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"]{position:relative;display:inline-block;width:100%;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"]::before{content:"";top:calc(50% - 2.5px);right:10px;position:absolute;pointer-events:none;border-color:#4f4f4f transparent transparent transparent;border-style:solid;border-width:6px 6px 0 6px;height:0;width:0;z-index:999;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"] select{height:auto;width:100%;cursor:pointer;color:#333333;line-height:1.4;margin-bottom:0;padding:0 6px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:15px;padding:12px;padding-right:25px;border:1px solid #e3e3e3;background:#ffffff;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"] select:focus{outline:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"]{text-align:left;margin:0;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"]{margin-bottom:10px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] *{cursor:pointer;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"]:last-of-type{margin-bottom:0;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]{display:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"] + label::after{content:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::after{border-color:#ffffff;content:"";}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::before{background:#10bf7a;border-color:#10bf7a;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label{position:relative;display:inline-block;padding-left:28px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::before,.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::after{position:absolute;content:"";display:inline-block;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::before{height:16px;width:16px;border:1px solid #e3e3e3;background:#ffffff;left:0px;top:3px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::after{height:4px;width:8px;border-left:2px solid #4d4d4d;border-bottom:2px solid #4d4d4d;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);left:4px;top:8px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="bbe15da0e6"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:5;margin:10px 0;position:relative;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ffffff;border:1px solid #dce1e5;border-radius:4px;color:#373f45;cursor:pointer;display:block;height:36px;margin:0 auto;opacity:0.95;padding:0;-webkit-text-decoration:none;text-decoration:none;text-indent:100%;-webkit-transition:ease-in-out all 200ms;transition:ease-in-out all 200ms;white-space:nowrap;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:190px;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='%23373F45'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='%23373F45'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='%23373F45'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='%23373F45'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='%23373F45'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='%23373F45'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='%23373F45'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='%23373F45'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='%23373F45'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='%23373F45'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='%23373F45'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='%23373F45'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='%23373F45'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='%23373F45'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='%23373F45'/%3E%3C/svg%3E");}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit:focus{background-color:#ffffff;-webkit-transform:scale(1.025) perspective(1px);-ms-transform:scale(1.025) perspective(1px);transform:scale(1.025) perspective(1px);opacity:1;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="dark"],.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="light"]{background-color:transparent;border-color:transparent;width:166px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="light"]{color:#ffffff;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='white'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='white'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='white'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='white'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='white'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='white'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='white'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='white'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='white'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='white'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='white'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='white'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='white'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='white'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='white'/%3E%3C/svg%3E");}@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}.formkit-form[data-uid="bbe15da0e6"] blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #e1e1e1;}.formkit-form[data-uid="bbe15da0e6"] .seva-custom-content{padding:15px;font-size:16px;color:#fff;mix-blend-mode:difference;} .formkit-form[data-uid="bbe15da0e6"]{box-shadow:0px 4px 8px rgba(105,113,119,0.2);max-width:740px !important;overflow:hidden;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"]{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.formkit-form[data-uid="bbe15da0e6"] .formkit-background{background-position:center center;background-size:cover;height:280px;margin:20px;border-radius:var(--bg-border-radius) !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-column{padding:20px;position:relative;-webkit-order:2;-ms-flex-order:2;order:2;}.formkit-form[data-uid="bbe15da0e6"] .formkit-header{margin-top:0;margin-bottom:24px;font-weight:700;font-size:calc(30px + (36 - 30) * ((100vw - 400px) / (600 - 400)));}@media all and (min-width:800px){.formkit-form[data-uid="bbe15da0e6"] .formkit-header{font-size:36px;}}.formkit-form[data-uid="bbe15da0e6"] .formkit-header h2{line-height:1.2;margin-top:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-content{margin-bottom:45px;font-size:16px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}.formkit-form[data-uid="bbe15da0e6"] .formkit-field{margin:0 0 10px 0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input{width:100%;border:0;padding-left:12px;padding-right:0;height:47px;font-size:14px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-select{padding-top:13px !important;padding-bottom:13px !important;border:0 !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-checkboxes{background:transparent !important;color:inherit !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields .formkit-submit{margin-top:8px;font-size:12px;height:47px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields .formkit-submit span{padding:15px 14px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"]{margin-left:-4px;margin-right:-4px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-submit{-webkit-flex:1 1 auto !important;-ms-flex:1 1 auto !important;flex:1 1 auto !important;margin:0 !important;min-width:90px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-submit{margin:0 4px 8px 4px !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-field{-webkit-flex:100 1 auto !important;-ms-flex:100 1 auto !important;flex:100 1 auto !important;margin:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container{margin:20px 0 0 0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-disclaimer{font-size:12px;opacity:0.6;margin-top:6px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-field,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit{margin:0 0 8px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}@media screen and (min-width:600px){.formkit-form[data-uid="bbe15da0e6"] [data-style="full"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"] .formkit-column{width:57%;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"] .formkit-background{width:44%;height:auto;margin-left:0;-webkit-order:2;-ms-flex-order:2;order:2;}.formkit-slide-in,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"],.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"]{max-width:450px !important;}.formkit-slide-in [data-style="full"],.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] [data-style="full"],.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] [data-style="full"]{-webkit-flex-direction:column !important;-ms-flex-direction:column !important;flex-direction:column !important;max-width:450px !important;}.formkit-slide-in .formkit-background,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-background,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-background{width:auto !important;height:280px !important;margin:20px !important;-webkit-order:0 !important;-ms-flex-order:0 !important;order:0 !important;}.formkit-slide-in .formkit-column,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-column,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-column{width:100% !important;-webkit-order:2 !important;-ms-flex-order:2 !important;order:2 !important;padding:20px 20px 30px 20px !important;}.formkit-slide-in .formkit-content,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-content,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-content{margin-bottom:25px !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-column{padding:55px 60px 55px 45px;}} </style></form>
+    </div>
+
+    
+    
+    
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tw/tags/f2e/" rel="tag"><i class="fa fa-tag"></i> f2e</a>
+              <a href="/tw/tags/html5/" rel="tag"><i class="fa fa-tag"></i> html5</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/tw/valetpress-setup/" rel="prev" title="【 工具 】Mac 限定 WordPress 本機開發環境 Valet + ValetPress">
+      <i class="fa fa-chevron-left"></i> 【 工具 】Mac 限定 WordPress 本機開發環境 Valet + ValetPress
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/tw/building-web-apps-with-wordpress-basic/" rel="next" title="【 書摘 】Building Web Apps with WordPress - WordPress 基本介紹">
+      【 書摘 】Building Web Apps with WordPress - WordPress 基本介紹 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E6%98%AF-Oberon-Design-System%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">什麼是 Oberon Design System？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ODS-Starter-Theme-%E4%BB%8B%E7%B4%B9"><span class="nav-number">3.</span> <span class="nav-text">ODS Starter Theme 介紹</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#themes-ods-src"><span class="nav-number">3.1.</span> <span class="nav-text">themes&#x2F;ods&#x2F;src</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#themes-ods-src-layouts"><span class="nav-number">3.2.</span> <span class="nav-text">themes&#x2F;ods&#x2F;src&#x2F;_layouts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#themes-ods-src-partials"><span class="nav-number">3.3.</span> <span class="nav-text">themes&#x2F;ods&#x2F;src&#x2F;_partials</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#themes-ods-assets"><span class="nav-number">3.4.</span> <span class="nav-text">themes&#x2F;ods&#x2F;assets</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#themes-ods-dev"><span class="nav-number">3.5.</span> <span class="nav-text">themes&#x2F;ods&#x2F;dev</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ODS-Starter-Theme-%E4%BD%BF%E7%94%A8%E8%AA%AA%E6%98%8E%E6%9B%B8"><span class="nav-number">4.</span> <span class="nav-text">ODS Starter Theme 使用說明書</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD"><span class="nav-number">4.1.</span> <span class="nav-text">前置作業</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Parcel"><span class="nav-number">4.2.</span> <span class="nav-text">Parcel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UIKit"><span class="nav-number">4.3.</span> <span class="nav-text">UIKit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pug"><span class="nav-number">4.4.</span> <span class="nav-text">Pug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sass"><span class="nav-number">4.5.</span> <span class="nav-text">Sass</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6"><span class="nav-number">4.6.</span> <span class="nav-text">ES6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8C%85%E5%89%8D%E7%AB%AF%E8%B3%87%E6%BA%90"><span class="nav-number">4.7.</span> <span class="nav-text">打包前端資源</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="賴俊吾 / Oberon Lai"
+      src="/tw/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">賴俊吾 / Oberon Lai</p>
+  <div class="site-description" itemprop="description">現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/tw/archives">
+          <span class="site-state-item-count">291</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/tw/categories/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tw/tags/">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/oberonlai" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:m615926@gmail.com" title="E-Mail → mailto:m615926@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/oberonlai" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/m615926" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;m615926" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">賴俊吾 / Oberon Lai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">740k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:13</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/tw/lib/anime.min.js"></script>
+  <script src="/tw/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+
+<script src="/tw/js/utils.js"></script>
+
+
+<script src="/tw/js/schemes/muse.js"></script>
+
+
+<script src="/tw/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/tw/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

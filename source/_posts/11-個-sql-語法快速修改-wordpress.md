@@ -1,0 +1,12 @@
+---
+title: 11 個 SQL 語法快速修改 WordPress
+tags: []
+id: '3343'
+categories:
+  - - WordPress
+date: 2018-02-09 13:03:41
+---
+
+有些資料在 WordPress 後台設定時，可能因筆數太多或是操作介面有固定流程而需費時修改的情況下，直接進資料庫修改會是非常方便又快速的方式，而一般的主機商多半會有提供資料庫管理介面 phpMyAdmin 來修改資料表，透過視覺化介面可以選擇要修改的資料並更新。這篇文章整裡了 11 個在管理 WordPress 網站上可能會用到的 SQL 語法，像是修改使用者密碼、修改全站網址、將文章搬到頁面、關閉所有迴響等功能，記得在使用前先備份好資料庫，才能在出狀況時還原，如果資料表前綴有修改過的，記得在語法中替換成你的資料表前綴。
+
+\[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1582165378557127" display="yes" title="MTEg5YCLIFNRTCDoqp7ms5Xlv6vpgJ/kv67mlLkgV29yZFByZXNz" body="5pyJ5Lqb6LOH5paZ5ZyoIFdvcmRQcmVzcyDlvozlj7DoqK3lrprmmYLvvIzlj6/og73lm6DnrYbmlbjlpKrlpJrmiJbmmK/mk43kvZzku4vpnaLmnInlm7rlrprmtYHnqIvogIzpnIDosrvmmYLkv67mlLnnmoTmg4Xms4HkuIvvvIznm7TmjqXpgLLos4fmlpnluqvkv67mlLnmnIPmmK/pnZ7luLjmlrnkvr/lj4jlv6vpgJ/nmoTmlrnlvI/vvIzogIzkuIDoiKznmoTkuLvmqZ/llYblpJrljYrmnIPmnInmj5Dkvpvos4fmlpnluqvnrqHnkIbku4vpnaIgcGhwTXlBZG1pbiDkvobkv67mlLnos4fmlpnooajvvIzpgI/pgY7oppboprrljJbku4vpnaLlj6/ku6Xpgbjmk4fopoHkv67mlLnnmoTos4fmlpnkuKbmm7TmlrDjgILpgJnnr4fmlofnq6DmlbToo6HkuoYgMTEg5YCL5Zyo566h55CGIFdvcmRQcmVzcyDntrLnq5nkuIrlj6/og73mnIPnlKjliLDnmoQgU1FMIOiqnuazle+8jOWDj+aYr+S/ruaUueS9v+eUqOiAheWvhueivOOAgeS/ruaUueWFqOermee2suWdgOOAgeWwh+aWh+eroOaQrOWIsOmggemdouOAgemXnOmWieaJgOaciei/tOmfv+etieWKn+iDve+8jOiomOW+l+WcqOS9v+eUqOWJjeWFiOWCmeS7veWlveizh+aWmeW6q++8jOaJjeiDveWcqOWHuueLgOazgeaZgumChOWOn++8jOWmguaenOizh+aWmeihqOWJjee2tOacieS/ruaUuemBjueahO+8jOiomOW+l+WcqOiqnuazleS4reabv+aPm+aIkOS9oOeahOizh+aWmeihqOWJjee2tOOAgg==" pid="3343"\]

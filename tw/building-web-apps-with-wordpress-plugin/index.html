@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/tw/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/tw/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/tw/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/tw/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/tw/css/main.css">
+
+
+<link rel="stylesheet" href="/tw/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oberonlai.blog","root":"/tw/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideDownIn","sidebar":"slideDownIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="三、Using WordPress Plugin &#x2F; 使用 WordPress 外掛WordPress 外掛超強大！它可以讓你在不用懂任何程式碼的狀況下就可以使用許多功能，不管你使用的是免費、付費或是自行開發的外掛，透過外掛可以大幅度的延伸 WordPress 的既有功能。 再加上 WordPress 是開源軟體，許多開發者設計各式各樣的外掛來解決他們自己或是別人的問題，根據 WordPress">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【 書摘 】Building Web Apps with WordPress - 使用 WordPress 外掛">
+<meta property="og:url" content="https://oberonlai.blog/tw/building-web-apps-with-wordpress-plugin/">
+<meta property="og:site_name" content="WordPress 開發日常">
+<meta property="og:description" content="三、Using WordPress Plugin &#x2F; 使用 WordPress 外掛WordPress 外掛超強大！它可以讓你在不用懂任何程式碼的狀況下就可以使用許多功能，不管你使用的是免費、付費或是自行開發的外掛，透過外掛可以大幅度的延伸 WordPress 的既有功能。 再加上 WordPress 是開源軟體，許多開發者設計各式各樣的外掛來解決他們自己或是別人的問題，根據 WordPress">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.36.01.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.37.34.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.38.26.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.39.20.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.40.28.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.42.44-1024x148.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.43.56-1024x295.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.44.51-1024x140.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.45.37.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.46.55-1024x648.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.50.55.jpg">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.57.13-1024x625.jpg">
+<meta property="article:published_time" content="2020-05-08T01:51:27.000Z">
+<meta property="article:modified_time" content="2021-05-01T12:53:00.850Z">
+<meta property="article:author" content="賴俊吾 &#x2F; Oberon Lai">
+<meta property="article:tag" content="$global">
+<meta property="article:tag" content="$wpdb">
+<meta property="article:tag" content="buddypress">
+<meta property="article:tag" content="custom plugin">
+<meta property="article:tag" content="gpl">
+<meta property="article:tag" content="loop">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.36.01.jpg">
+<meta property="og:image" content="/tw/images/og-img.jpg" />
+
+<link rel="canonical" href="https://oberonlai.blog/tw/building-web-apps-with-wordpress-plugin/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>【 書摘 】Building Web Apps with WordPress - 使用 WordPress 外掛 | WordPress 開發日常</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163107142-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-163107142-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/tw/" class="brand" rel="start" style="display: block">
+        <img class="logo-img" src="/tw/images/logo-w.svg" alt="WordPress 開發日常">
+    </a>
+      <p class="site-subtitle" itemprop="description">有任何 WordPress 客製需求歡迎與我聯絡！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-關於我">
+
+    <a href="/tw/about/" rel="section">關於我</a>
+
+  </li>
+        <li class="menu-item menu-item-合作方式">
+
+    <a href="/tw/how-can-oberon-help-you/" rel="section">合作方式</a>
+
+  </li>
+        <li class="menu-item menu-item-計價方式">
+
+    <a href="/tw/how-do-i-make-a-quotation/" rel="section">計價方式</a>
+
+  </li>
+        <li class="menu-item menu-item-學習-wordpress">
+
+    <a href="/tw/wordpress-full-stack/" rel="section">學習 WordPress</a>
+
+  </li>
+        <li class="menu-item menu-item-與我聯繫">
+
+    <a href="mailto:m615926@gmail.com" rel="noopener" target="_blank">與我聯繫</a>
+
+  </li>
+        <li class="menu-item menu-item-訂閱">
+
+    <a href="https://successful-trader-4225.ck.page/bbe15da0e6" rel="noopener" target="_blank">訂閱</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/oberonlai" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/building-web-apps-with-wordpress-plugin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【 書摘 】Building Web Apps with WordPress - 使用 WordPress 外掛
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-05-08 09:51:27" itemprop="dateCreated datePublished" datetime="2020-05-08T09:51:27+08:00">2020-05-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 20:53:00" itemprop="dateModified" datetime="2021-05-01T20:53:00+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>20k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>18 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="三、Using-WordPress-Plugin-使用-WordPress-外掛"><a href="#三、Using-WordPress-Plugin-使用-WordPress-外掛" class="headerlink" title="三、Using WordPress Plugin / 使用 WordPress 外掛"></a>三、Using WordPress Plugin / 使用 WordPress 外掛</h2><p>WordPress 外掛超強大！它可以讓你在不用懂任何程式碼的狀況下就可以使用許多功能，不管你使用的是免費、付費或是自行開發的外掛，透過外掛可以大幅度的延伸 WordPress 的既有功能。</p>
+<p>再加上 WordPress 是開源軟體，許多開發者設計各式各樣的外掛來解決他們自己或是別人的問題，根據 WordPress Codex 的定義：「外掛是一套程式，或是使用 PHP 寫成的多組 Function，用來幫 WordPress 增加特定的功能或服務，它透過 WordPress 的 API，無縫整合到所有的 WordPress 網站中。」</p>
+<span id="more"></span>
+<p>外掛可以把 WordPress 轉變成任何你想得到的網站，像是購物車、社群平台甚至是手機 App 。當 WordPress 完成安裝後會有兩個內建的外掛：Hello Dolly 與 Akismet。</p>
+<p>Hello Dolly 會在後台的頂端工具列加入隨機的歌詞，它沒啥實際作用，但很好展現了如何組織一個外掛的架構。而 Akismet 主要是整合 Akismet.com 這個服務，它可以自動防止垃圾留言。</p>
+<p>目前在 WordPress plugin repository 上面有超過五萬五千個外掛，但實際數字絕對不只這些，因為還有很多開發者寫好了外掛但沒有上架到這邊，他們多半會放在自己的個人或是商業網站上，其中也不少需要付費的。</p>
+<blockquote>
+<p>上 Github 去搜尋 WordPress Plugin 可以找到超過九萬筆的結果，裡面包含了許多沒有上架到官方的外掛。</p>
+</blockquote>
+<p>大部分的付費外掛都有提供開發者授權，只要付一次費用就可以裝在多個網站上面。需要注意的是，當在 Google 上面搜尋時，要確保是連結到外掛開發者的作者頁面或是官方網站，因為現在有非常多所謂的 GPL Club 提供付費外掛的破解版，而且價格通常比原價低很多甚至是免費。</p>
+<p>大部分這類網站所提供的東西都有毒，裡面可能會埋後門程式或是對你網站有害的程式碼，絕對不要貪小便宜而去使用，因為未來造成的損失絕對遠遠超過因為買盜版而省下的那一點錢。</p>
+<p>事實上正版外掛的售價已經是非常實惠的，再加上使用時有任何問題或是功能建議，大部分的開發團隊都非常樂於為用戶服務，更不用說程式碼漏洞的修補以及後續版本的即時更新，如果是有心要經營網站的朋友，千千萬萬不要去使用 GPL Club，即使他們說自己提供的軟體絕對乾淨沒問題…</p>
+<blockquote>
+<p>曾經遇過一位朋友說他只是要做自己的個人部落格，流量小小的，不會有什麼人看，也沒有要商業用途或是拿來賺錢，所以他就用了從 GPL Club 載來的佈景主題來架站。</p>
+<p>如果去搶銀行只搶了 100 塊也算犯法嗎？廢話，重點不是你的站大站小，而是只要使用盜版軟體就必須要準備好承受未來會付出的代價，而且免費版型已經這麼多了，既然會在意自己的網站要用更進階的功能，代表他對這個站還是有一定的期待，</p>
+<p>說什麼只是做個小網站所以用 GPL Club 應該沒關係，這都是為了說服自己使用盜版軟體的正當性而已，別自欺欺人了，不想花錢請用免費的，或是自己花時間去學習怎麼寫程式，沒有任何的理由可以去使用 GPL Club，</p>
+<p>更不用說有在接案的朋友，對，就是在說你！如果一個案子的總價連一支幾千塊的付費外掛都買不起來，那還是別出來接案了，提供客戶安全無虞的網站是接案者最基本的責任，連使用正版軟體這點都做不到的話請不要跟人家說你在接案，如果正在看這篇文章的你是剛入行的新朋友，請你務必要牢牢記住這一點：</p>
+<p>WordPress 社群之所以可以這麼龐大是因為太多開發者願意無償熱心投入，也因為有了這些社群使用者，開發者可以提供功能更多、更強的進階付費外掛，如果這些開發者無法從他們投入的產品中賺取應有的收入，結果就是開發者減少，開發者一減少我們就用不到這麼多好用的工具，那麼 WordPress 這個軟體就真的只能拿來寫部落格了…</p>
+<p>所以如果你覺得 WordPress 很好用、外掛很多、社群很熱心而且又完全免費，那麼就請你抱持著感恩的心來回報它，你可能沒辦法開發外掛，或是寫教學文來回饋社群，至少，用實際的購買行為來支持開發者，這樣就非常足夠了。</p>
+</blockquote>
+<h2 id="GPL-V2-開源授權規範"><a href="#GPL-V2-開源授權規範" class="headerlink" title="GPL V2 開源授權規範"></a><strong>GPL V2 開源授權規範</strong></h2><p>無論取得外掛的方式是什麼，所有的 WordPress 外掛都是採用 General Public License 版本 2 的授權協議，這表示當原始碼在需要被散佈的情況下（像是上架官方目錄、提供免費或付費下載），散播出去的原始碼也是必須遵循這樣的授權讓任何人都可以自由的修改、散佈。</p>
+<p>有些開發者會把前端的靜態資源檔案像是 HTML、CSS、JavaScript 採取不同的授權方式，以便與 PHP 的 GPL 來進行區分，而有些外掛會極力否認甚至不採用 GPL 授權。</p>
+<p>但 WordPress 的精神領袖 Matt Mullenweg 表示所有的佈景主題與外掛都一定、必須要採用 GPL 授權，所以如果你今天要開發的外掛是會在社群進行發佈，建議還是採取 GPL。</p>
+<blockquote>
+<p>這段作者講的很保守，因為這是很有爭議的地方，就我從開發者的角度來看，WordPress 主要的服務對象是使用者而非軟體開發業者，儘可能的讓使用者自由使用 WordPress 的所有工具是主要任務。</p>
+<p>WordPress 的商業模式是靠服務客戶而非販售程式碼，所以同樣的概念運用在社群上，協助客戶架設 WordPress 網站、提供長期的售後服務才是維繫客戶關係的關鍵，與傳統販售一次性軟體商品的模式相比，這樣的合作方式讓雙方都能持續互惠，也是讓社群能茁壯的原因之一。</p>
+<p>有了這樣的背景知識後，回到 GPL Club，對！你想得沒錯，它是完全符合 GPL 的授權規範的，這些業者他們聲稱收取的費用是維護費，就是當軟體版本有更新時他們會重新上架商品，但他們不會維護程式碼，使用上遇到問題他們也不會理你，所以才可以賣得這麼便宜。</p>
+<p>但畢竟不是原始的開發商，在他們取得這些外掛的過程中會不會加料也很難說，免費的最貴這句話不是沒有道理的，羊毛出在羊身上，他們不要你的錢那要的會是什麼呢？未來當看到免費或低於一般市價的商品時先想想這個問題，就不會被免費二字給沖昏頭了。</p>
+<p>最後還是還給 GPL Club 一個清白，它們的軟體不能算是「盜版」，因為並沒有違反 WordPress 的授權條款，比較有問題的是 Themeforest 的商品，因為他們有他們自己的授權方式，這部分就是各說各話了…</p>
+<p>總之，身為使用者，去作者網站進行購買下載就 100% 沒問題了，除了最有保障之外，這也是對他們最大的鼓勵！</p>
+</blockquote>
+<h2 id="開發自己的外掛"><a href="#開發自己的外掛" class="headerlink" title="開發自己的外掛"></a><strong>開發自己的外掛</strong></h2><p>雖然已經有成千上萬個寫好的外掛了，但常常還是覺得那邊功能差一點、這邊要是再有什麼就好了，如果你有這樣的感覺，就來寫自己的外掛吧！</p>
+<p>寫一支基本的外掛十分容易，只要在 wp-content/plugins 的目錄下，新增一個 .php 檔，檔名可以是任何名字，這邊示範新增一隻 my-plugin.php，打開編輯器，在 my-plugin.php 裡面加入以下註解：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">/**
+ * Plugin Name: My Plugin
+ * Plugin URI: https://bwawwp.com/my-plugin/
+ * Description: This is my plugin description.
+ * Author: messenlehner, strangerstudios
+ * Version: 1.0.0
+ * Author URI: https://bwawwp.com
+ * License: GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ */</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>輸入完後存檔，第一支外掛就完成了！你可以在後台的 外掛 &gt; 已安裝的外掛看到並啟用它，雖然現在它還沒有任何的功能，以下範例使用之前介紹過的 Hook，在前台的頁尾加入一些文字：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">function</span> <span class="token function">my_plugin_wp_footer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">echo</span> <span class="token string single-quoted-string">'I read Building Web Apps with WordPress and now I am a WordPress Genius!'</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'wp_footer'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'my_plugin_wp_footer'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>加入完成後存檔，應該就可以看到在網頁的最下方出現這段字。如果你很熟悉 PHP，就可以開始寫東西了，不熟也沒關係，找些功能單純的外掛像是 Hello Dolly，看它是怎麼運作的。</p>
+<h2 id="外掛的資料夾結構"><a href="#外掛的資料夾結構" class="headerlink" title="外掛的資料夾結構"></a><strong>外掛的資料夾結構</strong></h2><p>無論是什麼程式，有好的檔案結構才有辦法維護，如果外掛很單純，一支主要的 php 檔就可以解決是最好的，但通常為了要完成某些功能，程式碼會越來越多，像是控制前/後臺的 CSS、JS、圖片等等，這邊使用本書範例外掛 School Press 來說明資料夾結構：</p>
+<p><strong>plugins/schoolpress/adminpages</strong>/</p>
+<p>如果外掛有提供後台設定頁面的話，把頁面的 php 檔放在這個資料夾中，以下範例為新增後台設定頁面：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token comment">// add a SchoolPress menu with reports page</span>
+<span class="token keyword">function</span> <span class="token function">sp_admin_menu</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">add_menu_page</span><span class="token punctuation">(</span>
+<span class="token string single-quoted-string">'SchoolPress'</span><span class="token punctuation">,</span>
+<span class="token string single-quoted-string">'SchoolPress'</span><span class="token punctuation">,</span>
+<span class="token string single-quoted-string">'manage_options'</span><span class="token punctuation">,</span>
+<span class="token string single-quoted-string">'sp_reports'</span><span class="token punctuation">,</span>
+<span class="token string single-quoted-string">'sp_reports_page'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'admin_menu'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'sp_admin_menu'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// function to load admin page</span>
+<span class="token keyword">function</span> <span class="token function">sp_reports_page</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">require_once</span> <span class="token function">dirname</span><span class="token punctuation">(</span> <span class="token constant">__FILE__</span> <span class="token punctuation">)</span> <span class="token operator">.</span> <span class="token string double-quoted-string">"/adminpages/reports.php"</span><span class="token punctuation">;</span>  <span class="token comment">// 設定頁模板</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>plugins/schoolpress/classes/</strong></p>
+<p>該資料夾放 php 的類別檔，習慣用法是一個類別一個獨立的檔案，檔案名稱命名方式為 class.className.php，className 替換為你的類別名稱。</p>
+<p><strong>plugins/schoolpress/css/</strong></p>
+<p>該資料夾放 CSS 檔案，可以把它拆分為控制前台 style 的 frontend.css 與後台 admin.css，也可以放第三方的樣式檔，以下範例說明如何掛載 CSS 檔到前台與後台：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token keyword">function</span> <span class="token function">sp_load_admin_styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token function">wp_enqueue_style</span><span class="token punctuation">(</span>
+<span class="token string single-quoted-string">'schoolpress-plugin-admin'</span><span class="token punctuation">,</span>
+<span class="token function">plugins_url</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'css/admin.css'</span><span class="token punctuation">,</span> <span class="token constant">__FILE__</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token constant">SCHOOLPRESS_VERSION</span><span class="token punctuation">,</span>
+<span class="token string single-quoted-string">'screen'</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'admin_enqueue_scripts'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'sp_load_admin_styles'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">sp_load_frontend_styles</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">wp_enqueue_style</span><span class="token punctuation">(</span>
+        <span class="token string single-quoted-string">'schoolpress-plugin-frontend'</span><span class="token punctuation">,</span>
+        <span class="token function">plugins_url</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'css/frontend.css'</span><span class="token punctuation">,</span> <span class="token constant">__FILE__</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token keyword">array</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token constant">SCHOOLPRESS_VERSION</span><span class="token punctuation">,</span>
+        <span class="token string single-quoted-string">'screen'</span>
+    <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'wp_enqueue_scripts'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'sp_load_frontend_styles'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>要掛在前台使用 wp_enqueue_scripts 這個 Hook，而後台是 admin_enqueue_scripts。在寫前台的 CSS 時，必須要考慮到這些樣式是否該放在佈景主題的 style.css 而非外掛之中，因為前台的樣式通常是由佈景主題所控制的。</p>
+<p>放在外掛的 CSS 代表就算切換佈景主題也不會變動，想像當你的佈景主題沒有任何樣式的時候畫面至少該呈現什麼樣子，這些樣式的 CSS 就適合放在外掛之中，並預期佈景主題有了樣式之後會覆蓋過去。</p>
+<p>舉個例子：外掛的 frontend.css 不應該帶有控制顏色的屬性，而是控制大頭照的寬度與浮動比較適合放在這邊。</p>
+<p><strong>plugins/schoolpress/js/</strong></p>
+<p>該資料夾放所有的 JavaScript 檔案，與 CSS 一樣可以切分為前台用的 frontend.js 與後台 admin.js。也可以把第三方的 JS 檔用子資料夾放在這邊。以下範例說明如何掛載 JS 檔：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token keyword">function</span> <span class="token function">sp_load_admin_scripts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token function">wp_enqueue_script</span><span class="token punctuation">(</span>
+<span class="token string single-quoted-string">'schoolpress-plugin-admin'</span><span class="token punctuation">,</span>
+<span class="token function">plugins_url</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'js/admin.js'</span><span class="token punctuation">,</span> <span class="token constant">__FILE__</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">array</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'jquery'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token constant">SCHOOLPRESS_VERSION</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'admin_enqueue_scripts'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'sp_load_admin_scripts'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">sp_load_frontend_scripts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token function">wp_enqueue_script</span><span class="token punctuation">(</span>
+<span class="token string single-quoted-string">'schoolpress-plugin-frontend'</span><span class="token punctuation">,</span>
+<span class="token function">plugins_url</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'js/frontend.js'</span><span class="token punctuation">,</span> <span class="token constant">__FILE__</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">array</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'jquery'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token constant">SCHOOLPRESS_VERSION</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'wp_enqueue_scripts'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'sp_load_frontend_scripts'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>與 CSS 一樣使用 wp_enqueue_scripts 與 admin_enqueue_scripts 這兩支 Hook，同時也要考慮哪些前台的 JS 應該要放在佈景主題而非外掛。像是控制 slideshow 的 JS 要放在佈景主題，而呼叫 Ajax 的 JS 就可以放在外掛。</p>
+<p>因為掛載 CSS 與 JS 都是用同一個 Hook，所以可以把它們寫在同一支 function 裡面，要注意沒有 wp_enqueue_styles 與 admin_enqueue_styles 這樣的 Hook。</p>
+<p><strong>plugins/schoolpress/images/</strong></p>
+<p>該資料夾放外掛需要使用到的圖片。</p>
+<p><strong>plugins/schoolpress/includes/</strong></p>
+<p>該資料夾放支援外掛的 php 檔，通常是放非程式核心邏輯相關的輔主 function。因為在外掛資料夾的根目錄只能放一支主要的 php 檔，所以其他的檔案就用這個資料夾來進行組織管理，通常會有 functions.php、common.php 或是 helpers.php。</p>
+<p>儘可能把每一個檔案維持在小規模並用引入的方式來載入，像是產生隨機文字、整理字串或是其他 WordPress 沒有內建的第三方框架都可以放在這邊。</p>
+<p><strong>plugins/schoolpress/includes/lib</strong></p>
+<p>該資料夾放第三方的函式庫。</p>
+<p><strong>plugins/schoolpress/pages/</strong></p>
+<p>該資料夾放顯示在前端頁面的 php 檔，通常會使用 Shortcode 來顯示外掛所產生的內容，以下範例說明如何建立一組 Shortcode：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php">// preheader
+function sp_stub_preheader() &#123;
+if ( !is_admin() ) &#123;
+global $post, $current_user;
+if ( !empty( $post->post_content ) &amp;&amp; strpos
+   ( $post->post_content, '[sp_stub]' ) !== false ) &#123;
+/*
+Put your preheader code here.
+*/
+&#125;
+&#125;
+&#125;
+add_action( 'wp', 'sp_stub_preheader', 1 );
+
+// shortcode [sp_stub]
+function sp_stub_shortcode() &#123;
+ob_start();
+?>
+Place your HTML/etc code here.
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token variable">$temp_content</span> <span class="token operator">=</span> <span class="token function">ob_get_contents</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">ob_end_clean</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">return</span> <span class="token variable">$temp_content</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add_shortcode</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'sp_stub'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'sp_stub_shortcode'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>這邊的 preheader 指的是放入比 wp_head() 還要更早執行的程式碼，!is_admin 判斷是在前台，if ( !empty( $post-&gt;post_content ) &amp;&amp; strpos( $post-&gt;post_content, ‘[sp_stub]’ ) !== false ) 是判斷該頁面是否帶有 [sp_stub] 這個 Shortcode，有的話條件就成立。</p>
+<p>Hook wp 指的是會在 WordPress 建立完 $post 全域變數後、並在尚未渲染任何標頭與 HTML 內容之前觸發。preheader 這隻 function 可以用來檢查權限、表單提交的狀態或是任何在頁面還沒有被載入之前需要執行的功能。</p>
+<p>在 MVC 的架構下，preheader 放的是 model 或是 controller 的程式碼，因為頁面內容還沒有產生，你可以安全地把使用者導引至其他頁面，像是可以使用 wp_redirect() 來跳轉到註冊或是登入頁，避免讓他們造訪到會員限定的頁面。</p>
+<p>Shortcode 的部分使用 PHP 的 function：ob_start()、ob_get_contents()、ob_end_clean() 來把程式碼輸入到緩衝區而非瀏覽器之中。在 ?&gt; 與 &lt;?php 之間的字串 Place your HTML/etc code here. 會被放在 $temp_content 這個變數裡面，這樣做的用意是讓程式碼比較好閱讀，還可以混搭 HTML 與 PHP。</p>
+<blockquote>
+<p>這個範例有點難懂，簡單說就是當頁面帶有 [sp_stub] 的時候，可以做些判斷上的應用，像是使用者是否登入的判斷 is_user_logged_in 可以寫在 preheader 裡面，然後 sp_stub_shortcode 可以把「您尚未登入」 的提示存到緩衝區之中，這樣既可以顯示提示給使用者，又不會讓頁面開始渲染 HTML，因為 PHP 的頁面跳轉 <a target="_blank" rel="noopener" href="https://www.php.net/manual/en/function.header.php">header(‘Location:url’)</a> 必須在頁面還沒有任何內容的時候觸發。</p>
+</blockquote>
+<p><strong>plugins/schoolpress/services/</strong></p>
+<p>該資料夾放 Ajax 相關的 php 檔。</p>
+<p><strong>plugins/schoolpress/scheduled/</strong></p>
+<p>該資料夾放與排程相關的 php 檔。</p>
+<p><strong>plugins/schoolpress/schoolpress.php</strong></p>
+<p>外掛最主要的 php 檔，在比較大型的外掛中這支檔案主要負責引入其他的 php、常數的宣告、以及外掛的檔案說明註解。</p>
+<h2 id="開發現有外掛的附加套件"><a href="#開發現有外掛的附加套件" class="headerlink" title="開發現有外掛的附加套件"></a><strong>開發現有外掛的附加套件</strong></h2><p>除了可以開發自己的外掛，還可以幫其他人寫的外掛再開發附加套件 ( Add-Ons )。如果你發現了一支外掛可以滿足你 95% 的需求，剩下的 5% 不用把整個外掛載下來改寫，只要設計專屬於這支外掛的附加套件即可。</p>
+<p>大部分組織良好的外掛都有完善的 Hook 可供使用，所以只要利用這些 Hook 就可以再把程式碼掛到外掛裡面去，就像是寫外掛的時候把程式掛進 WordPress 內建的 Hook 一樣。</p>
+<p>如果遇到需要的 Hook 但該外掛並未提供，整包載回來自己動手修改也行，但比較好的做法是開 issue 給作者，請他們把你需要的 Hook 加入，讓其他開發者也可以受惠。</p>
+<h2 id="SchoolPress-使用場景"><a href="#SchoolPress-使用場景" class="headerlink" title="SchoolPress 使用場景"></a><strong>SchoolPress 使用場景</strong></h2><p>所以應該開發免費的還是進階付費的外掛？以下透過 SchoolPress 這個有社群功能的外掛來舉例：每位老師是社團的管理員，並且可以把學生帳號加入社團。學生可以瀏覽社團動態或是班級的動態牆。</p>
+<p>使用 <a target="_blank" rel="noopener" href="https://buddypress.org/">BuddyPress</a> 學生可以與其他學生建立朋友關係，追蹤他們的朋友或是老師，並且還可以發私訊與老師聯繫。</p>
+<p>使用 <a target="_blank" rel="noopener" href="https://badgeos.org/">BadgeOS</a> 與 <a target="_blank" rel="noopener" href="https://wordpress.org/plugins/badgeos-community-add-on/">BadgeOS Community</a> 套件，老師可以創造有趣的獎勵徽章給他的學生，學生只要完成作業或報告就可以獲得徽章，並且分享在他們的動態牆上。</p>
+<p>然後使用 <a target="_blank" rel="noopener" href="https://www.gravityforms.com/">Gravity Forms</a> 來設計表單讓學生提交他們的作業。</p>
+<h2 id="WordPress-Loop"><a href="#WordPress-Loop" class="headerlink" title="WordPress Loop"></a><strong>WordPress Loop</strong></h2><p>Loop 是除了 Hook 以外另一個在 WordPress 裡面非常重要的機制，它的主要功能是根據模板檔案來顯示文章的內容，大部分的 Theme 會在以下檔案包含 Loop 的運用：index.php、archive.php、category.php、tag.php、single.php、page.php。</p>
+<p>打開這些檔案會看到如下的程式碼：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token function">have_posts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span> <span class="token function">have_posts</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token function">the_post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">the_title</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'&lt;h2>'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'&lt;/h2>'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">the_content</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">// show a message like sorry no posts!</span>
+<span class="token punctuation">&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>have_posts() 檢查是否有文章可以被顯示，如果有的話就使用 while 迴圈把文章撈出來，先呼叫 <a target="_blank" rel="noopener" href="https://developer.wordpress.org/reference/functions/the_post/">the_post()</a> 來設置文章相關的全域變數，讓文章相關的資料可以被正確的取得。</p>
+<p>為了方便寫 HTML 以及閱讀性，可以使用一行的方式來寫 loop：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">have_posts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token delimiter important">?></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token function">have_posts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token class-name return-type">the_post</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>在 content 之前的 HTML<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token function">the_content</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>在 content 之後的 HTML <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">endwhile</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">else</span><span class="token punctuation">:</span> <span class="token delimiter important">?></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>沒有可以顯示的文章<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">endif</span><span class="token punctuation">;</span> <span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>實務上我自己是比較習慣用一行的寫法，當要處理比較多的 HTML 的時候會比較好寫，閱讀上也比較直覺，注意 if 跟 while 結尾是用冒號、else 也是用冒號，endwhile 跟 endif 是用分號結尾。</p>
+</blockquote>
+<h2 id="WordPress-全域變數"><a href="#WordPress-全域變數" class="headerlink" title="WordPress 全域變數"></a><strong>WordPress 全域變數</strong></h2><p>全域變數是可以自訂定義並用在所有地方的變數，WordPress 有內建了一些全域變數，讓你可以立即使用不用再自己花時間額外寫。內建的所有全域變數可以用 print_r 把它們印出來，或是參考 <a target="_blank" rel="noopener" href="https://codex.wordpress.org/Global_Variables">https://codex.wordpress.org/Global_Variables</a></p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token keyword">echo</span> <span class="token string single-quoted-string">'&lt;pre>'</span><span class="token punctuation">;</span>
+<span class="token function">print_r</span><span class="token punctuation">(</span> <span class="token variable">$GLOBALS</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token string single-quoted-string">'&lt;/pre>'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>如果要在程式內使用全域變數的話，可以這樣寫：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">global</span> <span class="token variable">$global_variable_name</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>有些全域變數只能在特定的場景下才有值可以取得，下面幾個是很常用到的全域變數：</p>
+<p><strong>$post</strong> - 在 loop 中取得資料表 wp_posts 內所有關於 post 的欄位。</p>
+<p><strong>$authordata</strong> - 在 loop 中取得文章作者的相關欄位。</p>
+<h2 id="wpdb"><a href="#wpdb" class="headerlink" title="$wpdb"></a><strong>$wpdb</strong></h2><p>$wpdb 是在 WordPress 中直接用來操作資料庫的類別，可以用它來進行資料庫的 select、update、insert 以及 delete。如果你不熟悉 WordPress 的 function，那麼 $wpdb 是你的好朋友。</p>
+<p>如果需要一些很複雜的資料庫查詢條件，而且是內建 function 找不到的，$wpdb 就可以派上用場了。但請別認為 WordPress 內建 function 的查詢速度很慢，除非你很熟悉資料庫，不然使用內建 function 來取得文章、使用者及其他資料是比較好的作法。</p>
+<p>因為 WordPress 核心維護團隊都已經把這些 function 優化過了，並且增加了快取機制來加速資料查詢，也可以在所有的外掛之中保持良好的運作，所以除非是在某些特殊狀況下，再來用 $wpdb 來做資料操作。</p>
+<h2 id="自訂資料表"><a href="#自訂資料表" class="headerlink" title="自訂資料表"></a><strong>自訂資料表</strong></h2><p>在 SchoolPress 這支外掛中，作者新開了一個資料表來紀錄學生作業與學生對應的關係，這可以讓資料庫比較清楚些，並且可以直接查詢每個學生的所有作業。</p>
+<p>通常新增資料表要使用 CREATE TABLE 語句，然後使用 WordPress 內建的 dbDelta() 來執行新增資料表，在新增資料表前有些地方要注意：</p>
+<p>在 option 中新增一個變數 $db_version，這是為了讓外掛知道目前使用的自訂資料表是第幾版，如果資料表欄位有變更，就可以使用 db_version 來做紀錄，也可以用來判斷當外掛第一次啟用時，不存在這個版本號才新增資料表。</p>
+<p>另一個常見作法是把自訂資料表的名稱作為 $wpdb 的一個屬性，可以讓之後查詢時比較省事，以下範例為 SchoolPress 的資料庫設定：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">// set up the database for the SchoolPress app</span>
+<span class="token keyword">function</span> <span class="token function">sp_setupDB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">global</span> <span class="token variable">$wpdb</span><span class="token punctuation">;</span>
+
+<span class="token comment">// shortcuts for SchoolPress DB tables</span>
+<span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token property">schoolpress_assignment_submissions</span> <span class="token operator">=</span> <span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token property">prefix</span> <span class="token operator">.</span>
+<span class="token string single-quoted-string">'schoolpress_assignment_submissions'</span><span class="token punctuation">;</span>
+
+<span class="token variable">$db_version</span> <span class="token operator">=</span> <span class="token function">get_option</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'sp_db_version'</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// create tables on new installs</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token keyword">empty</span><span class="token punctuation">(</span> <span class="token variable">$db_version</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">global</span> <span class="token variable">$wpdb</span><span class="token punctuation">;</span>
+
+<span class="token variable">$sqlQuery</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"
+CREATE TABLE '"</span> <span class="token operator">.</span> <span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token property">schoolpress_assignment_submissions</span> <span class="token operator">.</span> <span class="token string double-quoted-string">"' (
+  \`assignment_id\` bigint(11) unsigned NOT NULL,
+  \`submission_id\` bigint(11) unsigned NOT NULL,
+UNIQUE KEY \`assignment_submission\` (\`assignment_id\`,\`submission_id\`),
+UNIQUE KEY \`submission_assignment\` (\`submission_id\`,\`assignment_id\`)
+)
+"</span><span class="token punctuation">;</span>
+
+<span class="token keyword">require_once</span> <span class="token constant">ABSPATH</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'wp-admin/includes/upgrade.php'</span><span class="token punctuation">;</span>
+<span class="token function">dbDelta</span><span class="token punctuation">(</span> <span class="token variable">$sqlQuery</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token variable">$db_version</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'1.0'</span><span class="token punctuation">;</span>
+<span class="token function">update_option</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'sp_db_version'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'1.0'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token function">add_action</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'init'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'sp_dbSetup'</span><span class="token punctuation">,</span> <span class="token number">0</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>sp_dbSetup() 要在最早的時候執行，所以 hook add_acton 的第三個參數設為 0 ( 數字越小越先執行 )。然後因為資料表都會帶有前綴，預設雖然是 wp_，但因為外掛是要給其他人使用的，前綴通常都不會是預設值，所以使用 $wpdb-&gt;prefix 來取得資料表前綴。</p>
+<p>然後把資料表前綴加上資料表名稱存進 $wpdb 裡面，這樣在下面要 CREATE TABLE 帶入資料表名稱時就比較方便且容易理解。</p>
+<p>$db_version 會在為空值時才會給值並且存在 option 裡面，這樣在外掛第一次啟用時才會新增資料表。然後CREATE TABLE 語句指定要開的欄位，在寫 SQL 語句時，記得要先在 MySQL 裡面測過沒問題後才丟到外掛裡面去執行。</p>
+<p>最後使用 dbDelta 來執行資料表新增的動作，dbDelta 會判斷沒有該表才會新增，或是當有同名稱的表存在時，會幫你 ALTER TABLE 來確保已存在的表與新表有相同的 Schema。</p>
+<p>另外要注意的是，要使用 dbDelta 時必須先引入 wp-admin/includes/upgrade.php，然後才把 SQL 語句作為參數傳給 dbDelta。</p>
+<p>你的 SQL 語句與一般的有點不太相同，需要注意下面幾個地方</p>
+<ol>
+<li> 每一個新增的欄位要寫在獨立的一行</li>
+<li> 在 PRIMARY KEY 與定義主鍵的欄位之間要有空格</li>
+<li> 使用關鍵字 KEY 而不用 INDEX，並且至少包含一個 KEY</li>
+<li> 欄位名稱不要使用「’」與「`」這兩個符號</li>
+</ol>
+<p>參考 <a target="_blank" rel="noopener" href="https://codex.wordpress.org/Creating_Tables_with_Plugins">https://codex.wordpress.org/Creating_Tables_with_Plugins</a></p>
+<p>使用 dbDelta() 來新建資料表是比較好的選擇，因為它會幫你自動更新較舊的資料庫版本，其他的用法還可以使用 $wpdb-&gt;query($sqlQuery) 來直接新增。</p>
+<p>$wpdb-&gt;query() 可以直接執行任何經過驗證的 SQL 語法，其中的 query() 帶有很多實用的屬性協助開發者除錯以及追蹤查詢結果：</p>
+<ul>
+<li>  $wpdb-&gt;result - 顯示查詢結果</li>
+<li>  $wpdb-&gt;num_queries - 每次查詢會自動增加</li>
+<li>  $wpdb-&gt;last_query - 顯示最後一筆的查詢</li>
+<li>  $wpdb-&gt;last_error - 顯示最後一筆的錯誤訊息</li>
+<li>  $wpdb-&gt;insert_id - 顯示最後一筆成功 INSERT 的資料 ID</li>
+<li>  $wpdb-&gt;rows_affected - 顯示影響的資料筆數</li>
+<li>  $wpdb-&gt;num_rows - 顯示查詢結果比數</li>
+<li>  $wpdb-&gt;last_result - 顯示透過 mysql_fetch_object() 函式產出的物件</li>
+</ul>
+<p>$wpdb-&gt;query() 返回的值是根據查詢條件是否成功，返回 false 代表查詢失敗，你可以使用下面的程式碼來驗證查詢狀態：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token variable">$query</span><span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token constant boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> <span class="token function">wp_die</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"it failed"</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token punctuation">&#125;</span>
+
+返回的結果是從 <span class="token constant">CREATE</span>、<span class="token constant">ALTER</span>、<span class="token constant">TRUNCATE</span> 以及 <span class="token constant">DROP</span> 這些查詢所產出。影響的資料筆數是包含 <span class="token constant">SELECT</span>、<span class="token constant">INSERT</span>、<span class="token constant">UPDATE</span>、<span class="token constant">DELETE</span> 以及 <span class="token constant">REPLACE</span> 這些查詢。
+
+<span class="token comment">## **資料庫查詢的跳脫字元**</span>
+
+要注意的地方是 <span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">query</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 並不會自動處理跳脫字元的問題，在 WordPress 中有兩個方法來處理，分別是 <span class="token function">esc_sql</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 與 <span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token punctuation">)</span>，下面是 <span class="token function">esc_sql</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 的使用範例：
+
+<span class="token operator">&lt;</span><span class="token operator">?</span>php
+<span class="token keyword">global</span> <span class="token variable">$wpdb</span><span class="token punctuation">;</span>
+<span class="token variable">$user_query</span> <span class="token operator">=</span> <span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'uq'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+<span class="token variable">$sqlQuery</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"SELECT user_login FROM <span class="token interpolation"><span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token property">users</span></span> WHERE
+user_login LIKE '%"</span> <span class="token operator">.</span> <span class="token function">esc_sql</span><span class="token punctuation">(</span><span class="token variable">$user_query</span><span class="token punctuation">)</span> <span class="token operator">.</span> <span class="token string double-quoted-string">"%' OR
+user_email LIKE '%"</span> <span class="token operator">.</span> <span class="token function">esc_sql</span><span class="token punctuation">(</span><span class="token variable">$user_query</span><span class="token punctuation">)</span> <span class="token operator">.</span> <span class="token string double-quoted-string">"%' OR
+display_name LIKE '%"</span> <span class="token operator">.</span> <span class="token function">esc_sql</span><span class="token punctuation">(</span><span class="token variable">$user_query</span><span class="token punctuation">)</span> <span class="token operator">.</span> <span class="token string double-quoted-string">"%'
+"</span><span class="token punctuation">;</span>
+<span class="token variable">$user_logins</span> <span class="token operator">=</span> <span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">get_col</span><span class="token punctuation">(</span><span class="token variable">$sqlQuery</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">empty</span><span class="token punctuation">(</span><span class="token variable">$user_logins</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+<span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;ul>"</span><span class="token punctuation">;</span>
+<span class="token keyword">foreach</span><span class="token punctuation">(</span><span class="token variable">$user_logins</span> <span class="token keyword">as</span> <span class="token variable">$user_login</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#123;</span>
+<span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;li><span class="token interpolation"><span class="token variable">$user_login</span></span>&lt;/li>"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">echo</span> <span class="token string double-quoted-string">"&lt;/ul>"</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>至於 $wpdb-&gt;prepare() 用法類似是 sprint() 與 printf()，相較於 esc_sql()，它除了會處理跳脫字元外，還可以避免語句中單引號的問題。prepare 方法定義在 wp-includes/wp-db.php 中，可以接受兩個以上的參數。</p>
+<p><strong>$query</strong> - SQL 陳述語句的字串</p>
+<p><strong>$args</strong> - 一個或多個的變數來替代 SQL 語句中的 placeholder 所代表的值</p>
+<p>下面列出的 Placeholder 可以用在 SQL 的陳述語句中：</p>
+<ul>
+<li>  %d - integer 整數</li>
+<li>  %f - float 浮點數</li>
+<li>  %s - 字串</li>
+<li>  %% - 顯示百分比符號用</li>
+</ul>
+<p>$d、$f、$s 在語句中不加引號，然後要使用 %% 把 placeholder 包住，這樣才能找到精準比對的資料，每個 placeholder 都會對應到一個變數，使用範例如下：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token variable">$sqlQuery</span> <span class="token operator">=</span> <span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">prepare</span><span class="token punctuation">(</span><span class="token string double-quoted-string">"SELECT user_login FROM <span class="token interpolation"><span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token property">users</span></span> WHERE
+user_login LIKE '%%%s%%' OR
+user_email LIKE '%%%s%%' OR
+display_name LIKE '%%%s%%'"</span><span class="token punctuation">,</span> <span class="token variable">$user_query</span><span class="token punctuation">,</span> <span class="token variable">$user_query</span><span class="token punctuation">,</span> <span class="token variable">$user_query</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$user_logins</span> <span class="token operator">=</span> <span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">get_col</span><span class="token punctuation">(</span><span class="token variable">$sqlQuery</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>需要注意的地方是如果使用 $wpdb-&gt;prepare() 時沒有附上第二個參數會噴錯，因此如果不需要用動態資料來做 SQL 操作的話就不用使用 $wpdb-&gt;prepare()。</p>
+<h2 id="使用-wpdb-做-SELECT-查詢"><a href="#使用-wpdb-做-SELECT-查詢" class="headerlink" title="使用 $wpdb 做 SELECT 查詢"></a><strong>使用 $wpdb 做 SELECT 查詢</strong></h2><p>$wpdb 類別有很多方法可以來做資料庫查詢，針對 row 的資料查詢可以使用 $wpdb-&gt;get_results( $query, $output_type ) ，它會回傳查詢結果的陣列，在預設的情況下，回傳的是索引式陣列，下面列出回傳的資料型別：</p>
+<p><strong>OBJECT</strong> - 回傳索引式陣列的物件</p>
+<p><strong>OBJECT_K</strong> - 回傳關聯式陣列的物件，並會使用第一欄的值作為陣列的 Key，重複的值會被捨棄</p>
+<p><strong>ARRAY_A</strong> - 回傳帶有索引的關聯式陣列，使用欄位名稱作為 Key</p>
+<p><strong>ARRAY_N</strong> - 回傳帶有索引的索引式陣列</p>
+<p>使用範例如下：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">global</span> <span class="token variable">$wpdb</span><span class="token punctuation">;</span>
+<span class="token variable">$sqlQuery</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"SELECT * FROM <span class="token interpolation"><span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token property">posts</span></span>
+WHERE post_type = 'assignment'
+AND post_status = 'publish' LIMIT 10"</span><span class="token punctuation">;</span>
+<span class="token variable">$assignments</span> <span class="token operator">=</span> <span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">get_results</span><span class="token punctuation">(</span> <span class="token variable">$sqlQuery</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// rows are stored in an array, use foreach to loop through them</span>
+<span class="token keyword">foreach</span> <span class="token punctuation">(</span> <span class="token variable">$assignments</span> <span class="token keyword">as</span> <span class="token variable">$assignment</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">// each item is an object with property names equal to the SQL column names</span><span class="token delimiter important">?></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$assignment</span><span class="token operator">-></span><span class="token property">post_title</span><span class="token punctuation">;</span><span class="token delimiter important">?></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token function">apply_filters</span><span class="token punctuation">(</span> <span class="token string double-quoted-string">"the_content"</span><span class="token punctuation">,</span> <span class="token variable">$assignment</span><span class="token operator">-></span><span class="token property">post_content</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token delimiter important">?></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token punctuation">&#125;</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>針對 col 的查詢使用 $wpdb-&gt;get_col( $query, $column_offset = 0 )，它會返回第一欄的查詢結果。$column_offset 可以抓取其他欄位的資料來做顯示，第一欄是 0，第二欄是 1，其他以此類推。$wpdb-&gt;get_col() 方法常常被用來抓取文章的 ID，範例如下：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">global</span> <span class="token variable">$wpdb</span><span class="token punctuation">;</span>
+<span class="token variable">$sqlQuery</span> <span class="token operator">=</span> <span class="token string double-quoted-string">"SELECT ID FROM <span class="token interpolation"><span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token property">posts</span></span>
+WHERE post_type = 'assignment'
+AND post_status = 'publish'
+LIMIT 10"</span><span class="token punctuation">;</span>
+<span class="token comment">// getting IDs</span>
+<span class="token variable">$assignment_ids</span> <span class="token operator">=</span> <span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">get_col</span><span class="token punctuation">(</span> <span class="token variable">$sqlQuery</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// result is an array, loop through them</span>
+<span class="token keyword">foreach</span> <span class="token punctuation">(</span> <span class="token variable">$assignment_ids</span> <span class="token keyword">as</span> <span class="token variable">$assignment_id</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token comment">// we have the id, we can use get_post to get more data</span>
+<span class="token variable">$assignment</span> <span class="token operator">=</span> <span class="token function">get_post</span><span class="token punctuation">(</span> <span class="token variable">$assignment_id</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">></span></span><span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token variable">$assignment</span><span class="token operator">-></span><span class="token property">post_title</span><span class="token punctuation">;</span><span class="token delimiter important">?></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span> <span class="token keyword">echo</span> <span class="token function">apply_filters</span><span class="token punctuation">(</span> <span class="token string double-quoted-string">"the_content"</span><span class="token punctuation">,</span> <span class="token variable">$assignment</span><span class="token operator">-></span><span class="token property">post_content</span> <span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token delimiter important">?></span></span>
+<span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token punctuation">&#125;</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如果要針對其中一列作查詢可以使用 $wpdb-&gt;get_row( $query, $output_type, $row_offset )，$row_offset 可以指定抓取搜尋結果的其他資料，0 是第一筆，1 是第二筆，其他以此類推。</p>
+<h2 id="Insert、Replace-與-Update"><a href="#Insert、Replace-與-Update" class="headerlink" title="Insert、Replace 與 Update"></a><strong>Insert、Replace 與 Update</strong></h2><p>資料寫入的部分可以使用 $wpdb-&gt;insert( $table, $data, $format )，相較於自己寫 INSERT 語句，只要參數傳資料表名稱與要寫入的 row data，剩下的 $wpdb 就會自動幫你搞定。</p>
+<p>需要注意的地方是 $data 這個參數，必須與資料表的欄位名稱符合，$data 陣列中的值則代表要寫入的資料，範例如下：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">// 讓學生提交的資料與作業做關連</span>
+<span class="token keyword">global</span> <span class="token variable">$wpdb</span><span class="token punctuation">,</span> <span class="token variable">$current_user</span><span class="token punctuation">;</span>
+
+<span class="token comment">// create submission</span>
+<span class="token variable">$assignment_id</span> <span class="token operator">=</span> <span class="token function">intval</span><span class="token punctuation">(</span> <span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'assignment_id'</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$submission_id</span> <span class="token operator">=</span> <span class="token function">wp_insert_post</span><span class="token punctuation">(</span>
+<span class="token keyword">array</span><span class="token punctuation">(</span>
+<span class="token string single-quoted-string">'post_type'</span>    <span class="token operator">=></span> <span class="token string single-quoted-string">'submission'</span><span class="token punctuation">,</span>
+<span class="token string single-quoted-string">'post_author'</span>  <span class="token operator">=></span> <span class="token variable">$current_user</span><span class="token operator">-></span><span class="token constant">ID</span><span class="token punctuation">,</span>
+<span class="token string single-quoted-string">'post_title'</span>   <span class="token operator">=></span> <span class="token function">sanitize_title</span><span class="token punctuation">(</span> <span class="token variable">$_REQUEST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'title'</span><span class="token punctuation">]</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token string single-quoted-string">'post_content'</span> <span class="token operator">=></span> <span class="token function">sanitize_text_field</span><span class="token punctuation">(</span> <span class="token variable">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'submission'</span><span class="token punctuation">]</span> <span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// connect the submission to the assignment</span>
+<span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">insert</span><span class="token punctuation">(</span>
+  <span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token property">schoolpress_assignment_submissions</span><span class="token punctuation">,</span>
+  <span class="token keyword">array</span><span class="token punctuation">(</span> <span class="token string double-quoted-string">"assignment_id"</span><span class="token operator">=></span><span class="token variable">$assignment_id</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">"submission_id"</span><span class="token operator">=></span><span class="token variable">$submission_id</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token keyword">array</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'%d'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'%d'</span> <span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/*
+This insert call will generate a SQL query like:
+INSERT INTO
+'wp_schoolpress_assignment_submissions'
+('assignment_id','submission_id' VALUES (101,10)
+*/</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在範例中，先使用 wp_insert_post() 讓學生提交的資料先寫入文章類型為 submission 的 post，然後使用 $wpdb-&gt;insert 在 schoolpress_assignment_submissions 資料表新增一筆關聯的資料。</p>
+<p>需要注意的是第三個參數 array( ‘%d’, ‘%d’ )，這邊指定寫入資料的資料類型，$d 是整數，$s 還是字串，$f 是浮點數。如果沒有指定資料類型的話，一律會被當作是字串寫入。</p>
+<p>在大部分的情況下，要做文章類型的關聯可以直接使用 wp_posts 資料表裡面的 post_parent 欄位，但如果是要做多對多的關聯，像是一個 submission 可以對應到多個 assignment，這時候另外開一張表來紀錄會是比較清楚的作法。</p>
+<blockquote>
+<p>之前做過一個站有五種 Post Type，而這五種彼此都要互相關聯，而且是多對多的關係，我是用 ACF Pro 的 Relationship 欄位來處理，所以要從 A 文章類型去撈到關聯 B 文章類型、再從 B 去撈關聯 C 文章的欄位時，使用 ACF 的 get_field() 要繞好大一圈，而且會產生一堆為了拿 Post ID 的多重迴圈，這讓程式的維護變得異常複雜。</p>
+<p>如果依照作者的作法只要把互為關聯的 Post ID 獨立出來一張表來做存放，然後用 $wpdb 去拿關聯的文章 ID，也許事情會單純的多，但就是一開始資料表的欄位就要先規劃好。</p>
+</blockquote>
+<p>$wpdb-&gt;replace( $table, $data, $format ) 用法與 insert() 很類似，如果需要取代既有資料只要在 $data 陣列中指定相同的 key 既可進行取代。</p>
+<p>$wpdb-&gt;update( $table, $data, $where, $format, $where_format ) 則是用來修改整列的資料，跟自己寫 UPDATE 語句相比，用它比較容易且安全，使用範例如下：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token keyword">global</span> <span class="token variable">$wpdb</span><span class="token punctuation">;</span>
+<span class="token comment">// just update the status</span>
+<span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">update</span><span class="token punctuation">(</span>
+<span class="token string single-quoted-string">'ecommerce_orders'</span><span class="token punctuation">,</span>   <span class="token comment">//table name</span>
+<span class="token keyword">array</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'status'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'paid'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span>  <span class="token comment">//data fields</span>
+<span class="token keyword">array</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'id'</span> <span class="token operator">=></span> <span class="token variable">$order_id</span> <span class="token punctuation">)</span>  <span class="token comment">//where fields</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// update more data about the order</span>
+<span class="token variable">$wpdb</span><span class="token operator">-></span><span class="token function">update</span><span class="token punctuation">(</span>
+<span class="token string single-quoted-string">'ecommerce_orders'</span><span class="token punctuation">,</span>   <span class="token comment">//table name</span>
+<span class="token keyword">array</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'status'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'pending'</span><span class="token punctuation">,</span>  <span class="token comment">//data fields</span>
+<span class="token string single-quoted-string">'subtotal'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'100.00'</span><span class="token punctuation">,</span>
+<span class="token string single-quoted-string">'tax'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'6.00'</span><span class="token punctuation">,</span>
+<span class="token string single-quoted-string">'total'</span> <span class="token operator">=></span> <span class="token string single-quoted-string">'106.00'</span>
+<span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token keyword">array</span><span class="token punctuation">(</span> <span class="token string single-quoted-string">'id'</span> <span class="token operator">=></span> <span class="token variable">$order_id</span> <span class="token punctuation">)</span>  <span class="token comment">//where fields</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用 $where 來指定要修改的對象，然後用 $data 來傳入新的資料來修改。</p>
+<h2 id="wp-query"><a href="#wp-query" class="headerlink" title="$wp_query"></a><strong>$wp_query</strong></h2><p>$wp_query 是專門用來顯示文章內容的 class，下一章會有完整的介紹。</p>
+<h2 id="current-user"><a href="#current-user" class="headerlink" title="$current_user"></a><strong>$current_user</strong></h2><p>$current_user 是專們用來顯示目前已登入使用者資訊的物件，它不僅會回傳 wp_users 裡面的欄位，還可以得到已登入使用的角色與權限，範例如下：</p>
+<pre class="line-numbers language-php" data-language="php"><code class="language-php"><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">//welcome the logged-in user</span>
+<span class="token keyword">global</span> <span class="token variable">$current_user</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span> <span class="token operator">!</span><span class="token keyword">empty</span><span class="token punctuation">(</span> <span class="token variable">$current_user</span><span class="token operator">-></span><span class="token constant">ID</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+<span class="token keyword">echo</span> <span class="token string single-quoted-string">'Howdy, '</span> <span class="token operator">.</span> <span class="token variable">$current_user</span><span class="token operator">-></span><span class="token property">display_name</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token delimiter important">?></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上是 WordPress 常用到的 Global 變數，你也可以把自己常用到的全域變數存在 Global 裡面，這樣之後要重複取用就很方便。</p>
+<h2 id="實用免費外掛介紹"><a href="#實用免費外掛介紹" class="headerlink" title="實用免費外掛介紹"></a>實用免費外掛介紹</h2><p>很多免費的外掛功能都很強大，如果想開發某些功能，可以先找找有沒有類似的外掛，萬一有的話當然最好，或是有但可能沒有 100% 符合你的需求也沒關係，直接改寫它們在某些情況下可以省下很多時間。</p>
+<p><strong>Admin Columns</strong><br><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/codepress-admin-columns/">https://wordpress.org/plugins/codepress-admin-columns/</a></p>
+<p>專門做後台文章列表欄位管理的外掛，可以很方便的把各個文章欄位放到列表中，並且進行排序與位置編排，付費版還能直接整合第三方外掛的欄位，並支援進階搜尋、報表匯出，如果客戶對於後台的資料顯示有特殊需求，Admin Columns 可以幫上你很多忙！</p>
+<blockquote>
+<p>以前我很習慣用它，尤其是它的進階搜尋功能可以滿足客戶對於資料檢視的需求，但缺點就是報表 csv 匯出中文會亂碼，有回報給原廠但還未獲得解決，所以匯出功能還是要自己另外寫。</p>
+<p>但如果只是要單純欄位，特別是下面會介紹到的 ACF 欄位，必須要升級為付費版才能使用，再加上它的方案有限制網站數量，所以在客戶不需要進階搜尋功能的情況下，自己手刻會比較划算XD</p>
+<p>新增欄位不難寫，主要會用到兩支 Hook：manage_{post type}<em>columns 與 manage_</em>{post type}_posts_custom_column。第一個是設定欄位名稱，第二個是抓取欄位值，具體範例參考：<a target="_blank" rel="noopener" href="https://ods.oberonlai.blog/category/wordpress-admin/edit-php/">https://ods.oberonlai.blog/category/wordpress-admin/edit-php/</a></p>
+</blockquote>
+<p><strong>Advanced Custom Fields</strong><br><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/advanced-custom-fields/">https://wordpress.org/plugins/advanced-custom-fields/</a></p>
+<p>開發 WordPress 不能沒有的一支外掛，它可以用視覺化的介面幫各種文章類型增加多種不同的欄位。新增的介面也可以讓後台使用者直接在編輯畫面進行資料的修改，省去超多額外開發後台操作介面的時間。付費版提供更多欄位選擇，甚至還可以作為簡易的頁面編輯器來使用！</p>
+<p><strong>BadgeOS</strong><br><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/badgeos/">https://wordpress.org/plugins/badgeos/</a></p>
+<p>BadgeOS 讓你的網站可以提供不同的成就徽章給站內會員，它的主要功能是可以設計徽章，並且設定觸發獲得條件，另一支遊戲化成就機制的外掛叫做 GamiPress，就是從 BadgeOS 衍伸來的，作者認為 <a target="_blank" rel="noopener" href="https://wordpress.org/plugins/gamipress/">GamiPress</a> 維護的比較好並且擁有更多功能。</p>
+<p><strong>Posts 2 Posts</strong><br><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/posts-to-posts/">https://wordpress.org/plugins/posts-to-posts/</a></p>
+<p>Posts 2 Posts 可以讓站內所有文章擁有多對多的關聯，除了有方便的設定介面外，最重要的是它另外開了一張資料表來紀錄所有的對應關係，這在大型的網站中是非常有幫助的。</p>
+<blockquote>
+<p>可惜這支外掛已經四年沒更新，實驗過裝在 WordPress 5.4 上面會爆炸，也沒找到什麼其他替代方案，看來還是只能用 ACF 的 Relationship，或是找時間來修理它了…</p>
+</blockquote>
+<p>其他免費外掛介紹如下：</p>
+<p><a target="_blank" rel="noopener" href="https://tw.wordpress.org/plugins/members/">Members</a> - 管理使用者角色與權限，這部分會在第六章介紹如何使用程式碼來進行設定<br><a target="_blank" rel="noopener" href="https://tw.wordpress.org/plugins/w3-total-cache/">W3 Total Cache</a> - 老牌快取外掛，會在第十四章介紹關於 WordPress 的快取機制<br><a target="_blank" rel="noopener" href="https://tw.wordpress.org/plugins/wordpress-seo/">Yoast SEO</a> - 功能強大的 SEO 外掛  </p>
+<p>付費外掛介紹：</p>
+<p><a target="_blank" rel="noopener" href="https://www.gravityforms.com/">Gravity Forms</a> - 設計表單的外掛，還可以整合為數眾多的第三方服務<br><a target="_blank" rel="noopener" href="https://ithemes.com/backupbuddy/">BackupBuddy</a> - 備份還原外掛<br><a target="_blank" rel="noopener" href="https://www.wpallimport.com/">WP All Import</a> - 使用 XML 或 CSV 匯入網站資料</p>
+<h2 id="BuddyPress"><a href="#BuddyPress" class="headerlink" title="BuddyPress"></a><strong>BuddyPress</strong></h2><p><a target="_blank" rel="noopener" href="https://tw.wordpress.org/plugins/buddypress/">BuddyPress</a> 一套專門建置社群平台的外掛，只要安裝啟用後，立刻可以完成類似 Facebook 的社群網站。<br>第一版在 2009 年四月推出，已經跟 WordPress 走過數十個年頭。</p>
+<p>BuddyPress 必須運作在 Multisite 多站網絡的環境下，而它可以跟大部分的佈景主題相容，如果使用有針對 BuddyPress 所開發的佈景主題相容性會更好。</p>
+<p>有別於 WordPress 內建的資料表，BuddyPress 新增了許多表來紀錄資料，因為社群網站的內容格式與傳統的文章不大相同，如果要用自定義文章來客製的話會花不少功夫。所以使用 BuddyPress 的機制來開發會方便許多。</p>
+<p>以下為 BuddyPress database schema 說明：</p>
+<p><strong>wp_bp_activity</strong> - 記錄貼文資料</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.36.01.jpg"></p>
+<p><strong>wp_bp_activity_meta</strong> - 記錄貼文自訂資料</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.37.34.jpg"></p>
+<p><strong>wp_bp_invitations</strong> - 記錄使用者邀請資訊</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.38.26.jpg"></p>
+<p><strong>wp_bp_notifications</strong> - 記錄使用者通知訊息</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.39.20.jpg"></p>
+<p><strong>wp_bp_notifications_meta</strong> - 記錄使用者通知訊息的自訂資料</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.40.28.jpg"></p>
+<p><strong>wp_bp_xprofile_data</strong> - 記錄使用者資料</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.42.44-1024x148.jpg"></p>
+<p><strong>wp_bp_xprofile_fields</strong> - 記錄使用者欄位</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.43.56-1024x295.jpg"></p>
+<p><strong>wp_bp_xprofile_groups</strong> - 記錄使用者群組資訊</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.44.51-1024x140.jpg"></p>
+<p><strong>wp_bp_xprofile_meta</strong> - 記錄使用者自訂資料</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.45.37.jpg"></p>
+<p>BuddyPress 有許多功能可以讓使用者決定是否要啟用：</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.46.55-1024x648.jpg"></p>
+<p>在頁面設定的部分可以選擇 BuddyPress 相關頁面的指定，也可以使用頁面名稱來重新命名預設的顯示標題，另外要開放註冊的話還需要新增註冊與登入頁面，但前提是要先啟用讓任何人都可以註冊的選項。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.50.55.jpg"></p>
+<p>啟用 BuddyPress 後，可以在後台左側的使用者選單中，看到多出一個「簡介欄位」的選項，它可以讓你自行定義給使用者的資料欄位，像是地理位置、生日、喜愛演員、喜愛的顏色等等。這功能可以很方便的透過 UI 介面來管理使用者欄位，而不用寫程式碼。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/05/CleanShot-2020-05-07-at-09.57.13-1024x625.jpg"></p>
+<blockquote>
+<p>上一次我玩 BuddyPress 大概是三年前的事了，當時還沒有這麼多功能，大部分都要自行客製化，更不用說自訂使用者欄位這功能，如果可以把它內建在 WordPress 裡面就好了～</p>
+<p>自訂使用者欄位以前用過這支 —&gt; <a target="_blank" rel="noopener" href="https://wordpress.org/plugins/user-meta/">https://wordpress.org/plugins/user-meta/</a>，現在多半統一用 ACF 來處理。</p>
+</blockquote>
+<h2 id="BuddyPress-外掛介紹"><a href="#BuddyPress-外掛介紹" class="headerlink" title="BuddyPress 外掛介紹"></a><strong>BuddyPress 外掛介紹</strong></h2><p><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/buddypress-media/">BuddyPress Media</a><br>讓使用者可以在貼文中上傳圖片、聲音與影片，並且可以自行管理已上傳的內容</p>
+<p><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/bp-registration-options/">BuddyPress Registration Options</a><br>控管瀏覽權限，新會員必須要管理員審核才可以瀏覽內容</p>
+<p><a target="_blank" rel="noopener" href="https://apppresser.com/introducing-appcommunity/">AppPresser Add-on</a><br>把 BuddyPress 變成手機應用程式</p>
+<p><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/badgeos-community-add-on/">BadgeOS Community Add-on</a><br>增加徽章成就功能</p>
+<p><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/bbpress/">bbPress</a><br>加入論壇功能</p>
+
+        <hr>
+        <div>
+          <h2>覺得文章寫得好再幫我鼓個掌吧！</h2>
+          <iframe width="100%" height="230px" scrolling="no" frameborder="0" id="player" src="https://button.like.co/in/embed/oberonlai/button/?referrer=https://oberonlai.blog/tw/building-web-apps-with-wordpress-plugin/" allowfullscreen="true"></iframe>
+        </div>
+        <hr>
+        <h2>這是電子報訂閱，一週一次絕對沒有壯陽藥廣告～</h2>
+        <p>過往內容：<a target="_blank" rel="noopener" href="https://successful-trader-4225.ck.page/posts">https://successful-trader-4225.ck.page/posts</a></p>
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+        <form action="https://app.convertkit.com/forms/2577901/subscriptions" style="background-color: rgb(255, 255, 255); border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; max-width: none!important;" class="seva-form formkit-form" method="post" data-sv-form="2577901" data-uid="bbe15da0e6" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;訂閱成功，再幫我收信確認下吧！&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div data-style="full" style="--bg-border-radius: 3px;"><div data-element="column" class="formkit-column"><div class="formkit-header" style="color: rgb(83, 83, 83); font-size: 28px; font-weight: 400;" data-element="header"></div><div class="formkit-content" style="color: rgb(105, 113, 119);" data-element="content"><p>Hi，我是 Oberon，我會固定在每週五早上發送接案心得以及與 WordPress 相關的電子報，同時也會分享一些基礎的開發知識，讓你在 WordPress 的接案路上不孤單！</p></div><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="true" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400; background-color: rgb(243, 246, 249); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" aria-label="電子郵件" placeholder="電子郵件" required="" type="email"></div><div class="formkit-field"><input class="formkit-input" aria-label="您的大名" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400; background-color: rgb(243, 246, 249); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" name="fields[first_name]" placeholder="您的大名" type="text"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(113, 173, 137); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; font-weight: 700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span style="font-size: 16px;">訂閱電子報</span></button></div><div class="formkit-disclaimer" style="color: rgb(139, 139, 139); font-size: 13px;" data-element="disclaimer"><p>免費電子報，可隨時取消訂閱，沒有壓力！</p></div></div><div data-element="column" style="background-image: url(&quot;https://embed.filekitcdn.com/e/2SvCbYvt2MQD58GK3N3L5a/qAepSutQWFcsUd4u3qHwKy&quot;);" class="formkit-background"></div></div><style>.formkit-form[data-uid="bbe15da0e6"] *{box-sizing:border-box;}.formkit-form[data-uid="bbe15da0e6"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.formkit-form[data-uid="bbe15da0e6"] legend{border:none;font-size:inherit;margin-bottom:10px;padding:0;position:relative;display:table;}.formkit-form[data-uid="bbe15da0e6"] fieldset{border:0;padding:0.01em 0 0 0;margin:0;min-width:0;}.formkit-form[data-uid="bbe15da0e6"] body:not(:-moz-handler-blocked) fieldset{display:table-cell;}.formkit-form[data-uid="bbe15da0e6"] h1,.formkit-form[data-uid="bbe15da0e6"] h2,.formkit-form[data-uid="bbe15da0e6"] h3,.formkit-form[data-uid="bbe15da0e6"] h4,.formkit-form[data-uid="bbe15da0e6"] h5,.formkit-form[data-uid="bbe15da0e6"] h6{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="bbe15da0e6"] h2{font-size:1.5em;margin:1em 0;}.formkit-form[data-uid="bbe15da0e6"] h3{font-size:1.17em;margin:1em 0;}.formkit-form[data-uid="bbe15da0e6"] p{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="bbe15da0e6"] ol:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ul:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] blockquote:not([template-default]){text-align:left;}.formkit-form[data-uid="bbe15da0e6"] p:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] hr:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] blockquote:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ol:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ul:not([template-default]){color:inherit;font-style:initial;}.formkit-form[data-uid="bbe15da0e6"] .ordered-list,.formkit-form[data-uid="bbe15da0e6"] .unordered-list{list-style-position:outside !important;padding-left:1em;}.formkit-form[data-uid="bbe15da0e6"] .list-item{padding-left:0;}.formkit-form[data-uid="bbe15da0e6"][data-format="modal"]{display:none;}.formkit-form[data-uid="bbe15da0e6"][data-format="slide in"]{display:none;}.formkit-form[data-uid="bbe15da0e6"][data-format="sticky bar"]{display:none;}.formkit-sticky-bar .formkit-form[data-uid="bbe15da0e6"][data-format="sticky bar"]{display:block;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input,.formkit-form[data-uid="bbe15da0e6"] .formkit-select,.formkit-form[data-uid="bbe15da0e6"] .formkit-checkboxes{width:100%;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-button:focus,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:focus{outline:none;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button:hover > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:hover > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-button:focus > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:focus > span{background-color:rgba(0,0,0,0.1);}.formkit-form[data-uid="bbe15da0e6"] .formkit-button > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit > span{display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::-webkit-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::-moz-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input:-ms-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"]{position:relative;display:inline-block;width:100%;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"]::before{content:"";top:calc(50% - 2.5px);right:10px;position:absolute;pointer-events:none;border-color:#4f4f4f transparent transparent transparent;border-style:solid;border-width:6px 6px 0 6px;height:0;width:0;z-index:999;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"] select{height:auto;width:100%;cursor:pointer;color:#333333;line-height:1.4;margin-bottom:0;padding:0 6px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:15px;padding:12px;padding-right:25px;border:1px solid #e3e3e3;background:#ffffff;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"] select:focus{outline:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"]{text-align:left;margin:0;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"]{margin-bottom:10px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] *{cursor:pointer;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"]:last-of-type{margin-bottom:0;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]{display:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"] + label::after{content:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::after{border-color:#ffffff;content:"";}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::before{background:#10bf7a;border-color:#10bf7a;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label{position:relative;display:inline-block;padding-left:28px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::before,.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::after{position:absolute;content:"";display:inline-block;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::before{height:16px;width:16px;border:1px solid #e3e3e3;background:#ffffff;left:0px;top:3px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::after{height:4px;width:8px;border-left:2px solid #4d4d4d;border-bottom:2px solid #4d4d4d;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);left:4px;top:8px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="bbe15da0e6"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:5;margin:10px 0;position:relative;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ffffff;border:1px solid #dce1e5;border-radius:4px;color:#373f45;cursor:pointer;display:block;height:36px;margin:0 auto;opacity:0.95;padding:0;-webkit-text-decoration:none;text-decoration:none;text-indent:100%;-webkit-transition:ease-in-out all 200ms;transition:ease-in-out all 200ms;white-space:nowrap;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:190px;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='%23373F45'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='%23373F45'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='%23373F45'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='%23373F45'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='%23373F45'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='%23373F45'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='%23373F45'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='%23373F45'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='%23373F45'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='%23373F45'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='%23373F45'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='%23373F45'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='%23373F45'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='%23373F45'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='%23373F45'/%3E%3C/svg%3E");}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit:focus{background-color:#ffffff;-webkit-transform:scale(1.025) perspective(1px);-ms-transform:scale(1.025) perspective(1px);transform:scale(1.025) perspective(1px);opacity:1;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="dark"],.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="light"]{background-color:transparent;border-color:transparent;width:166px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="light"]{color:#ffffff;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='white'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='white'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='white'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='white'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='white'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='white'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='white'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='white'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='white'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='white'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='white'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='white'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='white'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='white'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='white'/%3E%3C/svg%3E");}@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}.formkit-form[data-uid="bbe15da0e6"] blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #e1e1e1;}.formkit-form[data-uid="bbe15da0e6"] .seva-custom-content{padding:15px;font-size:16px;color:#fff;mix-blend-mode:difference;} .formkit-form[data-uid="bbe15da0e6"]{box-shadow:0px 4px 8px rgba(105,113,119,0.2);max-width:740px !important;overflow:hidden;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"]{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.formkit-form[data-uid="bbe15da0e6"] .formkit-background{background-position:center center;background-size:cover;height:280px;margin:20px;border-radius:var(--bg-border-radius) !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-column{padding:20px;position:relative;-webkit-order:2;-ms-flex-order:2;order:2;}.formkit-form[data-uid="bbe15da0e6"] .formkit-header{margin-top:0;margin-bottom:24px;font-weight:700;font-size:calc(30px + (36 - 30) * ((100vw - 400px) / (600 - 400)));}@media all and (min-width:800px){.formkit-form[data-uid="bbe15da0e6"] .formkit-header{font-size:36px;}}.formkit-form[data-uid="bbe15da0e6"] .formkit-header h2{line-height:1.2;margin-top:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-content{margin-bottom:45px;font-size:16px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}.formkit-form[data-uid="bbe15da0e6"] .formkit-field{margin:0 0 10px 0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input{width:100%;border:0;padding-left:12px;padding-right:0;height:47px;font-size:14px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-select{padding-top:13px !important;padding-bottom:13px !important;border:0 !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-checkboxes{background:transparent !important;color:inherit !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields .formkit-submit{margin-top:8px;font-size:12px;height:47px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields .formkit-submit span{padding:15px 14px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"]{margin-left:-4px;margin-right:-4px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-submit{-webkit-flex:1 1 auto !important;-ms-flex:1 1 auto !important;flex:1 1 auto !important;margin:0 !important;min-width:90px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-submit{margin:0 4px 8px 4px !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-field{-webkit-flex:100 1 auto !important;-ms-flex:100 1 auto !important;flex:100 1 auto !important;margin:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container{margin:20px 0 0 0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-disclaimer{font-size:12px;opacity:0.6;margin-top:6px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-field,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit{margin:0 0 8px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}@media screen and (min-width:600px){.formkit-form[data-uid="bbe15da0e6"] [data-style="full"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"] .formkit-column{width:57%;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"] .formkit-background{width:44%;height:auto;margin-left:0;-webkit-order:2;-ms-flex-order:2;order:2;}.formkit-slide-in,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"],.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"]{max-width:450px !important;}.formkit-slide-in [data-style="full"],.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] [data-style="full"],.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] [data-style="full"]{-webkit-flex-direction:column !important;-ms-flex-direction:column !important;flex-direction:column !important;max-width:450px !important;}.formkit-slide-in .formkit-background,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-background,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-background{width:auto !important;height:280px !important;margin:20px !important;-webkit-order:0 !important;-ms-flex-order:0 !important;order:0 !important;}.formkit-slide-in .formkit-column,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-column,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-column{width:100% !important;-webkit-order:2 !important;-ms-flex-order:2 !important;order:2 !important;padding:20px 20px 30px 20px !important;}.formkit-slide-in .formkit-content,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-content,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-content{margin-bottom:25px !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-column{padding:55px 60px 55px 45px;}} </style></form>
+    </div>
+
+    
+    
+    
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tw/tags/global/" rel="tag"><i class="fa fa-tag"></i> $global</a>
+              <a href="/tw/tags/wpdb/" rel="tag"><i class="fa fa-tag"></i> $wpdb</a>
+              <a href="/tw/tags/buddypress/" rel="tag"><i class="fa fa-tag"></i> buddypress</a>
+              <a href="/tw/tags/custom-plugin/" rel="tag"><i class="fa fa-tag"></i> custom plugin</a>
+              <a href="/tw/tags/gpl/" rel="tag"><i class="fa fa-tag"></i> gpl</a>
+              <a href="/tw/tags/loop/" rel="tag"><i class="fa fa-tag"></i> loop</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/tw/building-web-apps-with-wordpress-basic/" rel="prev" title="【 書摘 】Building Web Apps with WordPress - WordPress 基本介紹">
+      <i class="fa fa-chevron-left"></i> 【 書摘 】Building Web Apps with WordPress - WordPress 基本介紹
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/tw/building-web-apps-with-wordpress-api-objects-and-helper-functions/" rel="next" title="【 書摘 】Building Web Apps with WordPress - 使用 WordPress API、物件、與實用函式">
+      【 書摘 】Building Web Apps with WordPress - 使用 WordPress API、物件、與實用函式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81Using-WordPress-Plugin-%E4%BD%BF%E7%94%A8-WordPress-%E5%A4%96%E6%8E%9B"><span class="nav-number">1.</span> <span class="nav-text">三、Using WordPress Plugin &#x2F; 使用 WordPress 外掛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GPL-V2-%E9%96%8B%E6%BA%90%E6%8E%88%E6%AC%8A%E8%A6%8F%E7%AF%84"><span class="nav-number">2.</span> <span class="nav-text">GPL V2 開源授權規範</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E7%99%BC%E8%87%AA%E5%B7%B1%E7%9A%84%E5%A4%96%E6%8E%9B"><span class="nav-number">3.</span> <span class="nav-text">開發自己的外掛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E6%8E%9B%E7%9A%84%E8%B3%87%E6%96%99%E5%A4%BE%E7%B5%90%E6%A7%8B"><span class="nav-number">4.</span> <span class="nav-text">外掛的資料夾結構</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E7%99%BC%E7%8F%BE%E6%9C%89%E5%A4%96%E6%8E%9B%E7%9A%84%E9%99%84%E5%8A%A0%E5%A5%97%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">開發現有外掛的附加套件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SchoolPress-%E4%BD%BF%E7%94%A8%E5%A0%B4%E6%99%AF"><span class="nav-number">6.</span> <span class="nav-text">SchoolPress 使用場景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WordPress-Loop"><span class="nav-number">7.</span> <span class="nav-text">WordPress Loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WordPress-%E5%85%A8%E5%9F%9F%E8%AE%8A%E6%95%B8"><span class="nav-number">8.</span> <span class="nav-text">WordPress 全域變數</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wpdb"><span class="nav-number">9.</span> <span class="nav-text">$wpdb</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E8%A8%82%E8%B3%87%E6%96%99%E8%A1%A8"><span class="nav-number">10.</span> <span class="nav-text">自訂資料表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-wpdb-%E5%81%9A-SELECT-%E6%9F%A5%E8%A9%A2"><span class="nav-number">11.</span> <span class="nav-text">使用 $wpdb 做 SELECT 查詢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Insert%E3%80%81Replace-%E8%88%87-Update"><span class="nav-number">12.</span> <span class="nav-text">Insert、Replace 與 Update</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wp-query"><span class="nav-number">13.</span> <span class="nav-text">$wp_query</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#current-user"><span class="nav-number">14.</span> <span class="nav-text">$current_user</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%A6%E7%94%A8%E5%85%8D%E8%B2%BB%E5%A4%96%E6%8E%9B%E4%BB%8B%E7%B4%B9"><span class="nav-number">15.</span> <span class="nav-text">實用免費外掛介紹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BuddyPress"><span class="nav-number">16.</span> <span class="nav-text">BuddyPress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BuddyPress-%E5%A4%96%E6%8E%9B%E4%BB%8B%E7%B4%B9"><span class="nav-number">17.</span> <span class="nav-text">BuddyPress 外掛介紹</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="賴俊吾 / Oberon Lai"
+      src="/tw/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">賴俊吾 / Oberon Lai</p>
+  <div class="site-description" itemprop="description">現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/tw/archives">
+          <span class="site-state-item-count">291</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/tw/categories/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tw/tags/">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/oberonlai" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:m615926@gmail.com" title="E-Mail → mailto:m615926@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/oberonlai" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/m615926" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;m615926" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">賴俊吾 / Oberon Lai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">740k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:13</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/tw/lib/anime.min.js"></script>
+  <script src="/tw/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+
+<script src="/tw/js/utils.js"></script>
+
+
+<script src="/tw/js/schemes/muse.js"></script>
+
+
+<script src="/tw/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/tw/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

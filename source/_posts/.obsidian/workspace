@@ -1,0 +1,102 @@
+{
+  "main": {
+    "id": "d7b5999946802bca",
+    "type": "split",
+    "children": [
+      {
+        "id": "f0dedb3989a81e54",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "wordpress-taiwan-stock.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5d656b6aaa5c99fe",
+    "type": "split",
+    "children": [
+      {
+        "id": "0d4fe308a27c37b9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f400a2fca7c2f57",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "eb73ff600a644ace",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "4411909cd8d629de",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea8c56afb96d361d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7a7e30d03518cf9b",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "wordpress-taiwan-stock.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "f0dedb3989a81e54",
+  "lastOpenFiles": [
+    "wordpress-taiwan-stock.md",
+    "how-i-manager-projects.md",
+    "wordpress-line-login-plugin.md",
+    "wordrpress-taiwan-stock.md",
+    "Untitled.md",
+    "專為-youtuber-設計的網站產生器.md",
+    "專為設計師打造的-wordpress-架站工具.md",
+    "超完整-wordpress-電子報工具.md",
+    "building-web-apps-with-wordpress.md",
+    "【-專案-】重新認識-google-blogger.md"
+  ]
+}

@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/tw/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/tw/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/tw/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/tw/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/tw/css/main.css">
+
+
+<link rel="stylesheet" href="/tw/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oberonlai.blog","root":"/tw/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideDownIn","sidebar":"slideDownIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WordPress 開發日常">
+<meta property="og:url" content="https://oberonlai.blog/tw/page/15/">
+<meta property="og:site_name" content="WordPress 開發日常">
+<meta property="og:description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="賴俊吾 &#x2F; Oberon Lai">
+<meta property="article:tag" content="WordPress,PHP,WordPress 外掛開發,WordPress 佈景主題開發,WordPress 工程師,敏捷接案,時薪計價,專案管理">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="/tw/images/og-img.jpg" />
+
+<link rel="canonical" href="https://oberonlai.blog/tw/page/15/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>WordPress 開發日常 - 有任何 WordPress 客製需求歡迎與我聯絡！</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163107142-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-163107142-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/tw/" class="brand" rel="start" style="display: block">
+        <img class="logo-img" src="/tw/images/logo-w.svg" alt="WordPress 開發日常">
+    </a>
+      <p class="site-subtitle" itemprop="description">有任何 WordPress 客製需求歡迎與我聯絡！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-關於我">
+
+    <a href="/tw/about/" rel="section">關於我</a>
+
+  </li>
+        <li class="menu-item menu-item-合作方式">
+
+    <a href="/tw/how-can-oberon-help-you/" rel="section">合作方式</a>
+
+  </li>
+        <li class="menu-item menu-item-計價方式">
+
+    <a href="/tw/how-do-i-make-a-quotation/" rel="section">計價方式</a>
+
+  </li>
+        <li class="menu-item menu-item-學習-wordpress">
+
+    <a href="/tw/wordpress-full-stack/" rel="section">學習 WordPress</a>
+
+  </li>
+        <li class="menu-item menu-item-與我聯繫">
+
+    <a href="mailto:m615926@gmail.com" rel="noopener" target="_blank">與我聯繫</a>
+
+  </li>
+        <li class="menu-item menu-item-訂閱">
+
+    <a href="https://successful-trader-4225.ck.page/bbe15da0e6" rel="noopener" target="_blank">訂閱</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/oberonlai" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88%E6%B5%81%E7%A8%8B%E4%BA%8C-%E7%AD%96%E7%95%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88%E6%B5%81%E7%A8%8B%E4%BA%8C-%E7%AD%96%E7%95%A5/" class="post-title-link" itemprop="url">資訊架構設計流程二-策略</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-12-25 04:11:54" itemprop="dateCreated datePublished" datetime="2010-12-25T04:11:54+08:00">2010-12-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E7%B6%B2%E7%AB%99%E4%BC%81%E5%8A%83/" itemprop="url" rel="index"><span itemprop="name">網站企劃</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在從事網頁設計的經驗中，常常在第一次接洽時，遇到下列的問題： <strong><em>1.我們想做網站，內容沒有很多，越簡單越好。</em></strong> <strong><em>2.我們想做網站，只要和<a target="_blank" rel="noopener" href="http://www.xxx.com一模一樣就好./">www.XXX.com一模一樣就好。</a></em></strong> <strong><em>3.我們想做網站，請報價</em></strong> <img src="https://oberonlai.blog/wp-content/uploads/2010/12/01.jpg" alt="長期受大雄威脅而患有被害幻想症的哆啦A夢"> 長期受大雄威脅而患有被害幻想症的哆啦A夢</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88%E6%B5%81%E7%A8%8B%E4%BA%8C-%E7%AD%96%E7%95%A5/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88%E6%B5%81%E7%A8%8B%E4%B8%89-%E8%A8%AD%E8%A8%88%E5%92%8C%E8%AA%AA%E6%98%8E%E6%96%87%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88%E6%B5%81%E7%A8%8B%E4%B8%89-%E8%A8%AD%E8%A8%88%E5%92%8C%E8%AA%AA%E6%98%8E%E6%96%87%E4%BB%B6/" class="post-title-link" itemprop="url">資訊架構設計流程三-設計和說明文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-11-22 17:04:51" itemprop="dateCreated datePublished" datetime="2010-11-22T17:04:51+08:00">2010-11-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E7%B6%B2%E7%AB%99%E4%BC%81%E5%8A%83/" itemprop="url" rel="index"><span itemprop="name">網站企劃</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>656</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://oberonlai.blog/wp-content/uploads/2010/11/3363169836_a71515444e_o.png"> 利用經過視覺設計化的圖表進行溝通，圖表的設計方向需提供不同的切入點描述全貌，亦需如同提案般依照不同的目標對象提供適切的圖表呈現方式。 視覺化圖表溝通的原則，盡量以簡單扼要的方式說明，並謹記少即是多的理論。圖表可以表達的有所有網站的內容元件由何構成，以及各元件間彼此的互存關係，像是藍圖(blueprint)以及框架圖(wire frame)。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88%E6%B5%81%E7%A8%8B%E4%B8%89-%E8%A8%AD%E8%A8%88%E5%92%8C%E8%AA%AA%E6%98%8E%E6%96%87%E4%BB%B6/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E5%9F%BA%E9%87%91%E8%AE%8A%E6%9B%B4%E6%8A%95%E8%B3%87%E6%A8%99%E7%9A%84%E8%BD%89%E6%8F%9B%E7%B3%BB%E7%B5%B1%E4%BB%8B%E9%9D%A2%E8%A8%AD%E8%A8%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E5%9F%BA%E9%87%91%E8%AE%8A%E6%9B%B4%E6%8A%95%E8%B3%87%E6%A8%99%E7%9A%84%E8%BD%89%E6%8F%9B%E7%B3%BB%E7%B5%B1%E4%BB%8B%E9%9D%A2%E8%A8%AD%E8%A8%88/" class="post-title-link" itemprop="url">變更基金投資標的轉換系統介面設計</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-11-12 09:28:58" itemprop="dateCreated datePublished" datetime="2010-11-12T09:28:58+08:00">2010-11-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E4%BD%BF%E7%94%A8%E8%80%85%E4%BB%8B%E9%9D%A2/" itemprop="url" rel="index"><span itemprop="name">使用者介面</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>一般投資型保單均包含數十筆基金標的，因隨著投資績效的差異，或是國際市場的動向，投資人可自行選擇改變基金標的或是變更其分配比例，其中屬基金標的轉換流程較為繁瑣，為規畫該系統流程及介面設計，在此將設計過程予以紀錄。 投資標的轉換主要流程如下 選擇可變更之保單號碼。 檢視該保單所包含之基金標的，根據當日參考價值來進行轉出(賣出)之動作。 轉出(賣出)之金額需大於新台幣5,000元整。 轉出(賣出)之金額依照比例轉入(買進)新檔基金，或是就現有基金進行調整。 轉入(買進)新檔基金可依照基金公司下拉選單進行選取。 轉入(買進)新檔基金可依照基金代號選擇字母索引進行選取。 轉入(買進)之比例需為100%($5,000)。 確認轉入(買進)之基金標的。</p>
+<h3 id="介面設計過程"><a href="#介面設計過程" class="headerlink" title="介面設計過程"></a>介面設計過程</h3>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E5%9F%BA%E9%87%91%E8%AE%8A%E6%9B%B4%E6%8A%95%E8%B3%87%E6%A8%99%E7%9A%84%E8%BD%89%E6%8F%9B%E7%B3%BB%E7%B5%B1%E4%BB%8B%E9%9D%A2%E8%A8%AD%E8%A8%88/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E7%B7%9A%E4%B8%8A%E4%BF%9D%E5%96%AE%E5%80%9F%E6%AC%BE%E7%94%B3%E8%AB%8B%E7%B6%B2%E7%AB%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E7%B7%9A%E4%B8%8A%E4%BF%9D%E5%96%AE%E5%80%9F%E6%AC%BE%E7%94%B3%E8%AB%8B%E7%B6%B2%E7%AB%99/" class="post-title-link" itemprop="url">線上保單借款申請網站</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-11-09 11:19:26" itemprop="dateCreated datePublished" datetime="2010-11-09T11:19:26+08:00">2010-11-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E4%BD%BF%E7%94%A8%E8%80%85%E4%BB%8B%E9%9D%A2/" itemprop="url" rel="index"><span itemprop="name">使用者介面</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>189</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ul>
+<li>  日期：2010/10/15</li>
+<li>  用途：提供線上辦理保單借款作業</li>
+<li>  參與：系統操作流程規劃、視覺風格設計、介面設計、div/css</li>
+<li>  說明：為方便用戶使用保單借款作業，製作線上借款專區進行借款操作。主要的設計重點在於流程的規劃，以及與程式設計溝通說明需求單位之想法，將其化作為圖像ddddd，並將操作介面視覺化，降低使用上之困難度，增加線上借款之可用性。</li>
+</ul>
+<p>網站首頁 <img src="https://oberonlai.blog/wp-content/uploads/2010/11/01.jpg" alt="網站首頁"> 登入頁面 <img src="https://oberonlai.blog/wp-content/uploads/2010/11/02.jpg" alt="登入頁面"> 密碼變更 <img src="https://oberonlai.blog/wp-content/uploads/2010/11/032.jpg" alt="密碼變更"> 完成交易 <img src="https://oberonlai.blog/wp-content/uploads/2010/11/041.jpg" alt="完成交易"> 借款流程 <img src="https://oberonlai.blog/wp-content/uploads/2010/11/05.jpg" alt="借款流程"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E4%BD%90%E8%97%A4%E5%8F%AF%E5%A3%AB%E5%92%8C%E7%9A%84%E8%B6%85%E6%95%B4%E7%90%86%E8%A1%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E4%BD%90%E8%97%A4%E5%8F%AF%E5%A3%AB%E5%92%8C%E7%9A%84%E8%B6%85%E6%95%B4%E7%90%86%E8%A1%93/" class="post-title-link" itemprop="url">佐藤可士和的超整理術</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-11-08 13:14:54" itemprop="dateCreated datePublished" datetime="2010-11-08T13:14:54+08:00">2010-11-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://oberonlai.blog/wp-content/uploads/2010/11/kashiwa.jpg" alt="佐藤可士和的超整理術" title="佐藤可士和的超整理術"> 對於從事設計，需要處理大量資料，如果沒有辦法有一套整理的邏輯與方法，想必這設計師解決問題的能力一定會有所不足。書中提到的概念很簡單，設計就是找出問題，這案子就已經解決了一半，而這問題的答案，就一定藏在客戶的心中，當找出答案後，才是設計師發揮自我所學的地方， 因此依照這邏輯把設計過程拆成兩大半來開，上半場的發現問題，與下半場的設計執行。而此書乃是著重在上半場的問題發現，要發現客戶問題所在的方法，就是必需運用該書的主題─整理術。 本書主要把整理術分為三個階段： (1)空間整理術-設定優先排序 (2)資訊整理術-導入獨特觀點 (3)思考整理術-將思緒資訊化 (1)空間整理術：藉由從自身週遭的環境開始做起，將私人、辦公場所的物品，依照生活模式依重要性將其取捨，捨棄是與不安的奮鬥，印像最深刻的是看到他公司的辦公環境，桌上沒有半點東西，我以為是為了要拍照，才特地大整理一翻， 想不到他在書中提到，這樣就是他們的辦公環境，運用統一規格的容器，將瑣碎的物品放在一起，就可以簡化視覺上的感受，降低處理業務時的壓力，在自己實際執行的成果上，發現的確有助於降低視覺的疲勞， 以及清理掉不需要的垃圾，清爽的感覺有助於工作的安排，不會桌上亂成一團而感覺工作作不完，養成隨手物品歸位的習慣，讓桌面可長保清潔，在虛擬空間部份，將資料夾盡量減少巢狀結構，以同層即可一目了然為原則，如資料夾過多也可使用搜尋功能，空間整裡的目的在於對實際的物品做排序，以親身體會整理過後的舒暢感。 (2)資訊整理術：在整理物品的時候，為了要取捨，一定要有所依據，如果要取捨辦公用品，一定會考量說那些東西會常用到，這時候，”使用頻率”就決定了這些物品的死活，而”使用頻率”就是導入的觀點， 在整理資訊時，一定要導入觀點才能將資訊做安排，但在解決客戶問題時的觀點，必需要從不同的角度來處理，拋開自以為是，而導入觀點的目的就是要找出答案(遠景)，目前應用過的經驗，在於整理所搜集到的資訊，並分析其利弊後，提出自己的建議， 讓自己有變換觀點的能力。 (3)思考整理術：將思緒轉換成文字，自我檢視非常困難，先從觀察別人開始學起，冷靜客觀的觀察，紀錄關鍵字，再將關鍵字與以分類，導出主軸觀點，方法與資訊整理法雷同，這方面的自我體會尚無，練習將自己的想法語言化，寫日記或是部落格應該都是不錯的練習方法。 總結：該書對於行銷企劃、設計人員都非常適合閱讀，書中舉出了許多實際案例，一窺設計公司與客戶之間的溝通模式。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E6%84%9B%E3%80%82%E9%80%9A%E7%94%A8%E8%A8%AD%E8%A8%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E6%84%9B%E3%80%82%E9%80%9A%E7%94%A8%E8%A8%AD%E8%A8%88/" class="post-title-link" itemprop="url">愛。通用設計</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-10-29 01:07:25" itemprop="dateCreated datePublished" datetime="2010-10-29T01:07:25+08:00">2010-10-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>312</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://oberonlai.blog/wp-content/uploads/2010/10/UniversalDesign.jpg" alt="UniversalDesign"> 第一次接觸通用設計，這本書對我而言算是很不錯的入門書，不僅介紹了何謂通用設計，還舉出日常生活中比比皆是的小例子，進而再以設計面及企業面，來強調通用設計的重要性。 通用設計簡單說就是將設計產品儘可能的服務到目標客層中所有類型的人，譬如說可調整高低的兒童座椅，但重點是這是一種觀念，在邁入高齡化社會之餘，人人所需的觀念， 舉捷運博愛座的例子，我們需要的是禮讓有需要的旅客，而不是搞一個藍色超顯眼的座位，不僅造成所需座位者心理的負面感受，在上班巔峰時間有人寧願站著擠也不願被貼上我坐博愛座的標籤， 真正的通用設計，是一般人皆可使用，卻因為多了一些貼心小設計，讓原本不方便使用的人更好使用，盡可能為不同類型的人考量，這才是通用設計的真締。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/hp12/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/hp12/" class="post-title-link" itemprop="url">HP12-網站流量分析活動參後感</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-10-27 17:21:07" itemprop="dateCreated datePublished" datetime="2010-10-27T17:21:07+08:00">2010-10-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>2 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://oberonlai.blog/wp-content/uploads/2010/10/gaff.gif" alt="網站流量分析"> 今晚參與了<a target="_blank" rel="noopener" href="http://www.hpx-party.com/hpx-events/hp12">網站企劃輕鬆聚的第12次活動-網站流量分析</a>的活動，因為今天下班有點晚，再加上下雨天，稍微小小遲到了十分鐘，到現場時繳了報名費後，發現主持人是平常在攝影的Scaler，剛剛回到家後才知道網站企劃輕鬆聚的創辦人<a target="_blank" rel="noopener" href="http://www.facebook.com/frichard">Richard</a>，今晚因身體不適高掛免戰牌，希望他能早日康復。 今晚的主題，是我期待非常久的網站流量分析，之所以會期待，是因為之前在工作的時候，一直很想要把這樣的機制引入到公司網站的經營之中，藉此來驗證網站的實際使用情形，那時學習的管道，就是拜讀連啟佑先生所著一書「[網站績效分析與管理](<a target="_blank" rel="noopener" href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010329981">http://www.books.com.tw/exep/prod/booksfile.php?item=0010329981</a> target=)」， 那時邊看書邊摸索，從理解名詞，到如何呈現資料讓其他部門了解，都花了許多功夫在研究，尤其是在網路技術的問題上，碰到了許多瓶頸，因而向Richard進行求救，他也完全不吝嗇的給我許多直接的實務建議，因此從獨自的封閉學習，到今日有專門的聚會分享這個主題，當然要把握到機會，好好的給他偷學個夠， 這次一共邀請了<a target="_blank" rel="noopener" href="http://www.hpx-party.com/hpx-events/hp12">五位講者</a>，每位在實務上都有豐富的經驗，第一位的Jenny以B2B的角度來看待網站流量分析這門學問，讓我認識了MarCom這個專有名詞(Market and Communication)，業務範圍包含了各類行銷活動，包含B2B產業最常舉辦的參展，以及開記者會或是發新聞稿， 在網站的經營上，從曝光-&gt;訪客造訪-&gt;點擊率-&gt;詢問率-&gt;索取樣品-&gt;訂單，整個流程就像是一個漏斗，篩選到最關鍵的成交，都需檢視其成效，她加入公司的初期，正面臨網站改版的階段，透過了解公司產品以及各別部門溝通，重新規劃網站主題，並且放棄使用SEO效果差的flash網頁，透過量化的數據來呈現網站改版後的成果，讓老闆了解，並爭取更多的行銷資源。 Phoebe是我參加網站企劃讀書會的夥伴之一，她的經驗往往讓我大開眼界，因處於旅遊網站公司，所有的網站規劃都由她一人所負責，她一直在強調一個重點，就是先做了研究想清楚看清楚後，再執行的成果，往往會比趕著上架發現不敷使用再重做，來得省成本及時間， 從Google Analytics的流量來源中，她們發現產品頁的曝光率不足，因而產生了強調關鍵字的策略，最後從分析結果中得知流量的成長，發現問題→產生目的→研究策略→具體執行→檢視成效→發現問題，這是一個循環的過程，每個網站都可以透過這樣的步驟來調整修改，改善網站的瀏覽品質。 Laurence的分享生動逗趣，他以自己工作中實際會使用到GA的狀況，來做一說明。他強調GA的時間觀點非常重要，很多數據是要透過比較來了解其重要性，而且盡量使用四週當做時間維度，避開六日的低流量， 他以日前世界杯足球賽爆紅的的奶機妹為引子，從當初的創造名詞，到新聞媒體的大量報導，造成爆衝的網站流量，一切是因為掌握話題的創造，他解釋，因為他們是以新聞為內容的網站，範圍過廣，不像一般的專業網站有固定的關鍵字，因而他們決定以創造關鍵字來增加曝光， 除此之外，網站流量來源以社群顯得較為強勢，希望主打搜尋引擎的他們，便可透過這樣的資料來加強關鍵字的優化，而地區性的流量爆漲不是他們的重點，如果是搜尋引擎的流量成長，才是他們關注的焦點，不同類型的網站會有不一樣的關鍵指標。 透過推薦網站連結，會發現到常連到自己家的網站，通常都是屬於同性質的網站，甚至還會發現山寨網站；另外為了增加回應，從GA中得知plurk的來源居多，他們便使用plurk API，把plurk上的留言替代成網站中的回應內容，實際上去看後發現有點慢XD， 如果要用網站活動分析，一定要把頁面中的相同連結，設為不同的網址，不然GA會把所有一樣按鈕的點擊百分比，計算成一樣的比率。此外除了相當令人懷疑的Alexa以外，還有<a target="_blank" rel="noopener" href="http://www.google.com/trends">Google Trends</a>、<a target="_blank" rel="noopener" href="http://www.quantcast.com/">quantcast</a>等服務來觀察其它網站之流量概況。 接續的Hotrank也是令我大開眼界，原來國內也有如此專業的網站分析軟體開發公司，仔細回想，在很多台灣的網站中，可以看到有掛Hotrank的icon，他們是以網路媒體的角度為切入點，來進行流量統計，相較於GA的報表以及可自行設定參數，Hotrank提供較直接的資料來讓客戶了解網站流量結果，不用再自行設定。 而網頁停留時間一般的統計軟體是採用頁面差的時間，而且此數據應著重在停留的總時數，而不是平均值；網站統計最危險的就是陷入數據的迷思，好的分析是要依照業主的需求來做規劃，有些業主只求曝光度而不求轉換率就是最好的例子。 最後非常專業的小黑，從了解為何需要流量統計開始，原因是為得知網站使用情況、網站使用品質、轉換率及使用者習慣為出發點，關鍵績效指標應該是有時間性的相對百分比數據，譬如像是在上一個月中網站的瀏覽率提高了20%，帶來了30%的新訪客成長。 而GA可以下參數_setVar來區分使用者是訪客、會員還是客戶，再從自定報表中來檢視每種流量來源的轉換率，達到追縱的目標；此外，還可以使用<a target="_blank" rel="noopener" href="http://www.google.com/support/analytics/bin/answer.py?hl=en&answer=55578">URL Builder</a>，來針對無法辨識來源的情況下(MSN、PTT、yahoo關鍵字廣告)，來進行追縱。 透過這工具的使用，我們可以來測驗不同版本的廣告頁面所收到的成效，放置_UTM不同參數的連結，讓GA可以判別連結的來源，藉此達到廣告投放的追縱。 今晚因各位分享者實在太有料，讓整場時間稍微延後一點點，但無損於內容的精彩度，而今日所學到的觀念及工具，可立即應用在工作上，我想這是今晚最大的收穫，而透過各位的分享，未來如果在流量分析上碰到問題，看來有更多的高手可以求救了!</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88%E6%B5%81%E7%A8%8B%E4%B8%80%EF%BC%9A%E7%A0%94%E7%A9%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88%E6%B5%81%E7%A8%8B%E4%B8%80%EF%BC%9A%E7%A0%94%E7%A9%B6/" class="post-title-link" itemprop="url">資訊架構設計流程一：研究</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-10-25 15:19:57" itemprop="dateCreated datePublished" datetime="2010-10-25T15:19:57+08:00">2010-10-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E7%B6%B2%E7%AB%99%E4%BC%81%E5%8A%83/" itemprop="url" rel="index"><span itemprop="name">網站企劃</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>2 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>資訊架構設計流程概觀：研究&gt;策略&gt;設計&gt;實作&gt;管理。這些看似完美無缺的架構當中，對於有經驗的網站企劃者而言，彷彿只會出現在夢裡，要如何落實在工作過程中，必需靠的不只是理論，還有做人處事的道理。</p>
+<h3 id="理論難道真的只是理論"><a href="#理論難道真的只是理論" class="headerlink" title="理論難道真的只是理論?"></a>理論難道真的只是理論?</h3><p>非常多的網站，往往都是在傖促中蘊釀出來，原因不外乎是在公司草創階段，網站的角色只是輔助工具，縱使是以電子商務為主要營收之公司，內部也缺乏專業人才，最後通常以技術導向為出發點，開始進行網站架設的專案。特別是在傳統產業，老闆的直覺架設網站需要的就是技術，因而未將網站的發展策略納入公司營運方針中，最後變成雙頭馬車，各自為陣。 談到關於網路媒體的組織共識，不得不提到這次台北市市長選舉的蘇貞昌陣營所規劃的「新媒體部門」(本人僅就組織規劃為探討重點，無任何政治色彩)</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88%E6%B5%81%E7%A8%8B%E4%B8%80%EF%BC%9A%E7%A0%94%E7%A9%B6/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E4%B8%80%E6%B7%98%E7%B6%B2-%E6%8F%90%E4%BE%9B%E5%AE%8C%E6%95%B4%E8%B3%BC%E7%89%A9%E6%90%9C%E5%B0%8B%E9%AB%94%E9%A9%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E4%B8%80%E6%B7%98%E7%B6%B2-%E6%8F%90%E4%BE%9B%E5%AE%8C%E6%95%B4%E8%B3%BC%E7%89%A9%E6%90%9C%E5%B0%8B%E9%AB%94%E9%A9%97/" class="post-title-link" itemprop="url">一淘網-提供完整購物搜尋體驗</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-10-20 01:56:50" itemprop="dateCreated datePublished" datetime="2010-10-20T01:56:50+08:00">2010-10-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E4%BD%BF%E7%94%A8%E8%80%85%E4%BB%8B%E9%9D%A2/" itemprop="url" rel="index"><span itemprop="name">使用者介面</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>840</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="http://www.etao.com/"><img src="https://oberonlai.blog/wp-content/uploads/2010/10/011.jpg" alt="一淘網" title="一淘網"></a> 今日從Inside看到這篇<a target="_blank" rel="noopener" href="http://www.inside.com.tw/10/13/etao-com">電子商務大比較？一淘網(etao.com) VS. PChome EC搜尋</a> 看完之後覺得非常的開心，因為書中的理論真的有人把它實踐出來。 至於台灣的購物搜尋，使用上的體驗差了十萬八千里，先不提彙編詞彙的部份，在ec搜尋上找iphone4，結果要在第九筆才看的到!? 試回想才發現，以前在yahoo購物中心或拍賣也常常出現這樣的情況，現在才知道是因為根本就沒有做控制詞彙，以及對搜尋結果進行優化。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E4%B8%80%E6%B7%98%E7%B6%B2-%E6%8F%90%E4%BE%9B%E5%AE%8C%E6%95%B4%E8%B3%BC%E7%89%A9%E6%90%9C%E5%B0%8B%E9%AB%94%E9%A9%97/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/android-slide-screen-%E8%A6%96%E8%A6%BA%E5%8C%96%E8%B3%87%E8%A8%8A%E6%B5%81%E6%A1%8C%E9%9D%A2%E7%B3%BB%E7%B5%B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/android-slide-screen-%E8%A6%96%E8%A6%BA%E5%8C%96%E8%B3%87%E8%A8%8A%E6%B5%81%E6%A1%8C%E9%9D%A2%E7%B3%BB%E7%B5%B1/" class="post-title-link" itemprop="url">Android Slide Screen-視覺化資訊流桌面系統</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-10-14 15:58:32" itemprop="dateCreated datePublished" datetime="2010-10-14T15:58:32+08:00">2010-10-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E4%BD%BF%E7%94%A8%E8%80%85%E4%BB%8B%E9%9D%A2/" itemprop="url" rel="index"><span itemprop="name">使用者介面</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>3 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>之前要換手機時總在考慮Android OS，絕對不是因為用過一陣子的tattoo覺得它好用而習慣它，純粹只是因為沒有足夠的銀彈去砸iphone，曾經去門市試玩過HTC的Legend、Desire，以及Samsung的i9000，說真的，要花這樣的價格去買這樣永遠看起來都卡卡的介面，還不如再多貼幾千塊去享受iphone的流暢， 或是只花個幾千塊來把玩一下android OS!?所以最後我敗了這一支TWM T1 <a target="_blank" rel="noopener" href="http://goo.gl/AZBI"><img src="https://oberonlai.blog/wp-content/uploads/2010/10/mobile01-84486775aad3248aed31971d5529b3a2-e1287069608355.jpg" alt="twm t1" title="圖片來自mobile01"></a> 知道這支手機的人可能不多，當初續約加3990空機價入手，android 1.6，聽說和HTC Legend是同一顆CPU，在mobile01 actt大大等人的努力下，把這支絲毫不起眼的手機變成CP值超高的入門機種，甚至到後來小賣店還一度漲價兩到三成，現在因為T2出了，這支應該也已經停產了。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/android-slide-screen-%E8%A6%96%E8%A6%BA%E5%8C%96%E8%B3%87%E8%A8%8A%E6%B5%81%E6%A1%8C%E9%9D%A2%E7%B3%BB%E7%B5%B1/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/keywords-extending/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/keywords-extending/" class="post-title-link" itemprop="url">文件關鍵字的擴展及延伸</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2010-10-11 16:33:01" itemprop="dateCreated datePublished" datetime="2010-10-11T16:33:01+08:00">2010-10-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E7%B6%B2%E7%AB%99%E4%BC%81%E5%8A%83/" itemprop="url" rel="index"><span itemprop="name">網站企劃</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>1.網站資料文件已從如何歸類文件進化到如何描述文件。 2.舉凡可形容檔案特性之描述文件，均可稱作為中介資料，此等描述乃協助系統進行資料判別，譬如meta、title、alt等等描述性資料。 3.控制詞彙是指用來描述文件的整體系統，底下包含了同義詞環圈、權威檔案、分類體系、彙編詞彙。 3-1.同義詞環圈是指某個主題的平等同義字，譬如iphone4、iphone 4、apple、預購、破解、appstore等關鍵字，這些關鍵字中並無階層關係，它們的地位平等，一般網站的搜尋結果應該要可以提供同義詞環圈的搜尋結果，但為避免出現太多不相干結果，有兩種做法，其一是搜尋結果包含同義字環圈，再提供精確搜尋選項，另一種相反之，藉此避免搜尋結果太過模糊或是太少。 3-2.權威檔案指的是同義詞環圈中包含優先術語，譬如優先術語是iphone4，其變異述語就可能是iphone 4，這樣的發展架構是從某個特定的關鍵字進行延伸，但在實務中，非常難以決定何者為優先術語，因而會從關鍵字的流量來進行操作。 3-3.分類體系是把權威檔案中的優先術語進行階層分類，像是3C&gt;智慧型手機&gt;ipone4，使用者可以透過分類後的搜尋結果，來得到更多更大範圍的資訊。 3-4.彙編詞彙是結合上述所有關係的模式，再多增加對於優先術語的聯想，它包含階層式的較寬術語以及較窄術語，也有對等式的變異術語，更多了對於優先術語的聯想，譬如優先術語是iphone4，較寬術語就是智慧型手機，較窄術語是iphone4 32G，變異術語就是iphone 4、iphone，聯想就是上班族、富士康。而較窄術語又可以變成優先術語，再發展一套自己的彙編詞彙。彙編詞彙做越多，對於使用者的需求將能包含的更完整，進而提供更完善的使用者經驗。 4.彙編詞彙依照完整度分為三種類型：典型式、索引式、搜尋式，最佳情況為典型式，所有的變異術語均可對照到優先術語，並可提供索引、相關詞結果、分類階層結果，提供最豐富的搜尋體驗；索引式是在無法進行同義詞搜尋結果，而僅能建立優先術語索引的情況下，所產生的方式；而搜尋式可能是因網站內容由用戶產生而無法建立索引的情況下所產生的方式。 5.階層關系有三種子類型：分類子分類、整體不可分割、實例實體，如果是以汽車為比喻的話，分類子分類就是汽車的類型，像是休旅車、跑車、卡車；而整體不可分割的部份，就是引擎、輪胎等汽車零件，對於汽車而言，它是不能單獨拆開販售的，汽車有這些零件才是一台完整的汽車：實例實體就是真正的汽車品牌，像是toyota的wish。 6.聯想關係也有許多子類別：研究領域及研究對象-心臟病學 心藏；程序及其媒介-白蟻防治 農藥；概念及其屬性-毒物 毒性；行動及行動之產物-飲食 消化不良；因果關系-節慶 除夕夜。 控制詞彙整體對內部而言，可以是溝通時的參考依據，以及對於文件的系統化管理工具，對外部而言，則是關鍵字行銷的策略地圖，無論功能為何，它提供了一種思考模式，讓人或系統更能了解對於文件的認識，但在實務經驗中，甚少對於該領域的知識，目前僅有同義詞環圈較為普遍，此作法乃是使用tag的方式來幫文章下標籤，如能提供更完整的彙編詞彙，將有助於使用者經驗。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/tw/page/14/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/tw/">1</a><span class="space">&hellip;</span><a class="page-number" href="/tw/page/14/">14</a><span class="page-number current">15</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="賴俊吾 / Oberon Lai"
+      src="/tw/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">賴俊吾 / Oberon Lai</p>
+  <div class="site-description" itemprop="description">現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/tw/archives">
+          <span class="site-state-item-count">291</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/tw/categories/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tw/tags/">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/oberonlai" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:m615926@gmail.com" title="E-Mail → mailto:m615926@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/oberonlai" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/m615926" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;m615926" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">賴俊吾 / Oberon Lai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">740k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:13</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/tw/lib/anime.min.js"></script>
+  <script src="/tw/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+
+<script src="/tw/js/utils.js"></script>
+
+
+<script src="/tw/js/schemes/muse.js"></script>
+
+
+<script src="/tw/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/tw/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

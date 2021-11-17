@@ -1,0 +1,74 @@
+// Header
+// --------------------------------------------------
+.header {
+  background: #f2f5f7;
+  background: url('../images/img-banner.jpg') 0% 50%;
+  background-size: cover;
+  padding: 3rem 0;
+}
+
+.header-inner {
+  padding: 20px 0;
+
+  +mobile() {
+    display: block;
+    padding: 10px 0;
+    width: auto;
+  }
+}
+
+.site-meta {
+  line-height: normal;
+
+  .brand {
+    padding: 2px 1px;
+
+    +mobile() {
+      display: block;
+    }
+  }
+
+  .site-title {
+    font-weight: bolder;
+  }
+}
+
+.logo-line-before, .logo-line-after {
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 75%;
+
+  +mobile() {
+    display: none;
+  }
+
+  i {
+    background: var(--brand-color);
+    display: block;
+    height: 2px;
+    position: relative;
+  }
+}
+
+.use-motion {
+  .logo-line-before i {
+    left: -100%;
+  }
+
+  .logo-line-after i {
+    right: -100%;
+  }
+}
+
+.site-subtitle {
+  display: none;
+}
+
+.logo-img {
+  width: 250px; 
+  margin: 0 auto;
+  +mobile() {
+    width: 200px;
+  }
+}

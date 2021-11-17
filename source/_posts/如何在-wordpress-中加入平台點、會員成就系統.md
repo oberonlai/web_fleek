@@ -1,0 +1,12 @@
+---
+title: 如何在 WordPress 中加入平台點、會員成就系統
+tags: []
+id: '3288'
+categories:
+  - - WordPress
+date: 2018-01-11 10:12:58
+---
+
+現在多數的平台為了讓會員更有向心力或是提升黏著度，採取遊戲化的會員機制已經是越來越常見了，但對不懂程式的朋友來說要從無到有設計這樣的機制難度頗高，幸好有偉大的 WordPress 社群開發了這樣的功能，GamiPress 就是專門提供遊戲化機制的外掛，它可以做平台點數、會員成就、會員排名等三大功能，外掛本身免費，還可以加購他們所開發的延伸外掛，像是使用平台點數購買商品，或讓會員可以直接用現金儲值取得平台點數等等的附加功能，非常適合想要提供會員成就系統的網站使用。
+<!-- more -->
+  \[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1553241031449562" display="yes" title="5aaC5L2V5ZyoIFdvcmRQcmVzcyDkuK3liqDlhaXlubPlj7Dpu57jgIHmnIPlk6HmiJDlsLHns7vntbE=" body="54++5Zyo5aSa5pW455qE5bmz5Y+w54K65LqG6K6T5pyD5ZOh5pu05pyJ5ZCR5b+D5Yqb5oiW5piv5o+Q5Y2H6buP6JGX5bqm77yM5o6h5Y+W6YGK5oiy5YyW55qE5pyD5ZOh5qmf5Yi25bey57aT5piv6LaK5L6G6LaK5bi46KaL5LqG77yM5L2G5bCN5LiN5oeC56iL5byP55qE5pyL5Y+L5L6G6Kqq6KaB5b6e54Sh5Yiw5pyJ6Kit6KiI6YCZ5qij55qE5qmf5Yi26Zuj5bqm6aCX6auY77yM5bm45aW95pyJ5YGJ5aSn55qEIFdvcmRQcmVzcyDnpL7nvqTplovnmbzkuobpgJnmqKPnmoTlip/og73vvIxHYW1pUHJlc3Mg5bCx5piv5bCI6ZaA5o+Q5L6b6YGK5oiy5YyW5qmf5Yi255qE5aSW5o6b77yM5a6D5Y+v5Lul5YGa5bmz5Y+w6bue5pW444CB5pyD5ZOh5oiQ5bCx44CB5pyD5ZOh5o6S5ZCN562J5LiJ5aSn5Yqf6IO977yM5aSW5o6b5pys6Lqr5YWN6LK777yM6YKE5Y+v5Lul5Yqg6LO85LuW5YCR5omA6ZaL55m855qE5bu25Ly45aSW5o6b77yM5YOP5piv5L2/55So5bmz5Y+w6bue5pW46LO86LK35ZWG5ZOB77yM5oiW6K6T5pyD5ZOh5Y+v5Lul55u05o6l55So54++6YeR5YSy5YC85Y+W5b6X5bmz5Y+w6bue5pW4562J562J55qE6ZmE5Yqg5Yqf6IO977yM6Z2e5bi46YGp5ZCI5oOz6KaB5o+Q5L6b5pyD5ZOh5oiQ5bCx57O757Wx55qE57ay56uZ5L2/55So44CC" pid="3288"\]

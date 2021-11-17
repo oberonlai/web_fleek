@@ -1,0 +1,12 @@
+---
+title: WooCommerce 運費條件外掛
+tags: []
+id: '3380'
+categories:
+  - - WordPress
+date: 2018-04-19 12:00:15
+---
+
+在預設情況下，WooCommerce 只能針對消費金額用折價券的方式做免運費的優惠，如果想要用其它的條件來做就沒辦法了，而 WooCommerce Advanced Free Shipping 這支外掛就是一套很不錯的解決方案。它除了可以針對金額來免運外，還可以用商品的購買數量、長寬或是庫存量、消費者的購買地區、會員等級等多達近二十種的條件來判斷是否需提供免運費，是一套加強 WooCommerce 免運功能的好用工具！
+
+\[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1654511057989225" display="yes" title="V29vQ29tbWVyY2Ug6YGL6LK75qKd5Lu25aSW5o6b" body="5Zyo6aCQ6Kit5oOF5rOB5LiL77yMV29vQ29tbWVyY2Ug5Y+q6IO96Yed5bCN5raI6LK76YeR6aGN55So5oqY5YO55Yi455qE5pa55byP5YGa5YWN6YGL6LK755qE5YSq5oOg77yM5aaC5p6c5oOz6KaB55So5YW25a6D55qE5qKd5Lu25L6G5YGa5bCx5rKS6L6m5rOV5LqG77yM6ICMIFdvb0NvbW1lcmNlIEFkdmFuY2VkIEZyZWUgU2hpcHBpbmcg6YCZ5pSv5aSW5o6b5bCx5piv5LiA5aWX5b6I5LiN6Yyv55qE6Kej5rG65pa55qGI44CC5a6D6Zmk5LqG5Y+v5Lul6Yed5bCN6YeR6aGN5L6G5YWN6YGL5aSW77yM6YKE5Y+v5Lul55So5ZWG5ZOB55qE6LO86LK35pW46YeP44CB6ZW35a+s5oiW5piv5bqr5a2Y6YeP44CB5raI6LK76ICF55qE6LO86LK35Zyw5Y2A44CB5pyD5ZOh562J57Sa562J5aSa6YGU6L+R5LqM5Y2B56iu55qE5qKd5Lu25L6G5Yik5pa35piv5ZCm6ZyA5o+Q5L6b5YWN6YGL6LK777yM5piv5LiA5aWX5Yqg5by3IFdvb0NvbW1lcmNlIOWFjemBi+WKn+iDveeahOWlveeUqOW3peWFt++8gQ==" pid="3380"\]

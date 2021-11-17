@@ -1,0 +1,49 @@
+// Menu
+// --------------------------------------------------
+.site-nav {
+  
+
+  +mobile() {
+    padding: 10px 10px 0;
+  }
+}
+
+.menu {
+  margin: 15px 0 0 0;
+  padding: 15px 0 0 0;
+
+  .menu-item {
+    margin: 0;
+
+    +mobile() {
+      margin-top: 5px;
+    }
+
+    a, span.exturl {
+      border-radius: 2px;
+      padding: 0 10px;
+      transition-property: background;
+      font-size: 1rem;
+
+      +mobile() {
+        text-align: left;
+      }
+
+      &:hover {
+        @extend .menu-item-active a;
+      }
+    }
+
+    .badge {
+      background: white;
+      border-radius: 10px;
+      color: $black-light;
+      padding: 1px 4px;
+      text-shadow: 1px 1px 0 rgba(0, 0, 0, .1);
+    }
+  }
+}
+
+.menu-item-active a, .menu .menu-item a:hover, .menu .menu-item span.exturl:hover {
+  background: #ebeee7;
+}

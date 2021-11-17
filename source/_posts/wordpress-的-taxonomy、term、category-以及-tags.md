@@ -1,0 +1,12 @@
+---
+title: WordPress 的 Taxonomy、Term、Category 以及 Tags
+tags: []
+id: '3115'
+categories:
+  - - WordPress
+date: 2017-10-24 11:50:46
+---
+
+  通常在開發佈景主題時會需要用到新的文章類型，像是 Portfolio 或是 Gallery，它們可以擁有自己的分類，而這個分類的基礎系統統稱為 Taxonomy，像是 Post 的 Taxonomy 預設叫做 category，Portfolio 的 Taxonomy 可以任意命名像是 type，Gallery 的 Taxonomy 可以任意命名像是 album，因為 Taxonomy 跟 category 中文都叫做分類，所以很容易混淆，只要記得 Taxonomy 是所有分類的母體，其它就是它的延伸。至於 Term 則是 Taxonomy 延伸分類的項目，如果以文章 category 來說，term 就是文章的分類項目，也就是在後台可以直接新增的文章分類，而 category (文章分類) 跟 tags (標籤) 的差異性在於前者能擁有子分類，而標籤只有單一層級。
+<!-- more -->
+  \[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1477388612368138" display="yes" title="V29yZFByZXNzIOeahCBUYXhvbm9teeOAgVRlcm3jgIFDYXRlZ29yeSDku6Xlj4ogVGFncw==" body="6YCa5bi45Zyo6ZaL55m85L2I5pmv5Li76aGM5pmC5pyD6ZyA6KaB55So5Yiw5paw55qE5paH56ug6aGe5Z6L77yM5YOP5pivIFBvcnRmb2xpbyDmiJbmmK8gR2FsbGVyee+8jOWug+WAkeWPr+S7peaTgeacieiHquW3seeahOWIhumhnu+8jOiAjOmAmeWAi+WIhumhnueahOWfuuekjuezu+e1see1seeoseeCuiBUYXhvbm9tee+8jOWDj+aYryBQb3N0IOeahCBUYXhvbm9teSDpoJDoqK3lj6vlgZogY2F0ZWdvcnnvvIxQb3J0Zm9saW8g55qEIFRheG9ub215IOWPr+S7peS7u+aEj+WRveWQjeWDj+aYryB0eXBl77yMR2FsbGVyeSDnmoQgVGF4b25vbXkg5Y+v5Lul5Lu75oSP5ZG95ZCN5YOP5pivIGFsYnVt77yM5Zug54K6IFRheG9ub215IOi3nyBjYXRlZ29yeSDkuK3mlofpg73lj6vlgZrliIbpoZ7vvIzmiYDku6XlvojlrrnmmJPmt7fmt4bvvIzlj6ropoHoqJjlvpcgVGF4b25vbXkg5piv5omA5pyJ5YiG6aGe55qE5q+N6auU77yM5YW25a6D5bCx5piv5a6D55qE5bu25Ly444CC6Iez5pa8IFRlcm0g5YmH5pivIFRheG9ub215IOW7tuS8uOWIhumhnueahOmgheebru+8jOWmguaenOS7peaWh+eroCBjYXRlZ29yeSDkvoboqqrvvIx0ZXJtIOWwseaYr+aWh+eroOeahOWIhumhnumgheebru+8jOS5n+WwseaYr+WcqOW+jOWPsOWPr+S7peebtOaOpeaWsOWinueahOaWh+eroOWIhumhnu+8jOiAjCBjYXRlZ29yeSAo5paH56ug5YiG6aGeKSDot58gdGFncyAo5qiZ57GkKSDnmoTlt67nlbDmgKflnKjmlrzliY3ogIXog73mk4HmnInlrZDliIbpoZ7vvIzogIzmqJnnsaTlj6rmnInllq7kuIDlsaTntJrjgII=" pid="3115"\]

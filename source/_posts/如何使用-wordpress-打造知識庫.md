@@ -1,0 +1,12 @@
+---
+title: 如何使用 WordPress 打造知識庫
+tags: []
+id: '3038'
+categories:
+  - - WordPress
+date: 2017-09-12 11:19:55
+---
+
+如果公司內部有客服部門，想必每天都為了客人一樣的問題被重覆詢問，這時有線上知識庫的話，就可以請客人先去查看看有沒有他需要的資訊，以降低客服人員的時間成本。使用 WordPress 有很多方式可以設計一套知識庫，可以用建立文章的方式來彙整客人常用的問題，然後搭配站內搜尋外掛來提供更完整的搜尋體驗，或是直接使用文內所介紹的外掛，把專門做知識庫的內容與文章分隔開來。
+
+\[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1441339095973090" display="yes" title="5aaC5L2V5L2/55SoIFdvcmRQcmVzcyDmiZPpgKDnn6XorZjluqs=" body="5aaC5p6c5YWs5Y+45YWn6YOo5pyJ5a6i5pyN6YOo6ZaA77yM5oOz5b+F5q+P5aSp6YO954K65LqG5a6i5Lq65LiA5qij55qE5ZWP6aGM6KKr6YeN6KaG6Kmi5ZWP77yM6YCZ5pmC5pyJ57ea5LiK55+l6K2Y5bqr55qE6Kmx77yM5bCx5Y+v5Lul6KuL5a6i5Lq65YWI5Y675p+l55yL55yL5pyJ5rKS5pyJ5LuW6ZyA6KaB55qE6LOH6KiK77yM5Lul6ZmN5L2O5a6i5pyN5Lq65ZOh55qE5pmC6ZaT5oiQ5pys44CC5L2/55SoIFdvcmRQcmVzcyDmnInlvojlpJrmlrnlvI/lj6/ku6XoqK3oqIjkuIDlpZfnn6XorZjluqvvvIzlj6/ku6XnlKjlu7rnq4vmlofnq6DnmoTmlrnlvI/kvoblvZnmlbTlrqLkurrluLjnlKjnmoTllY/poYzvvIznhLblvozmkK3phY3nq5nlhafmkJzlsIvlpJbmjpvkvobmj5Dkvpvmm7TlrozmlbTnmoTmkJzlsIvpq5TpqZfvvIzmiJbmmK/nm7TmjqXkvb/nlKjmloflhafmiYDku4vntLnnmoTlpJbmjpvvvIzmiorlsIjploDlgZrnn6XorZjluqvnmoTlhaflrrnoiIfmlofnq6DliIbpmpTplovkvobjgII=" pid="3038"\]

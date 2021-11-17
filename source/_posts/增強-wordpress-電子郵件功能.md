@@ -1,0 +1,12 @@
+---
+title: 增強 WordPress 電子郵件功能
+tags: []
+id: '3358'
+categories:
+  - - WordPress
+date: 2018-02-23 11:39:45
+---
+
+WordPress 的預設電子郵件通知類型較少，而且也自訂電子郵件的內容對於不懂程式的朋友會有一定的難度，Better Notification for WordPress 這支外掛可以針對十幾種情境來發送 email 給需要通知的對象，包含新文章發佈、文章更新、新分類、新增頁面等等，此外還有提供多種欄位的 shortcode 把站內資訊加入到 email 之中，還有提供編輯器介面來設計郵件，讓你可以打造符合企業形象的電子郵件，付費版提供更多的發信情境，巧妙運用能設計出與用戶意想不到的互動方式。
+<!-- more -->
+  \[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1596932693747062" display="yes" title="5aKe5by3IFdvcmRQcmVzcyDpm7vlrZDpg7Xku7blip/og70=" body="V29yZFByZXNzIOeahOmgkOiorembu+WtkOmDteS7tumAmuefpemhnuWei+i8g+Wwke+8jOiAjOS4lOS5n+iHquiogumbu+WtkOmDteS7tueahOWFp+WuueWwjeaWvOS4jeaHgueoi+W8j+eahOaci+WPi+acg+acieS4gOWumueahOmbo+W6pu+8jEJldHRlciBOb3RpZmljYXRpb24gZm9yIFdvcmRQcmVzcyDpgJnmlK/lpJbmjpvlj6/ku6Xph53lsI3ljYHlub7nqK7mg4XlooPkvobnmbzpgIEgZW1haWwg57Wm6ZyA6KaB6YCa55+l55qE5bCN6LGh77yM5YyF5ZCr5paw5paH56ug55m85L2I44CB5paH56ug5pu05paw44CB5paw5YiG6aGe44CB5paw5aKe6aCB6Z2i562J562J77yM5q2k5aSW6YKE5pyJ5o+Q5L6b5aSa56iu5qyE5L2N55qEIHNob3J0Y29kZSDmiornq5nlhafos4foqIrliqDlhaXliLAgZW1haWwg5LmL5Lit77yM6YKE5pyJ5o+Q5L6b57eo6Lyv5Zmo5LuL6Z2i5L6G6Kit6KiI6YO15Lu277yM6K6T5L2g5Y+v5Lul5omT6YCg56ym5ZCI5LyB5qWt5b2i6LGh55qE6Zu75a2Q6YO15Lu277yM5LuY6LK754mI5o+Q5L6b5pu05aSa55qE55m85L+h5oOF5aKD77yM5ben5aaZ6YGL55So6IO96Kit6KiI5Ye66IiH55So5oi25oSP5oOz5LiN5Yiw55qE5LqS5YuV5pa55byP44CC" pid="3358"\]

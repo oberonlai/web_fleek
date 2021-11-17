@@ -1,0 +1,12 @@
+---
+title: 如何在 WordPress 網站中提供會員刪除帳號的功能
+tags: []
+id: '3356'
+categories:
+  - - WordPress
+date: 2018-02-22 12:38:11
+---
+
+在一般情況下，網站通常只有註冊、加入會員的機制，很少看到能退出會員、刪除帳號的功能，在尊重會員隱私以及提供更友善的使用體驗下，加入刪除帳號的功能是個不錯的選擇，也可以在刪除前做問卷調查，蒐集會員流失的原因進而改善，這比留著一堆沒有互動的殭屍會員來得更有意義。這篇文章介紹了兩支外掛來做這功能，需要整理會員名單的朋友可以參考看看～
+<!-- more -->
+  \[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1595873013853030" display="yes" title="5aaC5L2V5ZyoIFdvcmRQcmVzcyDntrLnq5nkuK3mj5DkvpvmnIPlk6HliKrpmaTluLPomZ/nmoTlip/og70=" body="5Zyo5LiA6Iis5oOF5rOB5LiL77yM57ay56uZ6YCa5bi45Y+q5pyJ6Ki75YaK44CB5Yqg5YWl5pyD5ZOh55qE5qmf5Yi277yM5b6I5bCR55yL5Yiw6IO96YCA5Ye65pyD5ZOh44CB5Yiq6Zmk5biz6Jmf55qE5Yqf6IO977yM5Zyo5bCK6YeN5pyD5ZOh6Zqx56eB5Lul5Y+K5o+Q5L6b5pu05Y+L5ZaE55qE5L2/55So6auU6amX5LiL77yM5Yqg5YWl5Yiq6Zmk5biz6Jmf55qE5Yqf6IO95piv5YCL5LiN6Yyv55qE6YG45pOH77yM5Lmf5Y+v5Lul5Zyo5Yiq6Zmk5YmN5YGa5ZWP5Y236Kq/5p+l77yM6JKQ6ZuG5pyD5ZOh5rWB5aSx55qE5Y6f5Zug6YCy6ICM5pS55ZaE77yM6YCZ5q+U55WZ6JGX5LiA5aCG5rKS5pyJ5LqS5YuV55qE5q6t5bGN5pyD5ZOh5L6G5b6X5pu05pyJ5oSP576p44CC6YCZ56+H5paH56ug5LuL57S55LqG5YWp5pSv5aSW5o6b5L6G5YGa6YCZ5Yqf6IO977yM6ZyA6KaB5pW055CG5pyD5ZOh5ZCN5Zau55qE5pyL5Y+L5Y+v5Lul5Y+D6ICD55yL55yL772e" pid="3356"\]

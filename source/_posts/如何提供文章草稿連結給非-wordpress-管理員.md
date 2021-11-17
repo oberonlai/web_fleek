@@ -1,0 +1,12 @@
+---
+title: 如何提供文章草稿連結給非 WordPress 管理員
+tags: []
+id: '3136'
+categories:
+  - - WordPress
+date: 2017-11-03 12:43:36
+---
+
+  有時候在更新網站時，會遇到需要審稿的狀態，如果是寫手產出的內容，還可以藉由編輯或管理者來進行審稿，但有時如果是非網站管理員像是老闆或是外部的合作廠商，也想先預覽一下文章，幫他們開帳號再請他們登入後台查看這難度有點高，這時就可以使用 Public Post Preview 這支外掛來產出外部預覽連結，只要勾選 Enable Public Preview 就能快速產出，當外部人員確認無誤後再取消勾選即可，下面這篇文章也提供如何設定連結的有效時間，當超過一定時間後自動讓外部預覽連結失效。
+<!-- more -->
+  \[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1486852114755121" display="yes" title="5aaC5L2V5o+Q5L6b5paH56ug6I2J56i/6YCj57WQ57Wm6Z2eIFdvcmRQcmVzcyDnrqHnkIblk6E=" body="5pyJ5pmC5YCZ5Zyo5pu05paw57ay56uZ5pmC77yM5pyD6YGH5Yiw6ZyA6KaB5a+p56i/55qE54uA5oWL77yM5aaC5p6c5piv5a+r5omL55Si5Ye655qE5YWn5a6577yM6YKE5Y+v5Lul6JeJ55Sx57eo6Lyv5oiW566h55CG6ICF5L6G6YCy6KGM5a+p56i/77yM5L2G5pyJ5pmC5aaC5p6c5piv6Z2e57ay56uZ566h55CG5ZOh5YOP5piv6ICB6ZeG5oiW5piv5aSW6YOo55qE5ZCI5L2c5bug5ZWG77yM5Lmf5oOz5YWI6aCQ6Ka95LiA5LiL5paH56ug77yM5bmr5LuW5YCR6ZaL5biz6Jmf5YaN6KuL5LuW5YCR55m75YWl5b6M5Y+w5p+l55yL6YCZ6Zuj5bqm5pyJ6bue6auY77yM6YCZ5pmC5bCx5Y+v5Lul5L2/55SoIFB1YmxpYyBQb3N0IFByZXZpZXcg6YCZ5pSv5aSW5o6b5L6G55Si5Ye65aSW6YOo6aCQ6Ka96YCj57WQ77yM5Y+q6KaB5Yu+6YG4IEVuYWJsZSBQdWJsaWMgUHJldmlldyDlsLHog73lv6vpgJ/nlKLlh7rvvIznlbblpJbpg6jkurrlk6Hnorroqo3nhKHoqqTlvozlho3lj5bmtojli77pgbjljbPlj6/vvIzkuIvpnaLpgJnnr4fmlofnq6DkuZ/mj5DkvpvlpoLkvZXoqK3lrprpgKPntZDnmoTmnInmlYjmmYLplpPvvIznlbbotoXpgY7kuIDlrprmmYLplpPlvozoh6rli5XorpPlpJbpg6jpoJDopr3pgKPntZDlpLHmlYjjgII=" pid="3136"\]

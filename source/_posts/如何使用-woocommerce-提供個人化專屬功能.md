@@ -1,0 +1,12 @@
+---
+title: 如何使用 WooCommerce 提供個人化專屬功能
+tags: []
+id: '3145'
+categories:
+  - - WordPress
+date: 2017-11-08 14:25:27
+---
+
+購物網站提供個人化的專屬訊息更能有效能提升購買率，本文分享了四種方法並提供相對應的外掛或是程式修改方法，包含根據購買清單提供個人化的商品推薦、個人化的顯示訊息、根據客戶行為來給予折價券、販售個人化商品等，更進階的還可以透過瀏覽、銷售數據來提供折扣，但要小心過於個人化的功能要避免讓客戶覺得隱私受到侵犯，尊重客戶的意願才是服務的第一優先。
+
+\[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1491795330927466" display="yes" title="5aaC5L2V5L2/55SoIFdvb0NvbW1lcmNlIOaPkOS+m+WAi+S6uuWMluWwiOWxrOWKn+iDvQ==" body="6LO854mp57ay56uZ5o+Q5L6b5YCL5Lq65YyW55qE5bCI5bGs6KiK5oGv5pu06IO95pyJ5pWI6IO95o+Q5Y2H6LO86LK3546H77yM5pys5paH5YiG5Lqr5LqG5Zub56iu5pa55rOV5Lim5o+Q5L6b55u45bCN5oeJ55qE5aSW5o6b5oiW5piv56iL5byP5L+u5pS55pa55rOV77yM5YyF5ZCr5qC55pOa6LO86LK35riF5Zau5o+Q5L6b5YCL5Lq65YyW55qE5ZWG5ZOB5o6o6Jam44CB5YCL5Lq65YyW55qE6aGv56S66KiK5oGv44CB5qC55pOa5a6i5oi26KGM54K65L6G57Wm5LqI5oqY5YO55Yi444CB6LKp5ZSu5YCL5Lq65YyW5ZWG5ZOB562J77yM5pu06YCy6ZqO55qE6YKE5Y+v5Lul6YCP6YGO54CP6Ka944CB6Yq35ZSu5pW45pOa5L6G5o+Q5L6b5oqY5omj77yM5L2G6KaB5bCP5b+D6YGO5pa85YCL5Lq65YyW55qE5Yqf6IO96KaB6YG/5YWN6K6T5a6i5oi26Ka65b6X6Zqx56eB5Y+X5Yiw5L6154qv77yM5bCK6YeN5a6i5oi255qE5oSP6aGY5omN5piv5pyN5YuZ55qE56ys5LiA5YSq5YWI44CC" pid="3145"\]

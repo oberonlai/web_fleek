@@ -1,0 +1,10 @@
+---
+title: 企業集團形象網站設計風格參考
+tags: []
+id: '1116'
+categories:
+  - - 網站企劃
+date: 2013-09-08 11:46:27
+---
+
+[![web02-1](https://oberonlai.blog/wp-content/uploads/2013/09/web02-1-1024x511.jpg)](https://oberonlai.blog/wp-content/uploads/2013/09/web02-1.jpg) 以企業內、外部形象圖片作為網站主視覺，直接展示集團各公司業務內容。 [http://www.sj-fukuoka.or.jp/](http://www.sj-fukuoka.or.jp/)     [![web03](https://oberonlai.blog/wp-content/uploads/2013/09/web03-1024x511.jpg)](https://oberonlai.blog/wp-content/uploads/2013/09/web03.jpg) 透過插畫元素呈現集團子公司，利用透視法交錯象徵集團核心。 [http://www.bandainamco-ba.co.jp/](http://www.bandainamco-ba.co.jp/)     [![web04](https://oberonlai.blog/wp-content/uploads/2013/09/web04-1024x511.jpg)](https://oberonlai.blog/wp-content/uploads/2013/09/web04.jpg) 以企業標誌延伸網站主視覺，達成整體一致性。 [http://dbrain.co.jp/](http://dbrain.co.jp/)     [![web05](https://oberonlai.blog/wp-content/uploads/2013/09/web05-1024x511.jpg)](https://oberonlai.blog/wp-content/uploads/2013/09/web05.jpg) 以案例作品為主，並針對作品所露出之媒介設計相關之呈現元素。 [http://higherandhigher.com/](http://higherandhigher.com/)     [![web06-1](https://oberonlai.blog/wp-content/uploads/2013/09/web06-1-1024x511.jpg)](https://oberonlai.blog/wp-content/uploads/2013/09/web06-1.jpg) 以案例圖像為主，並輔以輪播動畫增加畫面豐富性。 [http://www.vin-blue.com/](http://www.vin-blue.com/)     [![web07](https://oberonlai.blog/wp-content/uploads/2013/09/web07-1024x511.jpg)](https://oberonlai.blog/wp-content/uploads/2013/09/web07.jpg) 以滿版圖像為主，左方編號可切換子公司代表性案例或形象圖片。 [http://www.thailandtravel.or.jp/zooming/](http://www.thailandtravel.or.jp/zooming/)     [![web08-1](https://oberonlai.blog/wp-content/uploads/2013/09/web08-1-1024x511.jpg)](https://oberonlai.blog/wp-content/uploads/2013/09/web08-1.jpg) 以文案為主的視覺風格，下方搭配案例小圖。 [http://ikebe-a.com/](http://ikebe-a.com/)     [![web09](https://oberonlai.blog/wp-content/uploads/2013/09/web09-1024x511.jpg)](https://oberonlai.blog/wp-content/uploads/2013/09/web09.jpg) 以單頁式頁面介紹企業資訊，搭配捲軸滾動呈現互動式動畫效果。 [http://adamrudzki.com/](http://adamrudzki.com/)

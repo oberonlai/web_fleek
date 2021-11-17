@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/tw/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/tw/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/tw/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/tw/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/tw/css/main.css">
+
+
+<link rel="stylesheet" href="/tw/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oberonlai.blog","root":"/tw/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideDownIn","sidebar":"slideDownIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="第一次完整學習 HTML 是在剛入行的時候，算一算也有十幾個年頭了，這些日子以來，對於 HTML5 只有著片段的知識，每當卡關去爬 Stackoverflow 時，才會驚訝的發現原來還有這些新東西可以用，所以在圖書館看到這本時，應該是老天爺叫我要好好的來重新認識 HTML 了。 看完幾個章節以後，有一種在看說明書的感覺。就像電器用品一樣，不用看說明書就可以用得順手，然後哪天在整理東西時發現冷氣">
+<meta property="og:type" content="article">
+<meta property="og:title" content="從新學習HTML5 (一) 概觀">
+<meta property="og:url" content="https://oberonlai.blog/tw/html5-intro/">
+<meta property="og:site_name" content="WordPress 開發日常">
+<meta property="og:description" content="第一次完整學習 HTML 是在剛入行的時候，算一算也有十幾個年頭了，這些日子以來，對於 HTML5 只有著片段的知識，每當卡關去爬 Stackoverflow 時，才會驚訝的發現原來還有這些新東西可以用，所以在圖書館看到這本時，應該是老天爺叫我要好好的來重新認識 HTML 了。 看完幾個章節以後，有一種在看說明書的感覺。就像電器用品一樣，不用看說明書就可以用得順手，然後哪天在整理東西時發現冷氣">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://i2.wp.com/oberonlai.blog/wp-content/uploads/2019/03/IMG_7996.jpg">
+<meta property="og:image" content="https://i1.wp.com/oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-11-at-21.54.26.jpg?ssl=1">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-09-at-21.55.24.png">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-09-at-21.55.55.png">
+<meta property="article:published_time" content="2019-03-11T14:04:24.000Z">
+<meta property="article:modified_time" content="2021-05-01T02:12:39.702Z">
+<meta property="article:author" content="賴俊吾 &#x2F; Oberon Lai">
+<meta property="article:tag" content="WordPress,PHP,WordPress 外掛開發,WordPress 佈景主題開發,WordPress 工程師,敏捷接案,時薪計價,專案管理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i2.wp.com/oberonlai.blog/wp-content/uploads/2019/03/IMG_7996.jpg">
+<meta property="og:image" content="/tw/images/og-img.jpg" />
+
+<link rel="canonical" href="https://oberonlai.blog/tw/html5-intro/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>從新學習HTML5 (一) 概觀 | WordPress 開發日常</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163107142-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-163107142-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/tw/" class="brand" rel="start" style="display: block">
+        <img class="logo-img" src="/tw/images/logo-w.svg" alt="WordPress 開發日常">
+    </a>
+      <p class="site-subtitle" itemprop="description">有任何 WordPress 客製需求歡迎與我聯絡！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-關於我">
+
+    <a href="/tw/about/" rel="section">關於我</a>
+
+  </li>
+        <li class="menu-item menu-item-合作方式">
+
+    <a href="/tw/how-can-oberon-help-you/" rel="section">合作方式</a>
+
+  </li>
+        <li class="menu-item menu-item-計價方式">
+
+    <a href="/tw/how-do-i-make-a-quotation/" rel="section">計價方式</a>
+
+  </li>
+        <li class="menu-item menu-item-學習-wordpress">
+
+    <a href="/tw/wordpress-full-stack/" rel="section">學習 WordPress</a>
+
+  </li>
+        <li class="menu-item menu-item-與我聯繫">
+
+    <a href="mailto:m615926@gmail.com" rel="noopener" target="_blank">與我聯繫</a>
+
+  </li>
+        <li class="menu-item menu-item-訂閱">
+
+    <a href="https://successful-trader-4225.ck.page/bbe15da0e6" rel="noopener" target="_blank">訂閱</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/oberonlai" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/html5-intro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          從新學習HTML5 (一) 概觀
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-03-11 22:04:24" itemprop="dateCreated datePublished" datetime="2019-03-11T22:04:24+08:00">2019-03-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>6.1k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>6 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><img src="https://i2.wp.com/oberonlai.blog/wp-content/uploads/2019/03/IMG_7996.jpg"></p>
+<p><img src="https://i1.wp.com/oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-11-at-21.54.26.jpg?ssl=1"></p>
+<p>第一次完整學習 HTML 是在剛入行的時候，算一算也有十幾個年頭了，這些日子以來，對於 HTML5 只有著片段的知識，每當卡關去爬 Stackoverflow 時，才會驚訝的發現原來還有這些新東西可以用，所以在圖書館看到這本時，應該是老天爺叫我要好好的來重新認識 HTML 了。</p>
+<p>看完幾個章節以後，有一種在看說明書的感覺。就像電器用品一樣，不用看說明書就可以用得順手，然後哪天在整理東西時發現冷氣機的說明書，隨手翻了一下，才驚喜的發現原來家裡的冷氣除了會冷以外，還有除濕、暖氣、烘乾、洗衣、脫水、無線分享器、播音樂等各種功能(?)，而且有些還真的非常實用，在看這本 HTML5 的時候就是這種感覺，每翻一頁處處都是驚喜，許多新功能立馬能在工作上派上用場，滿滿的意外收穫～</p>
+<p>但這本書實在太厚了，根本就是整個 W3C 文件的濃縮版，涵蓋的面向非常完整，從 HTML5 的歷史介紹、介面設計、通訊功能、影像資料處理，到本地資料儲存機制應有盡有，而且不是草草帶過，書裡介紹完整屬性並搭配實作範例，真的是 HTML5 參考書不為過。</p>
+<p>怕自己沒辦法一次整理完這麼龐大的資料量，只好分篇來紀錄，本文以 HTML5 的入門概觀為主，重點摘要整理如下：</p>
+<h2 id="HTML5-的歷史"><a href="#HTML5-的歷史" class="headerlink" title="HTML5 的歷史"></a>HTML5 的歷史</h2><p>記得學生時代用 Dreamweaver 設計網頁時，在檢視原始碼的模式下，有時候都會看到最上面有類似這一段的開頭：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD XHTML 1.0 Strict&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2002&#x2F;08&#x2F;xhtml&#x2F;xhtml1-strict.dtd&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>落落長的內容裡面寫著 XHTML ，心想這應該就是 HTML 的標準形式吧，在還是 DW 的年代，完全不知道怎麼寫 HTML，只會用現成的介面來產出網頁。直到後來才知道，原來還有一種叫 XHTML 的東西準備要來取代 HTML…</p>
+<p>HTML 最早是在西元 1990 年由網際網路發明人 Tim Berners-Lee 所制定的，並組成了 W3C (World Wide Web Consortium) 來維護 HTML，到了西元 1999 年進化到第四版，也就是 HTML5 的前身 HTML4.01，但由於 HTML4 本身架構以及語法的問題，遲遲無法進行改良，因此 W3C 決定以 XML 語言基礎，打掉重練 HTML 並開發 XHTML。</p>
+<p>直到 2003 年有新技術出現，原有的 HTML4 可以升級了並進行擴充了，於是由 Apple、Mozilla、Opera 組成的 WHATWG 來制定下一版的 HTML，但 W3C 也已經花了不少時間在著手 XHTML 的開發，所以情勢即將變成各玩各的規範，苦的就是瀏覽器廠商以及廣大的網站開發者。</p>
+<p>幸好在 2007 年，W3C 也加入了 WHATWG，一起參與下一代 HTML 的開發，雖然 W3C 並未放棄 XHTML 的計畫，但至少 HTML 可以繼續的被使用下去。到了 2010 年 HTML5 訂出草稿，最後在西元 2014 年 10/28 發表，雖然當時還是 Flash 橫著走的年代，直到 <a target="_blank" rel="noopener" href="https://chinese.engadget.com/2010/04/29/steve-jobs-publishes-some-thoughts-on-flash-many-many-thou/">Steven Jobs 力推 HTML5 並抵制 Flash</a>，HTML5 才逐漸發揚光大，成為現今主流的網頁技術。</p>
+<p>這幾年各家瀏覽器對於 HTML5 的支援越來越完整，有興趣的朋友可以到 <a target="_blank" rel="noopener" href="https://html5test.com/">https://html5test.com</a> 看看自己使用的瀏覽器的支援程度，個人覺得有點意外的是，macOS Safari 的支援度有點低，當年最早在制定 H5 的公司不就是 Apple 嗎？反倒是 Chrome 的支援度較完整。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-09-at-21.55.24.png"></p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-09-at-21.55.55.png"></p>
+<h2 id="HTML5-的主要內容"><a href="#HTML5-的主要內容" class="headerlink" title="HTML5 的主要內容"></a>HTML5 的主要內容</h2><p>廣義來說，HTML5 主要包含以下七大項的新增內容，當使用到其中一項內容時，我們便可以說該網頁是使用 HTML5 技術所開發的：</p>
+<h4 id="ㄧ-語意標籤-semantic"><a href="#ㄧ-語意標籤-semantic" class="headerlink" title="(ㄧ) 語意標籤 semantic"></a>(ㄧ) 語意標籤 semantic</h4><p>使用更具有意義的 HTML 標籤，讓搜尋引擎或是爬蟲機器人可以更方便與快速的了解網頁的內容，也讓開發人員有更ㄧ致的準則來使用適合內容的標籤。像是頁首使用 <header>、主要區塊使用 <section>、側邊欄使用 <aside> 等等。</p>
+<h4 id="二-離線儲存-offline-amp-storage"><a href="#二-離線儲存-offline-amp-storage" class="headerlink" title="(二) 離線儲存 offline&amp;storage"></a>(二) 離線儲存 offline&amp;storage</h4><p>透過快取技術、本地儲存與 Index DB，讓裝置在沒有網路的環境下，依舊可以瀏覽網站的內容，這對於裝置行動化的趨勢來說，是非常實用的功能。</p>
+<h4 id="三-裝置存取-Device"><a href="#三-裝置存取-Device" class="headerlink" title="(三) 裝置存取 Device"></a>(三) 裝置存取 Device</h4><p>隨著手機出貨量超越桌上型個人電腦，手持裝置變成是瀏覽網站最主要的來源，HTML5 可以取得使用裝置硬體的權限，讓網站可以像原生 APP 一樣，做到許多原本無法做到的功能，像是透過瀏覽器啟用相機、取得手機地理位址等等，大大加強了網站的應用性。</p>
+<h4 id="四-連結性-Connectivity"><a href="#四-連結性-Connectivity" class="headerlink" title="(四) 連結性 Connectivity"></a>(四) 連結性 Connectivity</h4><p>HTML5 讓網站之間傳輸資料更即時，非常適合做即時通訊或手機推播等功能。</p>
+<h4 id="五-效能與整合性-Perfermence-amp-Integrate"><a href="#五-效能與整合性-Perfermence-amp-Integrate" class="headerlink" title="(五) 效能與整合性 Perfermence&amp;Integrate"></a>(五) 效能與整合性 Perfermence&amp;Integrate</h4><p>整合 XMLHttpRequest 2 非同步載入技術，以及 Web Workers 支援網頁多工執行的特性，讓動態網頁從伺服器端請求資料更即時，使用體驗也更好。</p>
+<h4 id="六-2-3D-圖形與特效-2-3D-Graphic-amp-Effects"><a href="#六-2-3D-圖形與特效-2-3D-Graphic-amp-Effects" class="headerlink" title="(六) 2/3D 圖形與特效 2/3D Graphic&amp;Effects"></a>(六) 2/3D 圖形與特效 2/3D Graphic&amp;Effects</h4><p>以前 Flash 之所以能稱霸網路，就是因為透過 Action Script 可以開發出各種 2D 或 3D 的視覺動態呈現，為了補足這一塊，HTML5 開發了 Canvas、SVG、WebGL 讓設計人員可以在不需要安裝任何瀏覽器外掛的情況下，製作出具有高水準的影像或動畫。</p>
+<h4 id="七-多媒體-multimedia"><a href="#七-多媒體-multimedia" class="headerlink" title="(七) 多媒體 multimedia"></a>(七) 多媒體 multimedia</h4><p>Flash 最麻煩且最棘手的地方，就是在於他需要安裝瀏覽器套件才能使用，播放影音也不例外，所以 HTML5 直接內建影音播放功能，不需要任何的套件安裝就可以讓用戶可以看到內容。</p>
+<h2 id="HTML-基礎知識"><a href="#HTML-基礎知識" class="headerlink" title="HTML 基礎知識"></a>HTML 基礎知識</h2><h4 id="一-文件物件模型-Document-Object-Model-Tree"><a href="#一-文件物件模型-Document-Object-Model-Tree" class="headerlink" title="(一) 文件物件模型 Document Object Model Tree"></a>(一) 文件物件模型 Document Object Model Tree</h4><p>網頁內容是由 DOM Tree 的節點組成，每個 html 的標籤都會轉換成一個物件，以巢狀的方式紀錄每個標籤的父子關係，參考下圖的對應關係，左邊是 HTML 的標籤內容，右邊是轉換後的文件物件模型。  </p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;網頁&lt;&#x2F;title&gt;
+  &lt;&#x2F;head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;文章標題&lt;&#x2F;h1&gt;
+  &lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">DOCTYPE
+html
+├── head
+│   └── title
+├── body
+│   └── h1
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="二-HTML-根元素"><a href="#二-HTML-根元素" class="headerlink" title="(二) HTML 根元素"></a>(二) HTML 根元素</h4><p>HTML 跟元素是整份文件最上層的節點，擁有兩個屬性，一個是 manifest，專門設定來讀取網站快取清單的路徑，範例如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;html manifest&#x3D;&quot;cache.manifest&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>第二個是 lang，用來設定網頁所使用的語系：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;html lang&#x3D;&quot;zh-tw&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="三-head-元素"><a href="#三-head-元素" class="headerlink" title="(三) head 元素"></a>(三) head 元素</h4><p>head 元素主要放網頁描述資料的區塊，也就是中介資料，常用的有以下幾種：</p>
+<title> 網頁的標題，js 使用來取得網頁標題 document.title
+
+<base> 設定網站的基準網址，讓需要取得路徑的地方寫相對路徑即可，範例如下：
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;base href&#x3D;&#39;https:&#x2F;&#x2F;abc.com&#39;&gt;
+&lt;a href&#x3D;&#39;about.html&#39;&gt;Link&lt;&#x2F;a&gt;
+&#x2F;&#x2F; 點擊 Link 網址是 https:&#x2F;&#x2F;abc.com&#x2F;about.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<style> 放置 CSS 樣式的標籤
+
+<link> 引入媒體檔案的標籤，通常放在外部的 CSS 檔或使用它來引入
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;style.css&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<script> 引入外部 JavaScript 檔案的標籤，HTML 5 新增加了兩種讀取模式：
+
+預設：DOM 跑到就執行，會等 js 載完才會繼續往下跑  
+async：DOM 跑到就執行，不等 js 載完繼續往下跑  
+defer：DOM 跑到不執行，等 DOM 全部載完 js 最後才執行  
+
+<noscript> 不支援 JavaScript 情況下所顯示的文字
+
+<meta> 設定頁面的描述資料，使用 http-equiv 可設定 http 回應標頭狀態，主要分為三種：
+
+content-type 編碼宣告
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;meta http-equiv&#x3D;&quot;content-type&quot; content&#x3D;&quot;text&#x2F;html&quot; charest&#x3D;&quot;UTF-8&quot;&gt; 
+
+&#x2F;&#x2F; H5 中可直接由 charset 取代
+&lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+default-style 預設樣式 - 指定預設要讀取哪一個 CSS 檔
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;meta http-equiv&#x3D;&quot;Default-Style&quot; content&#x3D;&quot;Blue Style&quot; &#x2F;&gt;
+&lt;link rel&#x3D;&quot;alternate stylesheet&quot; href&#x3D;&quot;&#x2F;css&#x2F;green.css&quot; type&#x3D;&quot;text&#x2F;css&quot; title&#x3D;&quot;Green&quot; &#x2F;&gt;  
+&lt;link rel&#x3D;&quot;alternate stylesheet&quot; href&#x3D;&quot;&#x2F;css&#x2F;blue.css&quot; type&#x3D;&quot;text&#x2F;css&quot; title&#x3D;&quot;Blue&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+refresh 重整頁面
+
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 隔 30 秒後跳轉到 redirect.html
+&lt;meta http-equiv&#x3D;&quot;fresh&quot; content&#x3D;&quot;30;URL&#x3D;redirect.html&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+## 實用新增標籤
+
+前面提到 HTML5 新增的內容包含語意標籤、影音功能等等，因此也新增了不少新標籤來定義這些內容，這邊以三個面向進行分類，並挑選實用的標籤來進行說明：
+
+#### (一) 影音相關
+
+<video> 播放影片使用的標籤，可放入多個 source 來源，當瀏覽器不支援該影片格式時，可以向下相容
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;video width&#x3D;&quot;400&quot; controls&gt;
+  &lt;source src&#x3D;&quot;mov_bbb.mp4&quot; type&#x3D;&quot;video&#x2F;mp4&quot;&gt;
+  &lt;source src&#x3D;&quot;mov_bbb.ogg&quot; type&#x3D;&quot;video&#x2F;ogg&quot;&gt;
+  你的瀏覽器不支援 HTML5 播放器
+&lt;&#x2F;video&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<audio> 播放音檔使用的標籤
+
+#### (二) 文本相關
+
+<mark> 文字重點強調
+
+<progress> 顯示進度條
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;progress value&#x3D;&quot;22&quot; max&#x3D;&quot;100&quot;&gt;&lt;&#x2F;progress&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<meter> 顯示水平量表
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;meter value&#x3D;&quot;3&quot; min&#x3D;&quot;0&quot; max&#x3D;&quot;10&quot;&gt;十分之三&lt;&#x2F;meter&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<time> 顯示時間
+
+<wbr> 讓過長的文字在指定的地方斷行
+
+#### (三) 介面相關
+
+<details><summary> 內建的 accordion 功能
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;details&gt;
+  &lt;summary&gt;標題&lt;&#x2F;summary&gt;
+  展開內容
+&lt;&#x2F;details&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<datalist> 讓 input text 可以依照使用者搜尋文字跳出相關建議詞
+
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; input 的建議字使用 id 為 keyword 的 datalist 裡面的內容
+&lt;input list&#x3D;&quot;keyword&quot; &#x2F;&gt;
+
+&#x2F;&#x2F; 定義相關字詞
+&lt;datalist id&#x3D;&quot;keyword&quot;&gt;
+  &lt;option value&#x3D;&quot;Google&quot;&gt;
+  &lt;option value&#x3D;&quot;Yahoo&quot;&gt;
+  &lt;option value&#x3D;&quot;Bing&quot;&gt;
+&lt;&#x2F;datalist&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+## 新增全域屬性
+
+除了新的標籤以外，也有許多新的屬性可以使用，有了這些屬性，可以讓標籤更靈活的運用，此外還能擴充更多自訂屬性：
+
+contenteditable：可以讓任何標籤變成可輸入文字的 input text 狀態
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;p id&#x3D;&quot;msg&quot; contenteditable&gt;輸入內容&lt;&#x2F;p&gt;
+document.getElementById(&#39;msg&#39;).innerHTML); &#x2F;&#x2F; 取得輸入內容文字<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+data-\*：自訂資料屬性，讓標籤可以擴充自己定義的屬性
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;div id&#x3D;&quot;products&quot; data-price&#x3D;450 data-name&#x3D;&quot;books&quot; data-name-en&#x3D;&quot;books-en&quot;&gt;&lt;&#x2F;div&gt;
+document.getElementById(&quot;products&quot;).dataset.price &#x2F;&#x2F; 450
+document.getElementById(&quot;products&quot;).dataset.name &#x2F;&#x2F; books
+document.getElementById(&quot;products&quot;).dataset.nameEn &#x2F;&#x2F; books-en 用駝峰寫法<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+draggable/dropzone：標記可拖曳/置放標籤
+
+hidden：隱藏標籤
+
+spellcheck：拼字檢查
+
+## 小結
+
+整理完 HTML5 的由來以及新增的功能之後，接來深入介紹 HTML5 在介面設計上新增的標籤以及 CSS3 的各項功能。
+        <hr>
+        <div>
+          <h2>覺得文章寫得好再幫我鼓個掌吧！</h2>
+          <iframe width="100%" height="230px" scrolling="no" frameborder="0" id="player" src="https://button.like.co/in/embed/oberonlai/button/?referrer=https://oberonlai.blog/tw/html5-intro/" allowfullscreen="true"></iframe>
+        </div>
+        <hr>
+        <h2>這是電子報訂閱，一週一次絕對沒有壯陽藥廣告～</h2>
+        <p>過往內容：<a target="_blank" rel="noopener" href="https://successful-trader-4225.ck.page/posts">https://successful-trader-4225.ck.page/posts</a></p>
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+        <form action="https://app.convertkit.com/forms/2577901/subscriptions" style="background-color: rgb(255, 255, 255); border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; max-width: none!important;" class="seva-form formkit-form" method="post" data-sv-form="2577901" data-uid="bbe15da0e6" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;訂閱成功，再幫我收信確認下吧！&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div data-style="full" style="--bg-border-radius: 3px;"><div data-element="column" class="formkit-column"><div class="formkit-header" style="color: rgb(83, 83, 83); font-size: 28px; font-weight: 400;" data-element="header"></div><div class="formkit-content" style="color: rgb(105, 113, 119);" data-element="content"><p>Hi，我是 Oberon，我會固定在每週五早上發送接案心得以及與 WordPress 相關的電子報，同時也會分享一些基礎的開發知識，讓你在 WordPress 的接案路上不孤單！</p></div><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="true" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400; background-color: rgb(243, 246, 249); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" aria-label="電子郵件" placeholder="電子郵件" required="" type="email"></div><div class="formkit-field"><input class="formkit-input" aria-label="您的大名" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400; background-color: rgb(243, 246, 249); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" name="fields[first_name]" placeholder="您的大名" type="text"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(113, 173, 137); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; font-weight: 700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span style="font-size: 16px;">訂閱電子報</span></button></div><div class="formkit-disclaimer" style="color: rgb(139, 139, 139); font-size: 13px;" data-element="disclaimer"><p>免費電子報，可隨時取消訂閱，沒有壓力！</p></div></div><div data-element="column" style="background-image: url(&quot;https://embed.filekitcdn.com/e/2SvCbYvt2MQD58GK3N3L5a/qAepSutQWFcsUd4u3qHwKy&quot;);" class="formkit-background"></div></div><style>.formkit-form[data-uid="bbe15da0e6"] *{box-sizing:border-box;}.formkit-form[data-uid="bbe15da0e6"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.formkit-form[data-uid="bbe15da0e6"] legend{border:none;font-size:inherit;margin-bottom:10px;padding:0;position:relative;display:table;}.formkit-form[data-uid="bbe15da0e6"] fieldset{border:0;padding:0.01em 0 0 0;margin:0;min-width:0;}.formkit-form[data-uid="bbe15da0e6"] body:not(:-moz-handler-blocked) fieldset{display:table-cell;}.formkit-form[data-uid="bbe15da0e6"] h1,.formkit-form[data-uid="bbe15da0e6"] h2,.formkit-form[data-uid="bbe15da0e6"] h3,.formkit-form[data-uid="bbe15da0e6"] h4,.formkit-form[data-uid="bbe15da0e6"] h5,.formkit-form[data-uid="bbe15da0e6"] h6{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="bbe15da0e6"] h2{font-size:1.5em;margin:1em 0;}.formkit-form[data-uid="bbe15da0e6"] h3{font-size:1.17em;margin:1em 0;}.formkit-form[data-uid="bbe15da0e6"] p{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="bbe15da0e6"] ol:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ul:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] blockquote:not([template-default]){text-align:left;}.formkit-form[data-uid="bbe15da0e6"] p:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] hr:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] blockquote:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ol:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ul:not([template-default]){color:inherit;font-style:initial;}.formkit-form[data-uid="bbe15da0e6"] .ordered-list,.formkit-form[data-uid="bbe15da0e6"] .unordered-list{list-style-position:outside !important;padding-left:1em;}.formkit-form[data-uid="bbe15da0e6"] .list-item{padding-left:0;}.formkit-form[data-uid="bbe15da0e6"][data-format="modal"]{display:none;}.formkit-form[data-uid="bbe15da0e6"][data-format="slide in"]{display:none;}.formkit-form[data-uid="bbe15da0e6"][data-format="sticky bar"]{display:none;}.formkit-sticky-bar .formkit-form[data-uid="bbe15da0e6"][data-format="sticky bar"]{display:block;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input,.formkit-form[data-uid="bbe15da0e6"] .formkit-select,.formkit-form[data-uid="bbe15da0e6"] .formkit-checkboxes{width:100%;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-button:focus,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:focus{outline:none;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button:hover > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:hover > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-button:focus > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:focus > span{background-color:rgba(0,0,0,0.1);}.formkit-form[data-uid="bbe15da0e6"] .formkit-button > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit > span{display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::-webkit-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::-moz-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input:-ms-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"]{position:relative;display:inline-block;width:100%;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"]::before{content:"";top:calc(50% - 2.5px);right:10px;position:absolute;pointer-events:none;border-color:#4f4f4f transparent transparent transparent;border-style:solid;border-width:6px 6px 0 6px;height:0;width:0;z-index:999;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"] select{height:auto;width:100%;cursor:pointer;color:#333333;line-height:1.4;margin-bottom:0;padding:0 6px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:15px;padding:12px;padding-right:25px;border:1px solid #e3e3e3;background:#ffffff;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"] select:focus{outline:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"]{text-align:left;margin:0;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"]{margin-bottom:10px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] *{cursor:pointer;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"]:last-of-type{margin-bottom:0;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]{display:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"] + label::after{content:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::after{border-color:#ffffff;content:"";}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::before{background:#10bf7a;border-color:#10bf7a;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label{position:relative;display:inline-block;padding-left:28px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::before,.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::after{position:absolute;content:"";display:inline-block;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::before{height:16px;width:16px;border:1px solid #e3e3e3;background:#ffffff;left:0px;top:3px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::after{height:4px;width:8px;border-left:2px solid #4d4d4d;border-bottom:2px solid #4d4d4d;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);left:4px;top:8px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="bbe15da0e6"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:5;margin:10px 0;position:relative;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ffffff;border:1px solid #dce1e5;border-radius:4px;color:#373f45;cursor:pointer;display:block;height:36px;margin:0 auto;opacity:0.95;padding:0;-webkit-text-decoration:none;text-decoration:none;text-indent:100%;-webkit-transition:ease-in-out all 200ms;transition:ease-in-out all 200ms;white-space:nowrap;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:190px;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='%23373F45'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='%23373F45'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='%23373F45'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='%23373F45'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='%23373F45'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='%23373F45'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='%23373F45'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='%23373F45'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='%23373F45'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='%23373F45'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='%23373F45'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='%23373F45'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='%23373F45'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='%23373F45'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='%23373F45'/%3E%3C/svg%3E");}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit:focus{background-color:#ffffff;-webkit-transform:scale(1.025) perspective(1px);-ms-transform:scale(1.025) perspective(1px);transform:scale(1.025) perspective(1px);opacity:1;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="dark"],.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="light"]{background-color:transparent;border-color:transparent;width:166px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="light"]{color:#ffffff;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='white'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='white'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='white'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='white'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='white'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='white'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='white'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='white'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='white'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='white'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='white'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='white'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='white'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='white'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='white'/%3E%3C/svg%3E");}@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}.formkit-form[data-uid="bbe15da0e6"] blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #e1e1e1;}.formkit-form[data-uid="bbe15da0e6"] .seva-custom-content{padding:15px;font-size:16px;color:#fff;mix-blend-mode:difference;} .formkit-form[data-uid="bbe15da0e6"]{box-shadow:0px 4px 8px rgba(105,113,119,0.2);max-width:740px !important;overflow:hidden;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"]{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.formkit-form[data-uid="bbe15da0e6"] .formkit-background{background-position:center center;background-size:cover;height:280px;margin:20px;border-radius:var(--bg-border-radius) !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-column{padding:20px;position:relative;-webkit-order:2;-ms-flex-order:2;order:2;}.formkit-form[data-uid="bbe15da0e6"] .formkit-header{margin-top:0;margin-bottom:24px;font-weight:700;font-size:calc(30px + (36 - 30) * ((100vw - 400px) / (600 - 400)));}@media all and (min-width:800px){.formkit-form[data-uid="bbe15da0e6"] .formkit-header{font-size:36px;}}.formkit-form[data-uid="bbe15da0e6"] .formkit-header h2{line-height:1.2;margin-top:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-content{margin-bottom:45px;font-size:16px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}.formkit-form[data-uid="bbe15da0e6"] .formkit-field{margin:0 0 10px 0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input{width:100%;border:0;padding-left:12px;padding-right:0;height:47px;font-size:14px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-select{padding-top:13px !important;padding-bottom:13px !important;border:0 !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-checkboxes{background:transparent !important;color:inherit !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields .formkit-submit{margin-top:8px;font-size:12px;height:47px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields .formkit-submit span{padding:15px 14px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"]{margin-left:-4px;margin-right:-4px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-submit{-webkit-flex:1 1 auto !important;-ms-flex:1 1 auto !important;flex:1 1 auto !important;margin:0 !important;min-width:90px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-submit{margin:0 4px 8px 4px !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-field{-webkit-flex:100 1 auto !important;-ms-flex:100 1 auto !important;flex:100 1 auto !important;margin:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container{margin:20px 0 0 0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-disclaimer{font-size:12px;opacity:0.6;margin-top:6px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-field,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit{margin:0 0 8px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}@media screen and (min-width:600px){.formkit-form[data-uid="bbe15da0e6"] [data-style="full"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"] .formkit-column{width:57%;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"] .formkit-background{width:44%;height:auto;margin-left:0;-webkit-order:2;-ms-flex-order:2;order:2;}.formkit-slide-in,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"],.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"]{max-width:450px !important;}.formkit-slide-in [data-style="full"],.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] [data-style="full"],.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] [data-style="full"]{-webkit-flex-direction:column !important;-ms-flex-direction:column !important;flex-direction:column !important;max-width:450px !important;}.formkit-slide-in .formkit-background,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-background,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-background{width:auto !important;height:280px !important;margin:20px !important;-webkit-order:0 !important;-ms-flex-order:0 !important;order:0 !important;}.formkit-slide-in .formkit-column,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-column,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-column{width:100% !important;-webkit-order:2 !important;-ms-flex-order:2 !important;order:2 !important;padding:20px 20px 30px 20px !important;}.formkit-slide-in .formkit-content,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-content,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-content{margin-bottom:25px !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-column{padding:55px 60px 55px 45px;}} </style></form>
+    </div>
+
+    
+    
+    
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/tw/plesk-find-huge-file-or-folder/" rel="prev" title="Plesk 下找出大容量資料夾或檔案">
+      <i class="fa fa-chevron-left"></i> Plesk 下找出大容量資料夾或檔案
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/tw/html5-form/" rel="next" title="從新學習HTML5 (二) 表單">
+      從新學習HTML5 (二) 表單 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="賴俊吾 / Oberon Lai"
+      src="/tw/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">賴俊吾 / Oberon Lai</p>
+  <div class="site-description" itemprop="description">現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/tw/archives">
+          <span class="site-state-item-count">291</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/tw/categories/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tw/tags/">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/oberonlai" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:m615926@gmail.com" title="E-Mail → mailto:m615926@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/oberonlai" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/m615926" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;m615926" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">賴俊吾 / Oberon Lai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">740k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:13</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/tw/lib/anime.min.js"></script>
+  <script src="/tw/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+
+<script src="/tw/js/utils.js"></script>
+
+
+<script src="/tw/js/schemes/muse.js"></script>
+
+
+<script src="/tw/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/tw/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

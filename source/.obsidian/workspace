@@ -1,0 +1,102 @@
+{
+  "main": {
+    "id": "e8e18d4acd4c1ba9",
+    "type": "split",
+    "children": [
+      {
+        "id": "c3bfd136964697e1",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "_posts/woocommerce-product-dynamic-price.md",
+            "mode": "source"
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c63dbf8c5c53e9bb",
+    "type": "split",
+    "children": [
+      {
+        "id": "e9386fcd6020cbc6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "08dd411ee40117dc",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "50a3107b468ecb93",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "784acd445ebf1450",
+    "type": "split",
+    "children": [
+      {
+        "id": "2ec4c90a1be93901",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f96131b2e767638a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "_posts/woocommerce-product-dynamic-price.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "c3bfd136964697e1",
+  "lastOpenFiles": [
+    "_posts/woocommerce-product-dynamic-price.md",
+    "_posts/know-you-specification.md",
+    "_posts/how-to-write-the-effective-specification.md",
+    "_posts/wordpress-learning-books.md",
+    "_drafts/woocommerce-for-taiwan.md",
+    "_posts/wordpress-learning.md",
+    "_posts/what-did-i-learn-from-client 1.md",
+    "_posts/what-did-i-learn-from-client.md",
+    "_posts/wordpress-learning 1.md",
+    "about/index.md"
+  ]
+}

@@ -1,0 +1,12 @@
+---
+title: 五款讓 WordPress 成為專案管理工具的免費外掛
+tags: []
+id: '3332'
+categories:
+  - - WordPress
+date: 2018-02-06 11:33:42
+---
+
+現今市面上有許多方便使用的專案管理系統，像是 Bitrix24、Asana、Trello 等等，也有像是開源的 Redmine，但除了自由軟體外，線上服務號稱的免費總是有其限制，如果你已經習慣使用 WordPress，何不直接在裡面來管理你的專案呢？這篇文章分享了五款專案管理外掛，好處是可以使用既有資源來做更多事，另一方面這些外掛提供很多設定項，就不會被現成軟體給綁死，完全能客製調整成符合自己企業的業務需求。
+<!-- more -->
+  \[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1579071328866532" display="yes" title="5LqU5qy+6K6TIFdvcmRQcmVzcyDmiJDngrrlsIjmoYjnrqHnkIblt6XlhbfnmoTlhY3osrvlpJbmjps=" body="54++5LuK5biC6Z2i5LiK5pyJ6Kix5aSa5pa55L6/5L2/55So55qE5bCI5qGI566h55CG57O757Wx77yM5YOP5pivIEJpdHJpeDI044CBQXNhbmHjgIFUcmVsbG8g562J562J77yM5Lmf5pyJ5YOP5piv6ZaL5rqQ55qEIFJlZG1pbmXvvIzkvYbpmaTkuoboh6rnlLHou5/pq5TlpJbvvIznt5rkuIrmnI3li5nomZ/nqLHnmoTlhY3osrvnuL3mmK/mnInlhbbpmZDliLbvvIzlpoLmnpzkvaDlt7LntpPnv5LmhaPkvb/nlKggV29yZFByZXNz77yM5L2V5LiN55u05o6l5Zyo6KOh6Z2i5L6G566h55CG5L2g55qE5bCI5qGI5ZGi77yf6YCZ56+H5paH56ug5YiG5Lqr5LqG5LqU5qy+5bCI5qGI566h55CG5aSW5o6b77yM5aW96JmV5piv5Y+v5Lul5L2/55So5pei5pyJ6LOH5rqQ5L6G5YGa5pu05aSa5LqL77yM5Y+m5LiA5pa56Z2i6YCZ5Lqb5aSW5o6b5o+Q5L6b5b6I5aSa6Kit5a6a6aCF77yM5bCx5LiN5pyD6KKr54++5oiQ6Luf6auU57Wm57aB5q2777yM5a6M5YWo6IO95a6i6KO96Kq/5pW05oiQ56ym5ZCI6Ieq5bex5LyB5qWt55qE5qWt5YuZ6ZyA5rGC44CC" pid="3332"\]

@@ -1,0 +1,12 @@
+---
+title: WordPress 單頁式頁面製作工具
+tags: []
+id: '2945'
+categories:
+  - - WordPress
+date: 2017-08-11 11:35:08
+---
+
+  近幾年 WordPress 視覺化編輯器如雨後春筍般出現，每一款都有自己的支持者以及適合類型，今天要介紹的是專門針對一頁式網頁所設計的視覺化編輯器，叫做 Onepage Builder，一般的輯輯器因為需要延用原本 Header 與 Footer 的框架，所以都要離開編輯中的畫面到全站設定去調整，而 Onepage Builder 則可以完全打造自己的頁首與頁尾，它基本上就是提供一個完全空白的頁面讓你發揮，也可以使用內建的版型來設計，這對於需要製作臨時的行銷頁面或是週期性的促銷活動都可靈活運用。
+<!-- more -->
+  \[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1413269158780084" display="yes" title="V29yZFByZXNzIOWWrumggeW8j+mggemdouijveS9nOW3peWFtw==" body="6L+R5bm+5bm0IFdvcmRQcmVzcyDoppboprrljJbnt6jovK/lmajlpoLpm6jlvozmmKXnrY3oiKzlh7rnj77vvIzmr4/kuIDmrL7pg73mnInoh6rlt7HnmoTmlK/mjIHogIXku6Xlj4rpganlkIjpoZ7lnovvvIzku4rlpKnopoHku4vntLnnmoTmmK/lsIjploDph53lsI3kuIDpoIHlvI/ntrLpoIHmiYDoqK3oqIjnmoToppboprrljJbnt6jovK/lmajvvIzlj6vlgZogT25lcGFnZSBCdWlsZGVy77yM5LiA6Iis55qE6Lyv6Lyv5Zmo5Zug54K66ZyA6KaB5bu255So5Y6f5pysIEhlYWRlciDoiIcgRm9vdGVyIOeahOahhuaetu+8jOaJgOS7pemDveimgemboumWi+e3qOi8r+S4reeahOeVq+mdouWIsOWFqOermeioreWumuWOu+iqv+aVtO+8jOiAjCBPbmVwYWdlIEJ1aWxkZXIg5YmH5Y+v5Lul5a6M5YWo5omT6YCg6Ieq5bex55qE6aCB6aaW6IiH6aCB5bC+77yM5a6D5Z+65pys5LiK5bCx5piv5o+Q5L6b5LiA5YCL5a6M5YWo56m655m955qE6aCB6Z2i6K6T5L2g55m85o+u77yM5Lmf5Y+v5Lul5L2/55So5YWn5bu655qE54mI5Z6L5L6G6Kit6KiI77yM6YCZ5bCN5pa86ZyA6KaB6KO95L2c6Ieo5pmC55qE6KGM6Yq36aCB6Z2i5oiW5piv6YCx5pyf5oCn55qE5L+D6Yq35rS75YuV6YO95Y+v6Z2I5rS76YGL55So44CC" pid="2945"\]

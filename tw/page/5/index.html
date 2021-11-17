@@ -1,0 +1,3646 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/tw/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/tw/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/tw/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/tw/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/tw/css/main.css">
+
+
+<link rel="stylesheet" href="/tw/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oberonlai.blog","root":"/tw/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideDownIn","sidebar":"slideDownIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WordPress 開發日常">
+<meta property="og:url" content="https://oberonlai.blog/tw/page/5/">
+<meta property="og:site_name" content="WordPress 開發日常">
+<meta property="og:description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="賴俊吾 &#x2F; Oberon Lai">
+<meta property="article:tag" content="WordPress,PHP,WordPress 外掛開發,WordPress 佈景主題開發,WordPress 工程師,敏捷接案,時薪計價,專案管理">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="/tw/images/og-img.jpg" />
+
+<link rel="canonical" href="https://oberonlai.blog/tw/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>WordPress 開發日常 - 有任何 WordPress 客製需求歡迎與我聯絡！</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163107142-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-163107142-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/tw/" class="brand" rel="start" style="display: block">
+        <img class="logo-img" src="/tw/images/logo-w.svg" alt="WordPress 開發日常">
+    </a>
+      <p class="site-subtitle" itemprop="description">有任何 WordPress 客製需求歡迎與我聯絡！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-關於我">
+
+    <a href="/tw/about/" rel="section">關於我</a>
+
+  </li>
+        <li class="menu-item menu-item-合作方式">
+
+    <a href="/tw/how-can-oberon-help-you/" rel="section">合作方式</a>
+
+  </li>
+        <li class="menu-item menu-item-計價方式">
+
+    <a href="/tw/how-do-i-make-a-quotation/" rel="section">計價方式</a>
+
+  </li>
+        <li class="menu-item menu-item-學習-wordpress">
+
+    <a href="/tw/wordpress-full-stack/" rel="section">學習 WordPress</a>
+
+  </li>
+        <li class="menu-item menu-item-與我聯繫">
+
+    <a href="mailto:m615926@gmail.com" rel="noopener" target="_blank">與我聯繫</a>
+
+  </li>
+        <li class="menu-item menu-item-訂閱">
+
+    <a href="https://successful-trader-4225.ck.page/bbe15da0e6" rel="noopener" target="_blank">訂閱</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/oberonlai" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E3%80%90-%E6%9B%B8%E6%91%98-%E3%80%91dont-make-me-think/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E3%80%90-%E6%9B%B8%E6%91%98-%E3%80%91dont-make-me-think/" class="post-title-link" itemprop="url">【 書摘 】Don't Make Me Think</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-12-16 12:37:22" itemprop="dateCreated datePublished" datetime="2019-12-16T12:37:22+08:00">2019-12-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B/" itemprop="url" rel="index"><span itemprop="name">資訊架構</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>5k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>5 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a href="https://oberonlai.blog/wp-content/uploads/2015/06/s4357645.jpg"><img src="https://oberonlai.blog/wp-content/uploads/2015/06/s4357645.jpg" alt="s4357645"></a></p>
+<p>第一次讀到這本關於使用者體驗的經典書籍大概是四年前的事了，當時看完後不知道借給了那位朋友，就再也沒有回來過了，日前逛三民書局的簡體中文館發現了新版的它，除了原有的內容還更新了例子，甚至還加上行動裝置體驗的章節，二話不說立刻敗入，為了以防那天又被人借走回不來，趕緊寫下文章備份。</p>
+<p>本書分為四個大方向：</p>
+<p>一、基本原則</p>
+<p>二、網站導航系統的重要性</p>
+<p>三、簡易使用性測試</p>
+<p>四、行動體驗</p>
+<p>以下就各章節做重點摘錄。</p>
+<h2 id="一、基本原則"><a href="#一、基本原則" class="headerlink" title="一、基本原則"></a>一、基本原則</h2><blockquote>
+<p>「Don’t make me think」不要設計出會讓使用者感到困惑或猶豫不曉得要點那裡的介面。網站分類要明確，選單出現於固定位置、使用統一名稱、使用常見名稱、按鈕要像按扭、系統的回饋要符合使用者所預期的。</p>
+</blockquote>
+<p>使用者在網站上的每一次錯誤點擊，雖然不致於造成立即性的客戶流失，但使用者體驗是會堆疊的，只有做好每一個細節，使用者才能在極短的時間感受到企業要傳達的東西，這對於品牌的建立是關鍵。</p>
+<p>使用者體驗檢查清單：</p>
+<ul>
+<li>  我在什麼位置</li>
+<li>  我從那裡開始好</li>
+<li>  他們把XX放在什麼地方了</li>
+<li>  這個頁面上最重要的是什麼</li>
+<li>  為什麼他們把這個項目叫做這個</li>
+<li>  這是廣告還是網站的內容</li>
+</ul>
+<p><strong>使用者看網頁是用掃描的，眼裡只會出現他們感興趣與最想找的關鍵字</strong>，他們不會花時間去選擇最正確的答案，而是第一眼看到有相關性的就會點擊，所以保留瀏覽器上的返回按鈕是非常重要的。</p>
+<p>使用者不在乎運作原理，只要能滿足他們的需求，就會一直使用它。因此介面要符合使用者的瀏覽習慣來製作，以掃描式閱讀來設計，而非以雜誌或書籍閱讀的方式來設計。</p>
+<p>參考做法：</p>
+<p>（一）盡量利用慣例</p>
+<p>任何東西要讓人能瞬間理解，遵循習慣和慣例是一種好方法，譬如 LOGO 出現在左上角、主選單在網頁的上方或左邊，視覺元素的外觀、播放影片的 icon、搜尋、社群分享。如果想創新慣例，要確保使用者容易理解以及一併提供他們熟悉的慣例。</p>
+<p>（二）建立視覺上的層次</p>
+<p>越重要的部份越突出、邏輯相關的內容在視覺上也要相關、邏輯上屬於子分類的項目在視覺上可以用包圍的方式。</p>
+<p>（三）把頁面劃分成明確定義的區域</p>
+<p>可以讓使用者說出：這是今日頭條的連結、這是這個公司銷售的產品、他們正在向我推銷東西、這是連到其它頁面的選單。Banner Blindness ：為了可以快速找到他們想要的，使用者發展出一種會忽略看起來像是廣告的技能，<strong>所以重要的內容不要做得像廣告，而廣告可以做成像內容。</strong></p>
+<p>（四）明顯標示可以點擊的地方</p>
+<p>統一可以點擊的視覺元素，譬如底線、顏色，如果底線代表的是連結，那在內容強調文字時就不要使用底線。</p>
+<p>（五）將可能會干擾掃描的元素最小化</p>
+<p><strong>如果所有東西都要強調，就等於沒有東西在強調。</strong></p>
+<p>（六）幫內容設計清楚易掃描的格式</p>
+<p>充分使用標題、保持每個段落的簡潔、使用符號列表、強調關鍵字詞。</p>
+<p>使用者的點擊次數常規法則：三次不用思考、結果正確的點擊，所花費的心力相當於一次需要思考的點擊，<strong>所以重點不是在追求幾次點擊內讓使用者找到想要的內容，而是每一次的點擊有沒有更接近他們想要的。</strong></p>
+<p>省去多餘的歡迎詞、說明文字，只在有需要的時候以最精簡的方式呈現。</p>
+<h2 id="二、網站導航系統的重要性"><a href="#二、網站導航系統的重要性" class="headerlink" title="二、網站導航系統的重要性"></a>二、網站導航系統的重要性</h2><p><img src="https://oberonlai.blog/wp-content/uploads/2015/06/medium_2KIcZWinamB5poa6WLdn0zFH40HrYpiMX4fG8aINHbY.jpg" alt="二、網站導航系統的重要性"></p>
+<p>如果在網站上找不到方向，使用者就會離開你的網站。使用者進入網站後通常是為了特定目標，他們可能會使用搜尋功能或是選單進行瀏覽。</p>
+<p>在網站上瀏覽感覺不到大小、感覺不到方向、感覺不到位置，所以瀏覽器的書籤以及返回上一頁是非常重要的功能。網站選單可以告訴使用者我們這裡有什麼內容、如何開始使用網站、表達出網站管裡者是否了解自己的網站，進而影響到使用者的信心。</p>
+<p>全站導覽要出現在每一頁，提供使用者最可靠的方向依尋。主要包含網站 LOGO、內頁連結、常用工具連結、站內搜索。</p>
+<p><strong>大部份網站很少對內頁中的內頁的選單給予足夠的重視，因為開發時是由上往下進行頁面規劃，但使用者對於內頁選單的依賴程度與全站導覽是同等重要。</strong></p>
+<p>每個頁面都需要一個名稱，並且出現在合適且相同的位置，設計上要顯眼，進入該頁面的按鈕文字必須與頁面名稱相同，才不會造成使用者誤會。</p>
+<p>選單要能標示出使用者的現在位置，透過視覺上的明顯差異化來呈現。</p>
+<p>麵包屑亦能提供使用者了解所在位置，通常置於頁面最上方，使用大於符號進行間隔，強調最後一個項目來標示現在位置，並且不用增加連結。</p>
+<p>網站選單測試清單：</p>
+<ul>
+<li>  這是什麼網站(網站 LOGO)</li>
+<li>  我在那個內容裡面？(網頁名稱)</li>
+<li>  這個網站主要的內容有那些？(網站選單)</li>
+<li>  在這個頁面中我還可以去那？(內頁選單)</li>
+<li>  我在這個網站中的那裡？(所在位置)</li>
+<li>  站內搜尋在那？</li>
+</ul>
+<p>網站的首頁要能夠快速回答使用者五個問題：</p>
+<p>（一）這是什麼網站？</p>
+<p>（二）網站有些什麼內容？</p>
+<p>（三）我能在這邊得到什麼？</p>
+<p>（四）為什麼我現在這一頁？</p>
+<p>（五）從那邊開始？</p>
+<p>網站首頁要能正確傳達給使用者網站想表達的內容，不然使用者會以模糊錯誤的認知來繼續使用這個網站，進而發生更多錯誤的理解。</p>
+<p>由於社群與搜尋引擎的發達，使用者入站大多已不是首頁，因此上述四個問題也要盡可能在內頁中傳達清楚，但當使用者對於這網站的內容有興趣時，他們會返回首頁去看全站的內容，因此首頁的重要性還是不容忽視。</p>
+<p>網站如何傳達企業整體形象？</p>
+<p>（一）網站 slogan</p>
+<p>（二）主 Banner 放網站目標與內容介紹</p>
+<p>（三）更多服務介紹的內容</p>
+<p>（四）不要把老闆的精神訓話當成網站 slogan，因為這是給員工看的，而非你的使用者或客戶</p>
+<p>（五）最直接的方法，進行使用者測試檢視是否有正確傳達</p>
+<h2 id="三、簡易使用性測試"><a href="#三、簡易使用性測試" class="headerlink" title="三、簡易使用性測試"></a><strong>三、簡易使用性測試</strong></h2><p><img src="https://oberonlai.blog/wp-content/uploads/2015/06/medium_2FMVo9keG9QRRgZKzVkKycdi6DKQ8b6XB9Rkd4XQiWo.jpg" alt="三、簡易使用性測試"></p>
+<p>如何解決在會議上每個人對於網站內容、操作方式的不同看法？很簡單，拉個局外人來試試就好。<strong>為避免陷入無止盡的主觀意識爭論，我們的問題不該是「這邊是否該用下拉選單」，而是問：「在這頁面中，考量到使用者目的，使用下拉選單或是顯示的文字是否能帶給他們良好的體驗並導引到正確的結果？」</strong></p>
+<p>使用性測試的結果，往往不是證明開發小組中誰的意見對或錯，而是發現根本性的網站問題，就像是想問人到底要穿紅色的T恤還是白色的襯衫好，卻沒發現褲子根本還沒穿上。</p>
+<p>焦點小組與使用性測試最大的不同點在於前者僅需要受測者說，而後者在於觀察受測者做了什麼。<strong>簡易使用性測試，目的是以最低的成本，來檢測網站開發過程中是否有依循正確的方向走下去。</strong></p>
+<p>簡易使用性測試 Q&amp;A：</p>
+<p>（一）應該多久進行一次測試？</p>
+<p>固定每個月上午為最佳測試時間，理由是開發人員上午比較有空(?)，以固定每月而非以開發時程的原因在於開發計劃常常會偏離或是改規格，如果用「第一版上線後」才進行使用性測試，很容易被額外工作階段所延誤，固定時間也能養成團隊開發人員參與的習慣。</p>
+<p>（二）應該測試多少用戶？</p>
+<p>理想為三個，因為測試的目的不是在證明什麼，需要證明什麼才會要足夠的資料進行佐證，<strong>使用性測試的目的是發現問題，即使只測一位也好過不找任何人測試。</strong></p>
+<p>（三）如何選擇測試者？</p>
+<p>理想上，能找到我們的目標使用族群進行測試再恰當不過，但如果找非該網站領域的人也會有不錯的收獲，因為最大的使用性問題往往不是在於專業知識，而是把每位使用者當成初學者或是非領域的相關人員，讓不懂專業知識的人也能清楚明白，這對於有專業知識的人也會是非常友善的介面。</p>
+<p>（四）怎麼找到測試者？</p>
+<p>透過社群、論壇、網站會員、隔璧鄰居、親朋好友，提供時薪、車馬費等等回饋這些願意付出時間提供意見給我們的朋友，或是透過線上服務進行使用性測試—&gt;<a target="_blank" rel="noopener" href="http://www.usertesting.com/">http://www.usertesting.com/</a></p>
+<p>（五）在那裡測試？</p>
+<p>受測者可以在任何有電腦的地方，只要他操作電腦的畫面跟聲音可以傳到開發團隊的面前即可。實務上可以用像 <a target="_blank" rel="noopener" href="https://www.teamviewer.com/zhTW/index.aspx">Teamviewer</a> 這樣的遠端桌面軟體進行觀察。</p>
+<p>（六）應該由誰來引導測試？</p>
+<p>使用者測試需要一位主持人來引導開發團隊想要測試的功能與項目，最好是具有同理心、願意傾聽、看到別人犯錯誤時不會想要糾正他的人。主持人的目的是要協助受測者進行測試項目，並能鼓勵受測者勇於嘗試點擊，以及讓受測者說出目前的心理狀態。</p>
+<p>（七）誰該進行觀察？</p>
+<p>所有與該專案相關的人員，從第一線的執行者到上層的決策人員，有預算的話買些吃吃喝喝在觀察的現場中，觀察室需要一面能即時看到受測者操作畫面的大螢幕，以及可以聽到受測現場聲音的喇叭，在測試期間，請觀察人員根據看他們所看到聽到的做筆記，並於測試結束後提出。</p>
+<p>（八）何時該導入使用性測試？</p>
+<p><strong>越早越好，甚至還沒有網站的時候，就能針對同類型網站或競品網站進行測試</strong>，如果是需要網站改版，更可以針對現行網站進行測試，這樣就能知道那些功能需要保留或移除。在網站製作階段，從頁面草稿、線框圖、網站原型、mockup 等等，都能做使用者測試。</p>
+<p>（九）如何制定測試任務？</p>
+<p>很簡單，看我們想要測試什麼。像是加入會員的流程、購買商品的步驟、如何找到網站中某個特定的資訊等等。在設計任務的同時，也可以預留一些空間讓受測者自由發揮，像是「找一本你想買的書」會比「找一本兩百塊以下的書」來得更能觀察到受測者的使用行為。</p>
+<p>（十）使用性測試的 SOP</p>
+<ol>
+<li> 見面寒喧喇低賽。</li>
+<li> 打開網站讓受測者隨意逛逛並鼓勵他說出他看到的內容</li>
+<li> 開始任務，主持人告知任務內容，並請受測者完成。全程主持人不可詢問意見或引導性的提問，受測者卡關時不要協助他們，而是鼓勵他們說出卡關的點，主持人最主要的工作是發掘出任何使用上的問題給觀察室中的人了解。</li>
+<li> 完成所有受測任務，主持人可向受測者提問測試中所發生的問題，以及提出事前開發人員委託詢問的問題。</li>
+<li> 關門送客。</li>
+</ol>
+<p>（十一）使用性測試中的典型問題：</p>
+<ol>
+<li> 受測者不明白這個內容或功能是什麼意思，或是完全理解錯誤。</li>
+<li> 受測者找不到他們常用的字眼，這代表開發人員所用的字彙與受測者不同。</li>
+<li> 明明就在顯眼的地方但受測者就是沒看到。</li>
+</ol>
+<p>（十二）該如何決定修復那些問題？</p>
+<ol>
+<li> 收集問題列表，寫在白版上，紀錄相同的問題出現過幾次。</li>
+<li> 挑出10個最嚴重問題，請大家表決那些問題最重要、最需要被優先解決，或是根據出現次數進行優先修改順序。</li>
+<li> 問題評級，針對每項問題打分數，一到十分決定嚴重程度。</li>
+<li> 建立修復清單，針對問題該如何修復、所需時間、負責人進行彙整。可針對快速解決的問題再列一份清單，並且<strong>盡量在不添加現有內容或功能的原則下來解決使用性的問題</strong>。另外不要太看重受測者所提出的新功能，因為這大多代表著他們所面臨的問題沒有被妥善解決，如果他們真的提出一個很棒的解決方案，身為專業開發人員的我們一定會知道。</li>
+</ol>
+<p>（十三）那些理由讓人不做使用者測試？</p>
+<ol>
+<li> 沒時間—&gt;有測試可以避免冤枉路以及回過頭來花更多時間打掉重練。</li>
+<li> 沒有錢—&gt;清潔阿姨都可以抓來做使用者測試了，測試的硬體成本一般公司的會議室、咖啡廳都能運用，不用再額外花錢。</li>
+<li> 不知該何做—&gt;根據本書的方法多做幾次就能抓到技巧，<strong>重點是否有心從使用者身上學習還是只是把使用者體驗掛在嘴邊</strong>。</li>
+<li> 沒有實驗室—&gt;只要有兩臺可以上網的電腦就行。</li>
+<li> 不知如何解讀結果—&gt;最重要的問題誰都看得出來，如果沒人看出來那網站還是收收關了。</li>
+</ol>
+<h2 id="四、行動體驗"><a href="#四、行動體驗" class="headerlink" title="四、行動體驗"></a>四、行動體驗</h2><p><img src="https://oberonlai.blog/wp-content/uploads/2015/06/c9e42240.jpg" alt="c9e42240"></p>
+<p>行動體驗的設計原則：</p>
+<p>（一）允許縮放：不管是否有提供行動版網頁，能讓使用者自由縮放頁面大小非常重要，<strong>縱使我們覺得已將字體放到不能再大，還是會有人覺得字太小</strong>。</p>
+<p>（二）導引到正確的網址：如果網頁的電腦版與手機版是分開製作，務必確認內頁的連結可以導引到正確的版本，而非回到首頁。</p>
+<p>（三）提供完整網站的連結：不管行動內容設計得多完整、多豐富，<strong>使用者的經驗可能還停留在電腦版，他們會用電腦版的記憶來尋找他們想要的功能</strong>，所以務必提供版本切換的功能，慣例是在頁面底部。</p>
+<p>（四）不要隱藏該有的介面線索：按鈕要看起來可以點，輸入框看起來可以輸入。</p>
+<p>（五）介面需要容易學習並且可記憶性。</p>
+<p>提高網站使用好感度的方式：</p>
+<p>（一）知道使用者想在我們的網站上做什麼，並讓他們不費吹灰之力達成他們想要的。</p>
+<p>（二）告訴使用者他想知道的東西。</p>
+<p>（三）減少達成目標的步驟。</p>
+<p>（四）知道使用者可能那邊會碰到問題，並且提供解答。</p>
+<h2 id="個人心得"><a href="#個人心得" class="headerlink" title="個人心得"></a>個人心得</h2><p>在專案的過程中，總是會聽見業主許多對於網站設計的建議與想法，他們會根據自己的使用習慣來判斷公司網站也要以自己熟悉的方式來設計，這事實上也沒有對或錯，因為當網站完成後，最頻繁的訪問者可能就是老闆自己。</p>
+<p>會關心到使用者體驗，就是當他發現網站沒有流量、沒有達成預期目標，才會開始在意是不是網站那裡沒做好，那裡沒有符合使用者的期待，而這一切都是一種學習的過程。衷心希望有越來越多的企業主能夠盡早體悟到<strong>使用者體驗跟業蹟是正相關，微不足道的小細節累積起來都能帶給使用者截然不同的感受</strong>，真正去了解他們並解決他們的問題，才是能讓公司長久經營之道。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E3%80%90-%E6%9B%B8%E6%91%98-%E3%80%91%E7%B6%B2%E7%AB%99%E9%80%99%E6%A8%A3%E8%B3%A3%E6%89%8D%E6%9C%89%E8%AA%AA%E6%9C%8D%E5%8A%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E3%80%90-%E6%9B%B8%E6%91%98-%E3%80%91%E7%B6%B2%E7%AB%99%E9%80%99%E6%A8%A3%E8%B3%A3%E6%89%8D%E6%9C%89%E8%AA%AA%E6%9C%8D%E5%8A%9B/" class="post-title-link" itemprop="url">【 書摘 】網站這樣賣才有說服力</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-12-16 12:35:04" itemprop="dateCreated datePublished" datetime="2019-12-16T12:35:04+08:00">2019-12-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B/" itemprop="url" rel="index"><span itemprop="name">資訊架構</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://oberonlai.blog/wp-content/uploads/2016/01/getImage.jpeg" alt="getImage"></p>
+<h2 id="電子商務網站是線上的銷售員"><a href="#電子商務網站是線上的銷售員" class="headerlink" title="電子商務網站是線上的銷售員"></a>電子商務網站是線上的銷售員</h2><p>網路行銷：企業為了達到行銷目的在網路上展開的行銷活動</p>
+<p>網路行銷漏斗：流量、諮詢、線索、訂單</p>
+<p>企業做不好網路行銷的原因</p>
+<p>1.有網站沒流量-競爭對手多，很難被找到</p>
+<p>2.有流量沒諮詢-流量品質差、網站沒說服力</p>
+<h2 id="網站說服力的基本知識"><a href="#網站說服力的基本知識" class="headerlink" title="網站說服力的基本知識"></a>網站說服力的基本知識</h2><p>人的決策過程：需求確認 &gt; 方案蒐集 &gt; 方案評估 &gt; 克服決策壓力 &gt; 方案執行</p>
+<p>人的決策過程是五個步驟的迴圈</p>
+<p>決策壓力越大，越難進入下一個步驟迴圈</p>
+<p>如何說服他人做出決策：</p>
+<p>1.保持和決策者同步，不要輕易省略或跳躍某個步驟，</p>
+<p>說服的第一步是幫助他確認需求</p>
+<p>說服的第二步是幫助他人蒐集方案</p>
+<p>說服的第三步是幫助他人對方案進行評估</p>
+<p>說服的第四步是幫助他人克服決策壓力</p>
+<p>2.說服不是將個人意識強加他人，人們需要自己做出決定</p>
+<p>在進入下一階段前，必須透過提問的方式確認，不可以主觀地認為已經進入下一階段</p>
+<p>3.公正的評估方案，誠懇地提供說明更容易說服目標</p>
+<h2 id="影響網站說服力的要素"><a href="#影響網站說服力的要素" class="headerlink" title="影響網站說服力的要素"></a>影響網站說服力的要素</h2><p>說服力在網站的表現上為三大能力，分別是<strong>理解力、可信度、行動力</strong></p>
+<h3 id="理解力：讓訪客可以快速理解"><a href="#理解力：讓訪客可以快速理解" class="headerlink" title="理解力：讓訪客可以快速理解"></a>理解力：讓訪客可以快速理解</h3><p>具有說服力的網站可以快速地將以下資訊提供給對方：</p>
+<ol>
+<li> 我是誰</li>
+<li> 我賣什麼產品跟服務</li>
+<li> 我的產品跟服務能幫你解決什麼問題</li>
+<li> 為什麼要選擇我而不是其它人</li>
+<li> 為什麼我們現在就要合作</li>
+</ol>
+<p>電子商務網站要盡可能用最快的時間能讓用戶理解以上的事情，所以直白、簡單為準則</p>
+<p>前三點可以透過 logo 跟 slogan 清楚的表達出來</p>
+<p>對於一個有說服力的網站來說，在標頭區就能將以上資訊快速傳遞給訪客</p>
+<p>標頭區就應該將你產品的優勢或特色表現出來</p>
+<h3 id="可信度：讓訪客相信你說的是真實的"><a href="#可信度：讓訪客相信你說的是真實的" class="headerlink" title="可信度：讓訪客相信你說的是真實的"></a>可信度：讓訪客相信你說的是真實的</h3><p>如何建立可信度：</p>
+<ol>
+<li> 成功案例展示</li>
+<li> 客戶的評價</li>
+<li> 內容公開透明呈現</li>
+<li> 公開實績</li>
+<li> 第三方機構獲獎認證</li>
+</ol>
+<h3 id="行動力：讓訪客理解並信任我們後，還要有行動訴求"><a href="#行動力：讓訪客理解並信任我們後，還要有行動訴求" class="headerlink" title="行動力：讓訪客理解並信任我們後，還要有行動訴求"></a>行動力：讓訪客理解並信任我們後，還要有行動訴求</h3><p>主動提供合作意願給訪客</p>
+<p>行動提示主要表現形式有按鈕、電話號碼、線上表單等等</p>
+<p>網站說服力 = 理解力+可信度+行動力</p>
+<h2 id="電子商務網站的經營準則"><a href="#電子商務網站的經營準則" class="headerlink" title="電子商務網站的經營準則"></a>電子商務網站的經營準則</h2><p>1.清析的轉換目標 - 定位網站的目標</p>
+<p>如何專注網站目標</p>
+<p>問自己：這些對完成網站目標有幫助嗎？是必須的嗎？這句話或圖形是否能增加訪客對網站的理解和信任？是否能促使顧客採取我們所期望的行動？</p>
+<p>2.明確的目標族群 - 定位網站的目標訪客</p>
+<p>為了增加網站的說服力，網站應該是為了滿足特定的目標使用者而設計，而不是為所有顧客</p>
+<p>3.高度的相關資訊 - 給訪客想要的資訊</p>
+<p>訪客是以快速瀏覽的方式看你的網頁，找尋自己需要的關鍵字，確定找到關鍵字覺得有用，才會開始細看</p>
+<p>如果資訊不相關，說服力再怎麼強也是白搭</p>
+<p>4.簡潔的解決方案 - 給顧客簡單易行的方案</p>
+<p>銷售產品或服務本質上是在銷售解決方案</p>
+<p>優秀的業務員善於尋找客戶的問題，讓客戶意識到問題後，就可以很容易的把產品包裝成解決方案進行銷售</p>
+<p>5.清晰的公開實績 - 增加網站可信度</p>
+<p>說服力的核心問題是信任</p>
+<p>隨時保持行銷意識，蒐集可增加網站信任的素材</p>
+<p>6.明確的承諾保障 - 解決顧客決策壓力</p>
+<p>企劃網站請思考：</p>
+<ol>
+<li> 能給客戶的承諾和保障是什麼？</li>
+<li> 這個承諾能打消客戶的疑慮嗎？</li>
+<li> 這個承諾的成本和收益那個大？</li>
+<li> 怎麼為目標客戶準備一個明確的承諾？</li>
+</ol>
+<p>7.有力的行動提示 - 主動提示客戶採取行動</p>
+<h2 id="電子商務網站的版面設計準則"><a href="#電子商務網站的版面設計準則" class="headerlink" title="電子商務網站的版面設計準則"></a>電子商務網站的版面設計準則</h2><p>好的購買環境會激發顧客的購買熱情</p>
+<p>舒爽的頁面配置</p>
+<p>舒爽的色彩搭配</p>
+<p>愉悅的互動體驗</p>
+<p>如客戶能閱讀越多網站上的內容，成交的機會就越大</p>
+<h3 id="什麼時候網站外觀會成為購買的主要理由"><a href="#什麼時候網站外觀會成為購買的主要理由" class="headerlink" title="什麼時候網站外觀會成為購買的主要理由"></a>什麼時候網站外觀會成為購買的主要理由</h3><ol>
+<li> 決策者對要購買的產品缺乏專業能力判斷時，網站製作的細節會讓人聯想公司產品的用心程度</li>
+<li> 網站內容大家都差不多的時候</li>
+</ol>
+<p>通常取得客戶的聯絡方式比取得完整的資料來得更為重要（除非是要做 CRM），因此盡可能減少表單的欄位不讓訪客造成填寫的負擔</p>
+<p>客戶的詳細資料可以再取得聯繫後再逐步獲得，線上表單唯一的目的就是盡可能取得正確的聯繫方式。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E3%80%90-%E6%9B%B8%E6%91%98-%E3%80%91%E6%B2%92%E4%BA%BA%E6%87%82%E4%BD%A0%E6%80%8E%E9%BA%BC%E8%BE%A6%EF%BC%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E3%80%90-%E6%9B%B8%E6%91%98-%E3%80%91%E6%B2%92%E4%BA%BA%E6%87%82%E4%BD%A0%E6%80%8E%E9%BA%BC%E8%BE%A6%EF%BC%9F/" class="post-title-link" itemprop="url">【 書摘 】沒人懂你怎麼辦？</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-12-15 21:23:54" itemprop="dateCreated datePublished" datetime="2019-12-15T21:23:54+08:00">2019-12-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E5%B0%88%E6%A1%88%E5%8D%B3%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">專案即生活</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>2.9k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>3 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://oberonlai.blog/wp-content/uploads/2019/12/CleanShot-2019-12-15-at-21.23.06@2x.jpg"></p>
+<p>人真的是一種很難完全理解的生物，太多因素影響著我們看待一個人的方式，尤其是在現今社群的時代，一張圖、一段訊息、一個讚，就覺得對方可以理解我們，看完這本書之後才知道根本是天方夜譚，因此在怪罪別人都不理解你之前，先告訴自己：我們理解自己嗎？</p>
+<p>而對於希望得到別人好評的自己，也要問自己我們真的在意別人的看法嗎？書中提及改變他人認知的作法，最有效的就是運用引入注目的證據且持續轟炸，才會稍稍有機會觸動對方的認知機制，進而重新對你產生評價，但網友們隨意的批評、非善意的留言，我們真的要花寶貴的時間一個一個去重新改變他們的認知？省著點吧，在意我們真正在意的人就好。</p>
+<h2 id="認知模式"><a href="#認知模式" class="headerlink" title="認知模式"></a>認知模式</h2><p>人的認知方式很受演化的影響，一個基本事實是：人本身就是一團難解的謎。人與人之間溝通的資訊傳達沒有想像的多，很多時後你覺得我已經有明確的表達我的想法了，但對方的接收程度可能不到十分之一，也許他們正在忙、或是他們希望你做他想做的事，會有這樣的誤解是因為有兩個不正確的假設在影響著我們：</p>
+<ol>
+<li> 我們自以為別人都是客觀理性的看待我們</li>
+<li> 我們自以為別人都是用我們看待自己的方式來看待我們</li>
+</ol>
+<p>沒有人可以 100% 了解別人，解讀人的行為總是受到各種因素的影響，整體來說人都是懶得思考的，因為生活中有太多瑣事必須要處理，每件事情都要思考會讓心智負擔過重。所以人最常採用的認知模式為以下兩種：</p>
+<ol>
+<li> 捷思法：也就是經驗法則，因為之前那樣，所以現在一定也是這樣</li>
+<li> 假設法：根據瞎子摸象摸到的部位來進行假設與推斷</li>
+</ol>
+<p>因為假設法的認知模式，也就產生了驗證性偏見，人都會看到自己希望所看到的東西，而不去相信真正客觀的事實，因此也就有了所謂的初始效應，對方第一眼產生的印象會影響之後對你的行為詮釋。</p>
+<p>其次最常見的是刻板印象，人會以你所屬的群體來詮釋你的行為，再經由分類法，幫助大腦認知理解這個世界所有的人事物，因而延伸出月暈效應，雖然不會有人承認，但實驗證實多數人都會覺得外表好看的人，容易被人覺得比較聰明、誠實、善良等等的正面評價，</p>
+<p>長得好看但卻是壞人，會造成認知的認知失調，因此大腦會自動忽略某部分的條件以便讓心智引擎可以運作，譬如開始說這人長得醜、或是他不是好人，透過這樣告訴自己來調整認知落差。</p>
+<p>另外一個典型的認知叫做錯誤共識效應，當犯錯時為了讓自己比較好過，會認為其他人也跟自己有一樣的感覺或想法，譬如：我犯了全世界男人都會犯的錯XD</p>
+<p>錯誤的獨特性也是常見的現象，那就是人會傾向相信自己擁有比別人更高的道德觀、價值觀，換句話說也就是自我感覺良好的一種機制在運作。</p>
+<h2 id="認知過程"><a href="#認知過程" class="headerlink" title="認知過程"></a>認知過程</h2><p>人的認知過程分為兩個階段，第一階段是不自覺的潛意識認知，是自己完全沒有意識到的、無自我察覺的意圖，也是比較不費力認知方式，而且多半無法控制，在這階段認知者只會看見自己所希望看見的。</p>
+<p>第二階段要有非常特殊的狀況才會進入到此階段，進而觸發調整自我認知的機制，並且需要在大腦清醒、專注的時候才有機會運作，經研究人腦無法直接進入第二階段，當認知者把情境以及其他因素列入考慮來對你進行客觀評估的時候，才有可能改變對方的認知。</p>
+<h2 id="影響認知的因素"><a href="#影響認知的因素" class="headerlink" title="影響認知的因素"></a>影響認知的因素</h2><h3 id="信任濾鏡"><a href="#信任濾鏡" class="headerlink" title="信任濾鏡"></a>信任濾鏡</h3><p>首先是對你的信任感，初見陌生人對方會先判斷你是否有敵意，所以想要獲取對方的信任，首先是展現溫情，像是關注對方的話題，看著他的眼睛、對於對方的話題表示認同，同時也能表現同理心，更積極的作法是主動先信任對方，展現善意。</p>
+<p>此外透過展現能力來獲取信任，表現出有意志力，意志力是很容易讓人覺得你擁有正直的性格，保持謙虛也是很好的方法，另外展現掌權者的肢體語言，權力者最能自在的展現自我，縱使你不是真的權力者，但也可以透過貼標籤的方式告訴自己自己在掌控。</p>
+<p>表現潛力也是很重要的一環，相較於過去的表現，人們比較看重未來的潛力。</p>
+<h3 id="權利濾鏡"><a href="#權利濾鏡" class="headerlink" title="權利濾鏡"></a>權利濾鏡</h3><p>其次權力者的視角也會影響認知，對於權力者來說，他只希望你證明你對我有用，不然就滾開，想要有價值不是當好人，而是當有用的人。權力者他們關注自己的目標，不放心力在任何不重要的事情上，以節省心智消耗。</p>
+<h3 id="自我濾鏡"><a href="#自我濾鏡" class="headerlink" title="自我濾鏡"></a>自我濾鏡</h3><p>簡單說就是你的存在是否會威脅到他而影響到他對你的觀感，自我威脅的運作方式分為四個象限：</p>
+<ul>
+<li>  高相關性、高親近性</li>
+<li>  高相關性、低親近性</li>
+<li>  低相關性、高親近性</li>
+<li>  低相關性、低親近性</li>
+</ul>
+<p>相關性指的是你與他人的成就領域是否相關，他人的成就領域是自己在意的項目時才會有威脅性。親近性指的是你與這人的親近程度，也就是你們彼此之間的熟悉程度。當受到威脅時，自我感覺良好是消除自我威脅的一種方式。</p>
+<h3 id="人受到威脅的對應策略"><a href="#人受到威脅的對應策略" class="headerlink" title="人受到威脅的對應策略"></a>人受到威脅的對應策略</h3><p>第一個策略是貶低威脅者的成就，找其他勝過威脅者的領域來進行向下比較，譬如: 是啊，他是很優秀，不過他的女友腦袋空空空的。</p>
+<p>第二個是會讓自己與有榮焉，讓自己與威脅者處於同一個群體來降低威脅，像是子女的成功就是父母的驕傲。</p>
+<p>第三個方式是降低威脅者的相關性，譬如告訴自己威脅者的領域跟自己沒有關聯，像是遇到同行的佼佼者說自己也從事過其他行業並且取得不錯的成績。</p>
+<p>最後是把威脅者弄走，或是迴避他以降低親近性。</p>
+<p>如果不想讓別人警戒自己，可以使用以下方法降低威脅感：</p>
+<ul>
+<li>  謙虛一點</li>
+<li>  肯定他人</li>
+<li>  強調我們是一國的</li>
+</ul>
+<h2 id="影響認知的性格"><a href="#影響認知的性格" class="headerlink" title="影響認知的性格"></a>影響認知的性格</h2><p>冒險家，成就致上的性格：努力獲利最大化與避免錯失良機，溝通方式盡量強調機會與獲益，用成功案例來說服他們。</p>
+<p>保守者，規避風險性格：追求最小損失與維持現狀，溝通方式強調減少風險與損失，透過數據來佐證來證明這麼做可以維持現狀或是以防未來的風險。</p>
+<p>焦慮型人格：小時候缺乏關注，非常渴望獲得關注、沒有安全感，覺得要有條件才能得到愛，特徵是容易緊張、生氣、焦慮，溝通方式盡量採用同理心，並告訴自己他不是針對你，說明時要準確避免模稜兩可，說到做到對他們而言是最在乎的事情。</p>
+<p>逃避型人格：小時後缺乏關注，為了不讓自己受傷索性什麼都不要，沒有期待就沒有傷害。特徵是冷漠、疏離、不易與人親近，溝通方式要有耐性，關鍵是不要裝熟，發現他陷入壓力時不用詢問直接提供適當的協助，如果詢問他有八成的機率會拒絕你的協助，然後讓自己更痛苦。</p>
+<h2 id="如何改變別人的認知"><a href="#如何改變別人的認知" class="headerlink" title="如何改變別人的認知"></a>如何改變別人的認知</h2><p>只要啟動第二階段認知，就有機會改變，最強而有力的方式就是展現壓倒性又引人注目的證據，且持續展現，透過不停的轟炸認知者來喚醒他的第二階段認知。</p>
+<p>如果沒有這麼長的時間可以來改變，提醒認知者對於公平與平等的意識可能是個簡單又快速的方法，運用標籤的力量，告訴對方他是很公平的人，或是透過自己曾經看走眼的的偏見案例來邀請對方分享同樣的故事，讓他自己意識到對你的評價似乎不太公正。</p>
+<p>第三種方法是讓對方的成敗與你相關，把自己跟對方綁在一起，製造共同的目標或敵人，像是一起成立專案小組，同時製造自己與對方更多的相處機會，讓他意識到你不是他見過一次就不用在意的人，有更多的相處也才能有機會開始了解彼此。</p>
+<p>最後是適時且恰當的道歉，如果你真的不曉得做了什麼得罪了他，那就是真誠的道歉，道歉的關鍵是不要自我辯護，而是設想對方觀點以及承認對方的感受與價值觀，重建我們是一國的感覺，最重要的事搞清楚道歉對象並做出適合的道歉方式，提供相對應的補償。</p>
+<p>在希望別人可以客觀看待自己之前，也要先修正自己對於看人的認知，告訴自己不用急著對他人下評語，盡可能保持公平與客觀，並且留意偏見的產生，同時也用這樣的方法來看待自己，畢竟能先從自己了解起才有機會客觀的看待他人。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E8%B3%87%E8%A8%8A%E5%9C%96%E8%A1%A8%E8%A8%AD%E8%A8%88%E8%A1%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E8%B3%87%E8%A8%8A%E5%9C%96%E8%A1%A8%E8%A8%AD%E8%A8%88%E8%A1%93/" class="post-title-link" itemprop="url">【 書摘 】資訊圖表設計術</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-12-05 11:46:03" itemprop="dateCreated datePublished" datetime="2019-12-05T11:46:03+08:00">2019-12-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E8%B3%87%E8%A8%8A%E6%9E%B6%E6%A7%8B/" itemprop="url" rel="index"><span itemprop="name">資訊架構</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a target="_blank" rel="noopener" href="https://www.books.com.tw/products/0010761309">https://www.books.com.tw/products/0010761309</a></p>
+<p>久聞 Re-lab 團隊的大作，此書分享了他們的成功案例以及實作流程，書中對於資訊架構的介紹以及使用者研究的經驗，在軟體開發的領域亦非常受用，印象最深刻的是他們說明如何透過實驗來找到正確的溝通對象。案例是環境資訊協會想要推廣減少一次性使用物品為推廣目標，該協會想要推廣給平常不會特別關注環保議題的非同溫層族群，因此請來 Re-lab 來協助此次專案。</p>
+<p>在溝通對象不明確的情況下，他們採取了以下三個步驟：</p>
+<p>1.假設溝通群眾：</p>
+<p>首先取得正確的命題：誰有動機減少一次性物品的使用？然後使用心智圖來進行發想，從關鍵字來進一步聯想可能的族群，ex: 一次性物品的使用缺點 &gt; 很醜 &gt; 沒有品味 &gt; 注重生活品質的人</p>
+<p>2.具體描述溝通群眾的樣貌：</p>
+<p>把假設的溝通族群，開始進行分類，根據他們的年紀、關心的議題、身份來進行描述。</p>
+<p>3.在社群上快速測試以得出結論：</p>
+<p>根據上述的溝通族群設計相對應的文案與圖像，並且設計問卷來了解假受測族群的想法，然後去 FB 上買廣告，根據假設對象來下關鍵字，再從貼文的觸及人數、按讚數、分享數、留言數以及問卷回收率與內容來評估哪個族群對該議題最在意。</p>
+<p>過往在面對客戶的案件需求時，客戶總會希望這個網站可以給越多人看越好，不管男女老少都是他們想要吸引的對象，站在客戶的立場這是很正常的事情，但現在成熟的產業為了發展出更多的營收，會去垂直細分各種不同族群的需求，進而開發相對應的產品，因此如果沒有對溝通對象有一定程度的了解，很難吸引他們的注意力。</p>
+<p>再加上每天都有爆炸多的資訊要獲得使用者的注意力，沒有策略的溝通方式難度會是異常的高，除非像是病毒行銷常用的手法，足以引起大眾的好奇心進而造成瘋傳，這背後也是一連串縝密的策劃的。</p>
+<p>以下就其他各章節進行摘錄：</p>
+<p>資訊圖表的原理與概念</p>
+<p>改變資訊的揭露方式就可以讓系統自我調節，進而改善整個系統的問題。</p>
+<p>Has Rosling 瑞典數據大師</p>
+<p>吸引讀者的方法</p>
+<ol>
+<li> 提出他們可能關心的問題</li>
+<li> 明確點出讀者沒有意識到的認知落差</li>
+<li> 一開始就讓讀者知道我們要傳達的資訊跟他有什麼關</li>
+<li> 讓讀者覺得有收穫才能獲得轉分享</li>
+</ol>
+<p>吸引法則</p>
+<ol>
+<li> 記憶點：一次一個重點</li>
+<li> 資訊層次：安排資訊的層級、結構</li>
+<li> 視覺動線：上到下、左到右，要違反這規則需要有明確的視覺引導</li>
+<li> 設計方法：封閉性、相似性、相鄰性、連續性</li>
+<li> 顏色運用：根據傳達資訊屬性選擇顏色</li>
+<li> 互動性：透過文案進行引導</li>
+</ol>
+<p>資訊圖相關資源：</p>
+<p><a target="_blank" rel="noopener" href="https://www.facebook.com/Info2Act">https://www.facebook.com/Info2Act</a></p>
+<p><a target="_blank" rel="noopener" href="http://jeremycflin.github.io/">http://jeremycflin.github.io</a></p>
+<p><a target="_blank" rel="noopener" href="http://ai2html.org/">http://ai2html.org</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.tubegraphics.co.jp/">http://www.tubegraphics.co.jp</a></p>
+<p><a target="_blank" rel="noopener" href="https://infogra.me/">https://infogra.me</a></p>
+<p><a target="_blank" rel="noopener" href="https://informationisbeautiful.net/">https://informationisbeautiful.net</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.good.is/infographics">https://www.good.is/infographics</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/fs-%E7%A8%8B%E5%BC%8F%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/fs-%E7%A8%8B%E5%BC%8F%E9%96%8B%E7%99%BC%E6%97%A5%E8%AA%8C/" class="post-title-link" itemprop="url">FS 程式開發日誌</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-12-03 09:38:19" itemprop="dateCreated datePublished" datetime="2019-12-03T09:38:19+08:00">2019-12-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E8%80%81%E4%BA%BA%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">老人碎念</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>5.5k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>5 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="2019-12-03"><a href="#2019-12-03" class="headerlink" title="2019/12/03"></a>2019/12/03</h3><p>重刻編輯器的 UI ，JS 的部分比想像中要來得棘手，改了 DOM 之後噴一堆錯，看來還是習慣用 getElementById 比較安全，querySelector 太依賴 DOM 結構。然後意外發現 CSS 的 calc 竟然可以先乘除後加減，對於要計算 100vh 的比例很方便。</p>
+<pre class="line-numbers language-none"><code class="language-none">height: calc( ((100vh - 102px) &#x2F; 5) &#x2F; 3.5 );<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h3 id="2019-11-29"><a href="#2019-11-29" class="headerlink" title="2019/11/29"></a>2019/11/29</h3><p>「開始設計你的影像故事吧！頁面管理可以讓你新增、刪除、編輯頁面，還可以使用拖曳的方式來改變順序，在開始製作前不妨先把影像故事的頁面結構先建立完成，說一個好故事就從大綱開始！」這是在設計頁面管理的介面時，寫下的使用教學說明文字，在重新整理介面時，發現到一件事，這工具的背後，是不是該從教使用者如何寫出一個好故事開始？想要打造品牌，沒有一個好故事要從這麼競爭激烈的環境中脫穎而出實在困難，除非商品有獨特性或是獨佔性，但一般的業者可能很難有這樣的資源，業者的素材不好、品牌沒有深度、產品沒有靈魂，相反的，每次看旅遊雜誌總是介紹許多台灣努力在地深耕的品牌，其品質、包裝、行銷能力完全不輸國外品牌。希望這工具，可以幫助有心要經營品牌的業者，幫助他們把他們的理念可以傳達給更多人。</p>
+<h3 id="2019-11-28"><a href="#2019-11-28" class="headerlink" title="2019/11/28"></a>2019/11/28</h3><p>搞定頁面排序功能，比想像中碰到的阻礙小，要注意的地方就是重新排序完畢之後，要更新 data-slide 的數值，因為這會關係到 slide 的切換順序</p>
+<pre class="line-numbers language-none"><code class="language-none">setPageOrder()&#123;
+  this.vars.pageNav.addEventListener(&#39;stop&#39;,e&#x3D;&gt;&#123;
+    let orderArray &#x3D; [];
+    Array.from(this.vars.pageNav.querySelectorAll(&#39;li a&#39;)).forEach(element &#x3D;&gt; &#123;
+      orderArray.push(&#96;$&#123;element.dataset.page&#125;&#96;)
+    &#125;)
+    for (let i &#x3D; 0; i &lt; orderArray.length; i++) &#123;
+      this.vars.pageNav.querySelectorAll(&#39;li a&#39;)[i].dataset.slide &#x3D; i;
+      this.vars.slideshowPage.querySelector(&#39;.uk-slider-items&#39;).append(document.querySelector(&#96;li[data-page&#x3D;$&#123;orderArray[i]&#125;]&#96;))
+    &#125;
+    Array.from(this.vars.pageNav.querySelectorAll(&#39;li a&#39;)).forEach(element &#x3D;&gt; &#123;
+      setTimeout(() &#x3D;&gt; &#123;
+        element.classList.remove(&#39;active&#39;);
+      &#125;, 600);
+    &#125;);
+  &#125;)
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>開始著手進行編輯器的 UI 調整，先用 Sketch 設計，讓左側主選單有順序性，引導使用者照步驟操作，第二層選單改用 tab 來設計，緊靠著主選單來暗示關聯性，比較麻煩的地方就是小工具的地方需要改寫不少 code，變成不能用 offcanvas 來做而是要用 toggle，這樣的調整在 class 方面可能會造成某些無法預期的問題，封面設定的部分捨棄讓人困惑的 Google 搜尋結果頁，改以單純的頁面來顯示，輔以文字說明，在視覺線索上可以多強調這張圖是封面的意涵。</p>
+<h3 id="2019-11-27"><a href="#2019-11-27" class="headerlink" title="2019/11/27"></a>2019/11/27</h3><p>在改變小工具的尺寸後，右邊的設定項會噴錯這件事過關了，不是原本 moveable 的寫法有問題，而是在 script.js 裡面有做一個取得 config 的點擊事件，因為取到的 e.target 包含範圍太廣，造成在拖曳 moveable 也會觸發到偵聽事件，而 moveable node 並沒有 data-config 的屬性，所以導致 config 噴錯，處理方式是把這一個事件拿掉，但又會造成背景的 config 取不到，所以再寫了一個點擊事件來取得背景圖的 config。因為這件事學到了怎麼從 class 裡面把需要的東西傳出來，只要在建構式的時候先取好要拿的東西的變數名，然後指派值給他，這樣他就會變成這個類別的屬性，接下來只要 new 出實體後就可以用 . 取得該屬性的值。</p>
+<pre class="line-numbers language-none"><code class="language-none">Array.from(document.querySelectorAll(&#39;li a[data-config^&#x3D;page]&#39;)).forEach(element &#x3D;&gt; &#123;  &#x2F;&#x2F; 點擊內頁底圖取得 config
+    element.addEventListener(&#39;click&#39;,(e)&#x3D;&gt;&#123;
+      config &#x3D; e.currentTarget.dataset.config;
+    &#125;)
+  &#125;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>開發上遇到小低潮，根本原因是找不到現階段自己開發的目標是什麼？原本希望 11 月底就可以完成編輯器的部分，但遇到 UI 需要大幅度的調整，需要重新思考這工具的操作邏輯應該會是在何種使用情境底下，或是去類比既有的設計模式來進行調整，如果是以部落客為主要使用對像，操作方式可能會是類似文章發布系統，或是社群網站貼文的模式。如果是以大眾都熟悉的軟體，可能比較像是 Power Point，但真要這樣改下去整個 UI 都要重弄了，懊惱自己開發前為何不多做點研究以及使用 Prototype 做 user test，只能從現有的邏輯中先去調整看看了。</p>
+<p>所以有一種走了三個月又要從頭來過的感覺，想放棄的念頭就這樣冒了出來，再加上對於產品方向的不確定性，開始懷疑這一切是不是做白工？一覺睡起來，看著已經完成的 task 有 109 個，程式碼行數超過萬行、開發總小時數超過 300 個小時，學會了 js 的 class 運用、不依賴 jQuery 全寫原生 js、如何使用 localStorage 儲存複雜的資料、如何開發各種頁面小工具、drag＆drop、ajax insert post…，以一個 Side Project 的練習量來看好像已經足夠了XD。</p>
+<p>接下來呢…？進入撞牆期了，依照網站開發十多年的經驗，最好的解決辦法就是閉上嘴，專注在每一個 task 上面，其他，都不用想了。</p>
+<h3 id="2019-11-25"><a href="#2019-11-25" class="headerlink" title="2019/11/25"></a>2019/11/25</h3><p>這件事情卡關，在改變小工具的尺寸後，右邊的設定項會噴錯，原因是因為當點擊縮放控制點時，用來判斷要改變的對象 config 變數被清空了，所以需要在點擊縮放控制點時，要設定 config 為當前小工具的 data-config，於是寫了下面這一段，想要放在類別裡面，但 config 變數是在最外層的建立的，因此下面這段必須放在外層，又因為他是非同步事件，無法使用 return 的方式來回傳值，只能做成 function 寫在外層的 dataInput function 裡面</p>
+<pre class="line-numbers language-none"><code class="language-none">Array.from(document.querySelectorAll(&#39;.wrap-moveable.active .moveable-control&#39;)).forEach(element &#x3D;&gt; &#123;
+  element.addEventListener(&#39;click&#39;, e &#x3D;&gt; &#123;
+    config &#x3D; e.currentTarget.parentNode.previousElementSibling.dataset.config;
+  &#125;)
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>紀錄一下頁面拖曳改變順序的思路：左側選單當完成拖曳後，會依照現在的選單的順序組成一個 Array，去抓 data-page-name，組成 [“page0”,”page1”,”page2”]，然後中間的區塊會用迴圈的方式來 append innerHTML，用 getElementById 取得 node，然後依序 append。</p>
+<p>點擊複製網址功能，input 不能是在 disabled 的狀態下才有作用，但又不想讓 user 可以修改 input 裡面的內容，所以從 css 下手，用 pointer-events 讓 user 選不到 input field</p>
+<pre class="line-numbers language-none"><code class="language-none">vars.btnCopyEmbedCode.addEventListener(&#39;click&#39;, () &#x3D;&gt; &#123;
+  vars.embedCode.select();
+  vars.embedCode.setSelectionRange(0, 99999)
+  document.execCommand(&quot;copy&quot;);
+  vars.btnCopyEmbedCode.textContent &#x3D; &quot;已複製！&quot;
+  setTimeout(() &#x3D;&gt; &#123;
+    vars.btnCopyEmbedCode.textContent &#x3D; &quot;複製程式碼&quot;
+  &#125;, 2000);
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>FB &amp; Line share url</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;facebook.com&#x2F;sharer.php?u&#x3D;&lt;?php the_permalink(); ?&gt;&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;img src&#x3D;&quot;&lt;?php echo get_template_directory_uri(); ?&gt;&#x2F;img&#x2F;01_newspopup_fb.svg&quot; width&#x3D;&quot;9&quot;&gt;&lt;&#x2F;a&gt;
+&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;lineit.line.me&#x2F;share&#x2F;ui?url&#x3D;&lt;?php the_permalink(); ?&gt;&quot; target&#x3D;&quot;_blank&quot;&gt;&lt;img src&#x3D;&quot;&lt;?php echo get_template_directory_uri(); ?&gt;&#x2F;img&#x2F;01_newspopup_line.svg&quot; width&#x3D;&quot;16&quot;&gt;&lt;&#x2F;a&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h3 id="2019-11-23"><a href="#2019-11-23" class="headerlink" title="2019/11/23"></a>2019/11/23</h3><p>新增了 Bookend 的 CTA button，結果又發生逗號問題而讓 Bookend 噴錯，實在受夠了，乖乖把 Bookend 的 JSON 改用 PHP 的 Array 來組，最後再用 json_encode 來餵給 js，一開始組都還沒問題，但卡在 bookend link 這個地方，因為 as 要求的格式為 {},{}，但因為適是用陣列組出來的，所以 php 會變成 [{},{}]，多了外面的中括號 bookend 又會 GG，試著把 php array 轉成 object，但 encode 就還是會出現中括弧，一度想去 slack 裡面抱怨哪有人把多筆資料設計成 {},{} 這樣的格式，應該都是要用陣列才對，然後再想想問題提出了後面還要跟進與討論，覺得好懶好花時間，最後用了很爛的招： str_replace 四次來處理掉中括號以及多餘的逗號問題，希望未來有工程師看到我現在的解法，能想出更好的解決方案了。</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;?php echo str_replace(&#39;,&quot;,&#39;,&#39;,&#39;,str_replace(&#39;&#125;&quot;,&#39;,&#39;&#125;,&#39;,str_replace(&#39;&#125;,&quot;&#39;,&#39;&#125;,&#39;,str_replace(&#39;\&quot;&#39;,&#39;&quot;&#39;,json_encode( $bookend,JSON_UNESCAPED_UNICODE ))))); ?&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>另外修改好了 sidebar 的 style，多加了可顯示或關閉 sidebar 的設定項，讓不需要使用 sidebar 的人就能把它關閉，加了重整頁面時會跳出未儲存檔案的提醒、根據文字小工具選到的字型動態載入 Google font。</p>
+<h3 id="2019-11-22"><a href="#2019-11-22" class="headerlink" title="2019/11/22"></a>2019/11/22</h3><p>把 Bookend 做了一個整理，加了品牌介紹的區塊，然後徹底檢查會造成 Bookend error 的各種狀況，會有 error 是因為 Bookend 必須是 JSON 格式，少或多一個逗號都會造成錯誤，當 user 沒有填 Bookend 的所有項目資料為空時，逗號的判斷沒有寫好所以造成各種錯誤，後來想想這個區塊不應該這樣寫，而是先用 PHP 組成陣列之後，再用 json_encode 去產出 bookend 需要的東西，這樣就不用擔心逗號的問題，未來有時間再處理了。</p>
+<p>另外增加了 uploadcare 的檔案上傳限制，容量限制為 4 MB，檔案型態只允許 jpg png gif mp3 mp4 ，其他全鎖，避免有心人士上傳了惡意腳本來亂。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/media-with-ftp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/media-with-ftp/" class="post-title-link" itemprop="url">Media with FTP 外掛開發</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-07-27 10:20:12" itemprop="dateCreated datePublished" datetime="2019-07-27T10:20:12+08:00">2019-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>2 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>第一次練習開發 WordPress 外掛，心得紀錄如下：</p>
+<h1 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h1><ol>
+<li> 提交 github 修改</li>
+<li> 整合 cmb2 到 plugin</li>
+<li> 開後台設定欄位</li>
+<li> 上架 <a target="_blank" rel="noopener" href="http://wordpress.org/">wordpress.org</a> svn</li>
+</ol>
+<h2 id="如何修改別人-Repo-的流程"><a href="#如何修改別人-Repo-的流程" class="headerlink" title="如何修改別人 Repo 的流程"></a>如何修改別人 Repo 的流程</h2><p>先 fork 到自己的帳號，clone 到本機，remote 增加原始專案的 upstream，然後開分支處理，本機開發隨時 pull upstream，然後 push 到分支，完成後再開 pull request</p>
+<pre class="line-numbers language-none"><code class="language-none">$ git clone myfork
+
+$ git remote add upstream &lt;others repo&gt;
+
+$ git checkout -b &lt;branch name&gt;
+
+$ git commit -am &quot;message&quot;
+
+$ git pull upstream &lt;branch name&gt;
+
+$ git push origin &lt;branch name&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="CMB2-的一些雷"><a href="#CMB2-的一些雷" class="headerlink" title="CMB2 的一些雷"></a>CMB2 的一些雷</h2><ul>
+<li>  放在 theme or plugin 的資料夾直接引入if ( file_exists( dirname( <strong>FILE</strong>) . ‘/cmb2/init.php’ ) ) { require_once dirname( <strong>FILE</strong>) . ‘/cmb2/init.php’; } elseif ( file_exists( dirname( <strong>FILE</strong>) . ‘/CMB2/init.php’ ) ) { require_once dirname( <strong>FILE</strong>) . ‘/CMB2/init.php’; }</li>
+<li>  取得 option page 的值使用 cmb2_get_option，至少要帶兩個參數 key 與 idecho cmb2_get_option(‘wfm_options’,’wfm_port’)</li>
+</ul>
+<p>cmb2 API → <a target="_blank" rel="noopener" href="https://cmb2.io/api/index.html">https://cmb2.io/api/index.html</a></p>
+<h2 id="本地化外掛流程"><a href="#本地化外掛流程" class="headerlink" title="本地化外掛流程"></a>本地化外掛流程</h2><ul>
+<li>  主程式註解宣告的地方要有 Text domain 跟 Domain Path/* Plugin Name: Wp-ftp-media-library Plugin URI: <a target="_blank" rel="noopener" href="http://wordpress.stackexchange.com/questions/74180/upload-images-to-remote-server">http://wordpress.stackexchange.com/questions/74180/upload-images-to-remote-server</a>Description: Let’s you upload images to ftp-server and remove the upload on the local machine. Version: 0.1 Author: Pontus Abrahamsson Author URI: <a target="_blank" rel="noopener" href="http://pontusab.se/">http://pontusab.se</a>Text Domain: wp-ftp-media-library Domain Path: /languages */</li>
+<li>  用 wp cli 建立 pot 檔，進到外掛目錄，跑下面這段 cli，在寫 __e 的時候第二個參數 text domain 不能用變數，要寫死才行，不然 wp cli 會爬不到需要翻譯的字串$ wp i18n make-pot . languages/my-plugin.pot</li>
+<li>  mo 檔一定要跟 Text Domain 一樣，{text-domain}-{locale}.mo</li>
+<li>  外掛主程式載入翻譯檔function wfm_load_text_domain() { load_plugin_textdomain( ‘wp-ftp-media-library’, false , basename( dirname( <strong>FILE</strong>) ) . ‘/languages’ ); } add_action(‘plugins_loaded’, ‘wfm_load_text_domain’);</li>
+</ul>
+<h2 id="FTP-刪除遠端圖片"><a href="#FTP-刪除遠端圖片" class="headerlink" title="FTP 刪除遠端圖片"></a>FTP 刪除遠端圖片</h2><ul>
+<li>  使用 ftp_delete，使用流程一樣先 connect 再 login，然後利用 wp_get_attachment_url 取得原始圖路徑，再用 wp_get_attachment_metadata 取得縮圖路徑，hook 用 delete_attachment</li>
+<li>  開發外掛時檢查變數值的小技巧，用 error_log 把變數印在 error.log 訊息裡面</li>
+<li>  較大張的圖片會產生一張 wp_get_attachment_metadat 抓不到的縮圖圖片，</li>
+</ul>
+<pre class="line-numbers language-none"><code class="language-none">$file_year &#x3D; substr(wp_get_attachment_metadata($args)[&#39;file&#39;],0,8); $file_original &#x3D; str_replace($settings[&#39;cdn&#39;].&#39;&#x2F;&#39;,&quot;&quot;,wp_get_attachment_url($args)); $file_thumb &#x3D; $file_year.wp_get_attachment_metadata($args)[&#39;sizes&#39;][&#39;thumbnail&#39;][&#39;file&#39;]; $file_medium &#x3D; $file_year.wp_get_attachment_metadata($args)[&#39;sizes&#39;][&#39;medium&#39;][&#39;file&#39;]; $file_large &#x3D; $file_year.wp_get_attachment_metadata($args)[&#39;sizes&#39;][&#39;large&#39;][&#39;file&#39;]; $file_post &#x3D; $file_year.wp_get_attachment_metadata($args)[&#39;sizes&#39;][&#39;post-thumbnail&#39;][&#39;file&#39;]; error_log($file_year, 0); ftp_delete($connection,$file_original); ftp_delete($connection,$file_thumb); ftp_delete($connection,$file_medium); ftp_delete($connection,$file_large); ftp_delete($connection,$file_post); ftp_close($connection);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="外掛上架流程"><a href="#外掛上架流程" class="headerlink" title="外掛上架流程"></a>外掛上架流程</h2><ul>
+<li>  外掛命名</li>
+<li>  header comment</li>
+<li>  text domain 命名</li>
+<li>  readme.txt</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://blog.wpjam.com/article/listing-your-plugin-at-the-wordpressorg-plugin-directory/">如何发布插件到 WordPress 官方插件站</a></p>
+<h2 id="Composer-安裝管理"><a href="#Composer-安裝管理" class="headerlink" title="Composer 安裝管理"></a>Composer 安裝管理</h2><ul>
+<li>  使用 composer init 初始化</li>
+<li>  composer install 安裝套件</li>
+<li>  要引入別人寫的套件寫在 compser.json 裡面的 require 定義，然後 require_once vendor/autoload.php</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E5%BE%9E%E6%96%B0%E5%AD%B8%E7%BF%92html5-%E4%BA%94-css3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E5%BE%9E%E6%96%B0%E5%AD%B8%E7%BF%92html5-%E4%BA%94-css3/" class="post-title-link" itemprop="url">從新學習HTML5 (五) CSS3</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-04-04 22:16:21" itemprop="dateCreated datePublished" datetime="2019-04-04T22:16:21+08:00">2019-04-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>方塊模型 Flexible Box，父層元素宣告為 display: flex 後，可以使用下列屬性來控制子元素的排列方式：</p>
+<p>justify-content - 控制所有子元素的排列方式</p>
+<p>屬性有 flex-start flex-end center space-between space-around，space-around 在第一與最後一個元素會留空間可以 around。</p>
+<p>flex-direction: column 設定子元素為垂直排列，預設為水平排列</p>
+<p>align-items - 設定子元素的垂直對齊方式，屬性有 center flex-start flex-end baseline stretch</p>
+<p>flex-wrap:wrap 設定子元素要換行</p>
+<p>align-content - 設定在子元素換行的情況下，子元素區域的垂直對其方式，屬性有 center flex-start flex-end space-between space-around stretch</p>
+<p>order - 設定子元素的順序</p>
+<p>border-image - 讓邊框使用圖片，border-image: url(‘path/border.jpg’) 10 20 30 40 repeat，中間數字為上右下左四個角落圖片要被裁切的範圍，也可以使用百分比，最後一個參數為四個角落以外的圖片延展模式。</p>
+<p>columns - 讓在同個標籤內的文字可以分欄，設定方式為 columns: column-width column-count</p>
+<p>resize: both - 允許使用者改變元素大小，透過右下角的三角形進行拖曳縮放</p>
+<p>CSS 動畫相關：</p>
+<p>animation-duration 動畫開始到結束的秒數</p>
+<p>animation-iteration-count 動畫重複播放的次數，設定為 infinite 則無限循環</p>
+<p>animation-direction 正向播放或是反向播放</p>
+<p>animation-delay 延遲播放秒數</p>
+<p>window.matchMedia - 用 JS 來設定斷點</p>
+<pre class="line-numbers language-none"><code class="language-none">if( window.matchMedia(&#39;(max-width: 1000px)&#39;).matches )&#123;
+  alert(&quot;螢幕寬度大於 1000px&quot;);
+&#125; else if( window.matchMedia(&#39;(min-width: 1000px)&#39;).matches )&#123;
+  alert(&quot;螢幕寬度小於 1000px&quot;);
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 用 js 做 RWD
+var winW &#x3D; window.matchMedia(&quot;(max-width: 768px)&quot;);
+winW.addListener(resizeWidth);
+resizeWidth(winW);
+
+function resizeWidth(pMatchMedia)&#123;
+  if (pMatchMedia.matches) &#123;
+    alert(&#39;&lt; 768&#39;)
+  &#125;else &#123;
+    alert(&#39;&gt; 768&#39;)
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/html-tag/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/html-tag/" class="post-title-link" itemprop="url">從新學習HTML5 (四) 語意元素</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-04-01 22:25:54" itemprop="dateCreated datePublished" datetime="2019-04-01T22:25:54+08:00">2019-04-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>785</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>section - 表示文件中的特定區塊，裡面可以下 h1~h6</p>
+<p>article - 表示文件中與其他內容沒有關聯的獨立區塊，通常會放一段文字</p>
+<p>aside - 表示文件中與其他內容有輕微關係的區塊，多用於側邊欄的標籤</p>
+<p>header - 頁首或是 section 的頁首</p>
+<p>hgroup - 區塊內容的標題區域，裡面會有多個 h1~h6 標籤</p>
+<p>footer - 頁尾或是 section 的頁尾</p>
+<p>nav - 表示帶有導覽功能的區塊</p>
+<p>figure - 帶有說明的圖像元素</p>
+<p>figcaption - figure 區塊的標題</p>
+<p>與以上無相關的區塊就還是使用 div，有需要大綱編排層級的內容就用 section。</p>
+<h2 id="HTML-5-元素分類"><a href="#HTML-5-元素分類" class="headerlink" title="HTML 5 元素分類"></a>HTML 5 元素分類</h2><p>Metadata content - <head> 裡面的東西</p>
+<p>Flow content - 文件內大部分的內容皆屬此類</p>
+<p>Sectioning content - 帶有層級的大綱</p>
+<p>Heading Content - 定義 section 的標題</p>
+<p>Phrasing content - 文字內容的標籤元素</p>
+<p>Embedded content - 外部匯入的內容至目前網頁</p>
+<p>Interactive content - 支援使用者的互動的元素</p>
+<h2 id="大綱-Outline"><a href="#大綱-Outline" class="headerlink" title="大綱 Outline"></a>大綱 Outline</h2><p>瀏覽器會根據使用的 h1~h6 標籤輸出大綱來讓搜尋引擎更能理解整個網頁內容的架構，大綱就如同一本書的目錄，所以是以標題標籤來進行劃分，所以如果每個區塊有獨立的標題層級，要用 section 來進行分隔，並且都是從 h1 開始以方便辨識。</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;body&gt;
+&lt;h1&gt;Title&lt;&#x2F;h1&gt;
+&lt;section&gt;
+  &lt;h1&gt;Section Title&lt;&#x2F;h1&gt;
+&lt;&#x2F;section&gt;
+&lt;section&gt;
+  &lt;h1&gt;Section Title&lt;&#x2F;h1&gt;
+&lt;&#x2F;section&gt;
+&lt;&#x2F;body&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/html5-event/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/html5-event/" class="post-title-link" itemprop="url">從新學習HTML5 (三) 事件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-04-01 22:04:57" itemprop="dateCreated datePublished" datetime="2019-04-01T22:04:57+08:00">2019-04-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>2 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Clipboard-API"><a href="#Clipboard-API" class="headerlink" title="Clipboard API"></a>Clipboard API</h2><p>捕捉使用者在頁面剪下、複製、貼上的動作</p>
+<p>copy/oncopy 偵測複製行為</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;p id&#x3D;&#39;text&#39;&gt;這邊是即將要被複製的文字&lt;&#x2F;p&gt;
+&lt;script&gt;
+  var text &#x3D; document.querySelector(&#39;#text&#39;)
+  text.oncopy &#x3D; function(e)&#123;
+    alert( &quot;你剛剛複製了～&quot; );
+    return false; &#x2F;&#x2F; 多這行禁止複製文字
+  &#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>cut/oncut 偵測剪下行為</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;p id&#x3D;&#39;text&#39;&gt;這邊是即將要被剪下的文字&lt;&#x2F;p&gt;
+&lt;script&gt;
+  var text &#x3D; document.querySelector(&#39;#text&#39;)
+  text.oncut &#x3D; function(e)&#123;
+    alert( &quot;你剛剛剪下了～&quot; );
+    return false; &#x2F;&#x2F; 多這行禁止剪下文字
+  &#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>paste/onpaste 偵測貼上行為，使用 clipboardClip.getData(‘Text’) 來取得貼上的內容</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;p id&#x3D;&#39;text&#39;&gt;這邊是即將要被貼上的文字&lt;&#x2F;p&gt;
+&lt;p id&#x3D;&#39;msg&#39;&gt;&lt;&#x2F;p&gt;
+&lt;script&gt;
+  var text &#x3D; document.querySelector(&#39;#text&#39;),
+      msg &#x3D; document.querySelector(&#39;#msg&#39;)
+  text.onpaste &#x3D; function(e)&#123;
+    alert( &quot;你剛剛貼上你複製的文字了&quot; );
+    msg.innerHTML &#x3D; e.clipboardData.getData(&#39;Text&#39;)
+  &#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Drag-amp-Drop-API"><a href="#Drag-amp-Drop-API" class="headerlink" title="Drag&amp;Drop API"></a>Drag&amp;Drop API</h2><p>拖曳與置放元素的動作，要完成 drag &amp; drop 需經過以下步驟</p>
+<p>1. 使用 dataTransfer 取得 DataTransfer 物件來設置拖曳資訊</p>
+<p>2. 初始化事件 ondragstart 使用 dataTransfer.clearData() 來清空資訊以及 dataTransfer.setData() 紀錄開始拖曳的元素的資料</p>
+<p>3. 感應被拖曳的元素移動到可置放的元素使用 ondragover 來偵測</p>
+<p>4. 最後的置放使用 ondrop 來觸發，並用 dataTransfer.getData() 來取得拖曳元素，再用 appendChild 來把元素加入到目標元素中</p>
+<p>相關事件有：</p>
+<p>dragstart - 開始拖曳時觸發<br>drag - 拖曳過程中觸發<br>dragenter - 拖曳進入目標元素時被觸發<br>dragleave - 拖曳離開目標元素時被觸發<br>dragover - 拖曳經過目標元素時被觸發<br>drop - 置放至目標元素時被觸發<br>dragend - 結束拖曳操作時被觸發</p>
+<p>相關物件：</p>
+<p>dataTransfer.setData() - 寫入拖曳元素資料<br>dataTransfer.getData() - 取得拖曳元素資料<br>dataTransfer.clearData() - 清空拖曳元素資料  </p>
+<h2 id="History-API"><a href="#History-API" class="headerlink" title="History API"></a>History API</h2><p>透過 JS 來控制頁面的上下頁跳轉以及指定瀏覽歷程</p>
+<p>window.history.forward() - 下一頁<br>window.history.back() - 上一頁<br>window.history.go(pageIndex) - 前往指定的頁面</p>
+<p>控制瀏覽歷程以及改變網址列的網址結構</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 改變現有網址不換頁
+window.history.pushState(null, null, &quot;&#x2F;new&#x2F;&quot;);
+
+&#x2F;&#x2F; 作用同上，但不會把瀏覽歷程加到歷史紀錄中
+window.history.replaceState(null, null, &quot;&#x2F;new&#x2F;&quot;);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="Selector-API"><a href="#Selector-API" class="headerlink" title="Selector API"></a>Selector API</h2><p>熟悉 jQuery 的話用它當選擇器會很方便</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;p class&#x3D;&#39;ele&#39; id&#x3D;&#39;ELE-a&#39;&gt;aa&lt;&#x2F;p&gt;
+&lt;p class&#x3D;&#39;ele&#39; id&#x3D;&#39;ELE-b&#39;&gt;bb&lt;&#x2F;p&gt;
+&lt;script&gt;
+document.querySelect(&#39;#ELE-a&#39;).innerHTML;
+var ele &#x3D; document.querySelectAll(&#39;ele&#39;).innerHTML;
+
+&#x2F;&#x2F; 要取出值時要用迴圈去拿
+for(var i&#x3D;0; I&lt; ele.length; i++)&#123;
+  alert(ele.innerHTML)
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/2019-03-29-wordpress-meetup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/2019-03-29-wordpress-meetup/" class="post-title-link" itemprop="url">2019/03/29 WordPress 板橋小聚會後小記</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-03-30 13:47:55" itemprop="dateCreated datePublished" datetime="2019-03-30T13:47:55+08:00">2019-03-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-06-18 11:32:08" itemprop="dateModified" datetime="2021-06-18T11:32:08+08:00">2021-06-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>6k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>5 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>第一次在板橋小聚上台分享，把這幾年來的工作方式簡單整理一下，但最大的收獲是聽到站長路可的分享，關於如何處理混亂這件事情。一直以來我總是希望能掌控專案中的每個細節，從需求訪談、規格制定到修改項目都能確定就確定了，不要再變動，所以嘗試了各種文件格式、專案管理工具、issue tracking 就是希望可以避免再有變動這件事發生。</p>
+<p>但不管再怎麼努力想要掌控這一切，總是會有不受控制的時候，因為跟人合作就是會有非常多的變數，所以對於預期之外的狀況就常常讓自己心煩意亂，反而打壞了工作節奏甚至影響自己的情緒。因此能聽到路可分享「擁抱混亂、混亂是常態」這樣的觀點，讓我重新認識到某些事情沒有照著計畫走不一定是自己的管理能力不夠，而是要如何與混亂相處，並且保持彈性的做事方式來面對混亂，是日後在工作上要時時提醒自己的方向與目標。</p>
+<p>昨日會後的小組討論也很有收穫，認識了幾位新朋友，其中一位竟然還看過我早期工作室的網站，覺得又驚又喜，以前參加聚會的時候我都會像個花蝴蝶般的到處發名片，好像可以認識很多人很有趣，但現在覺得只要能認識一位新朋友並且好好的聊聊就很足夠了，談話內容的質比量來得重要的許多。</p>
+<p>以下就分享內容做簡單的摘要紀錄：</p>
+<p>第一位講者為賴俊吾 Oberon Lai，也是本站的主編 + 網站管理員，目前主要從事 WordPress 網站的客製化佈景主題開發，同時也在經營 WordPress 主機代管服務，主要分享的內容分為四大部分，從一人接案的陷阱、團隊合作的真諦到如何尋找合作夥伴以及團隊工作時常用的工具分享。</p>
+<h2 id="一人接案的陷阱"><a href="#一人接案的陷阱" class="headerlink" title="一人接案的陷阱"></a>一人接案的陷阱</h2><p>現在架網站的工具非常方便，現成的模板套一套不用三天就可以完成一個很有樣子的網站，但以接案的情況來說，問題常常出在溝通這個環節，如果無法有效理解客戶需求，前期的溝通與事後的結案，就會花上好幾個月的時間，而且現在資訊發達，客戶也會知道你用的工具，所以造成專業不被尊重，成為客戶的工具人。</p>
+<p>一人接案的好處是利潤獨佔，但以個人工作室來說，多是小企業會找上門來，因為個人作業讓客戶覺得比較彈性也比較好講話，所以常常必須付出像是全職工作的時間來幫客戶做事，也因此同一時間很難再去接其他案子，而且企業主對於外包的要求常常會高於公司內的員工，長時間下來接案者不但無法獲得充足的休息，更危險的是沒有時間去增進自己的能力。</p>
+<p>雖然說自由工作者這頭銜聽起來很自由，但如果專案不順利錢收不進來，這種壓力會讓人完全失去自由，就連想讓自己放個假也不敢，更不用說來自客戶的壓力以及害怕自己做不出來的壓力，這些都是一個人接案時所必須承受的負擔。</p>
+<h2 id="團隊合作的真諦"><a href="#團隊合作的真諦" class="headerlink" title="團隊合作的真諦"></a>團隊合作的真諦</h2><p>雖然也是有很多人可以一人接案過得舒舒服服的，但每個人的個性不同，適合的工作方式也不一樣，因此團隊合作也是很不錯的一種方式，但這個社會什麼樣的人都有，許多人打著合作的名義但骨子裡卻是想要只滿足自己的利益。</p>
+<p>對於團隊合作來說，不是一方凹另外一方的關係，也不是因為這領域我什麼都不懂所以找你合作，更不是因為要賣你產品所以提出合作，真正的合作關係，比較像是一種婚姻關係的承諾，這種關係會讓彼此為了團隊的成長而付出，像是執行者思考者怎麼樣的工作流程會讓專案更順暢、業務人員思考者怎麼加強自己的競爭力而提高報價，這些都是要靠自己去學習來加強。</p>
+<p>同時團隊成員彼此間也要互相學習，互相理解彼此在工作上的難處以及思考邏輯，才能增加溝通的品質以及增進彼此的了解。能夠做到這樣的良性循環，才是一個團隊合作的模式。</p>
+<h2 id="如何尋找團隊夥伴"><a href="#如何尋找團隊夥伴" class="headerlink" title="如何尋找團隊夥伴"></a>如何尋找團隊夥伴</h2><p>要找到合適的團隊夥伴靠的真的是緣分，像是曾經一起工作過的同事、在業界有配合作的同行、或是曾一起參與舉辦活動的夥伴，重點是要有一起共事過，對於很多事情的處理態度，就能知道有沒有辦法一起跟他合作。</p>
+<p>因為共事過，當專案遇到困難或是瓶頸的時候他的處理態度是如何？他犯錯時會不會承認還是裝死？自己犯錯時他是幫你一起想辦法彌補還是放馬後砲？外部提出不合理的要求他會怎麼應對等等，這些困境只有在一起合作時才有辦法看的出來，而這時候就是很好的判斷時機。</p>
+<h2 id="團隊合作的工具"><a href="#團隊合作的工具" class="headerlink" title="團隊合作的工具"></a>團隊合作的工具</h2><p>主要分為以下三類：</p>
+<p>(一) 專案管理工具</p>
+<p>好的專案管理工具可以一目瞭然目前所有專案的進度，已經完成了什麼、哪些優先的項目還沒完成、這週預計完成哪些項目。</p>
+<p><strong>Ora -</strong> <a target="_blank" rel="noopener" href="https://ora.pm/"><strong>https://ora.pm</strong></a></p>
+<p><img src="https://i0.wp.com/oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-30-at-11.58.51.jpg?fit=1024,521&ssl=1"></p>
+<p>前陣子剛結束 beta 版，是非常好用的看板管理系統，他可以依照專案流程去分割不同的 Board，並且提供行事曆介面去安排每一個 task 的執行時間，還有完整的報表統計工具，可以檢視哪個 task 花了最多時間，免費方案可以加入三個成員，對於小團隊非常適合。</p>
+<p>更多關於看板方法的應用可以參考這篇—&gt;<a href="https://oberonlai.blog/tw/scrum-kanban/">https://oberonlai.blog/scrum-kanban/</a></p>
+<p><strong>Adobe XD -</strong> <a target="_blank" rel="noopener" href="https://www.adobe.com/tw/products/xd.html"><strong>https://www.adobe.com/tw/products/xd.html</strong></a></p>
+<p><img src="https://i2.wp.com/oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-30-at-12.04.55@2x.jpg?fit=1024,717&ssl=1"></p>
+<p>設計軟體大廠 Adobe 所推出的介面設計工具 XD，在設計介面的效能與功能上，好過 Photoshop 或 Illustrator 大概八千倍左右，另外還內建製作 Prototype ，以及團隊溝通上最方便的規格產出的功能，參考以下連結 —&gt; <a target="_blank" rel="noopener" href="https://xd.adobe.com/spec/a5ead5cd-a1fe-4783-6a4a-84b5beeb926c-d3db/">https://xd.adobe.com/spec/a5ead5cd-a1fe-4783-6a4a-84b5beeb926c-d3db/</a></p>
+<p>工程師可以直接在設計稿看到圖像的尺寸規格以及位置資訊，同時也可以在介面上寫<br>回饋，以最直覺的視覺化的方式來紀錄問題，發起的問題會形成討論串，完成後可以標記已解決，達到 issue tracking 系統的效果。</p>
+<p>雖然這套是 Adobe 推出的，但他完全免費，不用付費就可以使用這套軟體的所有功能，他的付費點卡在要 share 規格的連結上限，免費版可以產出兩份設計稿的規格，如果當下只有一個專案在進行中，就非常夠用了。</p>
+<p><strong>Projecthuddle - <a target="_blank" rel="noopener" href="https://projecthuddle.io/">https://projecthuddle.io</a></strong></p>
+<p><img src="https://i0.wp.com/oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-30-at-12.14.37.jpg?fit=1024,520&ssl=1"></p>
+<p>Projecthuddle 是一套 WordPress 的付費外掛，他的主要功能就是如上述 Adobe XD 所產生的規格連結一樣，但差異在 Adobe XD 只能針對由設計稿來產生規格連結，而 Projecthuddle 是可以針對網站來下註解。也就是說如果你的架站流程是用現成的佈景主題來架設，所以不會有設計稿的產出，這時候用這外掛就可以在主機上的網站產生下註解的功能，與客戶討論時會節省許多時間。</p>
+<p>(二) 現金流管理工具</p>
+<p>專案管理最重要的部分就是現金流的管理，尤其時間比較久的專案或是同時間有許多專案在進行的時候，能看到所有專案的收款進度以及收款時間點就能安排接下來的工作優先順序。</p>
+<p><strong>Fuelapp -</strong> <a target="_blank" rel="noopener" href="https://fuelapp.io/"><strong>https://fuelapp.io</strong></a></p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-30-at-12.21.23.jpg"></p>
+<p>Fuelapp 是一款可以方便管理專案現金流的線上工具，他除了可以設定結案時間、收款時間外，還可以在線上直接製作報價單，最貼心的是還可以把報價單存樣板，如果日後有類似的案件就可以直接從樣板來產出報價單，大幅減少重新製作的時間。</p>
+<p>此外還有圖表分析工具，可以讓你檢視近期專案的狀況，像是專案平均時程、每月平均案量、結案率等等的數據，每月審視這些數據可以再來調整專案的製作流程。</p>
+<p>Fuelapp 的免費方案是限制輸入三個專案，對於小型工作室應該是足夠使用。</p>
+<p>(三) 知識共享工具</p>
+<p>團隊之間要互相學習，最好的方式就是共享彼此收集到的資訊，讓成員們可以自由取用。</p>
+<p><strong>Eagle - <a target="_blank" rel="noopener" href="https://eagle.cool/">https://eagle.cool</a></strong></p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-30-at-12.29.37.jpg"></p>
+<p>Eagle 是一套圖片管理工具，同時也可以作為書籤管理工具，其強大之處在於他的分類方式非常彈性，除了常見的資料夾分類外，還可以下 tag 以及自動分類的智慧型資料夾，在搜尋上除了關鍵字搜尋外，還可以使用顏色進行搜尋，或是使用進階搜尋來選圖片形狀、類型、時間等等的各種欄位。</p>
+<p>而作為團隊知識工具最方便的地方，在於他可以把蒐集到的圖片打包成一個資源庫，而這個資源庫是一個獨立的檔案，這檔案可以非常方便分享，裝有 Eagle 的電腦匯入這個資源庫之後，立刻就可以看到所有已加入的圖片。</p>
+<p>資源庫的讀取路徑也可以自行設定，所以說只要團隊成員把自己的資源庫放在雲端硬碟上，讓其他夥伴把資源庫同步到自己電腦後，當有人新增圖片時，其他人也就可以同步看到最新的資訊，完全不需要再靠通訊軟體傳來傳去，即時線上同步。</p>
+<p>這套軟體除了是台灣人開發的以外，而且不同於現在流行的訂閱制，它採用一次性買斷的方式進行銷售，也就是說只要付一次錢，就可以免費享受未來的更新功能，實在是超佛心啊啊啊～</p>
+<p>目前講者已收集了 218 個 WordPress 相關的書籤，如果有購買該軟體的朋友，可以透過該連結下載資源庫後匯入到自己的 Eagle 裡面，就能立刻同步這些 WordPress 資源。</p>
+<p><a target="_blank" rel="noopener" href="https://www.dropbox.com/s/45vnpp9ojzbq5qm/oberonlai-wordpress-library.eaglepack?dl=1">https://www.dropbox.com/s/45vnpp9ojzbq5qm/oberonlai-wordpress-library.eaglepack?dl=1</a></p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>團隊合作也是一種使用者體驗，能幫彼此多著想、多思考怎麼做會讓成員工作更順利，這才是團隊合作的一種默契，也是能長久走下去的關鍵。</p>
+<p>完整簡報檔連結：<a target="_blank" rel="noopener" href="https://www.dropbox.com/s/p7x0igt5u9ocawa/20190329-WP%E6%9D%BF%E8%81%9A%E7%B0%A1%E5%A0%B1-oberonlai.pdf?dl=0">https://www.dropbox.com/s/p7x0igt5u9ocawa/20190329-WP%E6%9D%BF%E8%81%9A%E7%B0%A1%E5%A0%B1-oberonlai.pdf?dl=0</a></p>
+<p>會後跟一位媽媽聊到關於接案合約的內容，以及需要注意的地方，我把自己以前常用的合約範本分享出來，這份合約是每次結束一個專案後就會 update 的版本，所以他已經被我不知道更新過幾百次了，希望就還是可以能保障自己，有需要的朋友請自取，然後再改良成自己的無敵版本吧XD</p>
+<p>合約範本連結：<a target="_blank" rel="noopener" href="https://docs.google.com/document/d/1yug-Nh-l_1Jzp-Cu9eyUk96EXyKkbghWG_hiKIgAyRM/edit">https://docs.google.com/document/d/1yug-Nh-l_1Jzp-Cu9eyUk96EXyKkbghWG_hiKIgAyRM/edit</a></p>
+<h2 id="被-WordPress-拯救的人生-站長路可"><a href="#被-WordPress-拯救的人生-站長路可" class="headerlink" title="被 WordPress 拯救的人生 - 站長路可"></a>被 WordPress 拯救的人生 - 站長路可</h2><p>路可是位很特別的講師，一整個氣場強大而且皮膚好好(?)，而且好會說故事簡報做的又漂亮，他的名字由來也很有梗，原來是指哪條路可走哪條路不可走，聽的時候一直覺得如果當年接案有聽到他的分享，應該可以少走很多冤枉路，但就像路可說的，每條路都是對於自我的修煉，要去克服自己的弱點才會成長進步。</p>
+<p>以下重點摘錄：</p>
+<p>對於授課這件事情，每位講師都有一套自己的系統，但這些方法論，不一定適用在每個的身上，所以透過自身經驗的分享，希望讓聽者可以汲取到自己需要的那部分，進而產生共鳴與回饋。</p>
+<p>路可分享自己創業的故事，從一開始的人間失控說起，創業是自我修煉的過程，能克服就能進到下一步，很多時候會觸及到內心的深處，而不只是創業的理論而已。</p>
+<p>困境就是想辦法解決，路可分享了創業上的八個困境，最早不知道自己要幹嘛，跑去雲南流浪，去了邊界的一個窮到爆炸的村莊，期間也做過網拍，沒賺到什麼錢，後來去上班認識一位老闆願意栽培他做網站，但老闆身體不好，常常要去洗腎，在照顧老闆的過程中，同時也開始自學 WordPress。</p>
+<p>第二個困境是遇見恐怖情人以自殺逼婚 (這一段故事要聽路可現場說才精彩)，總之最後為了要逃離這人飛去美國的朋友家，開始研究網路創業，如果可以放下羞恥，就是突破的開始，只要曾經跌落人生的谷底、被打趴，能站起來後就什麼都沒在怕的了。</p>
+<p>剛開始接案很擔心會做不到客戶的要求，但後來理解到許多事情都是可以溝通的，替代的方案也很多，重點是要能解決客戶的問題，萬一真的不能做就坦白說不能做。</p>
+<p>在修煉之前覺得 po 文被當成小白被嘲笑很丟臉，修煉後覺得丟臉也不會怎麼樣，多 po 文就會讓嘲笑過你的人閉嘴，拜演算法所賜，塗鴉牆上面最後會看到你貼文的人都是喜歡你的人。</p>
+<p>開始進行一日一書摘，發文是很重的練習，練習怎麼組織內容，表達自己的想法，另外用部落格文章來投放臉書廣告，一天一百元沒有負擔，來摸索如何增加廣告投放效益，偶爾也會轉貼到相關社團，不會只是單純的複製貼上，會先觀察社團屬性，思考成員的想法再來進行貼文。</p>
+<p>兩三篇文章同時廣告，搭配一日一書摘，從 0 到 5000 粉絲不是問題，反正做下去就知道，但接下來的困境是流量粉絲不能當飯吃，要如何將流量變現，會用 WordPress 就是一個很大的優勢。</p>
+<p>有了自媒體之後，接案接到手軟，從來沒缺過案子，不用上接案平台去比價比稿，自媒體發酵，客戶自動找上門。另外轉發專業文章到個人 FB，不用怕丟臉，成為行動孵化器，走到哪就跟人談行銷，幫忙看網站、粉絲專頁，如果你可以解決他的問題，他就會幫你介紹更多客戶。</p>
+<p>另外寫部落格文章投稿到媒體平台也是會有意外的收穫，曾經投稿到關鍵評論網結果獲得 GQ 雜誌的採訪機會，去社團主動幫網友解決問題，主動私訊協助。</p>
+<p>服務流程要能夠專業化，合約文件該有的要有，只要能夠穩住現金流，就能活得下來了，接案很難賺大錢，先能活下去再說。</p>
+<p>最討厭被客戶要求看作品集，如果你目前的作品數量不多，把客戶的焦點移轉到解決他的問題。</p>
+<p>不一定要把自己變很得最強，而是要讓所有人都想跟你合作，要有專注力、有精神，成為一個有熱情有夢想的人。</p>
+<p>與客戶對話時別用工程師邏輯，也要練習聽出客戶的弦外之音，也就是他真正想要解決的問題。跟客戶聊他聽得懂的，客戶聽不懂工程師邏輯。</p>
+<p>與客戶的應對態度要友善，但不要低聲下氣，不要滿足客戶的每個要求，聲音要有自信，私下的生活習慣也要有品質，氣場比實力重要。</p>
+<p>在社群經營上同樣性質的內容大家看久了會膩，最大困難就是好不容易發現有一招可以 work，但過沒幾個月就沒效了。重點是高價值的文章內容太長太硬，一般人不會天天看，所以也要發些軟性的內容，目前累積最多讚的是勵志文，用軟性文章吸引人持續追蹤，並且練習說一個好故事。</p>
+<p>量的累積會帶來質的突變，專注在自己的路上面，該發生的事情就會自然發生。</p>
+<p>接案上如果算客戶便宜，還是會被凹，如何做一個有原則的接案者，做人友善但也要有原則，不需要妥協來委屈自己，篩選客戶才能遠離折磨，有自己的原則才不需要附和人。</p>
+<p>經營自己的網站就是篩選客戶的第一關卡，因為看過文章而來的客戶頻率就會很合，因為已經先認同你的觀點，有人覺得報價太貴，但事實是怎麼樣都會有人覺得貴，接案路上要遠離折磨。</p>
+<p>曾經推出一萬元的行銷課，如果是以投資類型的課程不算貴，但在行銷業界算是高單價，高價銷售是為了自己的修煉，也就是不要小看自己的價值。</p>
+<p>接案者常常覺得事情太多間不夠，生活總是陷入混亂，事實上混亂就是常態，是一種非常正常的循環過程，混亂不是罪惡，在自我成長的過程中就一定會有混亂的發生，讓混亂進來，再去想辦法克服混亂。</p>
+<p>最不想做的事情就是一個突破點，創業會放大自身每個弱點，而自己能想到最聰明方法通常不是最好的方法，縮小目標，每天進步一點，然後擁抱混亂，是成長的必要。</p>
+<p>目前在做的計畫是重新架個人網站，然後計畫寫一本書，做架站教學，並成立 Line 群討論組，把整個架站過程錄下來變成教學，重新投入教學才覺得又活了起來，自己想做的事是創業者的社群，教學不單純只是理論方法，而是社群一起學習，一邊走一邊學才是真正有效的教學。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/2019-cybersec/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/2019-cybersec/" class="post-title-link" itemprop="url">2019 台灣資安大會 Day1</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-03-20 22:54:26" itemprop="dateCreated datePublished" datetime="2019-03-20T22:54:26+08:00">2019-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/Host/" itemprop="url" rel="index"><span itemprop="name">Host</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/TCP-IP/" itemprop="url" rel="index"><span itemprop="name">TCP/IP</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>5.1k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>5 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://i2.wp.com/oberonlai.blog/wp-content/uploads/2019/03/IMG_8004.jpg?fit=1024,768&ssl=1"></p>
+<p>後兩天沒空，所以應該只會有 Day1 的心得XD</p>
+<p>生平第一次參加由 iThome 所主辦的台灣資安大會，規模之大讓我大開眼界，整個研討會分為三天，除了上午大會堂的主講演講外，下午更有十軌的議程在同步進行，橫跨台北會議中心與世貿一館二樓的多間教室，廠商展覽攤位也是非常熱鬧，令我眼花繚亂@@</p>
+<p>但一方面覺得可能是自己跑錯棚，或是根本沒待過相關產業，在這台灣 IT 產業這麼大的盛事裡，我竟然沒有看到半位認識的人，驚覺自己實在太渺小，也讚嘆台灣 IT 產業鍊之大，讓我這井底之蛙能以全新的視野來看待自己每天在處理的業務，也算是開了眼界。</p>
+<p>一整天聽不懂的東西比聽進去的東西還多，雖然很多都是來賣藥的，但對於身兼半個網管的我似乎沒太大吸引力，唯一一場覺得比較有社群分享交流的講座是「IT 人專職資安人的起手式」，講師幽默風趣又分享許多免費資源，是一整天聽下來覺得賣藥意味比較不那麼強烈的內容，但賣藥歸賣藥，加減還是有學到一些東西，整理紀錄如下：</p>
+<h3 id="超連結時代下的資安協議與回應"><a href="#超連結時代下的資安協議與回應" class="headerlink" title="超連結時代下的資安協議與回應"></a>超連結時代下的資安協議與回應</h3><p>這是接著小英總統致詞後的第一場開幕演講，講師 Bruce Schneier，大有來頭，世界知名的密碼學專家，出版過許多知名著作，<a target="_blank" rel="noopener" href="https://www.schneier.com/">部落格</a>也有非常多隱私議題相關的文章，會後的新書簽名會也是大排長龍，算是今天認識到最重量級的人物。</p>
+<p>在什麼都能連線的年代，資訊安全變得爆炸困難，每天隨身攜帶的手機、家裡的冰箱、上班開的汽車全都有可能會成為駭客攻擊的目標，講師提到六個課題是現在 IT 從業人員所必須面對的：</p>
+<ol>
+<li> 軟體的開發流程要納入安全性測試，讓參與人員能擁有安全意識。</li>
+<li> 現在很大一部分的漏洞修補都是在彌補早期網路技術所衍伸出的問題。</li>
+<li> 如何確保每一個使用者的裝置都能保持在最新狀態，但對於消費者而言，更新之後有很多功能根本就不是他們想要的。</li>
+<li> 系統的複雜性造成安全防護的困難。</li>
+<li> 互相相連的裝置變成了一個巨大的網際網路，其中一個被植入非常容易傳染給其他裝置。</li>
+<li> 第六點沒聽懂，好像是關於密碼這事…</li>
+</ol>
+<p>潛在的個人資料被竄改也是很危險的事，像是醫院裡面的病歷被竄改、汽車電子鎖被入侵，手機更是非常危險的裝置，裡面有所有與你相關的個人機密。</p>
+<p>資訊安全已經是國際間的問題，現在證明這問題基本上是無解，講師的建議是在軟體開發時就要把安全防護機制一併開發進去，在開發流程中就要有安全意識，而各國政府也要開始思考安全策略，從整體面來著手資訊安全問題。</p>
+<h3 id="恐懼的總和"><a href="#恐懼的總和" class="headerlink" title="恐懼的總和"></a>恐懼的總和</h3><p>講師為資安業界非常資深的張裕敏協理，現職為趨勢科技全球核心技術部，他帶來很精彩的分享內容，首先就駭客攻擊國家基礎設施的案例開頭。</p>
+<p>3/7 委內瑞拉大停電，主因是水利設施被攻擊，停止運轉所以造成無法發電，其他國家也發生過污水處理廠被攻擊，而紐約則是發生過水壩控制中新被入侵後將水導入其他城市。駭客攻擊的目的不外乎是希望造成損失、霸佔資源或是當做正式攻擊前的練習。</p>
+<p>駭客的攻擊手法有植入後門、社交工程、透過內部員工取得機密資訊等等，去年講師預測過未來有可能發生的攻擊事件，結果準確預測後引來大批國外媒體採訪，因為被誤認為是攻擊者，所以今年就不做預測了…</p>
+<p>國家關鍵基礎設施有明確定義，影響民生妨礙國家安全都算基礎建設，一共有八大類，鍵基礎設施被駭實例有污水處理廠、水壩、核電廠、偷取上市公司未公開的財報資訊等等。</p>
+<p>駭客的火力支援，要漏洞有漏洞，因為網路上都查得到，<a target="_blank" rel="noopener" href="https://ics-cert.us-cert.gov/advisories">https://ics-cert.us-cert.gov/advisories</a></p>
+<p>駭客要工具有工具，github 上面就一堆 ICS 開源工具，駭客要方法有方法，參考 <a target="_blank" rel="noopener" href="https://attack.mitre.org/matrices/enterprise/">https://attack.mitre.org/matrices/enterprise/</a>，目的是要控制與損害關鍵設備。</p>
+<p>駭客要目標有目標，使用 Shodan 搜尋引擎來找攻擊目標<br><a target="_blank" rel="noopener" href="https://www.shodan.io/">https://www.shodan.io</a><br><a target="_blank" rel="noopener" href="https://ics-radar.shodan.io/">https://ics-radar.shodan.io</a>  </p>
+<p><a target="_blank" rel="noopener" href="https://www.shodan.io/"></a>駭客眼中的新玩具：關鍵基礎設施，主要為網路基礎設施、金流基礎設施以及資訊媒體。使用 DNS 劫持讓訪客連到駭客指定的網站，因此設定 DNSSEC 就非常重要。路由器劫持，會造成偽造流量、封包路由異常。Public wifi 藉由外部入侵、實體入侵或是偽冒 AP，公眾 wifi 的路由器可能會被植入木馬。最後是 4G/5G 假基地台，會造成蓋台、通訊協定漏洞。</p>
+<p>金融基礎設施的攻擊包含後端資訊系統攻擊、外部入侵、帳戶清除，另外還有放置假 ATM 機偷吃提款卡與密碼，如果提款機左右兩邊是看的到機器本體一定是假的，真的機器有規定三面都一定是要密封的，避免有任何人為的植入行為。</p>
+<p>最新釋出的 ATM 惡意程式會讓提款機顯示畫面出現俄羅斯方塊、拉 BAR 等小遊戲，中獎時會吐鈔票。</p>
+<p>資訊媒體基礎設施的攻擊包含電視、網路、社群媒體等等，攻擊的主要目的是為了資訊操控、散播假資訊、資訊再加工，背後有特定目標及人士進行組職。最嚴重的資訊媒體入侵事件發生在 2013 年首爾的 darkseoul 事件。<br><a target="_blank" rel="noopener" href="http://blog.xecure-lab.com/2013/03/darkseoul-apt.html">http://blog.xecure-lab.com/2013/03/darkseoul-apt.html</a>  </p>
+<p>入侵資訊媒體基礎設施可以讓駭客有穩定的收入來源，有心人士也能更好操作輿論。最後試想萬一哪一天下班，捷運暫停行駛、要開車去加油結果油價漲了 2000 倍、路上的交通號誌全部是綠燈、手機 GPS 沒訊號、智慧門禁沒電進不了家門、廣播電視完全沒有訊號、無法刷卡、ATM 無法提款、假消息、陰謀論，這會是世界末日的場景？</p>
+<p>終極防禦之術？政府要多參考其他國家是如何防禦基礎設施，資訊安全是大家的事，如果哪天在等公車看到有人在對電子公車看板上下其手、毛手毛腳，立即通知相關單位，那人有很有可能就是在尋找實體入侵的 USB 接口。</p>
+<h3 id="當代資安的迷思與數位韌性"><a href="#當代資安的迷思與數位韌性" class="headerlink" title="當代資安的迷思與數位韌性"></a>當代資安的迷思與數位韌性</h3><p>講師為韋萊韜悅台灣分公司企業風險與保險經紀的吳明璋協理，著有鋼索上的管理課 韌性管理一書，分享關於企業如何做好韌性管理，第一次聽到原來還有資安保險這種東西，以及做筆記的時候一直把韌性打成任性XD</p>
+<p>資安的難題與挑戰，通常來自你我未知的領域，講師透過 jothari window 周哈里窗來描述資安的現況：我知你也知是開放、我知你不知是隱藏、你知我不知是盲點、你不知我也不知就是未知，而資安風險就是要盡可能消弭未知的存在，透過交流學習來避免未知。</p>
+<p>ISO 27001 是一套資訊安全管理系統驗證，許多企業努力取得該驗證，但還是有不少企業遭受到攻擊，所以引發了業界討論關於 ISO 27001 的有效性。關於資安常見的迷思：公司門禁森嚴還需要資安嗎？請人「測試」系統來跟老闆爭取經費？資安保險有必要嗎？</p>
+<p>資安風險的典範移轉正在進行中，發生攻擊事件是無法百分之百避免的，所以要聚焦在風險可接受的範圍、風險如何移轉、以及風險發生時如何減少損失，而韌性管理已成為國際資安領域中的顯學，因為資安而造成的損失金額並不會低於天災。</p>
+<p>數位韌性 ( Cyber-Resilience ) 的定義也就是當遭受攻擊時企業能夠應變的程度，並且能把損失控制在可接受範圍，避免骨牌效應的產生，數位韌性的執行三步驟：Assessment、 Protection、Quantified。</p>
+<p>資安保險的承保範圍包括數位資產的遺失、資料外洩、網路斷線以及網路勒索均能理賠。</p>
+<h3 id="It-人專職資安人的起手式"><a href="#It-人專職資安人的起手式" class="headerlink" title="It 人專職資安人的起手式"></a>It 人專職資安人的起手式</h3><p><img src="https://i0.wp.com/oberonlai.blog/wp-content/uploads/2019/03/574669285.330213-2.jpg?fit=576,1024&ssl=1"></p>
+<p>講師非常有趣，因為怕被查水表以及所屬公司未允許在公開場合簡報，所以帶著駭客組織 Anonymous 匿名者專用的 V 怪客面具，讓我非常期待會有什麼大爆料的精彩簡報，聽完後簡報收穫很多，但完全沒爆料啊XDD</p>
+<p>講師吳明蔚現為奧義智慧共同創辦人，是業界非常知名的白帽駭客，他講話速度非常快，聽完後只覺得 30 分鐘根本不夠而且意猶未盡，難怪這一堂課教室大爆棚，滿到根本沒地方坐，分享內容以免費的資安工具介紹為主軸，還小噹了一下教室外面在賣的資安產品，這講師的風格完全對我的胃口XD</p>
+<p>使用 Open Source 有相對應的風險，萬一東西壞了沒有客服讓你問，只能自己下去修，log 也要自己爬、疏理不同格式的日誌，最麻煩的就是更新與相容性問題，爆炸了一樣只能自己下去修，所以會花很多時間去處理 Open Source 工具所衍伸出來的問題。</p>
+<p>要做好資訊安全第一間最重要的事，就是先盤點現有的所有機器，包含公司的電腦、路由器、伺服器等設備，並嚴查 Internet 的出入口，也就是 Port 號要嚴格控管，另外有人登入主機要能夠發通知給管理者，以防主機被登入都不知道。</p>
+<p>使用 Nmap 來檢查主機狀態與對外開的 port 號<br><a target="_blank" rel="noopener" href="https://blog.gtwang.org/linux/nmap-command-examples-tutorials/">https://blog.gtwang.org/linux/nmap-command-examples-tutorials/</a>  </p>
+<p>盤點資產用軟體 OCS inventory<br><a target="_blank" rel="noopener" href="https://www.ocsinventory-ng.org/en/">https://www.ocsinventory-ng.org/en/</a>  </p>
+<p>使用 The Dude 來圖像式整理網路設備<br><a target="_blank" rel="noopener" href="https://mikrotik.com/thedude">https://mikrotik.com/thedude</a>  </p>
+<p>做好盤點之後，接下來就是來決定這些設備的重要性，存有客戶資料的機器很重要，老闆電腦的 D 槽也是非常重要XD，可以使用新竹市稅務局的資訊資產盤點表做為範本，裡面有有非常詳盡的格式來記錄所有資訊資產。<br><a target="_blank" rel="noopener" href="https://www.informationsecurity.com.tw/article/article_print.aspx?aid=5796">https://www.informationsecurity.com.tw/article/article_print.aspx?aid=5796</a>  </p>
+<p>盤點與紀錄都完成後，剩下的就是每個月的例行事務，像是使用 Nmap 每個月掃一次看看有沒有被開奇怪的 port，如果有被開但問人卻抓不到是誰，很簡單，把 port 關了在用的人就會來叫了。</p>
+<p>至於平日主機的監控，可以使用 Zabbix，他可以做到主機登入偵測，在手機上都可以看到主機被登入的警報，另外還可以做多台主機的叢集式管理，登入警報有個 Windows 作業系統的雷，因為某些執行緒會觸發登入行為，所以會被誤認為是主機登入，如果警報太多就沒有意義了，有跟沒有一樣。<br><a target="_blank" rel="noopener" href="https://www.zabbix.com/">https://www.zabbix.com</a>  </p>
+<p>另外可以使用 fail2ban 來做惡意 IP 的排除，在 Windows 上用的叫做 wail2ban<br><a target="_blank" rel="noopener" href="http://www.fail2ban.org/wiki/index.php/Main_Page">http://www.fail2ban.org/wiki/index.php/Main_Page</a><br><a target="_blank" rel="noopener" href="https://github.com/glasnt/wail2ban">https://github.com/glasnt/wail2ban</a>  </p>
+<p>傳統防火牆跟應用程式防火牆 (WAF) 最大的差異是傳統防火牆只會分辨識是文旦還是榴槤，判斷是文旦後就把文旦放在籃子裡，但無法分辨出放進籃子的文旦有沒有發霉或是爛掉，而 WAF 就好比 X 光機可以掃描文旦，看他的內部有沒有出問題。</p>
+<p>也就是以 OSI 模式來說，傳統防火牆只能偵測第三層的封包，也就是網路層 TCP/IP 協定的封包，而應用程式防火牆可以偵測第七層也就是應用層的封包，現在很多攻擊都是從應用層下手，而 WAF 主要就是防範這類的攻擊。</p>
+<p>WAF 可以看成一個反向代理伺服器，直接在源頭就把可疑封包給過濾掉，連讓他進主機的機會都沒有，可以使用 Nginx 做反向代理。</p>
+<p>萬一真的被入侵了，不要急著砍掉重練，先把被入侵的資料做備份後再做處理，要抓兇手也要先留下證據，第一時間就重灌的話什麼證據都沒有了。</p>
+<h3 id="狙擊駭客，拯救網站安全"><a href="#狙擊駭客，拯救網站安全" class="headerlink" title="狙擊駭客，拯救網站安全"></a>狙擊駭客，拯救網站安全</h3><p>講師為虛擬主機捕夢網雲端架構師陳建宏，講題內容主要在介紹他們所代理的 WAF 產品 dotDefender，涵蓋許多網站層面的防護。</p>
+<p>之前流行的勒索病毒是透過公司內部的 45 port 進行散播的，這代表企業內部的資安意識不足，而被攻進了內網。為了加強網站的安全性，在開發流程就要把資安檢測項目一併納入測試流程之中，最好的情況可以用分散式架構來分散網站、資料都在同一台主機的風險，另外也可以購買資安產品來加強防護。</p>
+<p>除了開發者的資安意識外，也要將使用者納入安全防護圈中，近年來電商網站講究購物便利，所以都會幫客人記住帳密然後自動登入，結果這些資料用明碼的方式存在 Cookie 中，有心人士就能直接登入竊取信用卡資訊。</p>
+<p>網站被入侵要先備份，千萬不可直接還原，才能診斷原因，進而找出漏洞的根源，漏洞補完後，要去檢討修補成效，也就是要進行複測，確保漏洞已被修補。</p>
+<p>平時就要定好被攻擊後的應變方法，通報該通報的單位，說明事情的起因以及處理方式，在台灣，企業都很害怕被別人知道自己網站被入侵，應該要仿效歐美的方式，把事發經過整理出來讓同業交流。</p>
+<p>WAF 有分為硬體式、軟體式以及雲端式，dotDefender 為軟體式，可以部署在自己的主機中。雲端式 WAF 的缺點是 DNS 要指過去，軟體式的好處是可以依照系統架構來安裝，比較彈性也好管理。</p>
+<p>中國菜刀木馬程式<br><a target="_blank" rel="noopener" href="https://fly8wo.github.io/2018/08/17/%E4%B8%AD%E5%9B%BD%E8%8F%9C%E5%88%80%E4%B9%8B%E5%86%99%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%9C%A8%E9%A9%AC%E5%8F%98%E5%BD%A2/">https://fly8wo.github.io/2018/08/17/中国菜刀之写一句话木马变形/</a>  </p>
+<p>電子商務網站提供給客戶的訂單查詢功能要小心，訂單號要記得加隨機亂碼，不然被猜出訂單邏輯其他客戶的訂單就會被看光光。</p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>看到很多廠商都在賣 WAF，這是今年資安界的趨勢嗎？</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/html5-form/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/html5-form/" class="post-title-link" itemprop="url">從新學習HTML5 (二) 表單</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-03-15 10:59:38" itemprop="dateCreated datePublished" datetime="2019-03-15T10:59:38+08:00">2019-03-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>9.4k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>9 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>上一篇在這邊—&gt;<a href="https://oberonlai.blog/html5-intro/">從新學習HTML5 (一) 概觀</a></p>
+<p>HTML5 在處理表單的部分有很大的躍進，以前最喜歡用 jQuery Validation Plugin 來處理各種表單欄位的驗證，但現在 HTML5 內建許多 API，初步看來，實務上的表單需求應該都能不透過外掛而用 API 達成，在瀏覽器的支援程度上也算完整，已經算是可以實戰的階段。</p>
+<p>關於表單的章節本書先從 input 新增的屬性介紹，還有一些可以更彈性使用 <form> 標籤的屬性，新增的 type 類型直接自動幫你判斷輸入文字是否符合規則，還有不知道什麼時候派得上用場的輸入文字選取 API，以及最實用的 input 驗證 API。希望學到這些以後可以把表單秒刻完啊啊啊～</p>
+<h2 id="input-相關屬性"><a href="#input-相關屬性" class="headerlink" title="input 相關屬性"></a>input 相關屬性</h2><p>顧名思義就是給 <input> 標籤專用的屬性，可以直接運用屬性來給輸入欄位下條件，很大幅度省下利用 js 來定義限制條件的時間，當然，比較複雜的條件就還是只能自己寫了。</p>
+<p><strong>autocomplete</strong> - 讓瀏覽器記憶曾經輸入過的文字，下次輸入時會自動提示，沒有特別定義這個屬性的話，預設狀態是開啟的，如果要關閉它再寫 autocomplete=off。</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 停用自動提示功能 --&gt;
+&lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;username&quot; autocomplete&#x3D;&quot;off&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>size</strong> - 控制輸入文字的顯示長度，但不會限制字數，有點不知要用在什麼地方，能輸入幾個字元不就是告訴使用者限制的字數嗎？</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 可輸入無限多位元，但只會出現六位數 --&gt;
+&lt;input type&#x3D;&quot;text&quot; size&#x3D;6 &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>maxlength</strong> - 限制輸入字數，這個很常用  </p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 只能輸入六個位元 --&gt;
+&lt;input type&#x3D;&quot;text&quot; maxlength&#x3D;6 &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>required</strong> - 必填欄位，一個單字搞定</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input type&#x3D;&quot;text&quot; required &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>readonly</strong> - 顯示唯讀狀態，不得輸入任何內容</p>
+<p><strong>min/max</strong> - 設定輸入日期或數字的最大值與最小值，也適用在設定 type=range 滑桿控制的範圍</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 輸入介於 2~10 的數字 --&gt;
+&lt;input name&#x3D;day type&#x3D;number min&#x3D;2 max&#x3D;10&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>step</strong> - 設定更改數量或滑桿時的級距</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 每次修改必須以 2 為單位 --&gt;
+&lt;input type&#x3D;number min&#x3D;1 max&#x3D;100 step&#x3D;2&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>pattern</strong> - 使用正規表達式來驗證輸入資料</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 只允許輸入大寫英文字母一個 --&gt;
+&lt;input type&#x3D;text pattern&#x3D;&quot;[A-Z]&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><strong>autofoucs</strong> - 指定頁面載入時預設停留的 input，除了 input 外，select 與 button 也支援該屬性</p>
+<p><strong>multiple</strong> - 輸入資料至少要兩組以上，以逗號分隔</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 至少要輸入兩組以上的 email --&gt;
+&lt;input type&#x3D;email multiple&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="與-標籤相關的屬性"><a href="#與-標籤相關的屬性" class="headerlink" title="與  標籤相關的屬性"></a>與 <form> 標籤相關的屬性</h2><p>自己遇過一個問題，有時候為了排版的考量，表單裡面的欄位沒辦法包在 <form> 標籤裡面，這時候用 form 屬性就可以不受限制，另外還新增了可以複寫 action、method 等屬性的用法，只是又不知道這是什麼時候用得到…</p>
+<p><strong>form</strong> - submit 傳送時讓沒有包在 <form> 裡面的欄位也可以取得其值，但要先給 <form> 一個 id，然後把 form 屬性放在 input 裡面並指定要對應表單的 id</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;form id&#x3D;&quot;myform&quot;&gt;
+  &lt;button type&#x3D;submit&gt;SEND&lt;button&gt;
+&lt;&#x2F;form&gt;
+&lt;!-- input 不用在表單裡面 --&gt;
+&lt;input type&#x3D;text form&#x3D;&quot;myform&quot; required &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>formaction</strong> - 用在 submit button 裡面，複寫 <form> 本身的 action 屬性</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;form&gt;
+  &lt;input type&#x3D;submit formaction&#x3D;&quot;abc.url&quot;&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>formmethod</strong> - 用在 submit button 裡面，複寫 <form> 本身的 method 屬性</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;form&gt;
+  &lt;input type&#x3D;submit formmethod&#x3D;&quot;post&quot;&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>formtarget</strong> - 用在 submit button 裡面，複寫 <form> 本身的 target 屬性</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;form&gt;
+  &lt;input type&#x3D;submit formtarget&#x3D;&quot;_blank&quot;&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>formnovalidate</strong> - 用在 submit button 裡面，取消欄位驗證功能</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;form&gt;
+  &lt;input type&#x3D;submit formnovalidate&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="新增的-input-type-類型"><a href="#新增的-input-type-類型" class="headerlink" title="新增的 input type 類型"></a>新增的 input type 類型</h2><p>這些新增的 type 可以更方便的去指定驗證欄位條件，因為都內建的，常見的電子郵件或是 URL 都能判斷，更進階的還有日期選擇器、顏色選擇器，但瀏覽器支援差，還是要靠外掛處理了。</p>
+<p><strong>type=search</strong> - 同 input=text，但 chrome 上會多一個 X 可以清除已輸入文字</p>
+<p><strong>type=tel</strong> - 代表電話，驗證條件為純文字</p>
+<p><strong>type=url</strong> - 代表網址，驗證條件為前方要帶有 http:// 開頭的文字</p>
+<p><strong>type=email</strong> - 代表電子郵件，驗證條件為 @ 符號</p>
+<p><strong>type=password</strong> - 代表密碼，會自動以星號取代輸入文字</p>
+<p><strong>type=datetime 相關</strong> - 日期選擇器，但瀏覽器支援弱，不實用</p>
+<p><strong>type=number</strong> - 代表數值，驗證條件為數字</p>
+<p><strong>type=range</strong> - 使用滑桿輸入數字</p>
+<p><strong>type=color</strong> - 顏色選擇器，每個瀏覽器的選擇介面都不太一樣，不好自訂</p>
+<h2 id="input-文字選取的-api"><a href="#input-文字選取的-api" class="headerlink" title="input 文字選取的 api"></a>input 文字選取的 api</h2><p>用來取得 input 裡面文字被選取的狀態，當用滑鼠把文字選取起來時，可以得知是從第幾個字元開始被選取，也可以取得最後一個被選取的字元，還可以指定要自動選取的範圍，完全沒概念這要怎麼應用…</p>
+<p><strong>selectionStart</strong> - 文字選取屬性，表示被選取文字第一個字的索引值</p>
+<p><strong>selectionEnd</strong> - 文字選取屬性，表示被選取文字結束的索引位置</p>
+<p><strong>selectionDirection</strong> - 文字選取屬性，偵測選取文字時是向前還向後選取</p>
+<p><strong>select()</strong> - 文字選取方法</p>
+<p><strong>setSelectionRange(start,end, direction)</strong> - 程式設定選取範圍，最後一個 direction 選填</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input type&#x3D;&quot;text&quot; id&#x3D;&quot;text-box&quot; size&#x3D;&quot;20&quot; value&#x3D;&quot;1234&quot;&gt;
+&lt;button onclick&#x3D;&quot;selectText()&quot;&gt;選取2跟3&lt;&#x2F;button&gt;
+&lt;script&gt;
+function selectText() &#123;
+  var input &#x3D; document.getElementById(&#39;text-box&#39;);  
+  input.focus();
+  &lt;!-- end 索引值是指被選到文字的下一個 --&gt;
+  input.setSelectionRange(1, 3); 
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="input-驗證-API"><a href="#input-驗證-API" class="headerlink" title="input 驗證 API"></a>input 驗證 API</h2><p>驗證 API 是本章節的重點，在很多情況下，根本不會有 submit 傳送事件的觸發，尤其是現在常見的 ajax 應用，以及熱門的 js 框架，都採用非同步的方式去處理資料傳遞，所以學會如何使用 API 去控制驗證輸入欄位是非常重要的。</p>
+<p><strong>willValidate</strong> - 判斷欄位是否帶有驗證條件，如果有的話值是 true，這邊驗證條件指的是內建的 type 類型所判斷的條件，自己寫的條件無用，BUT…..</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input id&#x3D;&quot;hadValid&quot; type&#x3D;email&gt;
+&lt;input id&#x3D;&quot;hadNoValid&quot; type&#x3D;text&gt;
+&lt;button onclick&#x3D;&quot;check()&quot;&gt;CHECK&lt;&#x2F;button&gt;
+&lt;script&gt;
+function cheeck()&#123;        
+  alert(document.querySelector(&quot;#hadValid&quot;).willValidate)
+  alert(document.querySelector(&quot;#hadNoValid&quot;).willValidate)
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>我以為第一個 alert 是 true，第二個是 false，想不到第二個也是 true，後來爬到說 willValidate 唯一會 false 的情況，只有在 input 被設為 disabled 的時候，而且設了 disabled 不管 type 是什麼，全都是 false，這個屬性應該改名叫做 <strong>isDisabled</strong> 才對吧….Orz</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input id&#x3D;&quot;hadValid&quot; type&#x3D;email disabled&gt;
+&lt;input id&#x3D;&quot;hadNoValid&quot; type&#x3D;text disabled&gt;
+&lt;button onclick&#x3D;&quot;check()&quot;&gt;CHECK&lt;&#x2F;button&gt;
+&lt;script&gt;
+function check()&#123; 
+  &lt;!-- 兩個都回傳 false，無言.... --&gt;
+  alert(document.querySelector(&quot;#hadValid&quot;).willValidate)
+  alert(document.querySelector(&quot;#hadNoValid&quot;).willValidate)
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>checkValidity()</strong> - 判斷欄位是否有通過驗證，有的話回傳 true，如果在未輸入任何值得情況下，這個方法也是會過，所以要用他判斷最好要再加上檢查 value 是否為空，或是給 input required 屬性會比較準確</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!--  注意！沒設必填的話空值也會驗證成功 --&gt;
+&lt;input id&#x3D;&quot;check&quot; type&#x3D;email required&gt; 
+&lt;button onclick&#x3D;&#39;checkValid()&#39;&gt;CHECK&lt;&#x2F;button&gt;
+&lt;script&gt;
+function checkValid()&#123;
+  if( document.getElementById(&#39;check&#39;).checkValidity() )&#123;
+    alert(&quot;我成功啦～&quot;)
+  &#125; else &#123;
+    alert(&quot;我失敗啦～&quot;)
+  &#125;
+&#125;    
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>validity</strong> - 用來顯示錯誤狀態的一個物件 ValidityState，可以根據取得的結果來做相對應的動作，取得的結果有以下幾種，可以很精準的判斷錯誤狀態以提供使用者正確的回饋訊息：</p>
+<p>(一) validity.valueMissing – 有必填欄位未填的話返回 true</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input id&#x3D;&quot;check&quot; type&#x3D;text required&gt; 
+&lt;button onclick&#x3D;&#39;checkValid()&#39;&gt;Send&lt;&#x2F;button&gt;
+&lt;script&gt;
+function checkValid()&#123;
+  if (document.querySelector(&quot;#check&quot;).validity.valueMissing) &#123;
+    alert(&quot;必填欄位未填&quot;)
+  &#125; else &#123;
+    alert(&quot;驗證成功&quot;)
+ &#125; 
+&#125;    
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(二) validity.typeMismatch – 輸入格式不對的話返回 true，像是 type=email 沒有 @xx.xx，或是 type=url 沒有 http://</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input id&#x3D;&quot;check&quot; type&#x3D;email required&gt; 
+&lt;button onclick&#x3D;&#39;checkValid()&#39;&gt;Send&lt;&#x2F;button&gt;
+&lt;script&gt;
+function checkValid()&#123;
+  if (document.querySelector(&quot;#check&quot;).validity.typeMismatch) &#123;
+    alert(&quot;格式有誤&quot;)
+  &#125; else &#123;
+    alert(&quot;驗證成功&quot;)
+ &#125; 
+&#125;    
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(三) validity.patternMismatch – 正規表示法的驗證沒過返回 true</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input id&#x3D;&quot;check&quot; type&#x3D;text pattern&#x3D;&quot;[A-Z]&#123;3&#125;&quot; required&gt; 
+&lt;button onclick&#x3D;&#39;checkValid()&#39;&gt;Send&lt;&#x2F;button&gt;
+&lt;script&gt;
+function checkValid()&#123;
+  if (document.querySelector(&quot;#check&quot;).validity.patternMismatch) &#123;
+    alert(&quot;格式有誤&quot;)
+  &#125; else &#123;
+    alert(&quot;驗證成功&quot;)
+ &#125; 
+&#125;    
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(四) validity.tooLong – 超過 maxlength 設定的上限值回傳 true，但 Chrome / Safari 似乎不支援，測試了老半天都無法取得 true，還是只好乖乖的用 length 去判斷了</p>
+<p>(五) validity.rangeUnderflow – 小於 min 屬性的下限值回傳 true</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input id&#x3D;&quot;check&quot; type&#x3D;number min&#x3D;10&gt; 
+&lt;button onclick&#x3D;&#39;checkValid()&#39;&gt;Send&lt;&#x2F;button&gt;
+&lt;script&gt;
+function checkValid()&#123;
+  if (document.querySelector(&quot;#check&quot;).validity.rangeUnderflow) &#123;
+    alert(&quot;數字不得低於10&quot;)
+  &#125; else &#123;
+    alert(&quot;驗證成功&quot;)
+ &#125; 
+&#125;    
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(六) validity.rangeOverflow – 大於 max 屬性的上限值回傳 true</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input id&#x3D;&quot;check&quot; type&#x3D;number max&#x3D;10&gt; 
+&lt;button onclick&#x3D;&#39;checkValid()&#39;&gt;Send&lt;&#x2F;button&gt;
+&lt;script&gt;
+function checkValid()&#123;
+  if (document.querySelector(&quot;#check&quot;).validity.rangeOverflow) &#123;
+    alert(&quot;數字不得大於10&quot;)
+  &#125; else &#123;
+    alert(&quot;驗證成功&quot;)
+ &#125; 
+&#125;    
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(七) validity.stepMismatch – 不符合 step 變量時回傳 true</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input id&#x3D;&quot;check&quot; type&#x3D;number min&#x3D;2 max&#x3D;10 step&#x3D;2 value&#x3D;2&gt; 
+&lt;button onclick&#x3D;&#39;checkValid()&#39;&gt;Send&lt;&#x2F;button&gt;
+&lt;script&gt;
+function checkValid()&#123;
+  if (document.querySelector(&quot;#check&quot;).validity.stepMismatch) &#123;
+    alert(&quot;增加數值要是 2 的倍數&quot;)
+  &#125; else &#123;
+    alert(&quot;驗證成功&quot;)
+ &#125; 
+&#125;    
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>(八) validity.customError – 判斷是否有設定 setCustomValidity 自訂錯誤訊息文字，有的話為 true</p>
+<p>(九) validity.valid – 僅顯示驗證是否有通過，有的話為 true，驗證沒過為 false</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input id&#x3D;&quot;check&quot; type&#x3D;text required&gt; 
+&lt;button onclick&#x3D;&#39;checkValid()&#39;&gt;Send&lt;&#x2F;button&gt;
+&lt;script&gt;
+function checkValid()&#123;
+  if (document.querySelector(&quot;#check&quot;).validity.valid) &#123;
+    alert(&quot;驗證成功&quot;)
+  &#125; else &#123;
+    alert(&quot;驗證失敗&quot;)
+ &#125; 
+&#125;    
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>setCustomValidity(message)</strong> - 自訂驗證未過時的錯誤訊息，並且用 inputElement.validationMessage 取得自訂的錯誤訊息</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;input id&#x3D;&quot;input&quot; type&#x3D;&#39;text&#39; required&#x2F;&gt;
+&lt;p id&#x3D;&#39;msg&#39;&gt;&lt;&#x2F;p&gt;
+&lt;button onclick&#x3D;&#39;check()&#39;&gt;SEND&lt;&#x2F;button&gt;
+&lt;script&gt;
+  var input &#x3D; document.querySelector(&#39;#input&#39;);
+  var msg &#x3D; document.querySelector(&#39;#msg&#39;);
+  function check()&#123;
+    if( input.validity.valueMissing ) &#123;
+       &#x2F;* 設定錯誤顯示文字   *&#x2F;
+      input.setCustomValidity(&#39;我錯啦～&#39;)
+      &#x2F;* 因為有自訂錯誤訊息，所以是 true *&#x2F; 
+      alert(input.validity.customError ) 
+      &#x2F;* 取得錯誤顯示文字 *&#x2F;
+      msg.innerHTML &#x3D; input.validationMessage 
+    &#125;
+  &#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="可用在-Input-的新事件"><a href="#可用在-Input-的新事件" class="headerlink" title="可用在 Input 的新事件"></a>可用在 Input 的新事件</h2><p>完整的新事件的部分將在下一章中介紹，這邊先介紹兩個跟 input 欄位相關的，一個是 oninput 另一個是 oninvalid。</p>
+<p>oninput 可以解決因為 onkeyup 跟 onkeydown 造成輸入判斷不精準的問題，而 oninvalid 顧名思義就是當驗證未過時觸發的事件，我們把上面 setCustomValidity 的寫法改用這兩個事件來處理。</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!-- 用事件設定錯誤訊息，在輸入時要清空，在驗證未過時設定 --&gt;
+&lt;form action&#x3D;&quot;&quot;&gt;
+  &lt;input type&#x3D;&#39;text&#39; oninput&#x3D;&quot;setCustomValidity(&#39;&#39;);&quot; oninvalid&#x3D;&quot;setCustomValidity(&#39;我錯啦～&#39;);&quot; required&#x2F;&gt;
+  &lt;input type&#x3D;&#39;submit&#39; &#x2F;&gt;
+&lt;&#x2F;form&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>這樣整理並且實作下來，發現還是有些屬性跟想像中的用法不一樣，雖然書上的文字描述好像很清楚，但實際用 jsfiddle 去 run 才發現根本不是這麼一回事，另外瀏覽器支援度也是個問題，在用的時候要先查清楚才行。</p>
+<p>下一篇繼續整理 HTML5 的新事件。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/html5-intro/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/html5-intro/" class="post-title-link" itemprop="url">從新學習HTML5 (一) 概觀</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-03-11 22:04:24" itemprop="dateCreated datePublished" datetime="2019-03-11T22:04:24+08:00">2019-03-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/HTML5/" itemprop="url" rel="index"><span itemprop="name">HTML5</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>6.1k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>6 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://i2.wp.com/oberonlai.blog/wp-content/uploads/2019/03/IMG_7996.jpg"></p>
+<p><img src="https://i1.wp.com/oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-11-at-21.54.26.jpg?ssl=1"></p>
+<p>第一次完整學習 HTML 是在剛入行的時候，算一算也有十幾個年頭了，這些日子以來，對於 HTML5 只有著片段的知識，每當卡關去爬 Stackoverflow 時，才會驚訝的發現原來還有這些新東西可以用，所以在圖書館看到這本時，應該是老天爺叫我要好好的來重新認識 HTML 了。</p>
+<p>看完幾個章節以後，有一種在看說明書的感覺。就像電器用品一樣，不用看說明書就可以用得順手，然後哪天在整理東西時發現冷氣機的說明書，隨手翻了一下，才驚喜的發現原來家裡的冷氣除了會冷以外，還有除濕、暖氣、烘乾、洗衣、脫水、無線分享器、播音樂等各種功能(?)，而且有些還真的非常實用，在看這本 HTML5 的時候就是這種感覺，每翻一頁處處都是驚喜，許多新功能立馬能在工作上派上用場，滿滿的意外收穫～</p>
+<p>但這本書實在太厚了，根本就是整個 W3C 文件的濃縮版，涵蓋的面向非常完整，從 HTML5 的歷史介紹、介面設計、通訊功能、影像資料處理，到本地資料儲存機制應有盡有，而且不是草草帶過，書裡介紹完整屬性並搭配實作範例，真的是 HTML5 參考書不為過。</p>
+<p>怕自己沒辦法一次整理完這麼龐大的資料量，只好分篇來紀錄，本文以 HTML5 的入門概觀為主，重點摘要整理如下：</p>
+<h2 id="HTML5-的歷史"><a href="#HTML5-的歷史" class="headerlink" title="HTML5 的歷史"></a>HTML5 的歷史</h2><p>記得學生時代用 Dreamweaver 設計網頁時，在檢視原始碼的模式下，有時候都會看到最上面有類似這一段的開頭：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html PUBLIC &quot;-&#x2F;&#x2F;W3C&#x2F;&#x2F;DTD XHTML 1.0 Strict&#x2F;&#x2F;EN&quot; &quot;http:&#x2F;&#x2F;www.w3.org&#x2F;2002&#x2F;08&#x2F;xhtml&#x2F;xhtml1-strict.dtd&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>落落長的內容裡面寫著 XHTML ，心想這應該就是 HTML 的標準形式吧，在還是 DW 的年代，完全不知道怎麼寫 HTML，只會用現成的介面來產出網頁。直到後來才知道，原來還有一種叫 XHTML 的東西準備要來取代 HTML…</p>
+<p>HTML 最早是在西元 1990 年由網際網路發明人 Tim Berners-Lee 所制定的，並組成了 W3C (World Wide Web Consortium) 來維護 HTML，到了西元 1999 年進化到第四版，也就是 HTML5 的前身 HTML4.01，但由於 HTML4 本身架構以及語法的問題，遲遲無法進行改良，因此 W3C 決定以 XML 語言基礎，打掉重練 HTML 並開發 XHTML。</p>
+<p>直到 2003 年有新技術出現，原有的 HTML4 可以升級了並進行擴充了，於是由 Apple、Mozilla、Opera 組成的 WHATWG 來制定下一版的 HTML，但 W3C 也已經花了不少時間在著手 XHTML 的開發，所以情勢即將變成各玩各的規範，苦的就是瀏覽器廠商以及廣大的網站開發者。</p>
+<p>幸好在 2007 年，W3C 也加入了 WHATWG，一起參與下一代 HTML 的開發，雖然 W3C 並未放棄 XHTML 的計畫，但至少 HTML 可以繼續的被使用下去。到了 2010 年 HTML5 訂出草稿，最後在西元 2014 年 10/28 發表，雖然當時還是 Flash 橫著走的年代，直到 <a target="_blank" rel="noopener" href="https://chinese.engadget.com/2010/04/29/steve-jobs-publishes-some-thoughts-on-flash-many-many-thou/">Steven Jobs 力推 HTML5 並抵制 Flash</a>，HTML5 才逐漸發揚光大，成為現今主流的網頁技術。</p>
+<p>這幾年各家瀏覽器對於 HTML5 的支援越來越完整，有興趣的朋友可以到 <a target="_blank" rel="noopener" href="https://html5test.com/">https://html5test.com</a> 看看自己使用的瀏覽器的支援程度，個人覺得有點意外的是，macOS Safari 的支援度有點低，當年最早在制定 H5 的公司不就是 Apple 嗎？反倒是 Chrome 的支援度較完整。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-09-at-21.55.24.png"></p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/03/CleanShot-2019-03-09-at-21.55.55.png"></p>
+<h2 id="HTML5-的主要內容"><a href="#HTML5-的主要內容" class="headerlink" title="HTML5 的主要內容"></a>HTML5 的主要內容</h2><p>廣義來說，HTML5 主要包含以下七大項的新增內容，當使用到其中一項內容時，我們便可以說該網頁是使用 HTML5 技術所開發的：</p>
+<h4 id="ㄧ-語意標籤-semantic"><a href="#ㄧ-語意標籤-semantic" class="headerlink" title="(ㄧ) 語意標籤 semantic"></a>(ㄧ) 語意標籤 semantic</h4><p>使用更具有意義的 HTML 標籤，讓搜尋引擎或是爬蟲機器人可以更方便與快速的了解網頁的內容，也讓開發人員有更ㄧ致的準則來使用適合內容的標籤。像是頁首使用 <header>、主要區塊使用 <section>、側邊欄使用 <aside> 等等。</p>
+<h4 id="二-離線儲存-offline-amp-storage"><a href="#二-離線儲存-offline-amp-storage" class="headerlink" title="(二) 離線儲存 offline&amp;storage"></a>(二) 離線儲存 offline&amp;storage</h4><p>透過快取技術、本地儲存與 Index DB，讓裝置在沒有網路的環境下，依舊可以瀏覽網站的內容，這對於裝置行動化的趨勢來說，是非常實用的功能。</p>
+<h4 id="三-裝置存取-Device"><a href="#三-裝置存取-Device" class="headerlink" title="(三) 裝置存取 Device"></a>(三) 裝置存取 Device</h4><p>隨著手機出貨量超越桌上型個人電腦，手持裝置變成是瀏覽網站最主要的來源，HTML5 可以取得使用裝置硬體的權限，讓網站可以像原生 APP 一樣，做到許多原本無法做到的功能，像是透過瀏覽器啟用相機、取得手機地理位址等等，大大加強了網站的應用性。</p>
+<h4 id="四-連結性-Connectivity"><a href="#四-連結性-Connectivity" class="headerlink" title="(四) 連結性 Connectivity"></a>(四) 連結性 Connectivity</h4><p>HTML5 讓網站之間傳輸資料更即時，非常適合做即時通訊或手機推播等功能。</p>
+<h4 id="五-效能與整合性-Perfermence-amp-Integrate"><a href="#五-效能與整合性-Perfermence-amp-Integrate" class="headerlink" title="(五) 效能與整合性 Perfermence&amp;Integrate"></a>(五) 效能與整合性 Perfermence&amp;Integrate</h4><p>整合 XMLHttpRequest 2 非同步載入技術，以及 Web Workers 支援網頁多工執行的特性，讓動態網頁從伺服器端請求資料更即時，使用體驗也更好。</p>
+<h4 id="六-2-3D-圖形與特效-2-3D-Graphic-amp-Effects"><a href="#六-2-3D-圖形與特效-2-3D-Graphic-amp-Effects" class="headerlink" title="(六) 2/3D 圖形與特效 2/3D Graphic&amp;Effects"></a>(六) 2/3D 圖形與特效 2/3D Graphic&amp;Effects</h4><p>以前 Flash 之所以能稱霸網路，就是因為透過 Action Script 可以開發出各種 2D 或 3D 的視覺動態呈現，為了補足這一塊，HTML5 開發了 Canvas、SVG、WebGL 讓設計人員可以在不需要安裝任何瀏覽器外掛的情況下，製作出具有高水準的影像或動畫。</p>
+<h4 id="七-多媒體-multimedia"><a href="#七-多媒體-multimedia" class="headerlink" title="(七) 多媒體 multimedia"></a>(七) 多媒體 multimedia</h4><p>Flash 最麻煩且最棘手的地方，就是在於他需要安裝瀏覽器套件才能使用，播放影音也不例外，所以 HTML5 直接內建影音播放功能，不需要任何的套件安裝就可以讓用戶可以看到內容。</p>
+<h2 id="HTML-基礎知識"><a href="#HTML-基礎知識" class="headerlink" title="HTML 基礎知識"></a>HTML 基礎知識</h2><h4 id="一-文件物件模型-Document-Object-Model-Tree"><a href="#一-文件物件模型-Document-Object-Model-Tree" class="headerlink" title="(一) 文件物件模型 Document Object Model Tree"></a>(一) 文件物件模型 Document Object Model Tree</h4><p>網頁內容是由 DOM Tree 的節點組成，每個 html 的標籤都會轉換成一個物件，以巢狀的方式紀錄每個標籤的父子關係，參考下圖的對應關係，左邊是 HTML 的標籤內容，右邊是轉換後的文件物件模型。  </p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;網頁&lt;&#x2F;title&gt;
+  &lt;&#x2F;head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;文章標題&lt;&#x2F;h1&gt;
+  &lt;&#x2F;body&gt;
+&lt;&#x2F;html&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-none"><code class="language-none">DOCTYPE
+html
+├── head
+│   └── title
+├── body
+│   └── h1
+
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="二-HTML-根元素"><a href="#二-HTML-根元素" class="headerlink" title="(二) HTML 根元素"></a>(二) HTML 根元素</h4><p>HTML 跟元素是整份文件最上層的節點，擁有兩個屬性，一個是 manifest，專門設定來讀取網站快取清單的路徑，範例如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;html manifest&#x3D;&quot;cache.manifest&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>第二個是 lang，用來設定網頁所使用的語系：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;html lang&#x3D;&quot;zh-tw&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="三-head-元素"><a href="#三-head-元素" class="headerlink" title="(三) head 元素"></a>(三) head 元素</h4><p>head 元素主要放網頁描述資料的區塊，也就是中介資料，常用的有以下幾種：</p>
+<title> 網頁的標題，js 使用來取得網頁標題 document.title
+
+<base> 設定網站的基準網址，讓需要取得路徑的地方寫相對路徑即可，範例如下：
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;base href&#x3D;&#39;https:&#x2F;&#x2F;abc.com&#39;&gt;
+&lt;a href&#x3D;&#39;about.html&#39;&gt;Link&lt;&#x2F;a&gt;
+&#x2F;&#x2F; 點擊 Link 網址是 https:&#x2F;&#x2F;abc.com&#x2F;about.html<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<style> 放置 CSS 樣式的標籤
+
+<link> 引入媒體檔案的標籤，通常放在外部的 CSS 檔或使用它來引入
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;style.css&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<script> 引入外部 JavaScript 檔案的標籤，HTML 5 新增加了兩種讀取模式：
+
+預設：DOM 跑到就執行，會等 js 載完才會繼續往下跑  
+async：DOM 跑到就執行，不等 js 載完繼續往下跑  
+defer：DOM 跑到不執行，等 DOM 全部載完 js 最後才執行  
+
+<noscript> 不支援 JavaScript 情況下所顯示的文字
+
+<meta> 設定頁面的描述資料，使用 http-equiv 可設定 http 回應標頭狀態，主要分為三種：
+
+content-type 編碼宣告
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;meta http-equiv&#x3D;&quot;content-type&quot; content&#x3D;&quot;text&#x2F;html&quot; charest&#x3D;&quot;UTF-8&quot;&gt; 
+
+&#x2F;&#x2F; H5 中可直接由 charset 取代
+&lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+default-style 預設樣式 - 指定預設要讀取哪一個 CSS 檔
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;meta http-equiv&#x3D;&quot;Default-Style&quot; content&#x3D;&quot;Blue Style&quot; &#x2F;&gt;
+&lt;link rel&#x3D;&quot;alternate stylesheet&quot; href&#x3D;&quot;&#x2F;css&#x2F;green.css&quot; type&#x3D;&quot;text&#x2F;css&quot; title&#x3D;&quot;Green&quot; &#x2F;&gt;  
+&lt;link rel&#x3D;&quot;alternate stylesheet&quot; href&#x3D;&quot;&#x2F;css&#x2F;blue.css&quot; type&#x3D;&quot;text&#x2F;css&quot; title&#x3D;&quot;Blue&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+refresh 重整頁面
+
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 隔 30 秒後跳轉到 redirect.html
+&lt;meta http-equiv&#x3D;&quot;fresh&quot; content&#x3D;&quot;30;URL&#x3D;redirect.html&quot; &#x2F;&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+## 實用新增標籤
+
+前面提到 HTML5 新增的內容包含語意標籤、影音功能等等，因此也新增了不少新標籤來定義這些內容，這邊以三個面向進行分類，並挑選實用的標籤來進行說明：
+
+#### (一) 影音相關
+
+<video> 播放影片使用的標籤，可放入多個 source 來源，當瀏覽器不支援該影片格式時，可以向下相容
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;video width&#x3D;&quot;400&quot; controls&gt;
+  &lt;source src&#x3D;&quot;mov_bbb.mp4&quot; type&#x3D;&quot;video&#x2F;mp4&quot;&gt;
+  &lt;source src&#x3D;&quot;mov_bbb.ogg&quot; type&#x3D;&quot;video&#x2F;ogg&quot;&gt;
+  你的瀏覽器不支援 HTML5 播放器
+&lt;&#x2F;video&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<audio> 播放音檔使用的標籤
+
+#### (二) 文本相關
+
+<mark> 文字重點強調
+
+<progress> 顯示進度條
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;progress value&#x3D;&quot;22&quot; max&#x3D;&quot;100&quot;&gt;&lt;&#x2F;progress&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<meter> 顯示水平量表
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;meter value&#x3D;&quot;3&quot; min&#x3D;&quot;0&quot; max&#x3D;&quot;10&quot;&gt;十分之三&lt;&#x2F;meter&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<time> 顯示時間
+
+<wbr> 讓過長的文字在指定的地方斷行
+
+#### (三) 介面相關
+
+<details><summary> 內建的 accordion 功能
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;details&gt;
+  &lt;summary&gt;標題&lt;&#x2F;summary&gt;
+  展開內容
+&lt;&#x2F;details&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<datalist> 讓 input text 可以依照使用者搜尋文字跳出相關建議詞
+
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; input 的建議字使用 id 為 keyword 的 datalist 裡面的內容
+&lt;input list&#x3D;&quot;keyword&quot; &#x2F;&gt;
+
+&#x2F;&#x2F; 定義相關字詞
+&lt;datalist id&#x3D;&quot;keyword&quot;&gt;
+  &lt;option value&#x3D;&quot;Google&quot;&gt;
+  &lt;option value&#x3D;&quot;Yahoo&quot;&gt;
+  &lt;option value&#x3D;&quot;Bing&quot;&gt;
+&lt;&#x2F;datalist&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+## 新增全域屬性
+
+除了新的標籤以外，也有許多新的屬性可以使用，有了這些屬性，可以讓標籤更靈活的運用，此外還能擴充更多自訂屬性：
+
+contenteditable：可以讓任何標籤變成可輸入文字的 input text 狀態
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;p id&#x3D;&quot;msg&quot; contenteditable&gt;輸入內容&lt;&#x2F;p&gt;
+document.getElementById(&#39;msg&#39;).innerHTML); &#x2F;&#x2F; 取得輸入內容文字<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+data-\*：自訂資料屬性，讓標籤可以擴充自己定義的屬性
+
+<pre class="line-numbers language-none"><code class="language-none">&lt;div id&#x3D;&quot;products&quot; data-price&#x3D;450 data-name&#x3D;&quot;books&quot; data-name-en&#x3D;&quot;books-en&quot;&gt;&lt;&#x2F;div&gt;
+document.getElementById(&quot;products&quot;).dataset.price &#x2F;&#x2F; 450
+document.getElementById(&quot;products&quot;).dataset.name &#x2F;&#x2F; books
+document.getElementById(&quot;products&quot;).dataset.nameEn &#x2F;&#x2F; books-en 用駝峰寫法<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+draggable/dropzone：標記可拖曳/置放標籤
+
+hidden：隱藏標籤
+
+spellcheck：拼字檢查
+
+## 小結
+
+整理完 HTML5 的由來以及新增的功能之後，接來深入介紹 HTML5 在介面設計上新增的標籤以及 CSS3 的各項功能。
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/plesk-find-huge-file-or-folder/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/plesk-find-huge-file-or-folder/" class="post-title-link" itemprop="url">Plesk 下找出大容量資料夾或檔案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-02-27 14:32:10" itemprop="dateCreated datePublished" datetime="2019-02-27T14:32:10+08:00">2019-02-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/Host/" itemprop="url" rel="index"><span itemprop="name">Host</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>867</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://i2.wp.com/oberonlai.blog/wp-content/uploads/2019/02/Carbonize-2019-02-27-at-2.15.52-PM.png?fit=1024,429&ssl=1"></p>
+<p>主機硬碟的空間超過一半了，沒足夠容量做整台主機的全量備份，只好手動找出是哪些大檔再吃硬碟，幾個關鍵容易肥大的資料夾先掃一掃。</p>
+<p>第一個是 /tmp 資料夾，如果是用 Plesk 的備份套件來搬家的話，搬完後這邊都會有暫存檔，如果是大站的這邊很容易會爆肥，記得要清。使用指令來撈出檔案最大的前五筆，筆數可自行調整。</p>
+<pre class="line-numbers language-none"><code class="language-none">du -ah &#x2F;tmp  sort -n -r  head -n 5 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>第二是 /var/lib/psa/dumps/domain，這是 Plesk 每個 domain 的備份目錄，我習慣都是備份到 Dropbox 上面，所以本機不會留備份檔，但有時後 Dropbox 備份失敗，Plesk 就會把備份檔存在這個目錄，所以檢查這邊有沒有肥大的備份檔是第二個地方。</p>
+<p>--max-depth 是要往下找到第幾層資料夾，以 plesk 的路徑來說是 /var/lib/psa/dumps/domains/<a target="_blank" rel="noopener" href="http://www.aaa.bbb,domain/">www.aaa.bbb，domain</a> 裡面放的就是該網址的備份檔，所以 –max-depth 設為一就好。</p>
+<pre class="line-numbers language-none"><code class="language-none">du -ah &#x2F;var&#x2F;lib&#x2F;psa&#x2F;dumps&#x2F;domains --max-depth&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>第三是 /var/www/vhosts/，這就是網站的主要路徑，裡面放的是運行中的網站，底下第一層就是 domain，所以一樣撈出第一層就好。</p>
+<pre class="line-numbers language-none"><code class="language-none">du -ah &#x2F;var&#x2F;www&#x2F;vhosts&#x2F; --max-depth&#x3D;1<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>篩選出肥大的網站之後，再進去查看是哪些資料夾肥大，以 WordPress 來說正常肥大的是 wp-content/uploads，這邊放的是圖檔，所以網站經營久了，自然會肥大，只能考慮圖床或是其他方案。</p>
+<p>可以砍的像是 snapshots 資料夾，這是在升級或更新 WordPress 前自動做的快照，以防有狀況時可以隨時還原，有固定備份的話這個資料夾的東西就可以砍了。</p>
+<p>其他再檢查有沒有不需要的網站，或是為了搬家留下的壓縮檔，就只能一個一個檢查了，清完後空間還是不夠，就確認可以升級硬碟空間了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/2019-02-26-wordpress-meetup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/2019-02-26-wordpress-meetup/" class="post-title-link" itemprop="url">2019/02/26 WordPress 板橋小聚會後小記</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-02-27 12:17:44" itemprop="dateCreated datePublished" datetime="2019-02-27T12:17:44+08:00">2019-02-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>3 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id=""><a href="#" class="headerlink" title=""></a></h2><p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/img_7985.jpg"></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>「因為住板橋，內湖的小聚太遠所以辦了板橋小聚！」主辦人 Erin Lin 這句話實在太深得我心，我就是住太遠超懶得去內湖，所以很少參加 WordPress 小聚的那個人XD</p>
+<p>WordPress 板橋小聚辦得非常成功，雖然號稱是「小聚」，但規模是「大聚」無誤，講師分享的內容都非常有料，現場的設備豪華，竟然有流明度 80,000 的投影機 (我有聽錯嗎？)，而且還是 Erin 自掏腰包貢獻給社群的，更不用說還有立體環繞音響、以及奉獻自己寶貴時間付出的志工大大們，在這個年代玩 WordPress 實在太幸福了，有超多大大可以請益啊～</p>
+<p>另外除了板橋外，全台各地的 WordPress 的小聚也如雨後春筍般的遍地開花了，有興趣的朋友可以上 WordPress 小聚紀錄網站 —&gt; <a target="_blank" rel="noopener" href="https://wp-meetups.com/">https://wp-meetups.com</a></p>
+<blockquote>
+<p>WordPress 為開源的架站工具，WordPress 小聚為非營利聚會，不屬於任何公司、品牌，純粹由 WordPress 愛好者發起</p>
+</blockquote>
+<p>以下就今天兩位講者精彩的分享做一些重點摘錄：</p>
+<h2 id="WooCoomerce-1000-人同時在線-一頁式電商"><a href="#WooCoomerce-1000-人同時在線-一頁式電商" class="headerlink" title="WooCoomerce 1000 人同時在線 一頁式電商"></a>WooCoomerce 1000 人同時在線 一頁式電商</h2><p>講師 Andy Liao 大大，資歷豐富的嚇人，尤其是跨領域的經驗，從技術到行銷都待過大企業的高階職務，演講方式風趣幽默，非常吸引聽眾。</p>
+<p>主要內容分為五大部分，從一頁式電商的概念介紹、一頁式電商與購物平台的策略、推薦的使用外掛，以及手把手的 WooCommerce 操作教學，最後還有非常精彩的網站壓力測試 Liveshow。</p>
+<p>整場聽下來 Andy 大大一直在強調一個觀念，那就是聽到別人的知識要能自己靈活思考並加以運用在自己的情境中，而非全部照本宣科，並且用最小成本做最快速度執行，才能進行優化調整。相信這是在競爭如此激烈的電商環境中，能存活下來的不二法門。</p>
+<p>Andy 大大用的簡報軟體很有趣，叫做 <a target="_blank" rel="noopener" href="http://focusky.com/">Focusky</a>，看官網介紹是一套以 HTML5 為核心的簡報製作軟體，可以做出超多各種絢麗的轉場效果，也因為是 HTML5，所以可以直接在瀏覽器上面播放，要簡報的電腦就不用安裝軟體，而且方案也很佛心，是用雲端空間的容量來計算，10G 的話是免錢，也許下次有機會我會用他來做簡報看看。  </p>
+<p><img src="https://i1.wp.com/oberonlai.blog/wp-content/uploads/2019/02/use2.png?fit=1024,530&ssl=1"></p>
+<p>簡報摘要如下：</p>
+<ul>
+<li>  有人說 WooCommerce 速度慢、門檻高、體質差，無法承載高流量</li>
+<li>  網頁載入超過三秒就被關閉的機會大幅提升</li>
+<li>  一千個人在線速度還要維持，實際經驗運作過是可行的，但還是要依照自身情況進行調整優化</li>
+</ul>
+<p>為什麼要用一頁式電商？</p>
+<ul>
+<li>  適合帶入第一次購買的客戶</li>
+<li>  架構邏輯清楚，無痛下單</li>
+<li>  從社群通路引導，第一次下單在一頁式電商，讓客戶產生專注力，提高轉換率</li>
+<li>  適合主題式產品、同質性商品、選擇性限制產品</li>
+<li>  可以賣完就關站，賣完就走了，不需要累積 SEO</li>
+<li>  付費廣告流量來源，導入後再做電商平台</li>
+</ul>
+<p>WordPress 的入門操作可以參考網站帶路姬的免費課程<br><a target="_blank" rel="noopener" href="https://wpointer.com/wordpress-tutorials/5days-wordpress-diy/">https://wpointer.com/wordpress-tutorials/5days-wordpress-diy/</a></p>
+<p>怎麼製作一頁式電商？</p>
+<ul>
+<li>  先決定網站目標</li>
+<li>  有人要買再去生產產品 –&gt; 適合名單收集型</li>
+<li>  產品銷售型可以連結，帶入精準的流量，進來就是要下單購買的</li>
+<li>  素材要對，要讓導購文案也可以吸引點進來的人，素材、文案、影片、圖片都重要</li>
+<li>  適合自己的轉換工具，知道自己在幹嘛，</li>
+<li>  Google 表單、WooCmmerce 都可以用，評估學習成本，只要能賣得嚇嚇叫就是好工具</li>
+</ul>
+<p>名單搜集型網站推薦的外掛:</p>
+<ul>
+<li>  WordPress</li>
+<li>  Elementor</li>
+<li>  ContactForm7</li>
+<li>  Tracking Code Manager 各種追蹤都能埋</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/tracking-code-manager/">https://wordpress.org/plugins/tracking-code-manager/</a></p>
+<p>產品銷售型使用 WooCommerce pixelyoursite 這隻外掛來埋入 Facebook Pixel，能追蹤像素才是電商的靈魂，一般客人加到購物車還是會進行比價，一頁式網站沒有購物車可以追蹤，WooCommerce 才能透過像素去持續追蹤潛在客戶。</p>
+<p><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/pixelyoursite/">https://wordpress.org/plugins/pixelyoursite/</a></p>
+<p>一頁式文案都是圖，在不同裝置上比較好控制版面，最下面通常會有行動訴求，透過表單搜集名單，目前行情是一個有效報名名單 500~700 元不等。UI 設計的好廣告轉換成本會下降，像是兩個人以上報名可以給優惠，吸引大家揪團報名，另外再透過網站的效能優化以容納更多在線人數。</p>
+<p>另外關於主題或外掛的來源要非常留意，盜版外掛會被植入木馬，要測試的話用原廠提供的免費版本，要商業使用的話就一定要購買，大部分的外掛都不貴，跟被駭客植入後門外洩客戶資料的後續處理成本相比，購買正版相對安全的多。</p>
+<p>WooCommerce 的設定細節：貨幣小數位數記得要設 0，不然金流不會過，台幣沒有小數點。</p>
+<p>現場示範五千筆資料，每頁 1-100 筆，使用無痕 + 4G 網路約在一秒內載入，使用 Firefox 的開發者工具來檢查，檢視指標是 DOMContentLoaded。</p>
+<p>使用 <a target="_blank" rel="noopener" href="https://loader.io/">Loader.io</a> 這套壓力測試工具進行模擬，可以看到連線人數與載入時間的即時圖表化呈現。</p>
+<p><img src="https://i0.wp.com/oberonlai.blog/wp-content/uploads/2019/02/image.png?fit=1024,591&ssl=1"></p>
+<p>要上線前一定要測試再測試，每種付款方式、物流、折扣優惠都要確保有測試到且正常運作，不然等開賣時才出包對品牌形象有害。</p>
+<p>最後結論保持思考、馬上行動！</p>
+<p>QA: 一頁式網站的 SEO 圖片用替代文字設定，複製貼上會扣分，有外掛可以一次修正。如果只是要把 WooCommerce 當成產品管理並且作為展示目錄，可以參考 WooCommerce Catalog Mode 這支外掛。</p>
+<p><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/yith-woocommerce-catalog-mode/">https://wordpress.org/plugins/yith-woocommerce-catalog-mode/</a></p>
+<h2 id="WP-Rocket-外掛實作"><a href="#WP-Rocket-外掛實作" class="headerlink" title="WP Rocket 外掛實作"></a>WP Rocket 外掛實作</h2><p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/img_7986.jpg"></p>
+<p>講師 Tonny 大大是資安方面的專家，每次有資安相關的問題我第一時間就是去煩他XD，他都非常有耐心的解答我的疑難雜症，也分享了許多關於伺服器優化的建議跟教學給我，但我偷懶都還沒拜讀，一整個就是擺著求心安的概念…</p>
+<p>Tonny 大大今天分享的是一套付費的快取外掛 WP Rocket，這套我自己也有在用，但裡面許多細部的設定涉及到很多網路的技術，基本上我就是啟用後就擺著不理他了，經過 Tonny 大大的介紹有稍微多理解一些，但很多關於 Preload、預先取得 DNS 請求、HEARTBEAT 以及 Varinsh 快取都還是一知半解，看來只能等 Tonny 大大再來介紹各種類型的快取技術以及怎麼實作了~(亂許願XD)</p>
+<p>重點摘錄如下：</p>
+<p>覺得網站跑起來慢慢的時候，第一首要先確認自己的網路連線速度，測速度的工具推薦Speedtest，先排除是自己網路連線速度的問題再來找主機的異常。</p>
+<p><a target="_blank" rel="noopener" href="https://www.speedtest.net/">https://www.speedtest.net</a></p>
+<p>確保自己的主機環境是 WordPress 官方推薦的規格，建議最佳環境為 php7.3、mysql5.6 or maria 10.0 、https support，這些是要讓網站能跑得快的最基本條件</p>
+<p>使用 Health check &amp; troubleshooting 做網站環境健檢，他會幫你列出合格與待改進的項目，此外還提供方便的外掛除錯功能，可以讓你在網站正常運作下找出有問題的外掛，當外掛發生衝突時就能派上用場。</p>
+<p><a target="_blank" rel="noopener" href="https://tw.wordpress.org/plugins/health-check/">https://tw.wordpress.org/plugins/health-check/</a></p>
+<p>如果要購買 WP Rocket 外掛有個隱藏技巧，原價要付費 49 鎂，下單之後先不要結帳，他們為了要鼓勵客戶完成結帳動作，會提供優惠來吸引你完成訂單，很棒的行銷，讓買的客戶也感受到賺到了。</p>
+<p>CDNplanet 查看網站使用的 CDN 業者。<br><a target="_blank" rel="noopener" href="https://www.cdnplanet.com/tools/cdnfinder/">https://www.cdnplanet.com/tools/cdnfinder/</a></p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>會後的分組討論也非常有趣，可以依照自己感興趣的議題加入小組討論，我亂入了接案/業務問題小組，雖然我自己現在根本沒在接洽業務XD，但看著有好多新人準備或是已經在投入網站接案的這塊市場，就在思考著是不是要把當年的接案血淚史來做個小分享，讓想要入這行的朋友少踩點雷，想著想著就失眠了@@</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/vue-js-examples/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/vue-js-examples/" class="post-title-link" itemprop="url">一些堪用的 Vue Components 套件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-02-20 09:51:29" itemprop="dateCreated datePublished" datetime="2019-02-20T09:51:29+08:00">2019-02-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://i0.wp.com/oberonlai.blog/wp-content/uploads/2019/02/screely-1550626306459.jpg?fit=1024,651&ssl=1"></p>
+<p>Vue.js Examples 這網站有點像是以前 jQuery Plugin Library 的概念，收集了很多各種封裝好的 UI 元件，內頁還有說明使用方法，但用了幾套後發現有些會跑不起來，可能是版本的問題，我把自己有用過的整理在這篇文章中。</p>
+<h2 id="Simple-and-smooth-vue-accordion"><a href="#Simple-and-smooth-vue-accordion" class="headerlink" title="Simple and smooth vue accordion"></a><a target="_blank" rel="noopener" href="https://vuejsexamples.com/simple-and-smooth-vue-accordion/">Simple and smooth vue accordion</a></h2><p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/vue-faq-accordion.gif"></p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 安裝 *&#x2F;
+npm i vue-faq-accordion
+
+&#x2F;* 使用 *&#x2F;
+&lt;template&gt;
+  &lt;VueFaqAccordion 
+    :items&#x3D;&quot;myItems&quot;
+  &#x2F;&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script&gt;
+import VueFaqAccordion from &#39;vue-faq-accordion&#39;
+
+export default &#123;
+  components: &#123;
+    VueFaqAccordion
+  &#125;,
+  data () &#123;
+    return &#123;
+      myItems: [
+          &#123;
+            title: &#39;標題&#39;,
+            value: &#39;內文&#39;,
+            category: &#39;Tab-1&#39; &#x2F;&#x2F; 有輸入 category 會自動分頁籤，不需要頁籤的話就拿掉它
+          &#125;,
+          &#123;
+            title: &#39;標題2&#39;,
+            value: &#39;內文2&#39;,
+            category: &#39;Tab-2&#39;
+          &#125;,
+        ]
+    &#125;
+  &#125;
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>樣式的部分我是用 scss 直接去硬改，每個都下 !important 去覆寫它，它的 css 都是寫 inline，正規作法應該是要改了之後重新編譯它，但好麻煩，理論上可以用選擇器的權限去蓋過。</p>
+<h2 id="Hooper-Slideshow"><a href="#Hooper-Slideshow" class="headerlink" title="Hooper Slideshow"></a><a target="_blank" rel="noopener" href="https://baianat.github.io/hooper/">Hooper Slideshow</a></h2><p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/CleanShot-2019-02-20-at-09.48.22.png"></p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;* 安裝 *&#x2F;
+npm install hooper
+
+&#x2F;* 使用 *&#x2F;
+&lt;template lang&#x3D;&quot;pug&quot;&gt;
+  div
+    hooper(style&#x3D;&#39;height: calc( 750 &#x2F; 1920 *100% )&#39; :centerMode&#x3D;&#39;true&#39; :wheelControl&#x3D;&#39;false&#39;)
+      slide( v-for&#x3D;&#39;slide in slides&#39; key&#x3D;&#39;slide.id&#39; )
+        img(:src&#x3D;&#39;slide.img_url&#39;)
+    .uk-container.layout
+      h1 Search
+&lt;&#x2F;template&gt;
+&lt;script&gt;
+import &#123; Hooper, Slide &#125; from &#39;hooper&#39;
+import &#39;hooper&#x2F;dist&#x2F;hooper.css&#39;;
+export default &#123;
+  name: &#39;&#39;,
+  data () &#123;
+    return &#123;
+      slides: [
+        &#123;id: 1, img_url: &#39;..&#x2F;img&#x2F;slide1.jpg&#39;&#125;,
+        &#123;id: 2, img_url: &#39;..&#x2F;img&#x2F;slide1.jpg&#39;&#125;
+      ]
+    &#125;
+  &#125;,
+  components: &#123;
+    Hooper,
+    Slide
+  &#125;,
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>如果要用 v-for 迴圈去產出 slide 的話，記得要加 key，不然會噴錯。另外還可以設置 breakpoints，如果想做成 carousel ，可以下 breakpoints 來各別設定 :itemsToShow。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/modal-popup-with-vuex/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/modal-popup-with-vuex/" class="post-title-link" itemprop="url">使用 Vuex 來控制燈箱效果狀態</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-02-19 23:06:26" itemprop="dateCreated datePublished" datetime="2019-02-19T23:06:26+08:00">2019-02-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>3 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://i2.wp.com/oberonlai.blog/wp-content/uploads/2019/02/Carbonize-2019-02-19-at-9.59.07-PM.png?fit=1024,807&ssl=1"></p>
+<p>今天碰到一個難題，我把每一個燈箱的顯示視窗獨立成元件，我想要用 A 元件裡面的按鈕去觸發燈箱元件的顯示，然後再用燈箱元件裡面的關閉按鈕來隱藏它，這就牽涉到一些問題：</p>
+<ol>
+<li> 燈箱元件如果是 A 元件的子組件，我可以用 props 去傳值給燈箱，但問題在於關閉的時候必須要從燈箱元件去控制父元件的參數，似乎可以用 $emit 但感覺好像又行不通</li>
+<li> 如果燈箱元件跟 A 元件並不是父子關係，props 就無用了</li>
+<li> 我的燈箱元件不只一個，而且 B 燈箱裡面會有觸發 C 燈箱的按鈕</li>
+</ol>
+<p>好吧，事實上我心裡早就有逃不掉用 Vuex 的打算了，只是因為一直看不懂它，所以就能閃則閃，研究了一天後，大概只了解了三成，但也夠我解決問題了，剩下的部分就等有遇上再說吧。</p>
+<p>我的目標流程是這樣：</p>
+<ul>
+<li>  一個主要模板 Layout.vue，用來引入燈箱 A、燈箱 B 以及 Header.vue</li>
+<li>  Header.vue 裡面有按鈕，點擊後會觸發燈箱 A</li>
+<li>  燈箱 A 裡面有按鈕，點擊後會關閉燈箱 A 並且開燈箱 B</li>
+</ul>
+<p>Vue 最大好處是中國人開發的，有很多中文資料，但他們的中文我真的有看沒有懂，雖然也有很多資料是繁體中文的整理，但大部分就是把官方文件繁體化，語意還是原本的簡中版本，所以還是看得霧煞煞。</p>
+<p>經過一天的實驗以及碰壁後，總算釐清了一些關於 Vuex 的基本概念，以下是我自己理解的繁中白話文解釋：</p>
+<ul>
+<li>  Vuex 是把變數變成全域的元件，相較於寫在元件裡的 data 只能給元件自己用，Vuex 的變數是所有元件都能存取</li>
+<li>  state 就等於元件裡面的 data，可以是物件</li>
+<li>  mutation 是唯一能改變 state 的方法，元件不能直接修改 state，會噴錯</li>
+<li>  modules 是可以把 state、mutations 這些 Vuex 的狀態變成物件，萬一有一堆東西要用 Vuex 來管理才不會超亂</li>
+<li>  store.js 是引入 modules 的母檔案，而主要全站入口 app.js 會引入 store.js，所以所有的元件都能讀到 state 裡面的變數</li>
+<li>  元件裡面是用 computed 來取得 state 值，因為我是用 v-model 來決定燈箱狀態，所以需要設 get 與 set function，不然會噴 Computed property “modalState” was assigned to but it has no setter 這個錯誤</li>
+<li>  至於 actions、getters、namespace 那些還看不懂…</li>
+</ul>
+<p>接下來進行實作，首先是增加一個 module 叫做 modals.js，裡面是控制所有燈箱的顯示狀態布林值，以及修改狀態的 mutations，然後把 store.js 引入到全站入口 app.js，接著去 A 燈箱使用 computed 去讀取 state、使用 methods 去定義 mutations，最後在 header.vue 也加入 mutations 方法，讓相對應的按鈕 click 後觸發。</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;** modals.js **&#x2F;
+export const modals &#x3D; &#123;
+  state: &#123;
+    isModalaActive: false, &#x2F;&#x2F; Ａ燈箱狀態
+    isModalbActive: false, &#x2F;&#x2F; B燈箱狀態
+  &#125;,
+  mutations: &#123;
+    &#x2F;&#x2F; 切換登入彈跳視窗狀態
+    modalAToggle ( state ) &#123;
+      state.isModalAActive &#x3D; !state.isModalAActive &#x2F;&#x2F; 當 isModalAActive 為 false 時變成 true，反之為 true 時變成 false
+    &#125;,
+    &#x2F;&#x2F; 切換登入彈跳視窗狀態
+    modalBToggle ( state ) &#123;
+      state.isModalBActive &#x3D; !state.isModalBActive
+      state.isModalAActive &#x3D; false &#x2F;&#x2F; 出現 B 燈箱時就要隱藏 A 燈箱
+    &#125;,
+  &#125;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>接下來是把 modal.js 引入到 store.js</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;** store.js **&#x2F;
+
+&#x2F;&#x2F; 給 IE11 用的 polyfill
+require (&#39;es6-promise&#39;).polyfill()
+
+import Vue from &#39;vue&#39;
+import Vuex from &#39;vuex&#39;
+
+Vue.use( Vuex )
+
+&#x2F;&#x2F; 我的 modal.js 是放在 modules 資料夾底下
+import &#123; modals &#125; from &#39;.&#x2F;modules&#x2F;modals.js&#39;
+
+export default new Vuex.Store(&#123;
+  &#x2F;&#x2F; 引入 modal.js
+  modules: &#123;
+    modals
+  &#125;
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>再把 store.js 引入到全站入口 app.js</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;** app.js **&#x2F;
+
+&#x2F;&#x2F; 略...
+import store from &quot;.&#x2F;store.js&quot;;
+
+new Vue(&#123;
+  router,
+  store
+&#125;).$mount(&#39;#app&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>在 A 燈箱元件加入 state 與 mutations，framework 我是用 uikit 的 vue 版本 <a target="_blank" rel="noopener" href="https://vuikit.js.org/">vuikit</a>，原始版本用得很開心，但 vuikit 很多元件都沒整合，很多 UI 不是要自己刻就是要另外找套件，vk-modal 是它的燈箱元件，使用 :show.sync 去決定顯示與否。</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;template lang&#x3D;&#39;pug&#39;&gt;
+  div
+    vk-modal.modal-small-width.modal-remove-padding(:show.sync&#x3D;&#39;modalState&#39;, center, stuck)
+      vk-modal-close(@click&#x3D;&#39;modalAToggle&#39;)
+      a.text-dark.link-underline(href&#x3D;&#39;#&#39; @click&#x3D;&#39;modalBToggle&#39;) 連到 B 燈箱的按鈕
+&lt;&#x2F;template&gt;
+&lt;script&gt;
+export default &#123;
+  computed: &#123;
+    &#x2F;&#x2F; modalState 是儲存從 store 裡面拿到的 state 值，寫法是 this.$store.state.module名.變數名，這邊卡超久@@
+    modalState: &#123;
+      &#x2F;&#x2F; 沒有 set 會出錯，get 記得要有 return
+      get()&#123;
+        return this.$store.state.modals.isModalAActive
+      &#125;,
+      set()&#123;
+        this.$store.state.modals.isModalAActive
+      &#125;
+    &#125;
+  &#125;,
+  methods: &#123;
+    &#x2F;&#x2F; 註冊 mutations 事件，就可以給元件使用
+    modalAToggle()&#123;
+      this.$store.commit(&#39;modalAToggle&#39;);
+    &#125;,
+    modalBToggle()&#123;
+      this.$store.commit(&#39;modalBToggle&#39;);
+    &#125;,
+  &#125;,
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>最後是 Header.vue，幫它也加入 modalAToggle 的 methods，這邊不需要 computed，因為沒有要取得燈箱狀態的功能，只要有 mutations 可以改變它就好。</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;template lang&#x3D;&#39;pug&#39;&gt;
+  div
+    a(href&#x3D;&#39;#&#39; @click&#x3D;&#39;modalAToggle&#39;) 要開啟 A 燈箱的按鈕
+&lt;&#x2F;template&gt;
+&lt;script&gt;
+export default &#123;
+  methods: &#123;
+    modalAToggle()&#123;
+      this.$store.commit(&#39;modalAToggle&#39;);
+    &#125;,
+  &#125;,
+&#125;
+&lt;&#x2F;script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>用 Vuex 就可以很有組織的完成這些需要參數傳來傳去的複雜問題，元件之間的溝通也容易了許多，相信再多用一陣子也逃不了要面對 actions 跟 getters 了啊啊啊～</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/tcp-ip-101/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/tcp-ip-101/" class="post-title-link" itemprop="url">網路技術 101</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-02-15 23:25:33" itemprop="dateCreated datePublished" datetime="2019-02-15T23:25:33+08:00">2019-02-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/TCP-IP/" itemprop="url" rel="index"><span itemprop="name">TCP/IP</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>4.8k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>4 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/CleanShot-2019-02-16-at-16.48.42.png"></p>
+<p>做了近十年的網站，每每遇到網路的問題總是靠著 Google 來的片斷資訊來矇混過關，心虛感長年揮之不去，所以一直想把這方面的基礎知識好好加強一下，但在想省書本錢的心態下，去圖書館能借到的這類書籍都是好久以前的古董，最後硬著頭皮 K 的結果也是消化不良。</p>
+<p>某天去逛誠品看到這本「機器博士帶你輕鬆看懂網路技術」，覺得日本人製作的電腦理論書籍真的非常厲害，透過豐富的插圖以及具體的生活比喻，翻了之後好像有比較理解一些，當下就忍住沒買直到在圖書館看到後立馬把它借回家(疑?)</p>
+<p>全書分為七個章節，核心主題圍繞在 TCP/IP 的四個階層來逐一說明，還有附帶網路安全以及加密機制的圖說，看完後不敢說全懂，但至少有一點基礎概念以及相關名詞的認識，要再回去 Google 又多了一些關鍵字可以用了XD</p>
+<p>以下就書中重點進行摘錄：</p>
+<p>網路簡單說就是電腦們採用相同的通訊協定進行溝通以及傳輸資料，依據不同的規模，可以分成以下幾種網路：</p>
+<ul>
+<li>  Local Area Network (LAN) 區域網路 - 家庭、小公司使用</li>
+<li>  Wireless Local Area Network (WLAN) 無線區域網路</li>
+<li>  Wide Area Network (WAN) 廣域網路 - 跨國的網路</li>
+<li>  Personal Area Network (PAN) 個人區域網路</li>
+<li>  Metropolitan Area Network (MAN) 都會區域網路</li>
+</ul>
+<p>TCP/IP 是網路傳輸協定的統稱，裡面包含了各種不同的協定，所謂的協定就是電腦跟電腦之間約定好的溝通方式，此外，所有要被傳送的資料都會被分割為封包進行傳輸，除了萬一斷線方便續傳外，還可以減小傳輸體積以利於運送。</p>
+<p>TCP/IP 傳輸協定主要有四個層級，不管是接收端還是傳送端都必須經過這四個階段：</p>
+<ol>
+<li> 電腦將輸入的資料轉換為網路共同的處理形式</li>
+<li> 思考用哪種方法傳輸資料</li>
+<li> 將資料分割為封包並決定傳送路徑</li>
+<li> 將封包轉為位元流 01 碼再透過線路傳送出去</li>
+</ol>
+<p>四個階段有不同的階層，分別為應用層、傳輸層、網際層、網路介面層。</p>
+<h2 id="一、應用層-Application-Layer"><a href="#一、應用層-Application-Layer" class="headerlink" title="一、應用層 (Application Layer)"></a>一、應用層 (Application Layer)</h2><p>應用層負責接收應用程式所輸入的資料，不同的軟體有不同的協定，常見的有以下這幾種：</p>
+<p><strong>HTTP 協定</strong>：瀏覽器所使用的，包含了 HTTP 請求以及 HTTP 回應，HTTP 請求只會傳送標頭封包不會傳檔案，標題裡面包含 client 端的資訊以及需要的檔案，HTTP 回應會回傳代碼來顯示狀態，以及傳送被請求的檔案。在造訪網站的過程中，每個檔案像是 js、css、或是圖片等資源在沒有快取的情況下，都要經過請求與回應的溝通過程。</p>
+<p>當使用者輸入網址要瀏覽一個網站時，會有一個 DNS 伺服器來告訴瀏覽器這個網址對應到的是哪個 IP 位址，萬ㄧ DNS 伺服器不知道的話，會去詢問名稱伺服器 (Name Server) ，詢問的邏輯會先從根網域伺服器開始，然後從網址由右至左開始依序查詢是哪一個名稱伺服器所有。</p>
+<p><strong>SMTP 協定</strong>：發信軟體與發信伺服器之間的協定，一般的發信流程為發信軟體 &gt; 發信人網域的 SMTP Server &gt; 中繼 Server-暫放信件的地方 &gt; 收信人網域的 POP server &gt; 收信軟體擷取新郵件</p>
+<p><strong>POP 協定</strong>：收信軟體與收信伺服器之間的協定，一般的收信流程為收信軟體 &gt; 收信 POP server &gt; 驗證身份 &gt; 取出 mail 到收信軟體。</p>
+<p>信件在傳送時，客戶端軟體使用 MIME 的 base64 編碼來傳送帶有中文主旨的郵件，收信軟體會再解碼還原成中文，以解決亂碼的問題，</p>
+<p><strong>IMAP 協定</strong>：另外一種收信的協定，好處是相較於 POP 協定，信件會持續保留在 IMAP Server 上，可以用不同裝置取得郵件，如果是 POP 協定則是 A 裝置收了信件後，B 裝置就無法再擷取到信件。</p>
+<p><strong>Telent 協定</strong>：可以從本機電腦連線遠端主機的協定，但因安全性較弱，現多採用 SSH 協定進行連線。</p>
+<h2 id="二、傳輸層-Transport-Layer"><a href="#二、傳輸層-Transport-Layer" class="headerlink" title="二、傳輸層 (Transport Layer)"></a>二、傳輸層 (Transport Layer)</h2><p>傳輸層主要負責決定要用哪種方式進行資料傳輸，並使用 port 號讓傳送的資料可以送給正確的應用層軟體，此外也負責節點間的數據傳送，此層主要的協定有兩種，TCP 與 UDP 協定。</p>
+<p><strong>TCP 協定</strong>：是屬於連線型的網路連線，主要特點為安全可靠，連線步驟有建立連線 &gt; 將資料拆成帶有流水號的 Segment(區段) 並依序傳輸 &gt; 關閉連線，每個被傳送的Segment 都帶有標頭，而標頭中有 Flag 來表示連線狀態，一共有六種：</p>
+<ul>
+<li>  URG (Urgent) - 緊急優先</li>
+<li>  PSH (Push) - 傳送到上一層</li>
+<li>  SYN (Synchronize) - 請求連線</li>
+<li>  ACK (Acknowledgement) - 確認需求</li>
+<li>  RST (Reset) - 中斷連線</li>
+<li>  FIN - 結束連線</li>
+</ul>
+<p>TCP 協定非常可靠的原因是會進行三次握手連線，傳送方發出 Syn 請求連線 &gt; 接收方發出 Ack 確認可連線 &gt; 傳送方發出 Ack 確認接收方可接收，也就是說會確認雙方都有正確的回應的狀況下才會開始傳送。</p>
+<p>這邊補充四次揮手斷線，傳送方發送 Fin 結束連線請求 &gt; 接收方發送 Ack 告訴傳送方等下，先確保資料已經傳完 &gt; 接收方發送 Fin 確定中止連線 &gt; 傳送方再次發送 Ack 告知接收方已收到中止連線確認，在接收方還沒收到 Ack 前都還可以繼續傳。</p>
+<p>連線逾時的情況則出現在遲遲沒有收到接收方的 Ack，傳送方送完後沒收到 Ack 就會再送一次，傳送方重傳多次都失敗就會發出 RST 中斷連線而造成連線逾時。</p>
+<p>為了加速 Segment 傳送，可設定 Window Size 來決定一次要傳多少資料，接收端可視自身的處理狀況來告知傳送方應該要用多大的 Window Size 來進行 Segement 傳送。</p>
+<p><strong>UDP 協定</strong>：屬於非連線型的網路連線，也就是不管接收方有沒有回應，傳送方就開始進行傳送，也因為不用等對方回應，所以傳送速度快，但最大缺點是完全不知道接收方有沒有收到，UDP 協定適合用在影音串流或是語音通訊服務，不用確保封包完整到達，只要可以堪用就好。</p>
+<h2 id="三、-網際層-Network-Layer"><a href="#三、-網際層-Network-Layer" class="headerlink" title="三、 網際層 (Network Layer)"></a>三、 網際層 (Network Layer)</h2><p>網際層主要負責決定封包要怎麼走，傳到哪個路由，另外切割封包也是在這一層，網際層最重要的就是 IP 協定。</p>
+<p><strong>IP 協定</strong>：主要使用 IP address 來確認要傳送的對象，IP address 為 32 位元的二進制數字，每 8 位元為一組(Octet)，共有四組，分為前段的網路編號與後端的主機編號，並使用子網路遮罩來決定怎麼分網路編號還是主機編號。</p>
+<p>假設子網路遮罩是 255.255.255.0，被遮住的前三組為網路編號，最後一組為主機編號，另外還可以使用 Prefix 表示法：192.168.0.1/24 代表前 24 個位元是網路編號( IPv4 一共有 32 個位元 )。</p>
+<p><strong>ICMP 協定</strong>：輔助 IP 的協定，萬一封包無法傳送到接收端，會通知傳送端封包傳送失敗，另外還可以做為診斷網路問題的工具。</p>
+<p><strong>ARP 協定</strong>：協助 IP 協定可以透過 IP 位址找到目標節點的 MAC 位址，其運作原理為傳送端節點使用廣播的方式送出 ARP 封包，裡面記錄了目標 IP，當目標 IP 節點收到該封包後，會再回傳帶有 MAC 位址的 ARP 回應封包給傳送端節點，如此就能正確的傳送。</p>
+<p>路由在 OSI 的第三層所以又叫第三層交換器，負責封包指路、中繼封包的裝置，路由到路由間的移動叫做 HOP 跳躍數。</p>
+<p>幫電腦指派 IP 的方法有兩種，由網管人員手動分派 IP，另外一種是使用 DHCP 協定，DHCP 協定可以動態指定 IP 位址，自動指派閒置的 IP 給要用的電腦。</p>
+<p>至於新加入到網路內的電腦還沒有被分派到 IP，所以預設為 0.0.0.0，DHCP server 的 IP 為廣播位址 255.255.255.255，所以通常能用的 IP 位址數量要扣掉這兩組。</p>
+<p>至於如何讓私有 IP 去連上公有 IP 則是透過 NAT (Network Address Translator) 技術去進行 IP 位址轉譯成為對外 IP，NAT 是一對一的，也就是同時間只能有一個私有 IP 去轉譯成公有 IP，而使用 NAPT (Network Address Port Translator) 則是用 Port 號去轉譯，所以可以達成多個私有 IP 對應到一個公有 IP。</p>
+<p>管理公有 IP 的單位為 ICANN，由這組織將 IP 分到各大洲，所以台灣分配到亞太地區的 IP，台灣管理 IP 單位為 TWNIC，TWNIC 再分配給 ISP 業者，ISP 業者再用動態公用 IP 來進行調度。</p>
+<p>但 IP 已經不夠用了，所以有 IPv6，一組有 16 位元，總共 8 組 128 位元，用冒號相隔每一組，並有三種省略規則：</p>
+<ul>
+<li>  每組數字的第一個 0 可以省略，像是「0DB8」可以省略為「DB8」</li>
+<li>  若整組皆為 0，則以 0 表示，像是「0000」則為「0」</li>
+<li>  為連續出現的0000可以省略成「::」，整組 IP 只能出現一次「::」來省略 0</li>
+</ul>
+<h2 id="四、網路介面層-Physical-Layer"><a href="#四、網路介面層-Physical-Layer" class="headerlink" title="四、網路介面層 (Physical Layer)"></a>四、網路介面層 (Physical Layer)</h2><p>網路介面層為整個網路傳輸的出入口，也就是將位元流轉換為訊號的形式來進行資料的傳輸或接收。主要分為兩種介面：</p>
+<ul>
+<li>  通訊介面 - 主要是指實體的網路纜線</li>
+<li>  網路介面 - 主要是指可以插網路纜線的接頭</li>
+</ul>
+<p>透過通訊介面相連的兩台電腦，也必須要採用相同的規範的通訊協定才能進行資料傳輸與接收，目前主流的通訊協定是乙太網路規範。而彼此透過網路線相連的電腦就可以稱作資料鏈路 (Data Link)。</p>
+<p>資料鏈路構成的基本條件是被連結的裝置必須要有網路卡，而構成資料鏈路的電腦被稱作為節點，資料鏈路常見的有四種類型：</p>
+<ul>
+<li>  匯流排狀 (Bus) 由一條主線分岔出支線來連結節點，優點是方便新增節點，缺點是主線掛掉全部節點就跟著 GG</li>
+<li>  環狀 (Ring) 像圓環一樣一條主線連到每個節點，優點是速度快， 因為每個節點都在主線上，缺點是主線或是其中其中一個節點掛掉就全部 GG</li>
+<li>  星狀 (Star) 中心點有路由器或是集線器來連到各節點，優點是可以靠中心裝置來控制各個節點，缺點是中心裝置不能壞</li>
+<li>  網狀 (Net) 各節點都有線路彼此相連，壞了其中一條或是節點都還可以從另外一條路繞道</li>
+</ul>
+<p>對於同個資料鏈路內，會使用 ＭAC 位址也就是網卡編號來辨識節點，但要把封包傳送到網際網路的另一端，不會是只有傳送端與接收端一對一這麼單純，中間會經過非常多的路由器來進行封包傳送的中繼，</p>
+<p>以生活中的例子來表示，如果要從台灣寄包裹到美國，寄件者要先寫好收件者的地址 (IP)，拿到郵局寄出後，中間可能會有集貨站 (路由器)，長途的話可能不只一個集貨站，寄到集貨站之間也需要集貨站的地址 (MAC)，最後才會到達收件者的手上。</p>
+<p>在網路介面層傳送的封包叫做訊框 (Frame)，如果是使用匯流排狀、環狀這樣的連結方式，就常常會遇到傳送訊框打架的情況，所以現在多採用路由器或是交換器的裝置，讓每個節點都有獨立的線路來進行訊框的傳遞，以減少等待或是發生衝突的狀況。</p>
+<p>常見的資料鏈結層中繼裝置：</p>
+<ul>
+<li>  中繼器 (Repeater) 讓訊號可以增加傳送距離，放大訊號，但如果是毀損的訊號也會造照樣被放大</li>
+<li>  集線器 (Hub) 把單一訊號分配給多個節點，另有中繼集線器，除了分配還可以順便加強訊號</li>
+<li>  橋接器 (Bridge) 又名第二層交換器，用來橋接兩組不同的資料鏈路，並且會判斷訊框是否有毀損來決定是否要傳送</li>
+<li>  交換式集線器 (Switching Hub) 橋接器的一種，也兼具集線器的功能</li>
+</ul>
+<p>常見的資料鏈路規範有以下幾種：</p>
+<ul>
+<li>  乙太網路 (Ethernet) 目前的主流，依據不同的規格傳輸速率以及纜線長度都有所不同，其中雙絞線可以進行全雙工，也就是同一線路可以同時進行傳送和接收，而半雙工則是只能進行傳送或接收的其中一種工作</li>
+<li>  無線區域網路 (Wireless LAN) 無線上網的通訊規範，家用路由器就是將兩種不同的通訊規範進行橋接，讓彼此互相連結</li>
+<li>  光纖分散式資料介面 (FDDI) 使用光纖線或是雙絞線的環狀資料鏈路，採用雙環線路，其中一條斷了另一條還可以運作</li>
+<li>  非同步傳輸模式 (ATM)</li>
+<li>  藍芽 (Bluetooth)</li>
+<li>  HDMI</li>
+</ul>
+<p>這本書一路這樣看下來，真心覺得網路十分神奇，用很多無法想像的方式連結著全世界，也稍微多了解了一點每天自己離不開的網路是如何運作的，期待下次 Debug 會順利一些啊啊啊～</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/git-history-%E5%8B%95%E7%95%AB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/git-history-%E5%8B%95%E7%95%AB/" class="post-title-link" itemprop="url">Git History 動畫</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-02-09 10:13:55" itemprop="dateCreated datePublished" datetime="2019-02-09T10:13:55+08:00">2019-02-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>290</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://i2.wp.com/oberonlai.blog/wp-content/uploads/2019/02/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7-2019-02-09-%E4%B8%8A%E5%8D%8810.17.33.jpg?fit=1024,563&ssl=1"></p>
+<p>非常有趣的一個服務 -&gt; <a target="_blank" rel="noopener" href="https://githistory.xyz/">https://githistory.xyz</a>，可以使用 Timeline 的方式看到一個檔案的 commit 紀錄，拿來做教學示範應該是滿實用的，使用方法也很簡單，進到 github repo 的檔案裡面，把網址裡面的 github.com 換成 githistory.xyz 就可以了喔喔喔～</p>
+<p>例如 <a target="_blank" rel="noopener" href="https://github.com/m615926/wp_local/blob/master/docker-compose.yml">https://github.com/m615926/wp_local/blob/master/docker-compose.yml</a> 換成<a target="_blank" rel="noopener" href="https://githistory.xyz/m615926/wp_local/blob/master/docker-compose.yml">https://githistory.xyz/m615926/wp_local/blob/master/docker-compose.yml</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/independent-publisher-2-wpcom/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/independent-publisher-2-wpcom/" class="post-title-link" itemprop="url">independent-publisher-2-wpcom</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-02-07 22:27:35" itemprop="dateCreated datePublished" datetime="2019-02-07T22:27:35+08:00">2019-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:38" itemprop="dateModified" datetime="2021-05-01T10:12:38+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>43</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>.entry-author .author-bio {font-style:normal}</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/tw/page/4/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/tw/">1</a><span class="space">&hellip;</span><a class="page-number" href="/tw/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/tw/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/tw/page/15/">15</a><a class="extend next" rel="next" href="/tw/page/6/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="賴俊吾 / Oberon Lai"
+      src="/tw/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">賴俊吾 / Oberon Lai</p>
+  <div class="site-description" itemprop="description">現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/tw/archives">
+          <span class="site-state-item-count">291</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/tw/categories/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tw/tags/">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/oberonlai" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:m615926@gmail.com" title="E-Mail → mailto:m615926@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/oberonlai" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/m615926" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;m615926" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">賴俊吾 / Oberon Lai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">740k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:13</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/tw/lib/anime.min.js"></script>
+  <script src="/tw/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+
+<script src="/tw/js/utils.js"></script>
+
+
+<script src="/tw/js/schemes/muse.js"></script>
+
+
+<script src="/tw/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/tw/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

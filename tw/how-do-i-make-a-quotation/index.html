@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/tw/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/tw/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/tw/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/tw/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/tw/css/main.css">
+
+
+<link rel="stylesheet" href="/tw/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oberonlai.blog","root":"/tw/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideDownIn","sidebar":"slideDownIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="摘要：我認為好的報價要能符合時間比例原則，並以單位時薪來展現自我價值，在這樣的前提之下，使用User Story&amp;任務拆解的工時估算法，從前置作業、頁面數量與功能開發三個大方向進行預估，並搭配透明化、定期主動回報工作進度的共同管理專案模式，讓客戶可以根據當月已開發時數 (費用) 決定優先順序，站在客戶立場，能隨時掌握專案進度並調整開發方向，減少時間成本的浪費，對於接案者來說，保持每月現金">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【 心得 】我的接案報價學">
+<meta property="og:url" content="https://oberonlai.blog/tw/how-do-i-make-a-quotation/">
+<meta property="og:site_name" content="WordPress 開發日常">
+<meta property="og:description" content="摘要：我認為好的報價要能符合時間比例原則，並以單位時薪來展現自我價值，在這樣的前提之下，使用User Story&amp;任務拆解的工時估算法，從前置作業、頁面數量與功能開發三個大方向進行預估，並搭配透明化、定期主動回報工作進度的共同管理專案模式，讓客戶可以根據當月已開發時數 (費用) 決定優先順序，站在客戶立場，能隨時掌握專案進度並調整開發方向，減少時間成本的浪費，對於接案者來說，保持每月現金">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://oberonlai.blog/wp-content/uploads/2020/08/CleanShot-2020-08-05-at-10.57.22-1024x821.jpg">
+<meta property="article:published_time" content="2020-08-11T02:27:31.000Z">
+<meta property="article:modified_time" content="2021-05-04T11:29:51.079Z">
+<meta property="article:author" content="賴俊吾 &#x2F; Oberon Lai">
+<meta property="article:tag" content="敏捷式接案">
+<meta property="article:tag" content="報價">
+<meta property="article:tag" content="接案">
+<meta property="article:tag" content="看板方法">
+<meta property="article:tag" content="WordPress 接案">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://oberonlai.blog/wp-content/uploads/2020/08/CleanShot-2020-08-05-at-10.57.22-1024x821.jpg">
+<meta property="og:image" content="/tw/images/og-img.jpg" />
+
+<link rel="canonical" href="https://oberonlai.blog/tw/how-do-i-make-a-quotation/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>【 心得 】我的接案報價學 | WordPress 開發日常</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163107142-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-163107142-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/tw/" class="brand" rel="start" style="display: block">
+        <img class="logo-img" src="/tw/images/logo-w.svg" alt="WordPress 開發日常">
+    </a>
+      <p class="site-subtitle" itemprop="description">有任何 WordPress 客製需求歡迎與我聯絡！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-關於我">
+
+    <a href="/tw/about/" rel="section">關於我</a>
+
+  </li>
+        <li class="menu-item menu-item-合作方式">
+
+    <a href="/tw/how-can-oberon-help-you/" rel="section">合作方式</a>
+
+  </li>
+        <li class="menu-item menu-item-計價方式">
+
+    <a href="/tw/how-do-i-make-a-quotation/" rel="section">計價方式</a>
+
+  </li>
+        <li class="menu-item menu-item-學習-wordpress">
+
+    <a href="/tw/wordpress-full-stack/" rel="section">學習 WordPress</a>
+
+  </li>
+        <li class="menu-item menu-item-與我聯繫">
+
+    <a href="mailto:m615926@gmail.com" rel="noopener" target="_blank">與我聯繫</a>
+
+  </li>
+        <li class="menu-item menu-item-訂閱">
+
+    <a href="https://successful-trader-4225.ck.page/bbe15da0e6" rel="noopener" target="_blank">訂閱</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/oberonlai" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/how-do-i-make-a-quotation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          【 心得 】我的接案報價學
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2020-08-11 10:27:31" itemprop="dateCreated datePublished" datetime="2020-08-11T10:27:31+08:00">2020-08-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-04 19:29:51" itemprop="dateModified" datetime="2021-05-04T19:29:51+08:00">2021-05-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/" itemprop="url" rel="index"><span itemprop="name">商業模式</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/%E5%B0%88%E6%A1%88/" itemprop="url" rel="index"><span itemprop="name">專案</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/%E5%B0%88%E6%A1%88/%E5%B0%88%E6%A1%88%E5%8D%B3%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">專案即生活</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/%E5%B0%88%E6%A1%88/%E5%B0%88%E6%A1%88%E5%8D%B3%E7%94%9F%E6%B4%BB/%E7%B6%B2%E7%AB%99%E4%BC%81%E5%8A%83/" itemprop="url" rel="index"><span itemprop="name">網站企劃</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/%E5%B0%88%E6%A1%88/%E5%B0%88%E6%A1%88%E5%8D%B3%E7%94%9F%E6%B4%BB/%E7%B6%B2%E7%AB%99%E4%BC%81%E5%8A%83/%E8%80%81%E4%BA%BA%E7%A2%8E%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">老人碎念</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F/%E5%B0%88%E6%A1%88/%E5%B0%88%E6%A1%88%E5%8D%B3%E7%94%9F%E6%B4%BB/%E7%B6%B2%E7%AB%99%E4%BC%81%E5%8A%83/%E8%80%81%E4%BA%BA%E7%A2%8E%E5%BF%B5/%E6%8E%A5%E6%A1%88/" itemprop="url" rel="index"><span itemprop="name">接案</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>8.2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>7 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>摘要：我認為好的報價要能符合時間比例原則，並以單位時薪來展現自我價值，在這樣的前提之下，使用User Story&amp;任務拆解的工時估算法，從前置作業、頁面數量與功能開發三個大方向進行預估，並搭配透明化、定期主動回報工作進度的共同管理專案模式，讓客戶可以根據當月已開發時數 (費用) 決定優先順序，站在客戶立場，能隨時掌握專案進度並調整開發方向，減少時間成本的浪費，對於接案者來說，保持每月現金流是能持續自我精進的關鍵。</p>
+</blockquote>
+<p>坦白說，接案這麼多年，我最討厭的部分就是洽談工作這個環節，從搭上線開始，初步了解需求，然後碰面洽談，整理會議記錄、網站規格、報價單、合約書，寄給客戶之後開始針對報價單的內容逐一刪減，被砍價是理所當然，而議價是我覺得最難受的過程，彷彿在說我這個人不值這個價，雖然理智上知道這是商業談判的一環，但心理上很容易就會跟自己過不去。</p>
+<p>接下來就是合約書，要提交給客戶的法務審查，審完後提出修改，當然修改條件我也不可能全部接受，於是中間又是一連串的來回，最後，真正開案大概是第一次會面之後的三個月了，而這三個月所花費的時間還沒有產生任何一毛的收入。</p>
+<span id="more"></span>
+
+<p>以往我的報價方式是用我每月的生活成本來計算，一般來說如果是要架設企業官網的話，我會從企劃、設計到程式開發等工作項目估算很模糊的開發時間，假設我一個月生活成本 10 萬塊，而這個案子我估計兩個月可以做完，那我總價就會報 20 萬元，如果沒在兩個月內做完，我就開始賠本了。</p>
+<p>所以我會想盡辦法用各種文件以及約定結案日期來讓專案可以在兩個月內完成，於是就給了自己很大的壓力，每週固定會議、追客戶資料、整理修改需求單、驗收確認表，同時還要處理設計、開發，但做這麼多行政作業的結果，真的能在設下的時間點內結掉的專案少之又少。</p>
+<p>所以每當下一次專案開始的時候，又會給自己增加更多的行政作業來確保案件如期執行，然後樂觀地期待著這次應該沒問題了吧！當重複失敗了 N 次以後，才開始認真重新檢視自己的工作流程，歸納出以下三點原因：</p>
+<h2 id="自己個性的使然"><a href="#自己個性的使然" class="headerlink" title="自己個性的使然"></a>自己個性的使然</h2><p>我熱愛做網站，為了要做網站，我願意學習各種相關知識，更希望透過自己學到的知識，去幫助需要的人，同時也能讓自己有飯吃，所以我會成為自由接案者純粹是因為我喜歡接觸到不同領域的人，然後透過我的專業技能去解決他們的問題並讓自己獲得成就感。</p>
+<p>這樣的理想主義是我做網站的初衷，但，接案久了就會不知道被第幾版的修改需求單給澆熄了熱情，每天在做的事情就是跟客戶爭執說這些功能並非在當初的報價範圍裡面所以沒辦法做，但更多時候就是睜一眼閉一眼做給客戶，因為爭論要做不做的時間已經夠我把這功能做完了，但背後更大的原因其實是我「害怕衝突」。</p>
+<p>這樣最後的結果就是一直被凹，有苦自己吞，不停的告訴自己沒關係，這些新加的東西我應該很快就能處理完，多做就是多學，這些多做的客戶會感謝我、會介紹更多客戶給我，弄不完就加班拼，這次拼一下、撐過去就是我的了、男人就是要能忍耐，然後把自己變成只是為了要能結案收尾款的工作機器…</p>
+<p>因此在結案時間不變的情況下，工作量卻是多了好幾倍，每多開發一個功能就要多一道修改驗收的流程，這樣完全不可能在原本預計的時間內完成。</p>
+<h2 id="客戶對於外包專案的認知"><a href="#客戶對於外包專案的認知" class="headerlink" title="客戶對於外包專案的認知"></a>客戶對於外包專案的認知</h2><p>準時結案這事除了要靠自己的努力外，剩下九成九的關鍵都是要看客戶對於這個專案的認知，對於客戶來說，通常需要發包就代表他們公司內部沒有專人可以處理這件事，所以投資了預算無非就是希望可以得到預期的結果。</p>
+<p>但很多公司往往忽略了外包的溝通成本，畢竟「預期的結果」公司內部不同職位的人會有不同的看法，更不用說還要傳達給公司外部的接案者，光是一個按鈕的位置可能就可以討論好幾個禮拜，而這些討論在還沒具體執行前都是一團謎，等公司內部討論出一個結論後，可能幾個禮拜的時間就用完了，而對我來說我卻還是要遵守結案時間。</p>
+<p>再加上負責專案的窗口往往都有自己原本的工作要做，所以等待網站需要的資料、文案、素材也會花上很長一段時間，其他像是等待確認製作方向、驗收製作項目等等，這些全都不是我可以掌控的因素，在這樣的情況下要讓專案可以準時結束自然是難上加難。</p>
+<h2 id="其他外力因素"><a href="#其他外力因素" class="headerlink" title="其他外力因素"></a>其他外力因素</h2><p>像是打籃球手指頭吃蘿蔔乾、小孩出生、家人生病、窗口離職、職務交接、老闆出差、颱風、武漢肺炎等等的各種外力因素，都可以造成專案的延宕。</p>
+<p>總結以上三點人為與非人為因素，我得到了一個結論：「專案永遠不可能在一開始約定的結案日期結案」。</p>
+<h3 id="到底何謂結案？"><a href="#到底何謂結案？" class="headerlink" title="到底何謂結案？"></a>到底何謂結案？</h3><p>認清了這個事實以後，我開始反思結案的定義，依照傳統合約的定義方式，只要乙方把報價單裡面的項目全部製作完成，並且收回尾款就算是結案，但，這樣的定義有一個非常大的漏洞，所謂的「製作完成」只是乙方單方面的認知，對於甲方來說，乙方的產出到底能否符合商業上與管理上的需求，這樣的認知是非常主觀的。</p>
+<p>最常聽到的就是當甲方看到成品時發現某個他認知「理所當然會有」的功能結果沒有，就會很驚訝的問說：「這功能不是基本的嗎」？然後乙方就會不爽，覺得自己的專業被質疑，開始解釋這功能當初沒有寫進報價單所以沒有開發，於是雙方就會進入僵持，直到某方退讓或是協調出雙方都能接受的作法。</p>
+<p>事實上，要解決這問題在報價階段就要先討論出每個功能的細部規格，並且能讓雙方對於要執行的項目都有正確的認知，但實際情況是認知這件事每個人都會有所落差，而且窗口的認知跟他的老闆也不一定相同，窗口認可的成品到老闆那關被打槍也是屢見不鮮。</p>
+<p>再來，如果我在還沒有得到任何收入前，都要幫每個客戶花這麼多的時間來確認每個功能，等到真正開工後早就餓死了，更不用說他們可以拿這份報價單去找其他更划算的團隊來執行，除非可以把確認規格這環節作為服務的收費項目，不然這樣的作法是不切實際的。</p>
+<p>其次，雙方的目標不一樣是讓結案如此困難的原因，甲方要能透過這個專案的產出來達成商業目標，而乙方是要嚴守當初報價的內容，避免無止境的修改需求或新功能讓自己或公司陷入營運的困境，但商場上每天都是瞬息萬變，昨天討論的內容可能今天就會被推翻，更不用說是在兩個月前討論的規格，怎麼可能在兩個月後完全一模一樣，所以乙方就會非常辛苦，為了要結案可能要做某些退讓，同時也要堅守底線不然案子賠到脫褲子，還要不讓夥伴覺得被凹，這工作真的裡外不是人。</p>
+<p>從這樣的合作關係衍伸思考下去，因為利益衝突，甲方也不可能得到乙方 100% 的專業協助，但甲方當初尋求外部廠商協助不就是為了獲得這些專業建議？雖然以職場道德來看，乙方收了錢就是要盡心盡力把工作做到 100%，但人性不可能無時無刻永遠都保持完美，當修改到第 101 個版本、案子走了超過一年還沒收到第二筆款項，還能對這專案保有專注度並持續提供專業建議的人大概只剩下聖人，而我早就擺爛了。</p>
+<p>所以我對於結案的認知，並非收到尾款或是過了約定結案時間後才算結案，而是乙方可以滿足甲方的商業目標而提供持續性的專業建議，當甲方決定暫停該專案或是結束與乙方的合作關係，這才是結案的時間點。</p>
+<h2 id="敏捷式接案"><a href="#敏捷式接案" class="headerlink" title="敏捷式接案"></a>敏捷式接案</h2><p>真正了解到自己為何每次接案都無法在預計時間內完成後，開始思考怎麼樣的合作方式是可以符合自己的個性又能滿足客戶需求，最後我得到了「敏捷式接案」這個答案。</p>
+<p>敏捷式接案的核心精神是捨棄傳統的報價單、合約書，改用時薪估價、Email 約定合作細節，並透明化開發過程，像是分享時間記錄、開放版本控管權限、每週固定回報進度等等，再根據實際花費時數來計算費用，以月結的方式來減少發案方的一次性大額開銷與維持接案方的固定現金流。</p>
+<p>而且很多時候沒有做下去都不知道會發生什麼事，談的時候很愉快，結果實際做起跟彼此的想像落差很大，但真的發生也沒關係，就直接終止合作，敏捷式接案隨時都能「結案」，不需要為了硬撐合約書上的結案時間而折磨彼此，更不用吵已經做的進度佔專案總金額的多少比例。</p>
+<p>敏捷式接案的具體執行步驟如下：</p>
+<h3 id="開發小時數預估"><a href="#開發小時數預估" class="headerlink" title="開發小時數預估"></a>開發小時數預估</h3><p>當第一次聽完客戶的需求描述後，一定會有一大堆實作的問題待確認，但這階段為了要讓客戶有預算上的心理準備，做出初步的開發小時數評估是必要的。通常我會從三個方向切入：</p>
+<ul>
+<li>  <strong>前置作業</strong> - 研究客戶參考網站的網站架構、清查哪些頁面是客戶所需，以及建置開發環境所需的小時數評估</li>
+<li>  <strong>頁面設計</strong> - 以完成單頁所需時間來評估，首頁或是已知的特殊頁面會花比較多的小時數，頁面設計的總小時數會依頁面數量而變動</li>
+<li>  <strong>特定功能</strong> - 客戶再三強調的特定功能，可能會有多個，每個功能加入需求確認的時數，然後初步拆解開發這個功能需要哪些步驟</li>
+</ul>
+<p>這些任務需要花費多久的時間，全部都是建立在對自己工作習慣的認識，所以平常就要養成記錄工作時數的習慣，然後定期回顧有沒有造成什麼時間的浪費，久了自然而然就能越估越準。</p>
+<p>當開始記錄工作小時數之後，任務拆解也就變得很自然，因為每個工作項目都要記錄的話，就能知道自己接下來要做的事情是什麼，雖然常常會有自己漏想的步驟，但因為有了記錄，在回顧的時候就會發現到原本做 A 功能只需 10 個 task，結果做完後發現竟然變成 15 個，檢視多出來的項目就能知道自己少了什麼，下次再做類似功能的時候就能修正自己的評估。</p>
+<p>假設今天接到一個需要開發某種平台的案件，小時數預估的範例如下：</p>
+<p>(一) 前置作業 - 8 小時</p>
+<ul>
+<li>  收集彙整參考平台之網站架構 / 功能 - 2hr</li>
+<li>  資料欄位 / 網站架構確認 - 4hr</li>
+<li>  頁面風格確認 - 1hr</li>
+<li>  開發環境與程式碼部署配置 - 1hr</li>
+</ul>
+<p>(二) 頁面切版 - 視頁數而定</p>
+<ul>
+<li>  基礎架構&amp;RWD 開發 - 4hr</li>
+<li>  首頁前端程式開發 - 4hr</li>
+<li>  首頁後端資料串接 - 4hr</li>
+<li>  內頁前端程式開發 - 2hr / 頁</li>
+<li>  內頁後端資料串接 - 2hr / 頁</li>
+</ul>
+<p>(三) 會員功能開發 - 5 小時</p>
+<ul>
+<li>  會員註冊登入需求確認 - 1hr</li>
+<li>  註冊 / 登入機制開發 - 2hr</li>
+<li>  Facebook Login 整合 - 2hr</li>
+</ul>
+<p>(四) 簡訊驗證功能開發 - 6 小時</p>
+<ul>
+<li>  簡訊驗證流程確認 - 1hr</li>
+<li>  簡訊廠商 API 文件研究 - 1hr</li>
+<li>  會員註冊 API 串接 - 4hr</li>
+</ul>
+<p>(五) 前台發文功能開發 - 9 小時</p>
+<ul>
+<li>  發文管理需求確認 - 1hr</li>
+<li>  介面設計 - 4hr</li>
+<li>  介面功能 - 4hr</li>
+</ul>
+<p>(六) 廣告管理功能 - 4 小時</p>
+<ul>
+<li>  廣告管理需求確認 - 1hr</li>
+<li>  廣告管理外掛 API 文件研究 - 1hr</li>
+<li>  前台版面整合廣告管理外掛 - 2hr</li>
+</ul>
+<p>把每項功能拆解任務後，粗估每個項目所需時間，再把所有小時數進行加總乘以時薪，就可以估算出開發這個平台至少要準備多少預算，萬一超出客戶預算太多，就直接從清單中去刪減，留下真正需要的功能，或是請客戶準備好需求文件，以減少每個項目的需求確認時間。</p>
+<h3 id="共同管理專案"><a href="#共同管理專案" class="headerlink" title="共同管理專案"></a>共同管理專案</h3><p>待預算經過客戶確認後，就能開工了。對，不用訂金、報價單、合約書，彼此合作的約定只需要透過 Email 保存即可，這時候只要在收信軟體開一個專案的資料夾，然後把關於這個案件的信件全都往裡面丟即可。</p>
+<p>接下來各種工作上需要用到的工具都盡量採用雲端服務，主要目的是可以把文件分享給客戶，讓客戶可以清楚看到目前整理了什麼、執行到哪裡，並且可以直接在上面進行留言或討論。以下列出我常用的工具：</p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.google.com.tw/intl/zh-TW/sheets/about/">Google 試算表</a></strong> - 在清查網站架構、功能與資料欄位的時候使用，能直接在上面與客戶討論哪些頁面需要新增，或是刪除不需要的功能</p>
+<p><strong><a target="_blank" rel="noopener" href="https://www.figma.com/">Figma</a></strong> - 雲端設計軟體，可以設計線框圖、介面、網站原型，支援多人同時編輯，並可以直接在上面註記留言</p>
+<p><a target="_blank" rel="noopener" href="https://www.markup.io/"><strong>Markup</strong></a> - 能直接在網站上註記留言的服務，這用來討論參考網站或是已經有網站雛形時非常好用，直接在畫面上標記留言可以清楚溝通要討論的地方，比起單純文字描述來得有效率的多</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/"><strong>Github</strong></a> - 程式碼版本控管服務，把客戶帳號加進來，讓客戶可以看到每一次的 Commit，如果公司內部有工程師，也能同步檢視程式碼品質</p>
+<p><a target="_blank" rel="noopener" href="https://ora.pm/"><strong>Ora</strong></a> - 看板管理工具，可以很靈活的分類工作項目，並整合多種不同的檢視模式，在看板、待辦清單、日曆檢視之間可以快速切換，同時還能記錄每個工作項目的執行時間，上傳該工作項目所需文件，最重要的是報表檢視功能，可以查看每個專案的花費時間</p>
+<p><strong><a target="_blank" rel="noopener" href="https://freedcamp.com/">Freedcamp</a></strong> - 彙整修改清單的工具，與 Ora 性質類似，但 Ora 我比較習慣用來管理自己所有專案的工作時間，Freedcamp 主要提供給客戶管理修改驗收清單</p>
+<p>以上的工具每一個都可以分享給客戶，讓他們隨時可以查看自己的工作狀況，有需要的時後也都可以在上面討論，透過 Ora 可以讓客戶知道我每天的工作小時數 ( 費用 )，進而隨時調整專案的方向</p>
+<h3 id="定期回顧"><a href="#定期回顧" class="headerlink" title="定期回顧"></a>定期回顧</h3><p>當然，這麼多工具客戶不可能每天都上去看，因此每週的定期摘要回顧非常重要。我會在每週一上午發信給客戶，回報上週的工作內容、時間記錄以及本週預計要執行的項目，同時提醒客戶哪些東西待確認以及製作網站所需文件的準備。</p>
+<p>在時間記錄的回報上，Ora 的報表功能超級方便，它可以整理出如下的圖表：</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2020/08/CleanShot-2020-08-05-at-10.57.22-1024x821.jpg"></p>
+<p>另外還可以匯出 CSV 檔列出每項 Task 的開始與結束時間，透過這樣的回顧來讓合作透明化，進而產生信賴感，最重要的是可以隨時掌握專案的開發進度，如果發現某些次要功能花費了太多時間，而核心功能卻完全沒有進展，就可以立刻調整開發順序，專注在最重要的工作項目上面。</p>
+<p>最後到了月底，就能以整月份的工作時數向客戶請款，因為每週的開銷客戶都能看得到，所以在請款上就能減少疑慮，相較於以往的請款方式，每一期的款項都必須要先檢查是否有達成合約上的付款條件，萬一在請款條約上有不同的認知，就會演變成接案方覺得該拿到款項，但發案方卻認為還沒有滿足付款條件的窘境，這時候就必須花時間討論出共識來。</p>
+<p>在討論請款的過程中，對接案方來說感覺很差，因為做了事卻無法準時拿到酬勞，而發案方也會很害怕，害怕付了錢之後就找不到人，因此定期回顧 + 月結可以很大程度消弭彼此的不安感，讓接案者可以每月有固定的現金流，而發案方可以攤提大筆費用的一次性開銷。</p>
+<h3 id="結語"><a href="#結語" class="headerlink" title="結語"></a>結語</h3><p>事實上國外的接案平台大部分都已經是採用時薪制了，國內的平台在這方面還是停留在固定金額的報價方式，這會導致發案者對於專案的預算評估過低，因為他們並不清楚開發一個網站到底需要多少時間成本，而很多小型工作室為了生存，就算賠錢也要先把案子簽下來，先拿到訂金撐過這個月再說。</p>
+<p>因為案件金額低，接案者只能用量來彌補每月的資金缺口，當同時接了大量的案件後，要能順利準時結案除非多請人手幫忙，不然只能等著唱開天窗，但要請人經營成本又會上升，所以又要再接更多的案子，就這樣進入惡性的循環。</p>
+<p>另一方面，當一個購物網站花 5,000 塊就可以找得到人做，對整體的接案市場並不是一件好事，從前期溝通、規劃、設計、開發、修改，就要花費非常多的時間，但發案者對於這樣的流程可能並不了解，所以價格普偏偏低，而剛出來接案的人以為這就是市場行情，長久下來的結果就是發案方得不到專業服務，接案方得不到應有報酬。</p>
+<p>因此我認為好的報價要能符合時間比例原則，並以單位時薪來展現自我價值，同時搭配透明化、定期主動回報工作進度的共同管理專案模式，讓客戶可以根據當月已開發時數 (費用) 決定優先順序，站在客戶立場，能隨時掌握專案進度並調整開發方向，減少時間成本的浪費，對於接案者來說，保持每月現金流是能長久自我經營的關鍵。</p>
+<h2 id="敏捷式接案-Q-amp-A"><a href="#敏捷式接案-Q-amp-A" class="headerlink" title="敏捷式接案 Q&amp;A"></a>敏捷式接案 Q&amp;A</h2><p>當然，任何方法用在真實世界總是會遇到很多挑戰，下面整理出一些我常被問到的問題：</p>
+<h3 id="Q1-沒訂金、沒報價單、沒合約會不會沒保障？"><a href="#Q1-沒訂金、沒報價單、沒合約會不會沒保障？" class="headerlink" title="Q1. 沒訂金、沒報價單、沒合約會不會沒保障？"></a>Q1. 沒訂金、沒報價單、沒合約會不會沒保障？</h3><p>就算有訂金、報價單、合約也常常會有做到一半人不見或是錢燒完收不回尾款的案子，所謂的保障，對雙方來說就是時間到了看得到成果並且拿得到酬勞，一堆文件作業也都是為了要確保雙方能信守承諾，萬一當其中一方背信時有求償損失的備案而已。</p>
+<p>對接案者來說，時薪計價最大的風險就是在於一個月的款項請不到，也就是白做工一個月，相較於以往好幾個月才能請一次款，只損失一個月的工作小時數已經是不幸的大幸了，而且只花一個月的時間就可以認識一間公司或一個人，不用花上好幾個月或好幾年的時間才知道，已經算是少走很多冤枉路了。</p>
+<p>當然，如果要上法院，每週定期回報記錄 Email 都能拿來作為證據，但還是要衡量官司打下去的成本是否會讓自己深陷泥沼，畢竟一般有規模的公司都會有法務部門來專責處理法律糾紛，個人或小型工作室這方面就會比較吃虧。</p>
+<p>對發案方來說，合作一個月的過程當中就能知道對方的工作方式，像是有沒有定期回報進度、是否有固定產出，如果發現苗頭不對，不用等到一個月，可能幾週就能知道是否要提早結清工作時數並尋找下一間合作廠商，如果有合約在，片面解約都是需要付出成本的，所以為了避免罰則，縱使知道合作對象有問題，還是必須要硬撐下去走完合約，通常最後的結果都不會太好。</p>
+<h3 id="Q2-預估工作項目跟實際執行時間有落差？"><a href="#Q2-預估工作項目跟實際執行時間有落差？" class="headerlink" title="Q2. 預估工作項目跟實際執行時間有落差？"></a>Q2. 預估工作項目跟實際執行時間有落差？</h3><p>在網站還沒有完成架構圖、需求確認、操作流程確認等等的內容前，所有的估時都是憑著過去經驗來做預測的，就像要做一個購物網站，基本會有的功能像是購物車、結帳、金流、物流串接等等，這些都有過去的時數可以參考，但每家公司的商業情境不同，管理需求也不同，因此實際執行上一定會跟當初預估的工作項目有所落差。</p>
+<p>但透過每週的定期回顧，就會慢慢釐清整個專案到底有多大，以及目前的完成進度百分比，所以重點應該是放在持續的追蹤與溝通，只要能透明化專案的資訊，客戶就不會覺得計時是黑箱作業而產生不信任感。</p>
+<h3 id="Q3-開會也要計時？"><a href="#Q3-開會也要計時？" class="headerlink" title="Q3. 開會也要計時？"></a>Q3. 開會也要計時？</h3><p>一個專案最花時間的地方不是坐在電腦前面寫程式，而是釐清客戶的需求以及確認成品是否有滿足客戶需求，初期的需求溝通的越明確，就越能減少後期修改的時間，但要能協助沒有網站專業知識的客戶釐清需求是一門學問，而且很多時候懂得這些專業知識的客戶也會把需求變得錯綜複雜。</p>
+<p>這是人之常情，在一個專案被發起時，公司內部會有許多的聲音需要整合，好的整合是可以排出優先順序，但大部分情況是包山包海，因此會產生矛盾與衝突，譬如說客服部希望在每頁的頁首可以放上明顯的客服信箱連結，以減少客服電話的量，但業務部希望放上聯絡電話，就能跟客戶進行直接銷售。</p>
+<p>沒有整合好的需求就會變成 Email 跟聯絡電話同時以超巨大的 48px 顯示在頁首，什麼都要顯眼最後就會變成什麼都不顯眼，這時候釐清客戶的需求後就能提供相對應的作法，譬如說在電腦版顯示 Email、手機版顯示電話號碼，或是採取 A/B test 來實驗怎麼放會比較好，這些都是接案者的經驗，這些經驗沒有辦法 Google 得到，因為這是根據客戶的情境所設計的。</p>
+<p>問出正確的問題、提出有效的作法、釐清真正重要的目標，這就是開會時接案者所提供的服務內容，就像美劇上常看到的心理醫生諮詢一樣，都是需要鐘點費的。</p>
+<h3 id="Q4-為何這個工作項目要花這麼多時間？"><a href="#Q4-為何這個工作項目要花這麼多時間？" class="headerlink" title="Q4. 為何這個工作項目要花這麼多時間？"></a>Q4. 為何這個工作項目要花這麼多時間？</h3><p>有些客戶會質疑某些工作項目應該不會太複雜，花這麼多時間不太合理，這樣的情況有兩種，一種是任務沒有被正確的拆解，像是要做購物網站，購物功能只被當作是一個工作項目，購物功能包含有前台頁面的建置、商品管理、訂單管理、金物流串接、會員功能等等的細項，如果只列了一個購物功能可能就要會花費數十個小時來開發，從總小時數來看就會覺得這個單一工作項目花了太多時間。</p>
+<p>另一種情況是客戶懂技術，他們以自己過去的經驗來判斷，所以會覺得某些時間的花費不合理。當然，工程師程度有高有低，做事的方式也會有所不同，這時候版本控管就是很好的溝通管道，因為程式碼的透明，客戶可以看到專案的原始碼，進而提出改善建議，也能判斷承接的工程師是否有辦法勝任這個工作。</p>
+<p>我自己是還沒遇過被質疑某個工作項目的花費時間，但每次卡關時我一定會先暫停計時，因為我的認知是只要卡關就是代表自身能力不足，需要花時間再學習、研究、實踐，而客戶不是花錢來讓我學習的，所以遇到卡關時一定會停止計時來避免客戶的花費。</p>
+<h3 id="Q5-程式的保固期間該如何計算？"><a href="#Q5-程式的保固期間該如何計算？" class="headerlink" title="Q5. 程式的保固期間該如何計算？"></a>Q5. 程式的保固期間該如何計算？</h3><p>不用計算。</p>
+<p>通常保固指的是當專案已經過了約定結案日期後，如果還有發生程式上的臭蟲需要被修復的維護期間，在保固期間內的 Bug 修改，接案方有責任協助處理，這時候問題就來了，到底什麼是「臭蟲」？網站開不了？功能無法正常使用？實際用起來應該這樣改比較好？</p>
+<p>關於臭蟲的定義也是一個吵不完的話題，常常客戶覺得是 Bug 的地方也許是某個邏輯沒有正確實現，但對於接案方來說這個邏輯並沒有在當初開發時接受到客戶的需求，而且結案時不都已經驗收過了，怎麼會現在才發現有這樣的問題？或是更多時候是使用者發現的 Bug，可能是公司內部操作人員或是外部使用者，這些都讓臭蟲的定義很難有一個明確的標準。</p>
+<p>回到保固的定義，指的是過了「約定結案日期」後的維護，以敏捷式接案的定義來看，並沒有所謂的結案日期，因此也就沒有保固這樣的概念。網站上線後有問題，持續的以時薪計價進行修改臭蟲或是根據使用者回饋進行調整，就不用為了保固範圍而犧牲能讓網站變得更好的改進措施，而接案方也能提供更多實務上的建議讓網站達成商業目標。</p>
+<blockquote>
+<p>如果你認同這樣的理念並想嘗試這樣的模式來進行專案的話，可以參考我的「<a href="https://oberonlai.blog/tw/how-can-oberon-help-you/">合作方式</a>」</p>
+</blockquote>
+
+        <hr>
+        <div>
+          <h2>覺得文章寫得好再幫我鼓個掌吧！</h2>
+          <iframe width="100%" height="230px" scrolling="no" frameborder="0" id="player" src="https://button.like.co/in/embed/oberonlai/button/?referrer=https://oberonlai.blog/tw/how-do-i-make-a-quotation/" allowfullscreen="true"></iframe>
+        </div>
+        <hr>
+        <h2>這是電子報訂閱，一週一次絕對沒有壯陽藥廣告～</h2>
+        <p>過往內容：<a target="_blank" rel="noopener" href="https://successful-trader-4225.ck.page/posts">https://successful-trader-4225.ck.page/posts</a></p>
+        <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+        <form action="https://app.convertkit.com/forms/2577901/subscriptions" style="background-color: rgb(255, 255, 255); border-top-left-radius: 6px; border-top-right-radius: 6px; border-bottom-right-radius: 6px; border-bottom-left-radius: 6px; max-width: none!important;" class="seva-form formkit-form" method="post" data-sv-form="2577901" data-uid="bbe15da0e6" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;訂閱成功，再幫我收信確認下吧！&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:false,&quot;url&quot;:&quot;https://convertkit.com?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}" min-width="400 500 600 700 800"><div data-style="full" style="--bg-border-radius: 3px;"><div data-element="column" class="formkit-column"><div class="formkit-header" style="color: rgb(83, 83, 83); font-size: 28px; font-weight: 400;" data-element="header"></div><div class="formkit-content" style="color: rgb(105, 113, 119);" data-element="content"><p>Hi，我是 Oberon，我會固定在每週五早上發送接案心得以及與 WordPress 相關的電子報，同時也會分享一些基礎的開發知識，讓你在 WordPress 的接案路上不孤單！</p></div><ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul><div data-element="fields" data-stacked="true" class="seva-fields formkit-fields"><div class="formkit-field"><input class="formkit-input" name="email_address" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400; background-color: rgb(243, 246, 249); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" aria-label="電子郵件" placeholder="電子郵件" required="" type="email"></div><div class="formkit-field"><input class="formkit-input" aria-label="您的大名" style="color: rgb(139, 139, 139); border-color: rgb(221, 224, 228); font-weight: 400; background-color: rgb(243, 246, 249); border-top-left-radius: 5px; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 5px;" name="fields[first_name]" placeholder="您的大名" type="text"></div><button data-element="submit" class="formkit-submit formkit-submit" style="color: rgb(255, 255, 255); background-color: rgb(113, 173, 137); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; font-weight: 700;"><div class="formkit-spinner"><div></div><div></div><div></div></div><span style="font-size: 16px;">訂閱電子報</span></button></div><div class="formkit-disclaimer" style="color: rgb(139, 139, 139); font-size: 13px;" data-element="disclaimer"><p>免費電子報，可隨時取消訂閱，沒有壓力！</p></div></div><div data-element="column" style="background-image: url(&quot;https://embed.filekitcdn.com/e/2SvCbYvt2MQD58GK3N3L5a/qAepSutQWFcsUd4u3qHwKy&quot;);" class="formkit-background"></div></div><style>.formkit-form[data-uid="bbe15da0e6"] *{box-sizing:border-box;}.formkit-form[data-uid="bbe15da0e6"]{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}.formkit-form[data-uid="bbe15da0e6"] legend{border:none;font-size:inherit;margin-bottom:10px;padding:0;position:relative;display:table;}.formkit-form[data-uid="bbe15da0e6"] fieldset{border:0;padding:0.01em 0 0 0;margin:0;min-width:0;}.formkit-form[data-uid="bbe15da0e6"] body:not(:-moz-handler-blocked) fieldset{display:table-cell;}.formkit-form[data-uid="bbe15da0e6"] h1,.formkit-form[data-uid="bbe15da0e6"] h2,.formkit-form[data-uid="bbe15da0e6"] h3,.formkit-form[data-uid="bbe15da0e6"] h4,.formkit-form[data-uid="bbe15da0e6"] h5,.formkit-form[data-uid="bbe15da0e6"] h6{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="bbe15da0e6"] h2{font-size:1.5em;margin:1em 0;}.formkit-form[data-uid="bbe15da0e6"] h3{font-size:1.17em;margin:1em 0;}.formkit-form[data-uid="bbe15da0e6"] p{color:inherit;font-size:inherit;font-weight:inherit;}.formkit-form[data-uid="bbe15da0e6"] ol:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ul:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] blockquote:not([template-default]){text-align:left;}.formkit-form[data-uid="bbe15da0e6"] p:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] hr:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] blockquote:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ol:not([template-default]),.formkit-form[data-uid="bbe15da0e6"] ul:not([template-default]){color:inherit;font-style:initial;}.formkit-form[data-uid="bbe15da0e6"] .ordered-list,.formkit-form[data-uid="bbe15da0e6"] .unordered-list{list-style-position:outside !important;padding-left:1em;}.formkit-form[data-uid="bbe15da0e6"] .list-item{padding-left:0;}.formkit-form[data-uid="bbe15da0e6"][data-format="modal"]{display:none;}.formkit-form[data-uid="bbe15da0e6"][data-format="slide in"]{display:none;}.formkit-form[data-uid="bbe15da0e6"][data-format="sticky bar"]{display:none;}.formkit-sticky-bar .formkit-form[data-uid="bbe15da0e6"][data-format="sticky bar"]{display:block;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input,.formkit-form[data-uid="bbe15da0e6"] .formkit-select,.formkit-form[data-uid="bbe15da0e6"] .formkit-checkboxes{width:100%;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit{border:0;border-radius:5px;color:#ffffff;cursor:pointer;display:inline-block;text-align:center;font-size:15px;font-weight:500;cursor:pointer;margin-bottom:15px;overflow:hidden;padding:0;position:relative;vertical-align:middle;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-button:focus,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:focus{outline:none;}.formkit-form[data-uid="bbe15da0e6"] .formkit-button:hover > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:hover > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-button:focus > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit:focus > span{background-color:rgba(0,0,0,0.1);}.formkit-form[data-uid="bbe15da0e6"] .formkit-button > span,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit > span{display:block;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;padding:12px 24px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input{background:#ffffff;font-size:15px;padding:12px;border:1px solid #e3e3e3;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;line-height:1.4;margin:0;-webkit-transition:border-color ease-out 300ms;transition:border-color ease-out 300ms;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input:focus{outline:none;border-color:#1677be;-webkit-transition:border-color ease 300ms;transition:border-color ease 300ms;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::-webkit-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::-moz-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input:-ms-input-placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input::placeholder{color:inherit;opacity:0.8;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"]{position:relative;display:inline-block;width:100%;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"]::before{content:"";top:calc(50% - 2.5px);right:10px;position:absolute;pointer-events:none;border-color:#4f4f4f transparent transparent transparent;border-style:solid;border-width:6px 6px 0 6px;height:0;width:0;z-index:999;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"] select{height:auto;width:100%;cursor:pointer;color:#333333;line-height:1.4;margin-bottom:0;padding:0 6px;-webkit-appearance:none;-moz-appearance:none;appearance:none;font-size:15px;padding:12px;padding-right:25px;border:1px solid #e3e3e3;background:#ffffff;}.formkit-form[data-uid="bbe15da0e6"] [data-group="dropdown"] select:focus{outline:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"]{text-align:left;margin:0;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"]{margin-bottom:10px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] *{cursor:pointer;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"]:last-of-type{margin-bottom:0;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]{display:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"] + label::after{content:none;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::after{border-color:#ffffff;content:"";}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] input[type="checkbox"]:checked + label::before{background:#10bf7a;border-color:#10bf7a;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label{position:relative;display:inline-block;padding-left:28px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::before,.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::after{position:absolute;content:"";display:inline-block;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::before{height:16px;width:16px;border:1px solid #e3e3e3;background:#ffffff;left:0px;top:3px;}.formkit-form[data-uid="bbe15da0e6"] [data-group="checkboxes"] [data-group="checkbox"] label::after{height:4px;width:8px;border-left:2px solid #4d4d4d;border-bottom:2px solid #4d4d4d;-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);left:4px;top:8px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert{background:#f9fafb;border:1px solid #e3e3e3;border-radius:5px;-webkit-flex:1 0 auto;-ms-flex:1 0 auto;flex:1 0 auto;list-style:none;margin:25px auto;padding:12px;text-align:center;width:100%;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert:empty{display:none;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert-success{background:#d3fbeb;border-color:#10bf7a;color:#0c905c;}.formkit-form[data-uid="bbe15da0e6"] .formkit-alert-error{background:#fde8e2;border-color:#f2643b;color:#ea4110;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;height:0px;width:0px;margin:0 auto;position:absolute;top:0;left:0;right:0;width:0px;overflow:hidden;text-align:center;-webkit-transition:all 300ms ease-in-out;transition:all 300ms ease-in-out;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div{margin:auto;width:12px;height:12px;background-color:#fff;opacity:0.3;border-radius:100%;display:inline-block;-webkit-animation:formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6- 1.4s infinite ease-in-out both;animation:formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6- 1.4s infinite ease-in-out both;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div:nth-child(1){-webkit-animation-delay:-0.32s;animation-delay:-0.32s;}.formkit-form[data-uid="bbe15da0e6"] .formkit-spinner > div:nth-child(2){-webkit-animation-delay:-0.16s;animation-delay:-0.16s;}.formkit-form[data-uid="bbe15da0e6"] .formkit-submit[data-active] .formkit-spinner{opacity:1;height:100%;width:50px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-submit[data-active] .formkit-spinner ~ span{opacity:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;width:100%;z-index:5;margin:10px 0;position:relative;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container[data-active="false"]{opacity:0.35;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit{-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;background-color:#ffffff;border:1px solid #dce1e5;border-radius:4px;color:#373f45;cursor:pointer;display:block;height:36px;margin:0 auto;opacity:0.95;padding:0;-webkit-text-decoration:none;text-decoration:none;text-indent:100%;-webkit-transition:ease-in-out all 200ms;transition:ease-in-out all 200ms;white-space:nowrap;overflow:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:190px;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='%23373F45'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='%23373F45'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='%23373F45'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='%23373F45'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='%23373F45'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='%23373F45'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='%23373F45'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='%23373F45'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='%23373F45'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='%23373F45'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='%23373F45'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='%23373F45'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='%23373F45'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='%23373F45'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='%23373F45'/%3E%3C/svg%3E");}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit:hover,.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit:focus{background-color:#ffffff;-webkit-transform:scale(1.025) perspective(1px);-ms-transform:scale(1.025) perspective(1px);transform:scale(1.025) perspective(1px);opacity:1;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="dark"],.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="light"]{background-color:transparent;border-color:transparent;width:166px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit[data-variant="light"]{color:#ffffff;background-image:url("data:image/svg+xml;charset=utf8,%3Csvg width='162' height='20' viewBox='0 0 162 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M83.0561 15.2457C86.675 15.2457 89.4722 12.5154 89.4722 9.14749C89.4722 5.99211 86.8443 4.06563 85.1038 4.06563C82.6801 4.06563 80.7373 5.76407 80.4605 8.28551C80.4092 8.75244 80.0387 9.14403 79.5686 9.14069C78.7871 9.13509 77.6507 9.12841 76.9314 9.13092C76.6217 9.13199 76.3658 8.88106 76.381 8.57196C76.4895 6.38513 77.2218 4.3404 78.618 2.76974C80.1695 1.02445 82.4289 0 85.1038 0C89.5979 0 93.8406 4.07791 93.8406 9.14749C93.8406 14.7608 89.1832 19.3113 83.1517 19.3113C78.8502 19.3113 74.5179 16.5041 73.0053 12.5795C72.9999 12.565 72.9986 12.5492 73.0015 12.534C73.0218 12.4179 73.0617 12.3118 73.1011 12.2074C73.1583 12.0555 73.2143 11.907 73.2062 11.7359L73.18 11.1892C73.174 11.0569 73.2075 10.9258 73.2764 10.8127C73.3452 10.6995 73.4463 10.6094 73.5666 10.554L73.7852 10.4523C73.9077 10.3957 74.0148 10.3105 74.0976 10.204C74.1803 10.0974 74.2363 9.97252 74.2608 9.83983C74.3341 9.43894 74.6865 9.14749 75.0979 9.14749C75.7404 9.14749 76.299 9.57412 76.5088 10.1806C77.5188 13.1 79.1245 15.2457 83.0561 15.2457Z' fill='white'/%3E%3Cpath d='M155.758 6.91365C155.028 6.91365 154.804 6.47916 154.804 5.98857C154.804 5.46997 154.986 5.06348 155.758 5.06348C156.53 5.06348 156.712 5.46997 156.712 5.98857C156.712 6.47905 156.516 6.91365 155.758 6.91365ZM142.441 12.9304V9.32833L141.415 9.32323V8.90392C141.415 8.44719 141.786 8.07758 142.244 8.07986L142.441 8.08095V6.55306L144.082 6.09057V8.08073H145.569V8.50416C145.569 8.61242 145.548 8.71961 145.506 8.81961C145.465 8.91961 145.404 9.01047 145.328 9.08699C145.251 9.16351 145.16 9.2242 145.06 9.26559C144.96 9.30698 144.853 9.32826 144.745 9.32822H144.082V12.7201C144.082 13.2423 144.378 13.4256 144.76 13.4887C145.209 13.5629 145.583 13.888 145.583 14.343V14.9626C144.029 14.9626 142.441 14.8942 142.441 12.9304Z' fill='white'/%3E%3Cpath d='M110.058 7.92554C108.417 7.88344 106.396 8.92062 106.396 11.5137C106.396 14.0646 108.417 15.0738 110.058 15.0318C111.742 15.0738 113.748 14.0646 113.748 11.5137C113.748 8.92062 111.742 7.88344 110.058 7.92554ZM110.07 13.7586C108.878 13.7586 108.032 12.8905 108.032 11.461C108.032 10.1013 108.878 9.20569 110.071 9.20569C111.263 9.20569 112.101 10.0995 112.101 11.459C112.101 12.8887 111.263 13.7586 110.07 13.7586Z' fill='white'/%3E%3Cpath d='M118.06 7.94098C119.491 7.94098 120.978 8.33337 120.978 11.1366V14.893H120.063C119.608 14.893 119.238 14.524 119.238 14.0689V10.9965C119.238 9.66506 118.747 9.16047 117.891 9.16047C117.414 9.16047 116.797 9.52486 116.502 9.81915V14.069C116.502 14.1773 116.481 14.2845 116.44 14.3845C116.398 14.4845 116.337 14.5753 116.261 14.6519C116.184 14.7284 116.093 14.7891 115.993 14.8305C115.893 14.8719 115.786 14.8931 115.678 14.8931H114.847V8.10918H115.773C115.932 8.10914 116.087 8.16315 116.212 8.26242C116.337 8.36168 116.424 8.50033 116.46 8.65577C116.881 8.19328 117.428 7.94098 118.06 7.94098ZM122.854 8.09713C123.024 8.09708 123.19 8.1496 123.329 8.2475C123.468 8.34541 123.574 8.48391 123.631 8.64405L125.133 12.8486L126.635 8.64415C126.692 8.48402 126.798 8.34551 126.937 8.2476C127.076 8.1497 127.242 8.09718 127.412 8.09724H128.598L126.152 14.3567C126.091 14.5112 125.986 14.6439 125.849 14.7374C125.711 14.831 125.549 14.881 125.383 14.8809H124.333L121.668 8.09713H122.854Z' fill='white'/%3E%3Cpath d='M135.085 14.5514C134.566 14.7616 133.513 15.0416 132.418 15.0416C130.496 15.0416 129.024 13.9345 129.024 11.4396C129.024 9.19701 130.451 7.99792 132.191 7.99792C134.338 7.99792 135.254 9.4378 135.158 11.3979C135.139 11.8029 134.786 12.0983 134.38 12.0983H130.679C130.763 13.1916 131.562 13.7662 132.615 13.7662C133.028 13.7662 133.462 13.7452 133.983 13.6481C134.535 13.545 135.085 13.9375 135.085 14.4985V14.5514ZM133.673 10.949C133.785 9.87621 133.061 9.28752 132.191 9.28752C131.321 9.28752 130.734 9.93979 130.679 10.9489L133.673 10.949Z' fill='white'/%3E%3Cpath d='M137.345 8.11122C137.497 8.11118 137.645 8.16229 137.765 8.25635C137.884 8.35041 137.969 8.48197 138.005 8.62993C138.566 8.20932 139.268 7.94303 139.759 7.94303C139.801 7.94303 140.068 7.94303 140.489 7.99913V8.7265C140.489 9.11748 140.15 9.4147 139.759 9.4147C139.31 9.4147 138.651 9.5829 138.131 9.8773V14.8951H136.462V8.11112L137.345 8.11122ZM156.6 14.0508V8.09104H155.769C155.314 8.09104 154.944 8.45999 154.944 8.9151V14.8748H155.775C156.23 14.8748 156.6 14.5058 156.6 14.0508ZM158.857 12.9447V9.34254H157.749V8.91912C157.749 8.46401 158.118 8.09506 158.574 8.09506H158.857V6.56739L160.499 6.10479V8.09506H161.986V8.51848C161.986 8.97359 161.617 9.34254 161.161 9.34254H160.499V12.7345C160.499 13.2566 160.795 13.44 161.177 13.503C161.626 13.5774 162 13.9024 162 14.3574V14.977C160.446 14.977 158.857 14.9086 158.857 12.9447ZM98.1929 10.1124C98.2033 6.94046 100.598 5.16809 102.895 5.16809C104.171 5.16809 105.342 5.44285 106.304 6.12953L105.914 6.6631C105.654 7.02011 105.16 7.16194 104.749 6.99949C104.169 6.7702 103.622 6.7218 103.215 6.7218C101.335 6.7218 99.9169 7.92849 99.9068 10.1123C99.9169 12.2959 101.335 13.5201 103.215 13.5201C103.622 13.5201 104.169 13.4717 104.749 13.2424C105.16 13.0799 105.654 13.2046 105.914 13.5615L106.304 14.0952C105.342 14.7819 104.171 15.0566 102.895 15.0566C100.598 15.0566 98.2033 13.2842 98.1929 10.1124ZM147.619 5.21768C148.074 5.21768 148.444 5.58663 148.444 6.04174V9.81968L151.82 5.58131C151.897 5.47733 151.997 5.39282 152.112 5.3346C152.227 5.27638 152.355 5.24607 152.484 5.24611H153.984L150.166 10.0615L153.984 14.8749H152.484C152.355 14.8749 152.227 14.8446 152.112 14.7864C151.997 14.7281 151.897 14.6436 151.82 14.5397L148.444 10.3025V14.0508C148.444 14.5059 148.074 14.8749 147.619 14.8749H146.746V5.21768H147.619Z' fill='white'/%3E%3Cpath d='M0.773438 6.5752H2.68066C3.56543 6.5752 4.2041 6.7041 4.59668 6.96191C4.99219 7.21973 5.18994 7.62695 5.18994 8.18359C5.18994 8.55859 5.09326 8.87061 4.8999 9.11963C4.70654 9.36865 4.42822 9.52539 4.06494 9.58984V9.63379C4.51611 9.71875 4.84717 9.88721 5.05811 10.1392C5.27197 10.3882 5.37891 10.7266 5.37891 11.1543C5.37891 11.7314 5.17676 12.1841 4.77246 12.5122C4.37109 12.8374 3.81152 13 3.09375 13H0.773438V6.5752ZM1.82373 9.22949H2.83447C3.27393 9.22949 3.59473 9.16064 3.79688 9.02295C3.99902 8.88232 4.1001 8.64502 4.1001 8.31104C4.1001 8.00928 3.99023 7.79102 3.77051 7.65625C3.55371 7.52148 3.20801 7.4541 2.7334 7.4541H1.82373V9.22949ZM1.82373 10.082V12.1167H2.93994C3.37939 12.1167 3.71045 12.0332 3.93311 11.8662C4.15869 11.6963 4.27148 11.4297 4.27148 11.0664C4.27148 10.7324 4.15723 10.4849 3.92871 10.3237C3.7002 10.1626 3.35303 10.082 2.88721 10.082H1.82373Z' fill='white'/%3E%3Cpath d='M13.011 6.5752V10.7324C13.011 11.207 12.9084 11.623 12.7034 11.9805C12.5012 12.335 12.2068 12.6089 11.8201 12.8022C11.4363 12.9927 10.9763 13.0879 10.4402 13.0879C9.6433 13.0879 9.02368 12.877 8.5813 12.4551C8.13892 12.0332 7.91772 11.4531 7.91772 10.7148V6.5752H8.9724V10.6401C8.9724 11.1704 9.09546 11.5615 9.34155 11.8135C9.58765 12.0654 9.96557 12.1914 10.4753 12.1914C11.4656 12.1914 11.9607 11.6714 11.9607 10.6313V6.5752H13.011Z' fill='white'/%3E%3Cpath d='M15.9146 13V6.5752H16.9649V13H15.9146Z' fill='white'/%3E%3Cpath d='M19.9255 13V6.5752H20.9758V12.0991H23.696V13H19.9255Z' fill='white'/%3E%3Cpath d='M28.2828 13H27.2325V7.47607H25.3428V6.5752H30.1724V7.47607H28.2828V13Z' fill='white'/%3E%3Cpath d='M41.9472 13H40.8046L39.7148 9.16796C39.6679 9.00097 39.6093 8.76074 39.539 8.44727C39.4687 8.13086 39.4262 7.91113 39.4116 7.78809C39.3823 7.97559 39.3339 8.21875 39.2665 8.51758C39.2021 8.81641 39.1479 9.03905 39.1039 9.18554L38.0405 13H36.8979L36.0673 9.7832L35.2236 6.5752H36.2958L37.2143 10.3193C37.3578 10.9199 37.4604 11.4502 37.5219 11.9102C37.5541 11.6611 37.6025 11.3828 37.6669 11.0752C37.7314 10.7676 37.79 10.5186 37.8427 10.3281L38.8886 6.5752H39.9301L41.0024 10.3457C41.1049 10.6943 41.2133 11.2158 41.3276 11.9102C41.3715 11.4912 41.477 10.958 41.644 10.3105L42.558 6.5752H43.6215L41.9472 13Z' fill='white'/%3E%3Cpath d='M45.7957 13V6.5752H46.846V13H45.7957Z' fill='white'/%3E%3Cpath d='M52.0258 13H50.9755V7.47607H49.0859V6.5752H53.9155V7.47607H52.0258V13Z' fill='white'/%3E%3Cpath d='M61.2312 13H60.1765V10.104H57.2146V13H56.1643V6.5752H57.2146V9.20312H60.1765V6.5752H61.2312V13Z' fill='white'/%3E%3C/svg%3E");}@-webkit-keyframes formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}@keyframes formkit-bouncedelay-formkit-form-data-uid-bbe15da0e6-{0%,80%,100%{-webkit-transform:scale(0);-ms-transform:scale(0);transform:scale(0);}40%{-webkit-transform:scale(1);-ms-transform:scale(1);transform:scale(1);}}.formkit-form[data-uid="bbe15da0e6"] blockquote{padding:10px 20px;margin:0 0 20px;border-left:5px solid #e1e1e1;}.formkit-form[data-uid="bbe15da0e6"] .seva-custom-content{padding:15px;font-size:16px;color:#fff;mix-blend-mode:difference;} .formkit-form[data-uid="bbe15da0e6"]{box-shadow:0px 4px 8px rgba(105,113,119,0.2);max-width:740px !important;overflow:hidden;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"]{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.formkit-form[data-uid="bbe15da0e6"] .formkit-background{background-position:center center;background-size:cover;height:280px;margin:20px;border-radius:var(--bg-border-radius) !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-column{padding:20px;position:relative;-webkit-order:2;-ms-flex-order:2;order:2;}.formkit-form[data-uid="bbe15da0e6"] .formkit-header{margin-top:0;margin-bottom:24px;font-weight:700;font-size:calc(30px + (36 - 30) * ((100vw - 400px) / (600 - 400)));}@media all and (min-width:800px){.formkit-form[data-uid="bbe15da0e6"] .formkit-header{font-size:36px;}}.formkit-form[data-uid="bbe15da0e6"] .formkit-header h2{line-height:1.2;margin-top:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-content{margin-bottom:45px;font-size:16px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;}.formkit-form[data-uid="bbe15da0e6"] .formkit-field{margin:0 0 10px 0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-input{width:100%;border:0;padding-left:12px;padding-right:0;height:47px;font-size:14px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-select{padding-top:13px !important;padding-bottom:13px !important;border:0 !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-checkboxes{background:transparent !important;color:inherit !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields .formkit-submit{margin-top:8px;font-size:12px;height:47px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields .formkit-submit span{padding:15px 14px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"]{margin-left:-4px;margin-right:-4px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-submit{-webkit-flex:1 1 auto !important;-ms-flex:1 1 auto !important;flex:1 1 auto !important;margin:0 !important;min-width:90px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-field,.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-submit{margin:0 4px 8px 4px !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-fields[data-stacked="false"] .formkit-field{-webkit-flex:100 1 auto !important;-ms-flex:100 1 auto !important;flex:100 1 auto !important;margin:0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-powered-by-convertkit-container{margin:20px 0 0 0;}.formkit-form[data-uid="bbe15da0e6"] .formkit-disclaimer{font-size:12px;opacity:0.6;margin-top:6px;}.formkit-form[data-uid="bbe15da0e6"] .formkit-field,.formkit-form[data-uid="bbe15da0e6"] .formkit-submit{margin:0 0 8px 0;-webkit-flex:1 0 100%;-ms-flex:1 0 100%;flex:1 0 100%;}@media screen and (min-width:600px){.formkit-form[data-uid="bbe15da0e6"] [data-style="full"]{-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"] .formkit-column{width:57%;}.formkit-form[data-uid="bbe15da0e6"] [data-style="full"] .formkit-background{width:44%;height:auto;margin-left:0;-webkit-order:2;-ms-flex-order:2;order:2;}.formkit-slide-in,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"],.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"]{max-width:450px !important;}.formkit-slide-in [data-style="full"],.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] [data-style="full"],.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] [data-style="full"]{-webkit-flex-direction:column !important;-ms-flex-direction:column !important;flex-direction:column !important;max-width:450px !important;}.formkit-slide-in .formkit-background,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-background,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-background{width:auto !important;height:280px !important;margin:20px !important;-webkit-order:0 !important;-ms-flex-order:0 !important;order:0 !important;}.formkit-slide-in .formkit-column,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-column,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-column{width:100% !important;-webkit-order:2 !important;-ms-flex-order:2 !important;order:2 !important;padding:20px 20px 30px 20px !important;}.formkit-slide-in .formkit-content,.preview .formkit-form[data-uid="bbe15da0e6"][data-format="slide in"] .formkit-content,.formkit-form[data-uid="bbe15da0e6"][data-format="slide in-editing"] .formkit-content{margin-bottom:25px !important;}.formkit-form[data-uid="bbe15da0e6"] .formkit-column{padding:55px 60px 55px 45px;}} </style></form>
+    </div>
+
+    
+    
+    
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tw/tags/%E6%95%8F%E6%8D%B7%E5%BC%8F%E6%8E%A5%E6%A1%88/" rel="tag"><i class="fa fa-tag"></i> 敏捷式接案</a>
+              <a href="/tw/tags/%E5%A0%B1%E5%83%B9/" rel="tag"><i class="fa fa-tag"></i> 報價</a>
+              <a href="/tw/tags/%E6%8E%A5%E6%A1%88/" rel="tag"><i class="fa fa-tag"></i> 接案</a>
+              <a href="/tw/tags/%E7%9C%8B%E6%9D%BF%E6%96%B9%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 看板方法</a>
+              <a href="/tw/tags/WordPress-%E6%8E%A5%E6%A1%88/" rel="tag"><i class="fa fa-tag"></i> WordPress 接案</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/tw/how-to-write-the-effective-specification/" rel="prev" title="【 心得 】企劃人員如何撰寫有效的軟體需求規格文件">
+      <i class="fa fa-chevron-left"></i> 【 心得 】企劃人員如何撰寫有效的軟體需求規格文件
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/tw/how-can-oberon-help-you/" rel="next" title="【 業配 】接案路上少的那一位 WordPress 工程師">
+      【 業配 】接案路上少的那一位 WordPress 工程師 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%B7%B1%E5%80%8B%E6%80%A7%E7%9A%84%E4%BD%BF%E7%84%B6"><span class="nav-number">1.</span> <span class="nav-text">自己個性的使然</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A2%E6%88%B6%E5%B0%8D%E6%96%BC%E5%A4%96%E5%8C%85%E5%B0%88%E6%A1%88%E7%9A%84%E8%AA%8D%E7%9F%A5"><span class="nav-number">2.</span> <span class="nav-text">客戶對於外包專案的認知</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%A4%96%E5%8A%9B%E5%9B%A0%E7%B4%A0"><span class="nav-number">3.</span> <span class="nav-text">其他外力因素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B0%E5%BA%95%E4%BD%95%E8%AC%82%E7%B5%90%E6%A1%88%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">到底何謂結案？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7%E5%BC%8F%E6%8E%A5%E6%A1%88"><span class="nav-number">4.</span> <span class="nav-text">敏捷式接案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%96%8B%E7%99%BC%E5%B0%8F%E6%99%82%E6%95%B8%E9%A0%90%E4%BC%B0"><span class="nav-number">4.1.</span> <span class="nav-text">開發小時數預估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E5%90%8C%E7%AE%A1%E7%90%86%E5%B0%88%E6%A1%88"><span class="nav-number">4.2.</span> <span class="nav-text">共同管理專案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E6%9C%9F%E5%9B%9E%E9%A1%A7"><span class="nav-number">4.3.</span> <span class="nav-text">定期回顧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B5%90%E8%AA%9E"><span class="nav-number">4.4.</span> <span class="nav-text">結語</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%8F%E6%8D%B7%E5%BC%8F%E6%8E%A5%E6%A1%88-Q-amp-A"><span class="nav-number">5.</span> <span class="nav-text">敏捷式接案 Q&amp;A</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Q1-%E6%B2%92%E8%A8%82%E9%87%91%E3%80%81%E6%B2%92%E5%A0%B1%E5%83%B9%E5%96%AE%E3%80%81%E6%B2%92%E5%90%88%E7%B4%84%E6%9C%83%E4%B8%8D%E6%9C%83%E6%B2%92%E4%BF%9D%E9%9A%9C%EF%BC%9F"><span class="nav-number">5.1.</span> <span class="nav-text">Q1. 沒訂金、沒報價單、沒合約會不會沒保障？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q2-%E9%A0%90%E4%BC%B0%E5%B7%A5%E4%BD%9C%E9%A0%85%E7%9B%AE%E8%B7%9F%E5%AF%A6%E9%9A%9B%E5%9F%B7%E8%A1%8C%E6%99%82%E9%96%93%E6%9C%89%E8%90%BD%E5%B7%AE%EF%BC%9F"><span class="nav-number">5.2.</span> <span class="nav-text">Q2. 預估工作項目跟實際執行時間有落差？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q3-%E9%96%8B%E6%9C%83%E4%B9%9F%E8%A6%81%E8%A8%88%E6%99%82%EF%BC%9F"><span class="nav-number">5.3.</span> <span class="nav-text">Q3. 開會也要計時？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q4-%E7%82%BA%E4%BD%95%E9%80%99%E5%80%8B%E5%B7%A5%E4%BD%9C%E9%A0%85%E7%9B%AE%E8%A6%81%E8%8A%B1%E9%80%99%E9%BA%BC%E5%A4%9A%E6%99%82%E9%96%93%EF%BC%9F"><span class="nav-number">5.4.</span> <span class="nav-text">Q4. 為何這個工作項目要花這麼多時間？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q5-%E7%A8%8B%E5%BC%8F%E7%9A%84%E4%BF%9D%E5%9B%BA%E6%9C%9F%E9%96%93%E8%A9%B2%E5%A6%82%E4%BD%95%E8%A8%88%E7%AE%97%EF%BC%9F"><span class="nav-number">5.5.</span> <span class="nav-text">Q5. 程式的保固期間該如何計算？</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="賴俊吾 / Oberon Lai"
+      src="/tw/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">賴俊吾 / Oberon Lai</p>
+  <div class="site-description" itemprop="description">現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/tw/archives">
+          <span class="site-state-item-count">291</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/tw/categories/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tw/tags/">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/oberonlai" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:m615926@gmail.com" title="E-Mail → mailto:m615926@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/oberonlai" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/m615926" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;m615926" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">賴俊吾 / Oberon Lai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">740k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:13</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/tw/lib/anime.min.js"></script>
+  <script src="/tw/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+
+<script src="/tw/js/utils.js"></script>
+
+
+<script src="/tw/js/schemes/muse.js"></script>
+
+
+<script src="/tw/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/tw/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,2499 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/tw/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/tw/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/tw/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/tw/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/tw/css/main.css">
+
+
+<link rel="stylesheet" href="/tw/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"oberonlai.blog","root":"/tw/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":true,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"disqus","storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideDownIn","sidebar":"slideDownIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WordPress 開發日常">
+<meta property="og:url" content="https://oberonlai.blog/tw/page/6/">
+<meta property="og:site_name" content="WordPress 開發日常">
+<meta property="og:description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:author" content="賴俊吾 &#x2F; Oberon Lai">
+<meta property="article:tag" content="WordPress,PHP,WordPress 外掛開發,WordPress 佈景主題開發,WordPress 工程師,敏捷接案,時薪計價,專案管理">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="/tw/images/og-img.jpg" />
+
+<link rel="canonical" href="https://oberonlai.blog/tw/page/6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>WordPress 開發日常 - 有任何 WordPress 客製需求歡迎與我聯絡！</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163107142-1"></script>
+    <script data-pjax>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-163107142-1');
+      }
+    </script>
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta custom-logo">
+
+    <a href="/tw/" class="brand" rel="start" style="display: block">
+        <img class="logo-img" src="/tw/images/logo-w.svg" alt="WordPress 開發日常">
+    </a>
+      <p class="site-subtitle" itemprop="description">有任何 WordPress 客製需求歡迎與我聯絡！</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-關於我">
+
+    <a href="/tw/about/" rel="section">關於我</a>
+
+  </li>
+        <li class="menu-item menu-item-合作方式">
+
+    <a href="/tw/how-can-oberon-help-you/" rel="section">合作方式</a>
+
+  </li>
+        <li class="menu-item menu-item-計價方式">
+
+    <a href="/tw/how-do-i-make-a-quotation/" rel="section">計價方式</a>
+
+  </li>
+        <li class="menu-item menu-item-學習-wordpress">
+
+    <a href="/tw/wordpress-full-stack/" rel="section">學習 WordPress</a>
+
+  </li>
+        <li class="menu-item menu-item-與我聯繫">
+
+    <a href="mailto:m615926@gmail.com" rel="noopener" target="_blank">與我聯繫</a>
+
+  </li>
+        <li class="menu-item menu-item-訂閱">
+
+    <a href="https://successful-trader-4225.ck.page/bbe15da0e6" rel="noopener" target="_blank">訂閱</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/oberonlai" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/facebook/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/facebook/" class="post-title-link" itemprop="url">Facebook</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-02-07 22:08:40" itemprop="dateCreated datePublished" datetime="2019-02-07T22:08:40+08:00">2019-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:38" itemprop="dateModified" datetime="2021-05-01T10:12:38+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>0</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E6%8B%AF%E6%95%91%E4%BA%BA%E7%94%9F%E7%9A%84%E8%BB%9F%E9%AB%94%E9%9C%80%E6%B1%82%E8%A6%8F%E6%A0%BC%E6%9B%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E6%8B%AF%E6%95%91%E4%BA%BA%E7%94%9F%E7%9A%84%E8%BB%9F%E9%AB%94%E9%9C%80%E6%B1%82%E8%A6%8F%E6%A0%BC%E6%9B%B8/" class="post-title-link" itemprop="url">拯救人生的軟體需求規格書</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-02-04 13:37:27" itemprop="dateCreated datePublished" datetime="2019-02-04T13:37:27+08:00">2019-02-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E5%B0%88%E6%A1%88%E5%8D%B3%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">專案即生活</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>3.8k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>3 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/116c20fe-5701-4fcf-af8a-8ef2a42978ee-23192-000014e67f8466a1_file.jpg"></p>
+<p>前陣子逛 FB 時看到 Udemy 上面這堂原價 7800 的課程 “How to write technical IT requirements to get what you need” 正在限時免費，剛好銜接看板方法不足的需求說明這塊，講師 Anca Onuta 是位非常有經驗的專案經理以及 Scrum Master，課程中同時以三種軟體產品：網站、Mobile App 以及聊天機器人為範例來說明需求文件該如何撰寫。</p>
+<p>滿喜歡講師以邊口述邊打字的方式來進行授課，這樣的模式比較容易進入情境，聽不懂英文的的部分也還有重點可以看，雖然 Udemy 有自動字幕的功能，卻因為講師的口音而常常翻譯錯誤，邊聽邊看講師打下的筆記還比較容易理解些。</p>
+<p>課堂中也有作業練習，講師也都會幫忙解決疑難雜症，或是想要開發的產品類型並未出現在課程之中，只要跟講師反應她都會再新增相關的範例，只能說現在線上課程好競爭，而 Udemy 更是常常有這種限免或是跳樓大拍賣的優惠，我自己就買了一堆根本沒時間看，只能乖乖找時間補上了～</p>
+<p>推薦大家這個粉絲團–&gt;<a target="_blank" rel="noopener" href="https://www.facebook.com/softdevtools/">https://www.facebook.com/softdevtools/</a>，這邊常常都會有一堆免費課程的訊息，把他加到 FB 的搶先看就能隨時掌握最新的優惠課程資訊。</p>
+<p>“How to write technical IT requirements to get what you need” 這堂課程主要分為八大單元，從介紹需求文件類型開始，到如何組織文件內容、工具介紹以及在撰寫文件時需要注意的問題都非常詳盡，以下就各單元做重點摘錄：</p>
+<h2 id="一、需求文件類型"><a href="#一、需求文件類型" class="headerlink" title="一、需求文件類型"></a>一、需求文件類型</h2><p><strong>商業需求文件：</strong><br>描述整個商業計畫、商業目標、所需資源、商業模式等等商營營運各面相的文件，通常是企業經營階層需要的文件，如果是要自己新創事業也會需要。</p>
+<p><strong>產品需求文件：</strong><br>描述特定產品的產品計畫、產品目標、產品規格，產品可能有很多個，每個產品都有自己的產品需求文件。</p>
+<p><strong>軟體需求文件：</strong><br>描述產品內軟體的規格、功能、特色，也就是本課程主要介紹的需求文件。</p>
+<p><strong>用戶需求文件：</strong><br>描述產品使用者的目標、使用行為，以設計出更友善的系統操作介面。</p>
+<p>在介紹這些不同文件類型的時，講師有提到 Functionality 以及 Feature 這兩個容易令人搞混的名詞， Functionality 指的是介面背後的行為以及使用流程，是以比較宏觀角度來描述功能，而 Feature 指的是介面的互動方式，像是點擊按鈕改變字體大小，比較偏細部的具體操作步驟。</p>
+<p>另外一個重點是，只有在軟體開發的領域時「產品需求文件」會等於「軟體需求文件」因為軟體即為產品本身。</p>
+<h2 id="二、將想法具體化成可執行項目的方法-草稿階段"><a href="#二、將想法具體化成可執行項目的方法-草稿階段" class="headerlink" title="二、將想法具體化成可執行項目的方法-草稿階段"></a>二、將想法具體化成可執行項目的方法-草稿階段</h2><ol>
+<li> High Level Vision - 把想法寫下來，並說明這些想法想要達成的目標</li>
+<li> Scope - 透過哪些功能或內容來達成目標</li>
+<li> User Journey - 描述每一個功能的使用步驟以及互動狀態，越細越好，包含顯示欄位、操作流程</li>
+</ol>
+<p>下圖為講師示範以網站專案為範例的需求文件範本：</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/e89ea2e5b995e5bfabe785a7-2019-02-04-e4b88be58d8812.00.48.jpg" alt="螢幕快照 2019-02-04 下午12.00.48.jpg"></p>
+<p>High Level Vision 是希望可以更容易接觸到客戶、讓客戶找到並瞭解公司的服務項目、並直接與客戶取得聯繫，Scope 則是根據以上目標來列出網站可以放的內容，像是產品或服務列表、團對介紹、顧客回饋、訓練課程以及研討會等等，</p>
+<p>然後再逐一發展每個內容裡面的細項，像是團隊介紹裡面可以放團隊成員列表、大頭照、成員簡介，服務列表放入每個服務的名稱與說明，條列完成後，則是根據每個內容去定義的使用歷程，也就是 User Journey。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/e89ea2e5b995e5bfabe785a7-2019-02-04-e4b88be58d8812.09.08.jpg" alt="螢幕快照 2019-02-04 下午12.09.08.jpg"></p>
+<p>以訓練課程為例，其內容有免費預覽、付費觀賞、線上 QA 等內容，在 User Jourey 的部分則是去思考不同的使用者進入該區塊之後會有的操作，像是以新用戶來說，會先看到訓練課程列表 -&gt; 預覽課程 -&gt; 選擇他想上的課程 -&gt; 付費 -&gt; 取得付費課程 -&gt; 提供小禮物 -&gt; 感謝頁面或是其他課程推薦，而舊用戶也有相對應的操作流程，逐一把它列出。</p>
+<p>在草稿階段，我自己做網站企劃的實務經驗，通常是先去爬數家競品網站以及同類型非競品網站後，畫下每個站的網站架構，以及紀錄特定行為的操作步驟流程，像是加入會員、購買商品等等，然後把這些蒐集好的資料做分類，最後把它匯集成客戶網站需求文件的草稿，客戶有了草稿後，再協助他們訂出 High Level Vison、 Scope 以及 User Journey，不然客戶常常也不知道做網站的目的是什麼，裡面要放什麼內容。</p>
+<h2 id="三、整理需求文件的工具"><a href="#三、整理需求文件的工具" class="headerlink" title="三、整理需求文件的工具"></a>三、整理需求文件的工具</h2><ol>
+<li> 心智圖：這也是我最常用的發想工具，有時候還直接拿心智圖去跟客戶做討論，因為很方便可以看到全貌，也可以專注在細節，我是用 Xmind，講師分享的是 Coggle。</li>
+<li> 試算表：用 excel 或是 google 文件的試算表來整理草稿，方便的地方是可以進行排序，快速的找到要先進行開發的內容。</li>
+<li> Word 文件：比較正式的需求文件，可以提交給客戶當交付物。</li>
+</ol>
+<p>使用試算表的整理要點如下：</p>
+<ul>
+<li>  依照草稿區分 scope 裡面的頁面 / 內容 / 描述 / 顯示資訊 / 使用者歷程 / 技術需求 / 驗收標準 / <strong>優先順序</strong> / 重要性 等等的欄位</li>
+<li>  依照草稿提到的內容來動態決定欄位，並整理成精準的文字</li>
+<li>  可以視覺化的顯示還有哪邊的內容有缺少</li>
+<li>  加入優先等級與重要性欄位，就可以使用排序功能優先顯示要開發的項目</li>
+</ul>
+<p>下圖為講師的 excel 需求文件範例</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/e89ea2e5b995e5bfabe785a7-2019-02-04-e4b88be58d8812.28.35.jpg" alt="螢幕快照 2019-02-04 下午12.28.35.jpg"></p>
+<p>先把 Scope 貼上，就成為 Page/Seciton 的項目，然後每個 Scope 裡面的內容，放在第二欄的 Content/Functionalities，其他欄位可以視需要新增刪減，</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/e89ea2e5b995e5bfabe785a7-2019-02-04-e4b88be58d8812.30.57.jpg" alt="螢幕快照 2019-02-04 下午12.30.57.jpg"></p>
+<p>最後面三個欄位在開發上非常重要，驗收標準、優先度以及重要性，用 Excel 最大好處就是可以進行排序。  </p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/e89ea2e5b995e5bfabe785a7-2019-02-04-e4b88be58d8812.33.42.jpg" alt="螢幕快照 2019-02-04 下午12.33.42.jpg"></p>
+<p>由於我有 Word 恐懼症，每次都會被他的排版給搞瘋，但如果是比較有規模且制度完善的公司，提交一份 Word 文件應該還是免不了的。整理邏輯跟 Excel 雷同，只是把欄位換成標題，然後把每個內容細項變成是清單目錄。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/02/e89ea2e5b995e5bfabe785a7-2019-02-04-e4b88be58d8812.37.13.jpg" alt="螢幕快照 2019-02-04 下午12.37.13.jpg"></p>
+<p>心智圖的整理方式較為直覺且不必擔心太多格式排版的問題。</p>
+<h2 id="四、需求文件的基本框架"><a href="#四、需求文件的基本框架" class="headerlink" title="四、需求文件的基本框架"></a>四、需求文件的基本框架</h2><p><strong>1. Description 描述功能的用途、內容</strong><br>列出 Pages 項目裡面應有的內容，以及進一步說明這些內容的欄位、互動功能會如何實現。</p>
+<p><strong>2. Action 功能操作的細節 ( User  Journey )</strong><br>需要使用者操作的步驟，像是輸入的資料欄位、資料驗證方式、發送電子郵件、如何取得登入授權。</p>
+<p><strong>3.Deliverable 該功能預期的產出物、交付物</strong><br>完成這個 Page 應該會有哪些產出，像是加入會員的表單、註冊會員的頁面、忘記密碼功能等等。</p>
+<p>**4.Acceptance Criteria 確認完成的標準<br>**如何說明這個 Page 或功能已經完成，像是會員可以成功登入、註冊帳號、可以使用忘記密碼功能收到密碼重設的連結。</p>
+<p>課程提到的文件基本框架的部分我覺得是比較彈性的，可能依照 Scope 裡面 page 或 functionality 的不同而會有不一樣的欄位，但基本上離不開這四大範疇，第三與第四點實務上常忽略的地方，所以每次請客戶驗收時總是會發現自己漏掉頁面，或是工程師開發好的功能卻不是客戶需要的，這就是在前置溝通時期沒有對於完成標準有一致性的認知而造成的誤會，最後的結局總是只能苦命的打掉重做，所以好的需求文件規格書真的可以拯救人生啊。</p>
+<h2 id="五、需求文件的技術說明"><a href="#五、需求文件的技術說明" class="headerlink" title="五、需求文件的技術說明"></a>五、需求文件的技術說明</h2><p>描述開發這個產品需要的所有所以技術細節：</p>
+<ol>
+<li> 程式語言相關：像是使用什麼語言、程式面的特殊需求、可以擴充、方便移轉、需要支援哪些裝置等等</li>
+<li> 主機相關：主機規格、機房位置、備份機制、部署流程</li>
+<li> 第三方整合相關：需使用到的第三方 SDK 或是 API 介接</li>
+<li> 管理者相關：管理者權限、管理層級、可使用功能</li>
+</ol>
+<p>這部分就是把想得到的技術細節寫下來，但常常會發生邊做邊產生新的技術應用，就要更新這份需求文件，常保這份文件保持在最新狀態是非常重要的。</p>
+<h2 id="六、法律要求"><a href="#六、法律要求" class="headerlink" title="六、法律要求"></a>六、法律要求</h2><p>這是最容易被忽略但也最關鍵的部分，如果網站花了大筆時間人力開發，最後卻因為法律問題而導致必須下架，這會是非常嚴重的損失，所以一開始先了解相關的法律規定以及必須揭露的資訊，甚至是需要讓使用者同意的規範，這些都要在寫需求文件階段時一併考量進去。</p>
+<h2 id="七、撰寫需求文件的要點"><a href="#七、撰寫需求文件的要點" class="headerlink" title="七、撰寫需求文件的要點"></a>七、撰寫需求文件的要點</h2><p>整理需求通常會從草稿開始，然後整理成可以讓別人看得懂的文件，再透過溝通討論逐步發展出細節，有了細節後繪製 wireframe -&gt; User Flow -&gt; Prototype，可以更方便團隊成員理解產品的內容，但有一點要注意，在還沒有草稿階段時直接進入 wireframe 的繪製很容易會迷失方向，會拘泥在細節上而忘了整體目標，所以較好的作法還是先把 High Level Vision、Scope、User Journey 整理出來，wireframe 當成是輔助溝通的工具為佳。</p>
+<p>此外，在整理正式文件的過程中，必須仔細選擇用字遣詞，確保團隊成員可以正確理解，減少假設性的問題，並寫下具體的說明跟解釋，搭配圖片的使用以及有系統的格式整理，在第一次發出這份文件時不要讓他們自己看，而是可以召開會議口頭解釋文件內的所有內容，確保團隊成員都能正確的理解進而減少誤會的產生。</p>
+<h2 id="小結"><a href="#小結" class="headerlink" title="小結"></a>小結</h2><p>我自己是有一份常用的規格清單文件，上完這堂課程之後，可以加入新的欄位來加強文件的完整性以及實用性，也學習到怎麼使用 Excel 來整理並排序，如果未來要開發自己的產品，也是非常實用喔喔喔。</p>
+<blockquote>
+<p>最近把實務上整理軟體規格書的經驗另外寫成了一篇「<a href="https://oberonlai.blog/tw/how-to-write-the-effective-specification/">企劃人員如何撰寫有效的軟體需求規格文件</a>」，如果有了規格不知道該如何進行報價，可以參考另一篇「<a href="https://oberonlai.blog/tw/how-do-i-make-a-quotation/">我的接案報價學</a>」</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/wordpress-%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%B5%B1%E5%AF%84%E4%BB%B6%E4%BA%BA%E4%BB%A5%E5%8F%8A%E7%99%BC%E4%BF%A1%E4%BF%A1%E7%AE%B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/wordpress-%E4%BF%AE%E6%94%B9%E7%B3%BB%E7%B5%B1%E5%AF%84%E4%BB%B6%E4%BA%BA%E4%BB%A5%E5%8F%8A%E7%99%BC%E4%BF%A1%E4%BF%A1%E7%AE%B1/" class="post-title-link" itemprop="url">WordPress 修改系統寄件人以及發信信箱</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-02-02 13:41:30" itemprop="dateCreated datePublished" datetime="2019-02-02T13:41:30+08:00">2019-02-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>511</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在預設情況下，發送系統信的寄件人名稱會是 WordPress 以及 <a href="mailto:&#x77;&#x6f;&#x72;&#100;&#x70;&#x72;&#101;&#115;&#115;&#64;&#100;&#x6f;&#x6d;&#97;&#x69;&#110;&#46;&#99;&#x6f;&#109;">&#x77;&#x6f;&#x72;&#100;&#x70;&#x72;&#101;&#115;&#115;&#64;&#100;&#x6f;&#x6d;&#97;&#x69;&#110;&#46;&#99;&#x6f;&#109;</a>，在 function.php 加入以下兩個 hook 來進行修改</p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 修改發信電子郵件
+function wpb_sender_email( $original_email_address ) &#123;
+  return ‘service@domain.com&#39;;
+&#125;
+&#x2F;&#x2F; 修改寄件人名稱
+function wpb_sender_name( $original_email_from ) &#123;
+  return ‘Hello~&#39;;
+&#125;
+add_filter( &#39;wp_mail_from&#39;, &#39;wpb_sender_email&#39; );
+add_filter( &#39;wp_mail_from_name&#39;, &#39;wpb_sender_name&#39; );<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/git-essentials/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/git-essentials/" class="post-title-link" itemprop="url">人生也有 Git 就好了...</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-01-24 23:24:35" itemprop="dateCreated datePublished" datetime="2019-01-24T23:24:35+08:00">2019-01-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>3 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://oberonlai.blog/wp-content/uploads/2019/01/img_7899.jpg"></p>
+<p>回想當年第一次接觸 Git ，是在開發線上旅遊照片整理服務「Mr.Travelo 我的旅遊書」的時候，當時夥伴找到了一位來自美國的工程師來協助我們進行後端程式的開發，我的 Git 就是在這位工程師的指導下，第一次用 Git 實戰在專案之中。</p>
+<p>但英文聽力弱弱的我，再加上自己那時候非常習慣用 Dropbox 來做檔案的同步與備份，要學一個新的版本控制方法讓我頭非常痛，光是要把 Git 的環境安裝起來就卡了非常多關，更不用說後來開發時遇到衝突、檔案還原等狀況，卻只能用終端機指令模式來操作的方式，讓我非常不適應 Git。</p>
+<p>將近十年過去了，除了比較沒那麼害怕終端機外，也慢慢習慣在每個專案採用 Git 作為版本控制，但總覺得對 Git 的認識還是停留在當年懵懂的階段，於是在圖書館逛到這本，就還是乖乖借回來 K 了～</p>
+<p>本書分為七個章節，從基礎到進階的知識，再到實用的設定方法以及工具介紹，算是滿全面的，而且還有說明怎麼從 SVN 移轉到 Git 的方法，實務上還滿常碰到 SVN 的環境，但可能是翻譯書，有些部分不太像中文，或是專有名詞的翻法跟一般見到的不太一樣，市面上有許多其他 Git 的出版，第一次接觸的朋友可能還是買台灣工程師寫的書讀起來比較好理解些。</p>
+<p>以下就我自己覺得實用的部分做個紀錄：</p>
+<h2 id="零、實用的基本指令"><a href="#零、實用的基本指令" class="headerlink" title="零、實用的基本指令"></a>零、實用的基本指令</h2><p>git remote add upstream <a target="_blank" rel="noopener" href="https://xxx.xx/">https://xxx.xx</a> 可以跟被 fork 的程式碼保持同步<br>git reset HEAD<del>1 回到前一次的提交<br>git reset Head</del>1^1 回到前一次的分支提交<br>git reset –hard HEAD~N 回到前N次的提交<br>git log -2 查看最近兩筆的 commit 紀錄<br>git reflog 查看所有 git 的操作記錄<br>git fetch 只是抓回遠端檔案還沒有進行合併，需要再執行 git merge<br>git fetch + git merge = git pull<br>git stash 把東西先打包起來，在還沒做完卻又必須切換分支的情況下適用<br>git merge 跟 git rebase 後者不會留下 commit 紀錄<br>git diff 比對檔案差異</p>
+<h2 id="一、Github-Flow-的介紹"><a href="#一、Github-Flow-的介紹" class="headerlink" title="一、Github Flow 的介紹"></a>一、Github Flow 的介紹</h2><p>因為沒有待過大型的開發團隊，在我自己開發上很少用到分支這個功能。最完整且最全面的分支管理模式，應該是分為五條的 GitFlow，從分出 delevop、release，再到 feature 以及 hotfix，沒實戰過但感覺起來是滿複雜的，</p>
+<p>書中介紹的由 Github 提出的 Flow 就相對單純的多，主要規則如下</p>
+<ol>
+<li> 在 master 分支的任何東西是可部署的：也就是自己在合併前都能確保程式無誤，不會害 master 爆炸</li>
+<li> 建立有清楚描述的分支：以開發的功能會處理的具體事項作為分支命名，團隊中要能訂定分支的命名規則，方便其他人辨識。譬如 new-user-creation</li>
+<li> 經常推送分支：頻繁地將分支推送到遠端伺服器，讓團隊成員透過 git fetch 可以看到活躍分支的狀態</li>
+<li> 隨時建立 Pull Request：利用 Github 特有的 PR 功能來讓其他人檢視你的程式碼並提供改進建議</li>
+<li> 只有在經過 Pull Request 通過後才進行合併，確保程式都是有被審核過的</li>
+<li> 審查通過後立即部署</li>
+<li> 此流程對於需要頻繁更新的網站專案非常適合，即時且高效</li>
+</ol>
+<h2 id="二、Git-Config-的設定"><a href="#二、Git-Config-的設定" class="headerlink" title="二、Git Config 的設定"></a>二、Git Config 的設定</h2><p>Git 可以依照自己的使用習慣設定許多便利的功能，像是別名、自動修正錯別字等等，config 設定的影響範圍分為三種層級</p>
+<ol>
+<li> 系統層級 –system: 這代表設定的影響範圍會包含此電腦中的所有使用者以及使用 Git 做版控的專案資料夾</li>
+<li> 使用者層級 –global: 只給當前的系統使用者使用，最常用的選項是這個</li>
+<li> 儲存庫層級 –local: 只作用在當前的工作目錄</li>
+</ol>
+<p>git config –global help.autocorrect 10 當拼字有誤時，自動修正 git 指令的功能。設定別名的方式：輸入 git config –global alias.別名名稱 “要取代的指令”，像是設定 git config –global alias.ad “add .”，之後只要打 git ad 就可以完成加入檔案追蹤的動作。其他實用別名設定如下：</p>
+<p>git config –global alias.last “log -1 HEAD” —&gt; 查看最新的 commit 訊息<br>git config –global alias.undo “reset HEAD~1”—&gt;回到上一動<br>git config –global alias.cm “!git add . &amp;&amp; git commit -m”—&gt;使用驚嘆號來執行外部指令，只要輸入 git cm 直接完成 commit</p>
+<p>可以用這方法去組合更多讓自己工作更加快速的別名。</p>
+<h2 id="三、良好的-Git-Message-撰寫習慣"><a href="#三、良好的-Git-Message-撰寫習慣" class="headerlink" title="三、良好的 Git Message 撰寫習慣"></a>三、良好的 Git Message 撰寫習慣</h2><p>這部分是我認為這本書最棒的地方，以往都想說 message 只有自己看，所以大概都會亂打一些英文，連中文都懶得打，然後 commit 很隨便，常常推上去後才發現有東西沒改到，所以就會出現 “修改介面-1”、”修改介面-2” 這樣重複堆疊上去的訊息，簡單說我根本是把 Git 當成 FTP 在用，書中提到的重點完全讓我重新審視自己寫的 message，並且運用在專案之後，一整個覺得考試都考一百分了喔喔喔～</p>
+<ol>
+<li> 在紙上先將工作事項拆解成小任務：這跟看板方法提到的準備作業很像，先拆分準備要做的事，書中更具體的提到一個蕃茄鐘 25 分鐘可以完成的工作為一個小任務，有這個先決條件就很好拆分任務內容了。</li>
+<li> 先寫下小任務的提交訊息再開始寫程式碼：這點非常驚人，先寫下要提交的訊息除了可以確保訊息是有意義外，更重要的是他可以讓你專注在這個任務，只開啟跟這個任務相關的檔案，如果改了其他無關的檔案，立刻就會發現這不是我現在要做的事情，就會回頭乖乖做現在該做的事。</li>
+<li> 每完成一個小任務進行提交：小任務完成後就提交很有爽快感，每次小任務的提交都能離完成大任務更近一步。</li>
+<li> 別做出斷斷續續的提交：要保持開發的完整性，萬一真的寫到一半被抓去救火，先用 git stash 的功能把目前的進度封存起來。</li>
+<li> 說明功能變化而非實作細節修 bug 的話先描述問題或是原始需求：訊息以動詞開頭，像是新增、修改、除錯什麼什麼功能或介面，以非工程師也能看得懂的淺顯文字進行撰寫。</li>
+</ol>
+<p>現在的網頁編輯器越來越先進，直接整合 Git 版控，只要在工作目錄有 git init，設好 git remote，它就可以抓到有修改的檔案，並且自動 git add 到索引，然後在介面中輸入 message，直接 commit 完成，也能推送到遠端，甚至是做視覺化的 git diff。</p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/01/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7-2019-01-24-%E4%B8%8B%E5%8D%8811.14.49.jpg"></p>
+<p><img src="https://oberonlai.blog/wp-content/uploads/2019/01/%E8%9E%A2%E5%B9%95%E5%BF%AB%E7%85%A7-2019-01-24-%E4%B8%8B%E5%8D%8811.11.19.jpg"></p>
+<p>我現在都是用 Visual Studio Code 作為主力開發編輯器，強大的功能、豐富的外掛生態以及還能維持很不錯的效能，真的是微軟這幾年最偉大的發明之一也不為過～</p>
+<h2 id="個人感想"><a href="#個人感想" class="headerlink" title="個人感想"></a>個人感想</h2><p>依照這態勢 Git 應該還是會繼續紅下去，更不用說微軟把 Github 原本需要付費的 private repo 功能給完全開放，讓我從 bitbucket 跳槽回 Github，不知道還要亂打什麼感想，十一點半了來洗洗睡了…</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/scrum-kanban/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/scrum-kanban/" class="post-title-link" itemprop="url">原來我以為的看板根本不是看板...</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-01-19 13:35:04" itemprop="dateCreated datePublished" datetime="2019-01-19T13:35:04+08:00">2019-01-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/%E5%B0%88%E6%A1%88%E5%8D%B3%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">專案即生活</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>3.5k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>3 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://oberonlai.blog/wp-content/uploads/2019/01/3fcaf236-ee60-4696-b695-f9da5fde112b-2628-0000035174261442_file.jpg"> 很久沒有用 Trello 了，因為最近的專案一直找不太到適合的軟體來統整各方面的需求，於是就想說回頭用看看 Trello 來進行整理，基本的 Todo、In Process、Done 這幾個欄位也大概知道要怎麼用，但隨著進行的項目越來越多，Todo、In Process 越拖越長，卻不見 Done 的增加，開始懷疑是不是自己能力不足所以工作都消化不完 Orz… 直到上拜天去圖書館尋寶，找到這本 Ruddy 大大的大作「精實開發與看板方法」，才驚覺自己完全根本不知道什麼叫「看板」，還以為 Trello 就是看板，還以為只要會拖動卡片就是看板，真是搞笑了啊啊啊～ 本書分為八個章節，從基本介紹到看板設計，再到團隊與個人如何運用看板方法，最後還提到如何以系統思考來預測專案很難預知的各種變數，最有感覺的地方是看板一日遊的解說，非常契合自己以往在團隊中的開發經驗，以下就書中精華進行重點式摘要：</p>
+<h1 id="精實軟體開發七大原則："><a href="#精實軟體開發七大原則：" class="headerlink" title="精實軟體開發七大原則："></a>精實軟體開發七大原則：</h1><p>1、消除浪費 Eliminate waste：製造浪費的最大兇手是 Bug，只要保持程式碼的簡單可以避免 Bug，但現在軟體開發的環境越來越複雜，保持簡單不是一件容易的事，所以要可以真正的去了解程式碼，一知半解最容易造成 Bug。時程的預估都只是瞎猜，只有當專案開始時才能慢慢的掌握開發時間。 如何判斷浪費發生：</p>
+<p>一、半成品 Work In Process (WIP) 太多，控制在越小越好。</p>
+<p>二、額外過程：對專案不會產生價值的業務， 像是過多的行政文件整理。</p>
+<p>三、多餘功能：減少非必要的程式撰寫，新功能意味著新 bug 的可能。</p>
+<p>四、任務調換：多工 is evil，思路被打斷要重新進入很浪費時間。</p>
+<p>五、等待：等客戶的回應是必然的等待。OS: 這種等待真的是非常討厭，最近非常有感，一個問卷的評分方式請客戶提供結果等上了兩個禮拜，重點是還跟初期的規劃邏輯完全不同，一來一往就消耗超多時間。</p>
+<p>六、移動：簡單說就是卡關了要花多少時間去解。OS: 平常要做好給自己看的文件，尤其是開發環境的配置，卡在環境配置真的滿累人的。</p>
+<p>七、缺陷：就是 Bug，能越早找到越好。OS: 要開始練習寫測試案例了，不然都只是自己盲目的瞎測，給夥伴測試時也才有測試方向。</p>
+<p>2、增強學習 Amplify learning：卡關時能學到的東西最多，別一知半解的找到答案後貼上就沒事了，多了解一下是怎麼解決的，然後整理成文件，另外在有盈餘時間時進行重構是最高效的學習方式。 測試是最好的回饋，回饋要及時，寫完一段後就要進行測試，透過寫單元測試來核對程式碼的邏輯，最重要的是可以及早給客戶展示收集回饋，進而調整接下來的開發方向。 3、盡量延遲決策 Decide as late as possible：狀況還沒搞清楚的情況下就做決策，容易白做工而造成浪費，所以決策能拖就拖，拖到不做決策的成本高於做決策時， 就該做出決策了。 4、盡快交付 Deliver as fast as possible：別等到全部做完才給驗收，會讓驗收時間不夠， 進而影響到修改時間，及早交付以才能分清楚接下來工作項目的輕重緩急，看是要先修改客戶在意的項目，還是繼續開發其他功能。 5、授權團隊 Empower the team：在適當的規範下，讓團隊自己做出決策。 6、嵌入完整性 Build integrity in：接受需求變更是常態，透過持續的客戶回饋設計出理想中的系統，並保持架構的靈活。 7、著眼整體 See the whole：設定團隊開發目標避免拘泥於細節。</p>
+<h1 id="什麼是看板方法？"><a href="#什麼是看板方法？" class="headerlink" title="什麼是看板方法？"></a>什麼是看板方法？</h1><p>看板方法是半成品的約束系統，白話說就是要限制目前手頭正在做的工作數量，要等手上做的東西完成後，才能去拿新的工作來做，透過限制半成品的數量來找到最有效率的開發準則。 看板方法的實行步驟：整理現行工作流程 &gt; 把流程視覺化放進看板 &gt; 限制每個流程的半成品數量 &gt; 管理工作流程 &gt; 讓規則明確 &gt; 落實回饋循環 &gt; 由協助改善 經實驗演進 設計看板牆的三個基本元素：</p>
+<ol>
+<li> 範圍(整個工作的流程)</li>
+<li> 工作項目粒度(大工作還是小工作)</li>
+<li> 工作項目狀態(已完成 or 未完成)</li>
+</ol>
+<p>看板核心要素：</p>
+<ol>
+<li> 要有 WIP 限制</li>
+<li> 採用拉動系統，東西處理完後才能做新東西</li>
+<li> 有設定緩衝區</li>
+<li> 完成的項目先別刪，可以留著檢討完後再一次刪除</li>
+<li> 專案還沒開始時被要求估算時間，回答請再多給我一點時間進行評估</li>
+</ol>
+<h1 id="如何使用個人看板？"><a href="#如何使用個人看板？" class="headerlink" title="如何使用個人看板？"></a>如何使用個人看板？</h1><p>先把手邊的工作進行視覺化，依照待進行工作、準備中、今日工作、等待中、正在進行的工作、完成的這幾個項目來進行分類，個人專案看板的部分包含：衝刺工作項目、預備(分析及文件製作)、開發進行中、開發已完成、測試、發佈，原本我使用 Trello 來進行設計，但發現他沒有辦法跨看板來進行統整。 書中提到要可以有總覽的檢視介面來查看所有專案的狀態，試了幾套線上的服務，發現到 <a target="_blank" rel="noopener" href="https://ora.pm/">Ora</a> 這套服務功能比較齊全，且介面是我比較過最美的，但可惜的是他沒支援 WIP 的設定，看在他介面這麼優的前提下，只好自己想辦法弄了～ <img src="https://oberonlai.blog/wp-content/uploads/2019/01/ora1.jpg" alt="Ora1.jpg"> 上圖是我自己的個人看板，主要紀錄專案以外的事，中間上方可以快速切換看板，看板欄位的標題顏色都可以自己設定，會設成黑黃純粹是個人喜好XD。 第二欄準備中後面有個括弧 2，指的就是我給自己設定的 WIP，也就是說在準備中的工作事項不能超過兩個，有空位的時候才能從待進行工作拉入新的工作事項。同理，正在進行的工作的 WIP 也是設為 1，我的個人事務在一個衝刺時間內只做一項。 Ora 特別的地方在於說他的 List 有分為四種狀態：分別是 Frozen、Open、Review、Closed/Compledte，前兩者主要是控制這個 List 內的工作事項在 My Tasks 中是否可見，切換成 My Tasks 可以看到已被拉入 Open 的工作事項： <img src="https://oberonlai.blog/wp-content/uploads/2019/01/ora2.jpg" alt="Ora2.jpg"> 我在 MyLife 中把「看板方法讀書心得」拉入了準備中的這個 List，而這 List 的狀態是 Open，所以「看板方法讀書心得」的工作事項就會出現在 My Tasks 的 Inbox 裡面，最後我再從 Inbox 移動到要哪一天進行，這樣就能分配我今天、明天甚至是後天要做什麼。 專案的部分概念相同，理論上會有一個產品待辦項目，來紀錄這個專案需要開發的所有功能，把產品待辦項目拆解後就會進入衝刺工作項目，也就是在設定好的一個工作週期要來進行的任務，當中專案負責人會依據客戶需求來決定衝刺工作項目的開發順序， <img src="https://oberonlai.blog/wp-content/uploads/2019/01/ora3.jpg" alt="Ora3.jpg"> 同樣的，在預備跟開發-進行中的 List 後面也都有 (2) 的提示，代表這兩個階段只能接兩個工作事項，到了開發完成後後面還有一個 List 是測試，測試的內容就是要根據預備階段時整理好的測試案例來進行功能測試，沒問題後就可以 Demo 給客戶驗收。 驗收的結果有可能是需要修改，這時候就專案經理就要詢問客戶的意見，看是要先修改這個剛完成的項目還是繼續開發其他功能，藉此來決定接下來是哪個工作事項要進入預備階段。 <img src="https://oberonlai.blog/wp-content/uploads/2019/01/ora4.jpg" alt="Ora4.jpg"> Ora 還有許多功能，像是有開啟計時的話就會有上圖的報告，它也可以設定 Sprint Points，就可以在 Spring Review 那邊看到數據，但我還不太了解 Sprint 的理論與應用方法，日後再行補上。 可惜的是，Ora 沒有提供 WIP 的設定，所以也就沒有書中提到最重要的「累積流程圖 CFD」，這圖可以看出專案有沒有失控，尤其是接了太多根本做不完的需求，或是從中發現 WIP 的設定是否恰當，但以個人的專案來說，這套工具算是還夠用。 在預備階段的文件製作，作者提到需要製作系統文件以及測試案例的資料，看了很久一直不知道到底該怎麼撰寫，結果在書末的附錄就有完整的示範，然後又在 Google 的時候直接發現作者 Ruddy 大大的<a target="_blank" rel="noopener" href="https://ruddyblog.wordpress.com/2016/07/16/%E9%9C%80%E6%B1%82%E8%AE%8A%E5%8C%96%E5%A4%AA%E9%81%8E%E9%A0%BB%E7%B9%81/">這篇文章</a>，裡面提到一個工具叫做 <a target="_blank" rel="noopener" href="https://www.featuremap.co/">FeatureMap</a> 可以非常容易的做出 User Story Mapping 的展開圖，實在是非常方便，這次的專案就打算用它來練習撰寫測試案例。</p>
+<h1 id="個人心得"><a href="#個人心得" class="headerlink" title="個人心得"></a>個人心得</h1><p>看完這本書之後，告訴自己希望可以做到以下這些事：</p>
+<ol>
+<li> 找到答案複製貼上，不明白為何這樣寫，也許會造成其他問題也不知道， 還是要搞懂，然後把不需要的 code 拿掉</li>
+<li> 每個功能的流程要搞清楚，梳理出文件來確保沒有遺漏的狀態</li>
+<li> 常用的功能流程就差不多，沒做過的功能要特別注意</li>
+<li> 要學會寫文件交接給自己</li>
+<li> 從新檢視自己寫的東西進行重構，才能學到越多</li>
+<li> 做完一個工作事項再拉一個進來，就能看到目前累積的工作量</li>
+<li> 需要做決策時用七大原則來檢視目前的狀況</li>
+<li> 從既有流程進行小規模改善</li>
+<li> 功能一寫完就進行測試，別等到全部做完後再回來修改， 這樣可以提升交付程式的品質</li>
+<li> 工作事項要完成的前提是要經過測試</li>
+</ol>
+<p>感謝 Ruddy 大大的這本好書，接下來就是要進攻自動化測試喔喔喔～ 附上老師的部落格，裡面超有料—&gt;<a target="_blank" rel="noopener" href="https://ruddyblog.wordpress.com/">https://ruddyblog.wordpress.com</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/git-change-remote-url/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/git-change-remote-url/" class="post-title-link" itemprop="url">Git 修改遠端 remote url</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-01-15 16:54:34" itemprop="dateCreated datePublished" datetime="2019-01-15T16:54:34+08:00">2019-01-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>351</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>感謝微軟買了 Github，開放了私有 Repo 的功能，雖然自己寫的不是什麼多了不起的程式碼，但畢竟是客戶的東西還是不好意思直接公開，</p>
+<p>就直接從 Bitbuket 跳槽回 Github 吧，本地的檔案只要修改最後要 push 的遠端地址就好，其他都不用變動～</p>
+<p>1、先檢查目前的 remote 名稱</p>
+<pre class="line-numbers language-none"><code class="language-none">git remote -v<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>2、幹掉現有的 remote 名稱</p>
+<pre class="line-numbers language-none"><code class="language-none">git remote remove origin<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>3、新增新的 remote url</p>
+<pre class="line-numbers language-none"><code class="language-none">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;m615926&#x2F;myrepo.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>4、push 前記得要先 commit</p>
+<pre class="line-numbers language-none"><code class="language-none">git add .
+git commit -m ‘跳槽啦～&#39;
+git push --set-upstream origin master<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/laravel-mix-svg-sprite-for-vue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/laravel-mix-svg-sprite-for-vue/" class="post-title-link" itemprop="url">Laravel mix 加入 svg sprite 並設計成 vue component</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2019-01-15 16:39:32" itemprop="dateCreated datePublished" datetime="2019-01-15T16:39:32+08:00">2019-01-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>2 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Svg Sprite 可以非常方便的合併多張向量圖，讓 request 能少一些，之前純 Vue 的環境下是採用 svg-sprite-loader，無奈丟進 Laravel 裡面不理我，只好找別的解決方案。</p>
+<p>測試之後找到它—&gt;svg-spritemap-webpack-plugin，個人覺得他比 svg-sprite-loader 優秀，優秀的點在於它不會一開始就把 svg sprite 塞進來，只有在需要他時再呼叫就好，</p>
+<p>以下紀錄設定方法：</p>
+<p>一、先移除舊版的 svg-spritemap-webpack-plugin，再裝新的，新版本要在 laravle-mix 4.0 以上才可以用</p>
+<pre class="line-numbers language-none"><code class="language-none">npm uninstall svg-spritemap-webpack-plugin
+npm install svg-spritemap-webpack-plugin --save-dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>二、在 webpack.mix.js 宣告來源以及編譯後的路徑</p>
+<pre class="line-numbers language-none"><code class="language-none">const SVGSpritemapPlugin &#x3D; require(&#39;svg-spritemap-webpack-plugin’); &#x2F;&#x2F; 引入
+const svgSourcePath &#x3D; &#39;resources&#x2F;js&#x2F;icons&#x2F;svg&#x2F;*.svg&#39;;
+const svgSpriteDestination&#x3D; &#39;&#x2F;svg&#x2F;sprite.svg’; &#x2F;&#x2F; 不用加 public<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>三、webpackConfig 加入 plugin 相關設定</p>
+<pre class="line-numbers language-none"><code class="language-none">.webpackConfig(&#123;
+    plugins: [
+        new SVGSpritemapPlugin(
+            svgSourcePath, &#123;
+                output: &#123;
+                    filename: svgSpriteDestination,
+                    svgo: true
+                &#125;,
+            &#125;
+        )
+    ]
+&#125;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>四、新增 vue icon 元件，在 components 裡面新增一個資料夾 icon，裡面新增 index.vue，元件內容如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;template&gt;
+  &lt;svg :width&#x3D;&quot;width&quot; :height&#x3D;&quot;height&quot;&gt;
+    &lt;use :xlink:href&#x3D;&quot;iconName&quot;&#x2F;&gt;
+  &lt;&#x2F;svg&gt;
+&lt;&#x2F;template&gt;
+
+&lt;script&gt;
+export default &#123;
+  name: &#39;Icon&#39;,
+
+  props: &#123;
+    type: &#123;
+      default: &#39;sad&#39;
+    &#125;,
+
+    width: &#123;
+      default: 50
+    &#125;,
+
+    height: &#123;
+      default: 50
+    &#125;
+  &#125;,
+
+  computed: &#123;
+    iconName () &#123;
+      return &#39;&#x2F;svg&#x2F;sprite.svg#sprite-&#39; + this.$props.type
+    &#125;
+  &#125;
+&#125;
+&lt;&#x2F;script&gt;
+
+&lt;style scoped&gt;
+svg &#123;
+  fill: currentColor;
+  overflow: hidden;
+&#125;
+&lt;&#x2F;style&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>五、在 icons 的資料夾底下也就是 svg 檔案的地方，新增一個 index.js，內容如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">import Vue from &#39;vue&#39;
+import Icon from ‘..&#x2F;components&#x2F;icon&#39;
+Vue.component(&#39;icon&#39;, Icon)
+&#x2F;&#x2F; requires and returns all modules that match
+const requireAll &#x3D; requireContext &#x3D;&gt; requireContext.keys().map(requireContext)
+&#x2F;&#x2F; import all svg
+const req &#x3D; require.context(&#39;.&#x2F;svg&#39;, true, &#x2F;\.svg$&#x2F;)
+requireAll(req)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>六、在 app.js 引入 icons/index，把所有的 svg 一次引入到各個頁面，省去每次重複引入的麻煩</p>
+<pre class="line-numbers language-none"><code class="language-none">import &#39;.&#x2F;icons&#x2F;index’<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>七、在 vue 裡面就可以使用:</p>
+<pre class="line-numbers language-none"><code class="language-none">&lt;icon type&#x3D;“svgfilename” width&#x3D;‘xxx’ height&#x3D;‘xxx’&gt;&lt;&#x2F;icon&gt; 了<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/woocommerce-category-mode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/woocommerce-category-mode/" class="post-title-link" itemprop="url">WooCommerce 如何開啟商品型錄模式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-06-12 09:11:19" itemprop="dateCreated datePublished" datetime="2018-06-12T09:11:19+08:00">2018-06-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>243</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>WooCommerce 是 WordPress 最多人使用的購物車外掛，其商品管理以及購物功能也都非常完善，不管是賣實體還是數位商品都非常方便，國內各大第三方金流商也都有推出支援的外掛，可以快速整合物流或金流。但有時候我們只是想要使用他的商品管理功能而不使用結帳機制，來做為商品展示的用途，這時候就可以使用 YITH WooCommerce Catalog Mode 這款外掛，它可以讓 WooCommerce 關閉購物功能，把所有加入購物車的按鈕都隱藏不顯示，等未來需要購物功能時，再行開啟即可。 <img src="https://oberonlai.blog/wp-content/uploads/2018/06/woocommerce-category-mode-01.jpg"> <img src="https://oberonlai.blog/wp-content/uploads/2018/06/woocommerce-category-mode-02.jpg"> <img src="https://oberonlai.blog/wp-content/uploads/2018/06/woocommerce-category-mode-03.jpg"></p>
+<p><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/yith-woocommerce-catalog-mode/">前往連結</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/woocommerce-step-checkout/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/woocommerce-step-checkout/" class="post-title-link" itemprop="url">WooCommerce 步驟結帳外掛</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-06-11 12:25:48" itemprop="dateCreated datePublished" datetime="2018-06-11T12:25:48+08:00">2018-06-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/uncategorized/" itemprop="url" rel="index"><span itemprop="name">uncategorized</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>252</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>WooCommerce 預設的結帳頁面，是把登入/註冊會員、訂購人資訊、付款方式全都放在同一頁之中，如果欄位較少或是沒有太複雜的進階功能時，放在單頁之中還算方便使用，但如果今天公司需要比較多的結帳功能或是要填寫較詳細的付款資料，拆成獨立的頁面來處理可能對使用者會比較友善，WooCommerce Multi-Step Checout 這支外掛可以很方便的完成此功能，它可以設定哪些步驟需要拆成獨立的頁面，顧客在結帳時也能切換前後步驟，在手機上也能瀏覽，是一支可以改善顧客體驗的 WooCommerce 外掛。 <img src="https://oberonlai.blog/wp-content/uploads/2018/06/woocommerce-step-checkout.jpg"> <img src="https://oberonlai.blog/wp-content/uploads/2018/06/screenshot-1.png"> <img src="https://oberonlai.blog/wp-content/uploads/2018/06/screenshot-3.png"> <img src="https://oberonlai.blog/wp-content/uploads/2018/06/screenshot-4.png"></p>
+<p><a target="_blank" rel="noopener" href="https://wordpress.org/plugins/wp-multi-step-checkout/">前往連結</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/wordpress-%E7%89%88%E6%9C%AC%E6%8E%A7%E7%AE%A1%E5%B7%A5%E5%85%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/wordpress-%E7%89%88%E6%9C%AC%E6%8E%A7%E7%AE%A1%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">WordPress 版本控管工具</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-04-30 11:13:59" itemprop="dateCreated datePublished" datetime="2018-04-30T11:13:59+08:00">2018-04-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>對於比較少在寫程式的朋友來說，可能很習慣使用 FTP 來把檔案上傳到網站上，但如果不小心覆蓋或是刪除到正確的檔案，沒有備份的話就會很麻煩了，為了避免這樣的情況，工程師在開發網站的時候往往都會使用一套版本控管系統，目前的主流版控系統叫作 Git，使用版控差別在於說隨時都可以回到上一個儲存點，就像打 RPG 一樣，萬一改錯或是刪錯檔案時，就可以立刻還原，Gitium 這支外掛可以幫你整合第三方的 Git 寄放服務，萬一哪一天主題或是外掛更新後發生相容性錯誤，就可以用 Git 還原到正常的版本。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/wordpress-%E7%89%88%E6%9C%AC%E6%8E%A7%E7%AE%A1%E5%B7%A5%E5%85%B7/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/woocommerce-%E9%81%8B%E8%B2%BB%E6%A2%9D%E4%BB%B6%E5%A4%96%E6%8E%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/woocommerce-%E9%81%8B%E8%B2%BB%E6%A2%9D%E4%BB%B6%E5%A4%96%E6%8E%9B/" class="post-title-link" itemprop="url">WooCommerce 運費條件外掛</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-04-19 12:00:15" itemprop="dateCreated datePublished" datetime="2018-04-19T12:00:15+08:00">2018-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在預設情況下，WooCommerce 只能針對消費金額用折價券的方式做免運費的優惠，如果想要用其它的條件來做就沒辦法了，而 WooCommerce Advanced Free Shipping 這支外掛就是一套很不錯的解決方案。它除了可以針對金額來免運外，還可以用商品的購買數量、長寬或是庫存量、消費者的購買地區、會員等級等多達近二十種的條件來判斷是否需提供免運費，是一套加強 WooCommerce 免運功能的好用工具！</p>
+<p>[mxp_fb2wp_display_embed sender=”449900911783585” item=”share” post_id=”449900911783585_1654511057989225” display=”yes” title=”V29vQ29tbWVyY2Ug6YGL6LK75qKd5Lu25aSW5o6b” body=”5Zyo6aCQ6Kit5oOF5rOB5LiL77yMV29vQ29tbWVyY2Ug5Y+q6IO96Yed5bCN5raI6LK76YeR6aGN55So5oqY5YO55Yi455qE5pa55byP5YGa5YWN6YGL6LK755qE5YSq5oOg77yM5aaC5p6c5oOz6KaB55So5YW25a6D55qE5qKd5Lu25L6G5YGa5bCx5rKS6L6m5rOV5LqG77yM6ICMIFdvb0NvbW1lcmNlIEFkdmFuY2VkIEZyZWUgU2hpcHBpbmcg6YCZ5pSv5aSW5o6b5bCx5piv5LiA5aWX5b6I5LiN6Yyv55qE6Kej5rG65pa55qGI44CC5a6D6Zmk5LqG5Y+v5Lul6Yed5bCN6YeR6aGN5L6G5YWN6YGL5aSW77yM6YKE5Y+v5Lul55So5ZWG5ZOB55qE6LO86LK35pW46YeP44CB6ZW35a+s5oiW5piv5bqr5a2Y6YeP44CB5raI6LK76ICF55qE6LO86LK35Zyw5Y2A44CB5pyD5ZOh562J57Sa562J5aSa6YGU6L+R5LqM5Y2B56iu55qE5qKd5Lu25L6G5Yik5pa35piv5ZCm6ZyA5o+Q5L6b5YWN6YGL6LK777yM5piv5LiA5aWX5Yqg5by3IFdvb0NvbW1lcmNlIOWFjemBi+WKn+iDveeahOWlveeUqOW3peWFt++8gQ==” pid=”3380”]</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E5%85%AD%E6%AC%BE-woocommerce-%E5%A0%B1%E8%A1%A8%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E5%85%AD%E6%AC%BE-woocommerce-%E5%A0%B1%E8%A1%A8%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/" class="post-title-link" itemprop="url">六款 WooCommerce 報表分析工具</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-04-09 12:08:59" itemprop="dateCreated datePublished" datetime="2018-04-09T12:08:59+08:00">2018-04-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>866</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>有在經營電子商務的網站，最重要的就是可以了解商品的銷售狀況以及客戶的購買習慣，然而 WooCommerce 內建的分析工具相對薄弱，這時就可以藉助第三方服務來增加報表功能，這篇文章分享了六款 WooCommerce 報表分析工具，有整合站外的線上服務，也有安裝在站內的報表外掛，提供給有需要的朋友！</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E5%85%AD%E6%AC%BE-woocommerce-%E5%A0%B1%E8%A1%A8%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/wordpress-%E6%9C%83%E5%93%A1%E9%99%90%E5%AE%9A%E5%85%A7%E5%AE%B9%E5%A4%96%E6%8E%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/wordpress-%E6%9C%83%E5%93%A1%E9%99%90%E5%AE%9A%E5%85%A7%E5%AE%B9%E5%A4%96%E6%8E%9B/" class="post-title-link" itemprop="url">WordPress 會員限定內容外掛</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-04-02 11:13:38" itemprop="dateCreated datePublished" datetime="2018-04-02T11:13:38+08:00">2018-04-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>870</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>如果你的網站是提供進階的內容，需要加入會員才能看到完整的文章，那麼使用 WP-Members 這支外掛可以很容易的達到此功能。它可以將文章內容限定為會員瀏覽，還可以在前臺提供會員登入以及註冊表單，讓你的訪客可以快速完成會員申請，另外還可以自訂註冊表單欄位，是一套非常方便的內容管理工具。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/wordpress-%E6%9C%83%E5%93%A1%E9%99%90%E5%AE%9A%E5%85%A7%E5%AE%B9%E5%A4%96%E6%8E%9B/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E4%B8%80%E4%BA%9B%E6%9C%83%E8%AE%93-wordpress-%E7%B6%B2%E7%AB%99%E8%AE%8A%E6%85%A2%E7%9A%84%E7%86%B1%E9%96%80%E5%A4%96%E6%8E%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E4%B8%80%E4%BA%9B%E6%9C%83%E8%AE%93-wordpress-%E7%B6%B2%E7%AB%99%E8%AE%8A%E6%85%A2%E7%9A%84%E7%86%B1%E9%96%80%E5%A4%96%E6%8E%9B/" class="post-title-link" itemprop="url">一些會讓 WordPress 網站變慢的熱門外掛</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-03-26 12:31:29" itemprop="dateCreated datePublished" datetime="2018-03-26T12:31:29+08:00">2018-03-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>WordPress 最吸引人使用的因素莫過於有一大堆實用又豐富的外掛生態，但外掛往往也是造成網站速度變慢的主因之一，沒有經過良好設計的外掛，會因為頻繁的資料庫連線、大範圍的資料庫查詢、在沒用到的頁面引入、或是引入一些不必要的套件而造成網站效能低落，本文列舉出幾套熱門且吃資源的外掛，以及可能的替代方案，還有如何透過土法煉鋼的方式找出吃效能的外掛怪獸，如果你的網站剛好遇到這樣的問題，在升級主機前可以先從外掛檢查下手！</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E4%B8%80%E4%BA%9B%E6%9C%83%E8%AE%93-wordpress-%E7%B6%B2%E7%AB%99%E8%AE%8A%E6%85%A2%E7%9A%84%E7%86%B1%E9%96%80%E5%A4%96%E6%8E%9B/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E5%A6%82%E4%BD%95%E5%B9%AB-wordpress-%E6%96%87%E7%AB%A0%E5%A2%9E%E5%8A%A0%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6%E6%A2%9D%EF%BC%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E5%A6%82%E4%BD%95%E5%B9%AB-wordpress-%E6%96%87%E7%AB%A0%E5%A2%9E%E5%8A%A0%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6%E6%A2%9D%EF%BC%9F/" class="post-title-link" itemprop="url">如何幫 WordPress 文章增加閱讀進度條？</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-02-28 12:45:13" itemprop="dateCreated datePublished" datetime="2018-02-28T12:45:13+08:00">2018-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>相信大家可能都有在一些比較大型的媒體網站上看過這功能：頁面上方顯示進度條，會隨著頁面捲動的比例增加進度條的進度，藉此來提示讀者文章的閱讀進度。Post Reading Progress 這支外掛可以很方便的達成此功能，它除了可以設定進度條的位置、高度外，還可以調整成符合網站色系的配色工具，想幫自己部落格增加這功能的朋友可以試一試這支外掛。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E5%A6%82%E4%BD%95%E5%B9%AB-wordpress-%E6%96%87%E7%AB%A0%E5%A2%9E%E5%8A%A0%E9%96%B1%E8%AE%80%E9%80%B2%E5%BA%A6%E6%A2%9D%EF%BC%9F/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/wordpress-%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C%E6%AA%94%E6%A1%88%E4%B8%8B%E8%BC%89%E5%8A%9F%E8%83%BD%EF%BC%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/wordpress-%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C%E6%AA%94%E6%A1%88%E4%B8%8B%E8%BC%89%E5%8A%9F%E8%83%BD%EF%BC%9F/" class="post-title-link" itemprop="url">WordPress 如何製作檔案下載功能？</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-02-26 12:36:17" itemprop="dateCreated datePublished" datetime="2018-02-26T12:36:17+08:00">2018-02-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>999</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>常碰到 B2B 類型的企業需要在網站上提供產品型錄或是規格說明書下載的功能嗎？檔案總管的功能除了要讓潛在客戶方便搜尋瀏覽，也要讓企業內部維護人員能方便管理上傳的文件，這篇文章完整說明如何先從新增文章類型開始，設計自己的檔案文件頁面與分類，再到使用 Posts Table Pro 這支付費外掛把文件列表顯示在前台，讓你可以快速完成檔案下載系統。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/wordpress-%E5%A6%82%E4%BD%95%E8%A3%BD%E4%BD%9C%E6%AA%94%E6%A1%88%E4%B8%8B%E8%BC%89%E5%8A%9F%E8%83%BD%EF%BC%9F/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E5%A2%9E%E5%BC%B7-wordpress-%E9%9B%BB%E5%AD%90%E9%83%B5%E4%BB%B6%E5%8A%9F%E8%83%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E5%A2%9E%E5%BC%B7-wordpress-%E9%9B%BB%E5%AD%90%E9%83%B5%E4%BB%B6%E5%8A%9F%E8%83%BD/" class="post-title-link" itemprop="url">增強 WordPress 電子郵件功能</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-02-23 11:39:45" itemprop="dateCreated datePublished" datetime="2018-02-23T11:39:45+08:00">2018-02-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>WordPress 的預設電子郵件通知類型較少，而且也自訂電子郵件的內容對於不懂程式的朋友會有一定的難度，Better Notification for WordPress 這支外掛可以針對十幾種情境來發送 email 給需要通知的對象，包含新文章發佈、文章更新、新分類、新增頁面等等，此外還有提供多種欄位的 shortcode 把站內資訊加入到 email 之中，還有提供編輯器介面來設計郵件，讓你可以打造符合企業形象的電子郵件，付費版提供更多的發信情境，巧妙運用能設計出與用戶意想不到的互動方式。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E5%A2%9E%E5%BC%B7-wordpress-%E9%9B%BB%E5%AD%90%E9%83%B5%E4%BB%B6%E5%8A%9F%E8%83%BD/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E5%A6%82%E4%BD%95%E5%9C%A8-wordpress-%E7%B6%B2%E7%AB%99%E4%B8%AD%E6%8F%90%E4%BE%9B%E6%9C%83%E5%93%A1%E5%88%AA%E9%99%A4%E5%B8%B3%E8%99%9F%E7%9A%84%E5%8A%9F%E8%83%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E5%A6%82%E4%BD%95%E5%9C%A8-wordpress-%E7%B6%B2%E7%AB%99%E4%B8%AD%E6%8F%90%E4%BE%9B%E6%9C%83%E5%93%A1%E5%88%AA%E9%99%A4%E5%B8%B3%E8%99%9F%E7%9A%84%E5%8A%9F%E8%83%BD/" class="post-title-link" itemprop="url">如何在 WordPress 網站中提供會員刪除帳號的功能</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-02-22 12:38:11" itemprop="dateCreated datePublished" datetime="2018-02-22T12:38:11+08:00">2018-02-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在一般情況下，網站通常只有註冊、加入會員的機制，很少看到能退出會員、刪除帳號的功能，在尊重會員隱私以及提供更友善的使用體驗下，加入刪除帳號的功能是個不錯的選擇，也可以在刪除前做問卷調查，蒐集會員流失的原因進而改善，這比留著一堆沒有互動的殭屍會員來得更有意義。這篇文章介紹了兩支外掛來做這功能，需要整理會員名單的朋友可以參考看看～</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E5%A6%82%E4%BD%95%E5%9C%A8-wordpress-%E7%B6%B2%E7%AB%99%E4%B8%AD%E6%8F%90%E4%BE%9B%E6%9C%83%E5%93%A1%E5%88%AA%E9%99%A4%E5%B8%B3%E8%99%9F%E7%9A%84%E5%8A%9F%E8%83%BD/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E5%B0%87-instagram-%E8%BD%89%E6%8F%9B%E6%88%90%E7%B6%B2%E7%AB%99/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E5%B0%87-instagram-%E8%BD%89%E6%8F%9B%E6%88%90%E7%B6%B2%E7%AB%99/" class="post-title-link" itemprop="url">將 Instagram 轉換成網站</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-02-21 12:10:04" itemprop="dateCreated datePublished" datetime="2018-02-21T12:10:04+08:00">2018-02-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>819</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>對有在經營 IG 的朋友來說，可以試試 Zine 這套服務，他可以把 IG 的內容轉換成四種不同的 layout，並且可自由選擇字型與配色，讓你的 IG 頁面有不同的風格與樣式，此外還可自訂網域以及網站代管服務，對於已經擁有 IG 帳號但還沒有網站的店家可以考慮從這服務進行初期的網站建置。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E5%B0%87-instagram-%E8%BD%89%E6%8F%9B%E6%88%90%E7%B6%B2%E7%AB%99/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://oberonlai.blog/tw/%E8%AE%93%E4%BD%A0%E7%9A%84%E7%B6%B2%E7%AB%99%E4%B9%9F%E6%9C%89%E8%B7%9F-fb-%E8%B2%BC%E6%96%87%E4%B8%80%E6%A8%A3%E7%9A%84%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%9B%9E%E9%A5%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/tw/images/avatar.jpg">
+      <meta itemprop="name" content="賴俊吾 / Oberon Lai">
+      <meta itemprop="description" content="現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WordPress 開發日常">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/tw/%E8%AE%93%E4%BD%A0%E7%9A%84%E7%B6%B2%E7%AB%99%E4%B9%9F%E6%9C%89%E8%B7%9F-fb-%E8%B2%BC%E6%96%87%E4%B8%80%E6%A8%A3%E7%9A%84%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%9B%9E%E9%A5%8B/" class="post-title-link" itemprop="url">讓你的網站也有跟 FB 貼文一樣的表情符號回饋</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+
+              <time title="創建時間：2018-02-14 12:29:11" itemprop="dateCreated datePublished" datetime="2018-02-14T12:29:11+08:00">2018-02-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新於</span>
+                <time title="修改時間：2021-05-01 10:12:39" itemprop="dateModified" datetime="2021-05-01T10:12:39+08:00">2021-05-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分類於</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/tw/categories/WordPress/" itemprop="url" rel="index"><span itemprop="name">WordPress</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="文章字數">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="所需閱讀時間">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 分鐘</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>從去年開始，FB 貼文除了可以點「讚」，還可以選擇其它四種心情，也有越來越多的粉絲團利用這功能舉辦活動，但 Facebook 提供嵌入到網站的 Like 小工具，還是只能點讚，如果你希望也有其它表情符號可以點的話可以參考 Emojics 這個服務，簡單來說它就是提供一種回饋機制，讓網站本身除了「讚」以外還有其它心情可以選擇，這服務還提供後台數據可以進行分析，只是目前並無與 Facebook 數據連動。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/tw/%E8%AE%93%E4%BD%A0%E7%9A%84%E7%B6%B2%E7%AB%99%E4%B9%9F%E6%9C%89%E8%B7%9F-fb-%E8%B2%BC%E6%96%87%E4%B8%80%E6%A8%A3%E7%9A%84%E8%A1%A8%E6%83%85%E7%AC%A6%E8%99%9F%E5%9B%9E%E9%A5%8B/#more" rel="contents">
+                閱讀全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/tw/page/5/"><i class="fa fa-angle-left" aria-label="上一頁"></i></a><a class="page-number" href="/tw/">1</a><span class="space">&hellip;</span><a class="page-number" href="/tw/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/tw/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/tw/page/15/">15</a><a class="extend next" rel="next" href="/tw/page/7/"><i class="fa fa-angle-right" aria-label="下一頁"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="賴俊吾 / Oberon Lai"
+      src="/tw/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">賴俊吾 / Oberon Lai</p>
+  <div class="site-description" itemprop="description">現為全職 WordPress 工程師，網站開發經歷 11 年，專攻前端工程與 WordPress 佈景主題、外掛客製化開發</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/tw/archives">
+          <span class="site-state-item-count">291</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/tw/categories/">
+        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tw/tags/">
+        <span class="site-state-item-count">91</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/oberonlai" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:m615926@gmail.com" title="E-Mail → mailto:m615926@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/oberonlai" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;oberonlai" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/m615926" title="FB Page → https:&#x2F;&#x2F;www.facebook.com&#x2F;m615926" rel="noopener" target="_blank"><i class="fab fa-facebook fa-fw"></i>FB Page</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">賴俊吾 / Oberon Lai</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="總字數">740k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">11:13</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/tw/lib/anime.min.js"></script>
+  <script src="/tw/lib/pjax/pjax.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/medium-zoom@1/dist/medium-zoom.min.js"></script>
+
+<script src="/tw/js/utils.js"></script>
+
+
+<script src="/tw/js/schemes/muse.js"></script>
+
+
+<script src="/tw/js/next-boot.js"></script>
+
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/tw/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+    </div>
+</body>
+</html>

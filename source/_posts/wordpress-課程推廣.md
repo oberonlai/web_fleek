@@ -1,0 +1,12 @@
+---
+title: WordPress 課程推廣
+tags: []
+id: '3076'
+categories:
+  - - WordPress
+date: 2017-09-29 11:37:51
+---
+
+  能有專業的老師帶你系統性的學習是一件幸福的事。這年頭 Google 實在太方便了，但也造成知識的片面、零碎化，只知其表面往往也只能解決表面的問題，當相同的問題以不同的面貌出現時，就還是只能無限卡關，而這也是老師在現今資訊爆炸年代的存在價值。今天分享的這堂課程會從最基礎的網頁語法開始，並帶你熟悉網站運作原理，接下來才進入 WordPress，包含安裝、操作、客製，最後再帶入 SEO 的基礎觀念，非常適合準備投入網路經營的中小企業負責人，以及想轉行到網頁設計界的朋友，再加上是小班三人的編制，有問題可以直接煩老師XD，希望有越來越多人投入 WordPress 的領域！
+<!-- more -->
+  \[mxp\_fb2wp\_display\_embed sender="449900911783585" item="share" post\_id="449900911783585\_1455616591212007" display="yes" title="V29yZFByZXNzIOiqsueoi+aOqOW7ow==" body="6IO95pyJ5bCI5qWt55qE6ICB5bir5bi25L2g57O757Wx5oCn55qE5a2457+S5piv5LiA5Lu25bm456aP55qE5LqL44CC6YCZ5bm06aCtIEdvb2dsZSDlr6blnKjlpKrmlrnkvr/kuobvvIzkvYbkuZ/pgKDmiJDnn6XorZjnmoTniYfpnaLjgIHpm7bnoo7ljJbvvIzlj6rnn6XlhbbooajpnaLlvoDlvoDkuZ/lj6rog73op6PmsbrooajpnaLnmoTllY/poYzvvIznlbbnm7jlkIznmoTllY/poYzku6XkuI3lkIznmoTpnaLosozlh7rnj77mmYLvvIzlsLHpgoTmmK/lj6rog73nhKHpmZDljaHpl5zvvIzogIzpgJnkuZ/mmK/ogIHluKvlnKjnj77ku4ros4foqIrniIbngrjlubTku6PnmoTlrZjlnKjlg7nlgLzjgILku4rlpKnliIbkuqvnmoTpgJnloILoqrLnqIvmnIPlvp7mnIDln7rnpI7nmoTntrLpoIHoqp7ms5Xplovlp4vvvIzkuKbluLbkvaDnhp/mgonntrLnq5npgYvkvZzljp/nkIbvvIzmjqXkuIvkvobmiY3pgLLlhaUgV29yZFByZXNz77yM5YyF5ZCr5a6J6KOd44CB5pON5L2c44CB5a6i6KO977yM5pyA5b6M5YaN5bi25YWlIFNFTyDnmoTln7rnpI7op4Dlv7XvvIzpnZ7luLjpganlkIjmupblgpnmipXlhaXntrLot6/ntpPnh5/nmoTkuK3lsI/kvIHmpa3osqDosqzkurrvvIzku6Xlj4rmg7PovYnooYzliLDntrLpoIHoqK3oqIjnlYznmoTmnIvlj4vvvIzlho3liqDkuIrmmK/lsI/nj63kuInkurrnmoTnt6jliLbvvIzmnInllY/poYzlj6/ku6Xnm7TmjqXnhanogIHluKtYRO+8jOW4jOacm+aciei2iuS+hui2iuWkmuS6uuaKleWFpSBXb3JkUHJlc3Mg55qE6aCY5Z+f77yB" pid="3076"\]
